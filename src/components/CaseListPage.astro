@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs, { type Crumb } from './Breadcrumbs.astro';
+import CaseCards from './CaseCards.astro';
+import AdSlot from './AdSlot.astro';
+import { SITE_NAME } from '../site';
+import { caseUrl } from '../lib';
+interface Props { name: string; description: string; crumbs: Crumb[]; cases: CollectionEntry<'cases'>[] }
+const { name, description, crumbs, cases } = Astro.props;
+const abs = (p: string) => new URL(p, Astro.site).href;
+const jsonLd = [{
+  '@type': 'CollectionPage',
+  name,
+  url: abs(Astro.url.pathname),
+  description,
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: abs('/') },
+  mainEntity: { '@type': 'ItemList', itemListElement: cases.map((c, n) => ({ '@type': 'ListItem', position: n + 1, url: abs(caseUrl(c)), name: c.data.title })) },
+}];
+---
+<BaseLayout title={`${name} | ${SITE_NAME}`} description={description} jsonLd={jsonLd}>
+  <Breadcrumbs items={crumbs} />
+  <h1>{name}</h1>
+  <p class="answer">{description} {cases.length} {cases.length === 1 ? 'case' : 'cases'}.</p>
+  <slot />
+  <CaseCards cases={cases} />
+  <AdSlot />
+  <p><a href="/">← All cases</a></p>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import CaseListPage from '../../components/CaseListPage.astro';
+import { PRODUCT_TYPES, type Taxon } from '../../site';
+import { allCases, subSlug } from '../../lib';
+export function getStaticPaths() {
+  return PRODUCT_TYPES.map((t) => ({ params: { type: t.slug }, props: { t } }));
+}
+const { t } = Astro.props as { t: Taxon };
+const cases = (await allCases()).filter((c) => c.data.productType === t.name);
+const subs = [...new Set(cases.map((c) => c.data.appSubcategory).filter((s): s is string => !!s))].sort();
+---
+<CaseListPage name={`AI startups: ${t.name}`} description={t.description} crumbs={[{ name: 'Product types', href: '/types/' }, { name: t.name, href: `/types/${t.slug}/` }]} cases={cases}>
+  {subs.length > 0 && (
+    <nav aria-label="Subcategories"><p>Subcategories: {subs.map((s, n) => <>{n > 0 && ' · '}<a href={`/types/${t.slug}/${subSlug(s)}/`}>{s}</a></>)}</p></nav>
+  )}
+</CaseListPage>

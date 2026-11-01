@@ -2,20 +2,16 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { SITE_NAME } from '../site';
 ---
-<PageLayout title="About" description={`What ${SITE_NAME} is, who maintains it, how prompts and tutorials are made and checked, and how AI tools are used in making the site.`} updated="2026-11-01">
-  <p>{SITE_NAME} publishes a library of detailed, copy-ready AI prompts for web design, visual effects, interaction, motion, video, camera moves, images, writing and specific industries, plus practical AI tutorials for office work and small businesses. The free <a href="/idea-to-prompt/">Idea → Prompt</a> tool turns a rough idea into a structured brief.</p>
+<PageLayout title="About" description={`What ${SITE_NAME} is, who maintains it, how cases are researched and checked, and how AI tools are used in making the site.`} updated="2026-11-01">
+  <p>{SITE_NAME} publishes a <a href="/">library of real AI startup cases</a>, organised by <a href="/industries/">industry</a> and <a href="/types/">product type</a>. Each case records founders, launch date, team size and revenue, with every number linked to a dated source.</p>
   <h2>Who maintains this site</h2>
   <p>The site is maintained by a small <a href="/authors/editorial-team/">Editorial team</a>. We are independent of OpenAI, Anthropic, Google and other AI providers, and we do not claim professional credentials such as accountancy or financial advice qualifications.</p>
   <p>(The name is a leftover from the site's first life as a calculator site.)</p>
-  <h2>How we make prompts</h2>
+  <h2>How we research cases</h2>
   <ul>
-    <li>Every prompt is written by the editorial team and run in at least one of the tools it lists before it is published.</li>
-    <li>Variables are marked as <code>{'{{variable_name}}'}</code> and explained with an example, so you know exactly what to replace.</li>
-    <li>Example images are only shown when we generated them ourselves, and each one says how it was made.</li>
-    <li>Idea → Prompt uses fixed rules and templates in your browser. It does not call any AI service, and nothing you type is sent to a server.</li>
+    <li>Every number links to its source and the date it was reported.</li>
+    <li>Each figure is labelled founder-reported, verified or media-reported. If no reliable figure exists we say "Not disclosed" rather than estimate.</li>
   </ul>
-  <h2>How we write tutorials</h2>
-  <p>Tutorials cite official sources, show any arithmetic step by step, and state the date facts such as prices were last verified.</p>
   <h2>Use of AI</h2>
-  <p>We use AI tools (large language models) to help draft page text and code. AI output is never published unchecked: facts are checked against the cited sources and prompts are tested before publishing. Read more in our <a href="/editorial-policy/">editorial policy</a>.</p>
+  <p>We use AI tools (large language models) to help draft page text and code. AI output is never published unchecked: facts are checked against the cited sources before publishing. Read more in our <a href="/editorial-policy/">editorial policy</a>.</p>
 </PageLayout>

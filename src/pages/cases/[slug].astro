@@ -1,0 +1,70 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import { INDUSTRIES, SITE_NAME, typeSlug } from '../../site';
+import { LABEL_NAME, allCases, caseUrl, isoDate, subSlug } from '../../lib';
+export async function getStaticPaths() {
+  return (await allCases()).map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+}
+const { entry } = Astro.props as { entry: CollectionEntry<'cases'> };
+const d = entry.data;
+const { Content } = await render(entry);
+const ind = INDUSTRIES.find((i) => i.slug === d.industry)!;
+const path = caseUrl(entry);
+const cards = [
+  { name: 'Monthly revenue', ...d.mrr, value: d.mrr.display },
+  { name: 'Total revenue', ...d.totalRevenue, value: d.totalRevenue.display },
+  { name: 'Team size', ...d.teamSize, value: d.teamSize.display },
+  { name: 'Founded', label: d.foundedYear ? undefined : 'not-disclosed', value: d.foundedDate },
+  ...d.metrics,
+];
+const related = (await allCases()).filter((c) => c.data.slug !== d.slug && c.data.industry === d.industry).slice(0, 3);
+const jsonLd = [{
+  '@type': 'Article',
+  headline: d.title,
+  description: d.summary,
+  url: new URL(path, Astro.site).href,
+  dateModified: isoDate(d.updated),
+  about: { '@type': 'Organization', name: d.company, founder: d.founders.map((name) => ({ '@type': 'Person', name })), ...(d.foundedYear ? { foundingDate: String(d.foundedYear) } : {}) },
+  author: { '@type': 'Organization', name: SITE_NAME },
+  publisher: { '@type': 'Organization', name: SITE_NAME },
+  citation: d.sources.map((s) => s.url),
+}];
+---
+<BaseLayout title={`${d.title} | ${SITE_NAME}`} description={d.summary} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ name: ind.name, href: `/industries/${ind.slug}/` }, { name: d.company, href: path }]} />
+  <article class="case">
+    <p class="eyebrow">
+      <a href={`/industries/${ind.slug}/`}>{ind.name}</a> · <a href={`/types/${typeSlug(d.productType)}/`}>{d.productType}</a>
+      {d.appSubcategory && <> · <a href={`/types/app/${subSlug(d.appSubcategory)}/`}>{d.appSubcategory}</a></>}
+    </p>
+    <h1>{d.title}</h1>
+    <p class="answer">{d.summary}</p>
+    <p class="meta">Founder{d.founders.length > 1 ? 's' : ''}: {d.founders.join(', ')}</p>
+    <ul class="metric-cards" aria-label="Key numbers">
+      {cards.map((m) => (
+        <li>
+          <span class="m-name">{m.name}</span>
+          <strong>{m.value}</strong>
+          {m.label && <span class={`m-label l-${m.label}`}>{LABEL_NAME[m.label]}</span>}
+          {m.sourceUrl && <a class="m-src" href={m.sourceUrl} rel="nofollow noopener" target="_blank">Source{m.sourceDate && `, ${m.sourceDate}`}</a>}
+        </li>
+      ))}
+    </ul>
+    <AdSlot />
+    <div class="case-body"><Content /></div>
+    <section aria-labelledby="sources">
+      <h2 id="sources">Sources</h2>
+      <ol>{d.sources.map((s) => <li><a href={s.url} rel="nofollow noopener">{s.title}</a> – {s.publisher}, {s.date}</li>)}</ol>
+      <p class="meta">Labels: <strong>Founder-reported</strong> = stated by the founder or company; <strong>Verified</strong> = backed by a payment-processor screenshot, TrustMRR or a public platform count; <strong>Media-reported</strong> = published by a news outlet or third party. "Implied" monthly figures are annual figures divided by 12. We never estimate numbers ourselves.</p>
+    </section>
+    {related.length > 0 && (
+      <section aria-labelledby="related"><h2 id="related">More {ind.name} cases</h2>
+        <ul>{related.map((c) => <li><a href={caseUrl(c)}>{c.data.title}</a></li>)}</ul>
+      </section>
+    )}
+    <p class="meta">Last updated: <time datetime={isoDate(d.updated)}>{isoDate(d.updated)}</time></p>
+  </article>
+</BaseLayout>

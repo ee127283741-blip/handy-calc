@@ -47,94 +47,47 @@ describe('ads build', () => {
   it('ON: slot counts per page type', () => {
     const read = (p: string) => readFileSync(join(ON, p, 'index.html'), 'utf8');
     expect(slots(read('.'))).toBe(1);
-    expect(slots(read('ai-costs'))).toBe(1);
-    expect(slots(read('prompts'))).toBe(1);
-    expect(slots(read('prompts/web-design'))).toBe(1);
-    expect(slots(read('idea-to-prompt'))).toBe(1);
-  });
-
-  it('ON: prompt pages have 1–2 slots, all after the prompt and its copy button', () => {
-    const pages = files(join(ON, 'prompts')).filter((f) => f.split('/').length - ON.split('/').length === 4 && f.endsWith('index.html'));
-    expect(pages.length).toBeGreaterThanOrEqual(32);
-    for (const f of pages) {
-      const html = readFileSync(f, 'utf8');
-      expect(slots(html), f).toBeGreaterThanOrEqual(1);
-      expect(slots(html), f).toBeLessThanOrEqual(2);
-      const copy = html.indexOf('data-copy="prompt-text"');
-      const pre = html.indexOf('</pre>');
-      expect(copy, f).toBeGreaterThan(0);
-      expect(html.indexOf('<aside class="ad-slot'), f).toBeGreaterThan(Math.max(copy, pre));
-    }
-  });
-
-  const guides = (dir: string) => readdirSync(join(dir, 'guides')).map((s) => readFileSync(join(dir, 'guides', s, 'index.html'), 'utf8'));
-
-  it('ON: guides have a slot right after the 2nd paragraph, at most 4 slots', () => {
-    const pages = guides(ON);
-    expect(pages.length).toBeGreaterThanOrEqual(1);
-    for (const html of pages) {
-      const body = html.slice(html.indexOf('<h1'));
-      const p2 = body.indexOf('</p>', body.indexOf('</p>') + 4) + 4;
-      expect(body.slice(p2).trimStart().startsWith('<aside class="ad-slot')).toBe(true);
-      expect(slots(html)).toBeLessThanOrEqual(4);
-    }
-  });
-
-  it('OFF: guides have no ad markup', () => {
-    const pages = guides(OFF);
-    expect(pages.length).toBeGreaterThanOrEqual(1);
-    for (const html of pages) expect(html).not.toMatch(/class="ad-slot|adsbygoogle/);
   });
 });
 
 describe('site build (ads off)', () => {
   const read = (p: string) => readFileSync(join(OFF, p), 'utf8');
-  const guideUrls = () => readdirSync(join(OFF, 'guides')).map((s) => `/guides/${s}/`);
-  const urlsOf = (marker: string) => files(OFF)
-    .filter((f) => f.endsWith('index.html') && read(f.slice(OFF.length + 1)).includes(marker))
-    .map((f) => f.slice(OFF.length).replace(/index\.html$/, ''));
-  const PROMPT_CATS = ['web-design', 'visual-effects', 'interaction', 'motion', 'video-editing', 'camera-moves', 'image-generation', 'writing', 'industry'];
-  const HUBS = ['ai-costs', 'ai-business', 'ai-productivity', 'prompting', 'ai-tools', 'ai-privacy', 'prompts', ...PROMPT_CATS.map((c) => `prompts/${c}`)];
+  const caseUrls = () => readdirSync(join(OFF, 'cases')).map((s) => `/cases/${s}/`);
 
-  it('search index lists the tool, every guide and every prompt', () => {
+  it('search index lists every case', () => {
     const index: { url: string; type: string; title: string; category: string; description: string }[] = JSON.parse(read('search-index.json'));
-    const tools = urlsOf('"WebApplication"');
-    expect(tools).toEqual(['/idea-to-prompt/']);
-    for (const u of tools) expect(index.find((e) => e.url === u)?.type, u).toBe('tool');
-    const prompts = urlsOf('"CreativeWork"');
-    expect(prompts.length).toBeGreaterThanOrEqual(32);
-    for (const u of prompts) expect(index.find((e) => e.url === u)?.type, u).toBe('prompt');
-    for (const u of guideUrls()) expect(index.find((e) => e.url === u)?.type, u).toBe('guide');
-    for (const e of index) expect(e.title && e.category && e.description).toBeTruthy();
+    expect(index.map((e) => e.url).sort()).toEqual(caseUrls().sort());
+    for (const e of index) expect(e.title && e.type && e.category && e.description).toBeTruthy();
   });
 
-  it('rss.xml is RSS 2.0 with every guide and prompt', () => {
+  it('rss.xml is RSS 2.0 with every case', () => {
     const xml = read('rss.xml');
     expect(xml.startsWith('<?xml')).toBe(true);
     expect(xml).toMatch(/<rss version="2.0"[\s\S]*<channel>[\s\S]*<\/channel>\s*<\/rss>/);
-    for (const u of [...guideUrls(), ...urlsOf('"CreativeWork"')]) expect(xml).toContain(`${u}</link>`);
+    for (const u of caseUrls()) expect(xml).toContain(`${u}</link>`);
     expect(read('index.html')).toContain('type="application/rss+xml"');
   });
 
-  it('sitemap has lastmod for every url', () => {
+  it('sitemap has lastmod for every url and no removed sections', () => {
     const xml = read('sitemap-0.xml');
     const urls = xml.match(/<url>[\s\S]*?<\/url>/g) ?? [];
     expect(urls.length).toBeGreaterThan(10);
     for (const u of urls) expect(u, u).toMatch(/<lastmod>\d{4}-\d\d-\d\dT/);
-    expect(xml).toMatch(/prompts\/motion\/logo-reveal-animation\/<\/loc><lastmod>2026-10-21T/);
+    expect(xml).not.toMatch(/\/(prompts|guides|calculators|idea-to-prompt|prompting|ai-[a-z]+)\//);
   });
 
-  it('every prompt category has at least 3 prompts', () => {
-    for (const c of PROMPT_CATS) expect(readdirSync(join(OFF, 'prompts', c)).filter((s) => !s.endsWith('.html')).length, c).toBeGreaterThanOrEqual(3);
-  });
-
-  it('prompt pages have CreativeWork + BreadcrumbList JSON-LD, a highlighted prompt and a variables table', () => {
-    for (const u of urlsOf('"CreativeWork"')) {
-      const html = read(`${u.slice(1)}index.html`);
-      expect(html, u).toContain('"@type":"BreadcrumbList"');
-      expect(html, u).toMatch(/<pre id="prompt-text"[^>]*>[\s\S]*<mark>\{\{[a-z0-9_]+\}\}<\/mark>/);
-      expect(html, u).toContain('<th scope="col">Variable</th>');
+  it('removed pages are gone and every old URL has a 301', () => {
+    const rules = read('_redirects').split('\n').filter((l) => l.trim() && !l.startsWith('#')).map((l) => l.trim().split(/\s+/));
+    const from = new Set(rules.map((r) => r[0]));
+    for (const u of ['/prompts/', '/prompts/web-design/', '/guides/how-many-words-is-a-token/', '/idea-to-prompt/', '/calculators/', '/ai-costs/', '/prompting/', '/prompt-proofs/web-design/brand-identity-starter-kit.webp']) {
+      expect(from.has(u), u).toBe(true);
     }
+    for (const [src, dst, code] of rules) {
+      expect(code, src).toBe('301');
+      expect(from.has(dst), `chain ${src} -> ${dst}`).toBe(false);
+      expect(dst === '/' || readdirSync(join(OFF, dst.slice(1))).includes('index.html'), `${src} -> ${dst}`).toBe(true);
+    }
+    for (const d of ['prompts', 'guides', 'idea-to-prompt', 'calculators', 'prompt-proofs', 'ai-costs']) expect(() => readdirSync(join(OFF, d)), d).toThrow();
   });
 
   it('every internal link points to a built page, file or redirect', () => {
@@ -152,13 +105,12 @@ describe('site build (ads off)', () => {
     expect(broken).toEqual([]);
   });
 
-  it('hub pages have CollectionPage + ItemList + BreadcrumbList JSON-LD and no "Coming soon"', () => {
-    for (const h of HUBS) {
-      const html = read(`${h}/index.html`);
-      expect(html, h).toContain('"@type":"CollectionPage"');
-      expect(html, h).toContain('"@type":"ItemList"');
-      expect(html, h).toContain('"@type":"BreadcrumbList"');
-      expect(html, h).not.toMatch(/coming soon/i);
+  it('no internal links to removed pages', () => {
+    const bad: string[] = [];
+    for (const f of files(OFF).filter((f) => f.endsWith('.html') || f.endsWith('.txt') || f.endsWith('.xml') || f.endsWith('.json'))) {
+      if (f.endsWith('_redirects')) continue;
+      for (const m of readFileSync(f, 'utf8').matchAll(/(?:href="|https?:\/\/[^/"\s)]+)(\/(?:prompts|guides|calculators|idea-to-prompt|prompt-proofs|prompting|ai-costs|ai-business|ai-productivity|ai-tools|ai-privacy)\/[^"\s)]*)/g)) bad.push(`${f} -> ${m[1]}`);
     }
+    expect(bad).toEqual([]);
   });
 });

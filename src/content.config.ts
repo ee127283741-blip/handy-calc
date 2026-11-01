@@ -1,52 +1,41 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { CATEGORY_SLUGS, PROMPT_CATEGORY_SLUGS } from './site';
-
-const source = z.object({ title: z.string().min(3), url: z.string().url(), publisher: z.string().min(2) });
-const faq = z.object({ q: z.string().min(5), a: z.string().min(10) });
-const category = z.enum(CATEGORY_SLUGS);
-
-const guides = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/guides' }),
-  schema: z.object({
-    title: z.string().max(70),
-    slug: z.string().regex(/^[a-z0-9-]+$/),
-    metaDescription: z.string().min(70).max(170),
-    category,
-    subtopic: z.string().optional(),
-    alsoIn: z.array(category).default([]),
-    faqs: z.array(faq).default([]),
-    sources: z.array(source).min(1),
-    lastVerified: z.coerce.date().optional(),
-    author: z.string(),
-    published: z.coerce.date(),
-    updated: z.coerce.date(),
-    status: z.enum(['draft', 'published']),
-  }),
-});
-
-const prompts = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/prompts' }),
-  schema: z.object({
-    title: z.string().max(70),
-    slug: z.string().regex(/^[a-z0-9-]+$/),
-    category: z.enum(PROMPT_CATEGORY_SLUGS),
-    purpose: z.string().min(40).max(300),
-    variables: z.array(z.object({ name: z.string().regex(/^[a-z0-9_]+$/), description: z.string(), example: z.string() })).min(1),
-    tools: z.array(z.string()).min(1),
-    image: z.string().regex(/^\/prompt-proofs\//).optional(),
-    imageCredit: z.string().optional(),
-    imageWidth: z.number().int().default(1280),
-    imageHeight: z.number().int().default(800),
-    tags: z.array(z.string()).default([]),
-    published: z.coerce.date(),
-    updated: z.coerce.date(),
-  }),
-});
+import { INDUSTRY_SLUGS, PRODUCT_TYPE_NAMES, REVENUE_RANGE_SLUGS } from './site';
 
 const authors = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/authors' }),
   schema: z.object({ name: z.string(), slug: z.string(), description: z.string() }),
 });
 
-export const collections = { guides, prompts, authors };
+// Provenance of a number. 'not-disclosed' only when there is no number.
+export const LABELS = ['founder-reported', 'verified', 'media-reported', 'not-disclosed'] as const;
+const label = z.enum(LABELS);
+const dateish = z.string().regex(/^\d{4}(-\d{2}(-\d{2})?)?$/);
+const sourced = { label, sourceUrl: z.string().url().optional(), sourceDate: dateish.optional() };
+const money = z.object({ value: z.number().nullable(), display: z.string(), ...sourced });
+const metric = z.object({ name: z.string(), value: z.string(), ...sourced });
+
+const cases = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/cases' }),
+  schema: z.object({
+    title: z.string().max(70),
+    slug: z.string().regex(/^[a-z0-9-]+$/),
+    company: z.string(),
+    founders: z.array(z.string()).min(1),
+    summary: z.string().min(70).max(200),
+    industry: z.enum(INDUSTRY_SLUGS),
+    productType: z.enum(PRODUCT_TYPE_NAMES),
+    appSubcategory: z.string().optional(),
+    foundedYear: z.number().int().nullable(),
+    foundedDate: z.string(),
+    teamSize: z.object({ display: z.string(), ...sourced }),
+    mrr: money,
+    totalRevenue: money,
+    revenueRange: z.enum(REVENUE_RANGE_SLUGS),
+    metrics: z.array(metric).min(1),
+    sources: z.array(z.object({ title: z.string(), url: z.string().url(), publisher: z.string(), date: dateish })).min(1),
+    updated: z.coerce.date(),
+  }),
+});
+
+export const collections = { authors, cases };

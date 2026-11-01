@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { INDUSTRIES } from '../site';
+import { caseUrl } from '../lib';
+interface Props { cases: CollectionEntry<'cases'>[] }
+const { cases } = Astro.props;
+const ind = (s: string) => INDUSTRIES.find((i) => i.slug === s)!.name;
+---
+<ul class="cards case-cards">
+  {cases.map(({ data: d }) => (
+    <li data-industry={d.industry} data-type={d.productType} data-revenue={d.revenueRange} data-year={d.foundedYear ?? 'unknown'}>
+      <a href={caseUrl({ data: d } as CollectionEntry<'cases'>)}>{d.company}</a>
+      <span>{d.summary}</span>
+      <span class="count">{ind(d.industry)} · {d.appSubcategory ?? d.productType} · {d.foundedYear ?? 'Year n/d'}</span>
+      <span class="case-mrr">{d.mrr.value === null ? 'Monthly revenue: Not disclosed' : d.mrr.display}</span>
+    </li>
+  ))}
+</ul>

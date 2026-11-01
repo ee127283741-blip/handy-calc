@@ -1,0 +1,11 @@
+---
+import CaseListPage from '../../../components/CaseListPage.astro';
+import { allCases, subSlug } from '../../../lib';
+export async function getStaticPaths() {
+  const subs = [...new Set((await allCases()).map((c) => c.data.appSubcategory).filter((s): s is string => !!s))];
+  return subs.map((name) => ({ params: { sub: subSlug(name) }, props: { name } }));
+}
+const { name } = Astro.props as { name: string };
+const cases = (await allCases()).filter((c) => c.data.productType === 'App' && c.data.appSubcategory === name);
+---
+<CaseListPage name={`AI apps: ${name}`} description={`AI startup cases in the ${name} app subcategory.`} crumbs={[{ name: 'Product types', href: '/types/' }, { name: 'App', href: '/types/app/' }, { name, href: `/types/app/${subSlug(name)}/` }]} cases={cases} />

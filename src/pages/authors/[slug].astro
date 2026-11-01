@@ -3,14 +3,12 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { SITE_NAME } from '../../site';
-import { liveGuides } from '../../lib';
 export async function getStaticPaths() {
   return (await getCollection('authors')).map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
 }
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const path = `/authors/${entry.data.slug}/`;
-const works = (await liveGuides()).filter((g) => g.data.author === entry.data.name).sort((a, b) => a.data.title.localeCompare(b.data.title));
 const jsonLd = [{
   '@type': 'Person',
   name: entry.data.name,
@@ -23,7 +21,5 @@ const jsonLd = [{
   <Breadcrumbs items={[{ name: entry.data.name, href: path }]} />
   <h1>{entry.data.name}</h1>
   <Content />
-  <h2>Tutorials by the {entry.data.name}</h2>
-  <ul>{works.map((g) => <li><a href={`/guides/${g.data.slug}/`}>{g.data.title}</a></li>)}</ul>
-  <p>The {entry.data.name} also writes and tests the <a href="/prompts/">prompt library</a>.</p>
+  <p>The {entry.data.name} also researches and maintains the <a href="/">AI startup case library</a>.</p>
 </BaseLayout>

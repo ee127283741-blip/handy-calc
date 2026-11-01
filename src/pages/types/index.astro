@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { PRODUCT_TYPES, SITE_NAME } from '../../site';
+import { allCases } from '../../lib';
+const cases = await allCases();
+const n = (name: string) => cases.filter((c) => c.data.productType === name).length;
+---
+<BaseLayout title={`AI startup cases by product type | ${SITE_NAME}`} description="Browse real AI startup case studies by product type: SaaS, apps (mobile, browser extension), tools, services and content businesses.">
+  <Breadcrumbs items={[{ name: 'Product types', href: '/types/' }]} />
+  <h1>Cases by product type</h1>
+  <ul class="cards">
+    {PRODUCT_TYPES.map((t) => <li><a href={`/types/${t.slug}/`}>{t.name}</a><span>{t.description}</span><span class="count">{n(t.name)} cases</span></li>)}
+  </ul>
+</BaseLayout>

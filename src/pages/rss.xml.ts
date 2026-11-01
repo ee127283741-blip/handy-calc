@@ -1,15 +1,14 @@
 import type { APIRoute } from 'astro';
 import { SITE_NAME, SITE_TAGLINE } from '../site';
-import { allPrompts, liveGuides, promptUrl } from '../lib';
+import { allCases, caseUrl } from '../lib';
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-// Hand-written RSS 2.0 feed of guides and prompts, newest first.
+// Hand-written RSS 2.0 feed of cases, newest first.
 export const GET: APIRoute = async ({ site }) => {
   const abs = (p: string) => new URL(p, site).href;
   const entries = [
-    ...(await liveGuides()).map(({ data: d }) => ({ title: d.title, url: `/guides/${d.slug}/`, description: d.metaDescription, date: d.published })),
-    ...(await allPrompts()).map((p) => ({ title: p.data.title, url: promptUrl(p), description: p.data.purpose, date: p.data.published })),
+    ...(await allCases()).map((c) => ({ title: c.data.title, url: caseUrl(c), description: c.data.summary, date: c.data.updated })),
   ].sort((a, b) => b.date.valueOf() - a.date.valueOf() || a.title.localeCompare(b.title));
   const items = entries.map((e) => `    <item>
       <title>${esc(e.title)}</title>
@@ -21,7 +20,7 @@ export const GET: APIRoute = async ({ site }) => {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${esc(SITE_NAME)}: prompts and tutorials</title>
+    <title>${esc(SITE_NAME)}: AI startup case library</title>
     <link>${abs('/')}</link>
     <description>${esc(SITE_TAGLINE)}</description>
     <language>en</language>

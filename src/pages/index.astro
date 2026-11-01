@@ -1,52 +1,53 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from '../components/AdSlot.astro';
-import { CATEGORIES, PROMPT_CATEGORIES, SITE_NAME, SITE_TAGLINE } from '../site';
-import { allPrompts, liveGuides, promptUrl } from '../lib';
+import CaseCards from '../components/CaseCards.astro';
+import { INDUSTRIES, PRODUCT_TYPES, REVENUE_RANGES, SITE_NAME } from '../site';
+import { allCases, caseUrl } from '../lib';
 const home = new URL('/', Astro.site).href;
+const cases = await allCases();
+const years = [...new Set(cases.map((c) => c.data.foundedYear).filter((y): y is number => y !== null))].sort();
+const types = PRODUCT_TYPES.filter((t) => cases.some((c) => c.data.productType === t.name));
+const inds = INDUSTRIES.filter((i) => cases.some((c) => c.data.industry === i.slug));
+const description = 'A library of real AI startup case studies: how founders found the idea, launched, priced and marketed, with sourced, dated revenue figures.';
 const jsonLd = [
-  { '@type': 'WebSite', name: SITE_NAME, url: home, description: SITE_TAGLINE },
+  { '@type': 'WebSite', name: SITE_NAME, url: home, description },
   { '@type': 'Organization', name: SITE_NAME, url: home, logo: new URL('/favicon.svg', Astro.site).href },
+  { '@type': 'ItemList', name: 'AI startup case library', itemListElement: cases.map((c, n) => ({ '@type': 'ListItem', position: n + 1, url: new URL(caseUrl(c), Astro.site).href, name: c.data.title })) },
 ];
-const prompts = await allPrompts();
-const count = (slug: string) => prompts.filter((p) => p.data.category === slug).length;
-const guides = (await liveGuides()).sort((a, b) => b.data.updated.valueOf() - a.data.updated.valueOf()).slice(0, 6);
 ---
-<BaseLayout title={`${SITE_NAME} – AI Prompt Library, Idea → Prompt Tool & AI Tutorials`} description="Copy-ready AI prompts for web design, motion, video, camera moves, images and writing, a free Idea → Prompt generator, and practical AI tutorials." jsonLd={jsonLd}>
+<BaseLayout title={`${SITE_NAME} – AI Startup Case Library: Real Revenue, Sourced`} description={description} jsonLd={jsonLd}>
   <section class="hero">
-    <p class="eyebrow">Prompts · Design · Video · Images · Writing</p>
-    <h1>Better prompts, ready to copy</h1>
-    <p class="answer">{SITE_TAGLINE} Turn a rough idea into a detailed brief in seconds.</p>
-    <p class="hero-cta"><a class="btn btn-lg" href="/idea-to-prompt/">Try Idea → Prompt</a> <a href="/prompts/">or browse {prompts.length} prompts</a></p>
-    <form class="search" role="search" action="/calculators/" method="get">
-      <label for="hero-q">Search prompts and tutorials</label>
-      <div class="search-row">
-        <input id="hero-q" name="q" type="search" placeholder="e.g. landing page, orbit shot, product photo" autocomplete="off" />
-        <button type="submit" class="btn">Search</button>
-      </div>
-    </form>
+    <p class="eyebrow">AI startup case library</p>
+    <h1>How real AI startups got started</h1>
+    <p class="answer">{cases.length} case studies of AI products, mostly indie and bootstrapped. Every revenue number links to its source, is dated and labelled founder-reported, verified or media-reported. Where nothing is public we say "Not disclosed".</p>
   </section>
-  <section aria-labelledby="cats">
-    <p class="eyebrow">Prompt library</p>
-    <h2 id="cats">Prompt categories</h2>
-    <ul class="cards">
-      {PROMPT_CATEGORIES.map((c) => <li><a href={`/prompts/${c.slug}/`}>{c.name}</a><span>{c.description}</span><span class="count">{count(c.slug)} prompts</span></li>)}
-    </ul>
-  </section>
-  <section aria-labelledby="latest">
-    <p class="eyebrow">New</p>
-    <h2 id="latest">Latest prompts</h2>
-    <ul class="cards">
-      {prompts.slice(0, 6).map((p) => <li><a href={promptUrl(p)}>{p.data.title}</a><span>{p.data.purpose}</span></li>)}
-    </ul>
-  </section>
+  <form class="filters" id="case-filters" aria-label="Filter cases">
+    <label>Industry<select name="industry"><option value="">All</option>{inds.map((i) => <option value={i.slug}>{i.name}</option>)}</select></label>
+    <label>Product type<select name="type"><option value="">All</option>{types.map((t) => <option value={t.name}>{t.name}</option>)}</select></label>
+    <label>Monthly revenue<select name="revenue"><option value="">All</option>{REVENUE_RANGES.map((r) => <option value={r.slug}>{r.name}</option>)}</select></label>
+    <label>Founded<select name="year"><option value="">All</option>{years.map((y) => <option value={y}>{y}</option>)}<option value="unknown">Not disclosed</option></select></label>
+  </form>
+  <p class="meta" id="case-count" aria-live="polite">Showing {cases.length} of {cases.length} cases</p>
+  <CaseCards cases={cases} />
   <AdSlot />
-  <section aria-labelledby="tutorials">
-    <p class="eyebrow">Learn</p>
-    <h2 id="tutorials">AI tutorials</h2>
-    <ul class="cards">
-      {guides.map((g) => <li><a href={`/guides/${g.data.slug}/`}>{g.data.title}</a><span>{g.data.metaDescription}</span></li>)}
-    </ul>
-    <p>Browse by topic: {CATEGORIES.map((c, n) => <>{n > 0 && ' · '}<a href={`/${c.slug}/`}>{c.name}</a></>)}</p>
-  </section>
+  <p>Browse by <a href="/industries/">industry</a> or <a href="/types/">product type</a>.</p>
 </BaseLayout>
+<script>
+  // Light client-side filtering; without JS every case stays visible.
+  const form = document.getElementById('case-filters') as HTMLFormElement;
+  const items = [...document.querySelectorAll<HTMLLIElement>('.case-cards li')];
+  const count = document.getElementById('case-count')!;
+  const keys = { industry: 'industry', type: 'type', revenue: 'revenue', year: 'year' } as const;
+  const apply = () => {
+    const f = new FormData(form);
+    let shown = 0;
+    for (const li of items) {
+      const ok = (Object.keys(keys) as (keyof typeof keys)[]).every((k) => !f.get(k) || li.dataset[keys[k]] === f.get(k));
+      li.hidden = !ok;
+      if (ok) shown++;
+    }
+    count.textContent = `Showing ${shown} of ${items.length} cases`;
+  };
+  form.addEventListener('change', apply);
+</script>

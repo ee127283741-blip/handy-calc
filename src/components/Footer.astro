@@ -1,23 +1,20 @@
 ---
-import { CATEGORIES, PROMPT_CATEGORIES, SITE_NAME } from '../site';
+import { INDUSTRIES, SITE_NAME } from '../site';
 ---
 <footer class="site-footer">
   <div class="wrap">
     <div class="foot-cols">
       <div>
         <p class="logo">{SITE_NAME}</p>
-        <p>Copy-ready AI prompts and practical AI tutorials. Prices and facts are sourced and dated.</p>
+        <p>Real AI startup case studies with sourced, dated numbers.</p>
       </div>
-      <nav aria-labelledby="f-cats">
-        <h2 id="f-cats" class="eyebrow">Prompts</h2>
+      <nav aria-labelledby="f-cases">
+        <h2 id="f-cases" class="eyebrow">Cases</h2>
         <ul>
-          <li><a href="/idea-to-prompt/">Idea → Prompt</a></li>
-          {PROMPT_CATEGORIES.map((c) => <li><a href={`/prompts/${c.slug}/`}>{c.name}</a></li>)}
+          <li><a href="/">Case library</a></li>
+          {INDUSTRIES.map((c) => <li><a href={`/industries/${c.slug}/`}>{c.name}</a></li>)}
+          <li><a href="/types/">By product type</a></li>
         </ul>
-      </nav>
-      <nav aria-labelledby="f-pop">
-        <h2 id="f-pop" class="eyebrow">Tutorials</h2>
-        <ul>{CATEGORIES.map((c) => <li><a href={`/${c.slug}/`}>{c.name}</a></li>)}</ul>
       </nav>
       <nav aria-labelledby="f-site">
         <h2 id="f-site" class="eyebrow">{SITE_NAME}</h2>
@@ -31,6 +28,6 @@ import { CATEGORIES, PROMPT_CATEGORIES, SITE_NAME } from '../site';
         </ul>
       </nav>
     </div>
-    <p class="fine">© {new Date().getFullYear()} {SITE_NAME}. Check AI output and current prices on each provider's official page before you rely on them.</p>
+    <p class="fine">© {new Date().getFullYear()} {SITE_NAME}. Revenue figures are as reported by the cited sources on the dates shown; we do not audit them.</p>
   </div>
 </footer>

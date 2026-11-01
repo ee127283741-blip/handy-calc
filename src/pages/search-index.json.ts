@@ -1,8 +1,10 @@
 import type { APIRoute } from 'astro';
-import { allItems } from '../lib';
+import { INDUSTRIES } from '../site';
+import { allCases, caseUrl } from '../lib';
 
-// Static search index (tool, tutorials, prompts) for /calculators/, fetched on first use.
+// Static search index of cases for ToolSearch (404 page), fetched on first use.
 export const GET: APIRoute = async () => {
-  const index = (await allItems()).map(({ title, url, type, category, description }) => ({ title, url, type, category, description }));
+  const name = (slug: string) => INDUSTRIES.find((i) => i.slug === slug)?.name ?? slug;
+  const index = (await allCases()).map((c) => ({ title: c.data.title, url: caseUrl(c), type: c.data.productType, category: name(c.data.industry), description: c.data.summary }));
   return new Response(JSON.stringify(index), { headers: { 'Content-Type': 'application/json' } });
 };
