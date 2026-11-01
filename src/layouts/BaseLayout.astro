@@ -22,6 +22,8 @@ const beacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
+    <link rel="preload" href="/fonts/fraunces-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#f5f0e6" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <JsonLd data={jsonLd} />
@@ -33,7 +35,7 @@ const beacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap">
-        <a class="logo" href="/">{SITE_NAME}</a>
+        <a class="logo" href="/" aria-label={SITE_NAME}>Handy <span>Calc</span></a>
         <nav aria-label="Categories">
           <ul>{CATEGORIES.map((c) => <li><a href={`/${c.slug}/`}>{c.name}</a></li>)}</ul>
         </nav>

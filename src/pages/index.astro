@@ -9,11 +9,26 @@ const jsonLd = [
 ];
 ---
 <BaseLayout title={`${SITE_NAME} – Free Kitchen, DIY, Craft & Date Calculators`} description="Free calculators for cups to grams, oven temperatures and Gas Marks, paint, yarn and days between dates. Every formula is shown and every number is sourced." jsonLd={jsonLd}>
-  <h1>Free niche calculators with sourced answers</h1>
-  <p class="answer">{SITE_TAGLINE} Each tool shows its formula, a worked example and the sources behind its reference data.</p>
-  <ToolSearch />
-  <h2>Browse by category</h2>
-  <ul class="cards">
-    {CATEGORIES.map((c) => <li><a href={`/${c.slug}/`}><strong>{c.name}</strong></a><span>{c.description}</span></li>)}
-  </ul>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Kitchen · Home · Crafts · Calendar</p>
+      <h1>Free niche calculators with <em>sourced</em> answers</h1>
+      <p class="answer">{SITE_TAGLINE} Each tool shows its formula, a worked example and the sources behind its reference data.</p>
+    </div>
+    <div class="arch" aria-hidden="true">
+      <p class="k">All-purpose flour</p>
+      <p class="v">1 cup ≈ 120&nbsp;g</p>
+      <p class="s">Per the King Arthur Baking ingredient weight chart.</p>
+    </div>
+  </section>
+  <div class="split">
+    <h2>Find a calculator</h2>
+    <div><ToolSearch /></div>
+  </div>
+  <div class="split">
+    <h2>Browse by category</h2>
+    <ul class="cards">
+      {CATEGORIES.map((c) => <li><a href={`/${c.slug}/`}><strong>{c.name}</strong></a><span>{c.description}</span></li>)}
+    </ul>
+  </div>
 </BaseLayout>
