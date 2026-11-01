@@ -17,6 +17,10 @@ tools: ["Midjourney", "DALL\u00b7E", "Imagen", "Stable Diffusion", "Firefly"]
 tags: ["product-photo", "e-commerce", "studio", "lighting"]
 published: 2026-10-28
 updated: 2026-10-28
+image: /prompt-proofs/image-generation/ecommerce-product-photo.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage)"
+imageWidth: 864
+imageHeight: 1152
 ---
 
 ```text

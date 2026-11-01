@@ -17,6 +17,10 @@ tools: ["Midjourney", "DALL\u00b7E", "Imagen", "Recraft", "Firefly"]
 tags: ["illustration", "vector", "consistent-style", "ui"]
 published: 2026-10-30
 updated: 2026-10-30
+image: /prompt-proofs/image-generation/flat-vector-illustration-set.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage)"
+imageWidth: 1024
+imageHeight: 768
 ---
 
 ```text

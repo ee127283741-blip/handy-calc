@@ -17,6 +17,10 @@ tools: ["ChatGPT", "Claude", "Gemini"]
 tags: ["colour-grading", "davinci-resolve", "premiere", "look"]
 published: 2026-10-27
 updated: 2026-10-27
+image: /prompt-proofs/video-editing/colour-grade-look-recipe.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage) · 示意畫面 (illustrative still)"
+imageWidth: 1024
+imageHeight: 576
 ---
 
 ```text

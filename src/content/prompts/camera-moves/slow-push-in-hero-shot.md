@@ -20,6 +20,10 @@ tools: ["Runway", "Sora", "Veo", "Kling", "Luma"]
 tags: ["text-to-video", "dolly", "push-in", "product"]
 published: 2026-10-25
 updated: 2026-10-25
+image: /prompt-proofs/camera-moves/slow-push-in-hero-shot.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage) · 示意畫面 (illustrative still)"
+imageWidth: 1024
+imageHeight: 576
 ---
 
 ```text

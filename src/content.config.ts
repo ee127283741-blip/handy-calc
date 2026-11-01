@@ -36,6 +36,8 @@ const prompts = defineCollection({
     tools: z.array(z.string()).min(1),
     image: z.string().regex(/^\/prompt-proofs\//).optional(),
     imageCredit: z.string().optional(),
+    imageWidth: z.number().int().default(1280),
+    imageHeight: z.number().int().default(800),
     tags: z.array(z.string()).default([]),
     published: z.coerce.date(),
     updated: z.coerce.date(),

@@ -17,6 +17,10 @@ tools: ["Midjourney", "DALL\u00b7E", "Imagen", "Firefly"]
 tags: ["portrait", "editorial", "natural-light", "photography"]
 published: 2026-10-29
 updated: 2026-10-29
+image: /prompt-proofs/image-generation/editorial-portrait-natural-light.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage)"
+imageWidth: 864
+imageHeight: 1152
 ---
 
 ```text

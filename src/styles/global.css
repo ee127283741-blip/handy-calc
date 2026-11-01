@@ -153,7 +153,7 @@ section:not(.hero) > .eyebrow:first-child { border-top: 1px solid var(--line); p
 pre.prompt { margin: 0; background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.4rem; font: .9rem/1.65 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; max-height: 42rem; overflow-y: auto; }
 mark { background: var(--result-bg); color: var(--accent-dark); font-weight: 600; border-radius: 3px; padding: 0 .15em; }
 .proof { margin: 2rem 0; }
-.proof img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+.proof img { display: block; width: auto; max-width: 100%; height: auto; max-height: 640px; border: 1px solid var(--line); border-radius: var(--radius); }
 .proof figcaption { margin-top: .5rem; font-size: .85rem; color: var(--muted); }
 
 table { border-collapse: collapse; width: 100%; margin: 1.25rem 0; font-size: .95rem; font-variant-numeric: tabular-nums; }

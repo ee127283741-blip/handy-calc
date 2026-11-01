@@ -20,6 +20,10 @@ tools: ["Runway", "Sora", "Veo", "Kling", "Luma"]
 tags: ["text-to-video", "orbit", "arc-shot", "cinematic"]
 published: 2026-10-26
 updated: 2026-10-26
+image: /prompt-proofs/camera-moves/orbit-shot-around-subject.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage) · 示意畫面 (illustrative still)"
+imageWidth: 1024
+imageHeight: 576
 ---
 
 ```text

@@ -20,6 +20,10 @@ tools: ["Claude", "ChatGPT", "Gemini", "CapCut", "Opus Clip"]
 tags: ["short-form", "repurposing", "vertical-video", "social"]
 published: 2026-10-25
 updated: 2026-10-25
+image: /prompt-proofs/video-editing/short-form-video-repurposing.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage) · 示意畫面 (illustrative still)"
+imageWidth: 720
+imageHeight: 1280
 ---
 
 ```text

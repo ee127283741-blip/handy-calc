@@ -20,6 +20,10 @@ tools: ["ChatGPT", "Claude", "Gemini"]
 tags: ["youtube", "script", "editing", "retention"]
 published: 2026-10-26
 updated: 2026-10-26
+image: /prompt-proofs/video-editing/youtube-video-script-and-edit-structure.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage) · 示意畫面 (illustrative still)"
+imageWidth: 1024
+imageHeight: 576
 ---
 
 ```text

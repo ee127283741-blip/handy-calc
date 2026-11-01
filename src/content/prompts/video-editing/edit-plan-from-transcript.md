@@ -20,6 +20,10 @@ tools: ["Claude", "ChatGPT", "Gemini", "Descript"]
 tags: ["editing", "transcript", "interview", "story"]
 published: 2026-10-24
 updated: 2026-10-24
+image: /prompt-proofs/video-editing/edit-plan-from-transcript.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage) · 示意畫面 (illustrative still)"
+imageWidth: 1024
+imageHeight: 576
 ---
 
 ```text

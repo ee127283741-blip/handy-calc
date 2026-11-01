@@ -20,6 +20,10 @@ tools: ["Runway", "Sora", "Veo", "Kling"]
 tags: ["text-to-video", "crane", "drone", "establishing-shot"]
 published: 2026-10-27
 updated: 2026-10-27
+image: /prompt-proofs/camera-moves/crane-up-reveal-establishing-shot.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage) · 示意畫面 (illustrative still)"
+imageWidth: 1024
+imageHeight: 576
 ---
 
 ```text

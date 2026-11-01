@@ -20,6 +20,10 @@ tools: ["Midjourney", "DALL\u00b7E", "Imagen", "Stable Diffusion"]
 tags: ["concept-art", "environment", "cinematic", "worldbuilding"]
 published: 2026-10-31
 updated: 2026-10-31
+image: /prompt-proofs/image-generation/cinematic-concept-art-scene.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage)"
+imageWidth: 1024
+imageHeight: 576
 ---
 
 ```text

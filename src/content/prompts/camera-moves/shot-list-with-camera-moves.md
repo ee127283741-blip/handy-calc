@@ -20,6 +20,10 @@ tools: ["ChatGPT", "Claude", "Gemini", "Runway"]
 tags: ["shot-list", "camera-moves", "pre-production", "ad"]
 published: 2026-10-28
 updated: 2026-10-28
+image: /prompt-proofs/camera-moves/shot-list-with-camera-moves.webp
+imageCredit: "Generated with Grok Bot image generator (GenerateImage) · 示意畫面 (illustrative still)"
+imageWidth: 1024
+imageHeight: 576
 ---
 
 ```text

@@ -73,7 +73,7 @@ const jsonLd = [{
     </section>
     {d.image && (
       <figure class="proof">
-        <img src={d.image} alt={`Example result for the ${d.title} prompt`} width="1280" height="800" loading="lazy" decoding="async" />
+        <img src={d.image} alt={`Example result for the ${d.title} prompt`} width={d.imageWidth} height={d.imageHeight} loading="lazy" decoding="async" />
         {d.imageCredit && <figcaption>{d.imageCredit}</figcaption>}
       </figure>
     )}
