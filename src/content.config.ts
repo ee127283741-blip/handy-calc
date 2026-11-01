@@ -3,6 +3,7 @@ import { glob } from 'astro/loaders';
 
 const source = z.object({ title: z.string().min(3), url: z.string().url(), publisher: z.string().min(2) });
 const faq = z.object({ q: z.string().min(5), a: z.string().min(10) });
+const category = z.enum(['ai-costs', 'ai-business', 'ai-productivity', 'prompts']);
 const wordCount = (s: string) => s.trim().split(/\s+/).length;
 
 const calculators = defineCollection({
@@ -10,7 +11,7 @@ const calculators = defineCollection({
   schema: z.object({
     title: z.string().max(70),
     slug: z.string().regex(/^[a-z0-9-]+$/),
-    category: z.enum(['cooking', 'home-diy', 'crafts', 'date-time', 'units']),
+    category,
     h1: z.string(),
     metaDescription: z.string().min(70).max(170),
     directAnswer: z.string().refine((s) => wordCount(s) <= 70, 'directAnswer must be 70 words or fewer'),
@@ -34,8 +35,11 @@ const guides = defineCollection({
     title: z.string().max(70),
     slug: z.string().regex(/^[a-z0-9-]+$/),
     metaDescription: z.string().min(70).max(170),
-    category: z.enum(['cooking', 'home-diy', 'crafts', 'date-time', 'units']),
+    category,
+    tool: z.string().optional(),
+    faqs: z.array(faq).default([]),
     sources: z.array(source).min(1),
+    lastVerified: z.coerce.date().optional(),
     author: z.string(),
     published: z.coerce.date(),
     updated: z.coerce.date(),

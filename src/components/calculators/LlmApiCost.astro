@@ -1,0 +1,71 @@
+---
+import CalcShell from '../CalcShell.astro';
+import { API_MODELS } from '../../data/ai-pricing';
+---
+<CalcShell id="calc-llm" label="LLM API cost calculator">
+  <div class="row">
+    <div><label for="llm-model">Model</label>
+      <select id="llm-model">{API_MODELS.map((m) => <option value={m.id} selected={m.id === 'gpt-6.1-sol'}>{m.provider} {m.name}</option>)}</select>
+    </div>
+  </div>
+  <fieldset>
+    <legend>Measure text in</legend>
+    <label><input type="radio" name="llm-unit" value="tokens" checked /> Tokens</label>
+    <label><input type="radio" name="llm-unit" value="words" /> Words</label>
+  </fieldset>
+  <div class="row">
+    <div><label for="llm-in">Input per request (<span class="llm-u">tokens</span>)</label><input id="llm-in" inputmode="numeric" value="1000" /></div>
+    <div><label for="llm-out">Output per request (<span class="llm-u">tokens</span>)</label><input id="llm-out" inputmode="numeric" value="500" /></div>
+    <div><label for="llm-wpt">Words per token</label><input id="llm-wpt" inputmode="decimal" value="0.75" /><small>Used only when measuring in words. About 0.75 for English.</small></div>
+    <div><label for="llm-rpd">Requests per day</label><input id="llm-rpd" inputmode="numeric" value="100" /></div>
+    <div><label for="llm-days">Days per month</label><input id="llm-days" inputmode="numeric" value="30" /></div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <caption>All models, same usage (cheapest first)</caption>
+      <thead><tr><th scope="col">Model</th><th scope="col">Input $/1M</th><th scope="col">Output $/1M</th><th scope="col">Per request</th><th scope="col">Per month</th><th scope="col">Price verified</th></tr></thead>
+      <tbody id="llm-rows"></tbody>
+    </table>
+  </div>
+  <ul id="llm-changes"></ul>
+</CalcShell>
+<script>
+  import { $, todayIso, usd, wire } from '../../calculators/ui';
+  import { getModel, nextChange, priceOn } from '../../data/ai-pricing';
+  import { compareModels, costPerRequest, wordsToTokens } from '../../calculators/llmCost';
+  const root = document.getElementById('calc-llm')!;
+  const rows = $<HTMLTableSectionElement>(root, '#llm-rows');
+  const changes = $<HTMLUListElement>(root, '#llm-changes');
+  const num = (sel: string) => Number($(root, sel).value);
+  const cell = (tr: HTMLTableRowElement, text: string) => { tr.insertCell().textContent = text; };
+  const run = wire(root, () => {
+    const date = todayIso();
+    const words = (root.querySelector('input[name=llm-unit]:checked') as HTMLInputElement).value === 'words';
+    root.querySelectorAll('.llm-u').forEach((e) => (e.textContent = words ? 'words' : 'tokens'));
+    const wpt = num('#llm-wpt');
+    const toTok = (n: number) => (words ? wordsToTokens(n, wpt) : n);
+    const u = { inputTokens: toTok(num('#llm-in')), outputTokens: toTok(num('#llm-out')), requestsPerDay: num('#llm-rpd'), daysPerMonth: num('#llm-days'), date };
+    if (Object.values(u).some((v) => typeof v === 'number' && !(v >= 0 && Number.isFinite(v))) || (words && !(wpt > 0))) return 'Enter zero or positive numbers in every field';
+    const selected = $<HTMLSelectElement>(root, '#llm-model').value;
+    rows.replaceChildren();
+    changes.replaceChildren();
+    for (const r of compareModels(u)) {
+      const tr = rows.insertRow();
+      if (r.model.id === selected) tr.className = 'hl';
+      const p = priceOn(r.model, date);
+      cell(tr, `${r.model.provider} ${r.model.name}`);
+      cell(tr, usd(p.inputPerM));
+      cell(tr, usd(p.outputPerM));
+      cell(tr, usd(r.perRequest));
+      cell(tr, usd(r.monthly));
+      const a = Object.assign(document.createElement('a'), { href: r.model.sourceUrl, rel: 'noopener', textContent: r.model.lastVerified });
+      tr.insertCell().append(a);
+      const next = nextChange(r.model, date);
+      if (next) changes.append(Object.assign(document.createElement('li'), { textContent: `${r.model.name}: from ${next.from}, ${usd(next.inputPerM)} input / ${usd(next.outputPerM)} output per 1M tokens.` }));
+    }
+    const m = getModel(selected);
+    const per = costPerRequest(m, u.inputTokens, u.outputTokens, date);
+    return `${m.name}: ${usd(per)} per request · ${usd(per * u.requestsPerDay * u.daysPerMonth)} per month`;
+  });
+  run();
+</script>

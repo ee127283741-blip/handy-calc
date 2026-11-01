@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import AdSlot from '../../components/AdSlot.astro';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { liveGuides } from '../../lib';
 export async function getStaticPaths() {
@@ -8,4 +9,4 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
-<ArticleLayout entry={entry}><Content /></ArticleLayout>
+<ArticleLayout entry={entry}><Content components={{ AdSlot }} /></ArticleLayout>

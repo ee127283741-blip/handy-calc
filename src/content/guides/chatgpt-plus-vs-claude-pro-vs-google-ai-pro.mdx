@@ -1,0 +1,131 @@
+---
+title: "ChatGPT Plus vs Claude Pro vs Google AI Pro: Which Is Worth It?"
+slug: chatgpt-plus-vs-claude-pro-vs-google-ai-pro
+category: ai-costs
+tool: ai-subscription-vs-api-calculator
+metaDescription: ChatGPT Plus, Claude Pro and Google AI Pro (formerly Gemini Advanced) compared on price, billing and a worked break-even against paying for the API instead.
+faqs:
+  - q: Is Google AI Pro the same as Gemini Advanced?
+    a: Yes, in practice. Google AI Pro is Google's paid Gemini plan. It was previously marketed as Gemini Advanced and sold as part of Google One AI Premium. It is listed at $19.99 a month on Google's AI plans page.
+  - q: Which of the three plans is cheapest?
+    a: Claude Pro billed annually, at $17 a month ($200 a year). Billed monthly, Claude Pro and ChatGPT Plus are both $20 and Google AI Pro is $19.99, so the monthly prices are effectively the same.
+  - q: Would I save money using the API instead of a subscription?
+    a: For light to moderate use, often yes. In our worked example, 40 short messages a day cost $9.12 a month in raw API tokens on each provider's comparable model at current prices. Above roughly 88 messages a day of that size, the $20 plans come out cheaper.
+  - q: Does the API give me the same features as the chat app?
+    a: No. The API is billed per token and does not include the apps, file handling, usage limits and other features each plan bundles. The comparison here covers raw token cost only.
+  - q: Why does the Gemini break-even change on December 1, 2026?
+    a: Google's API pricing page lists a scheduled increase for Gemini 4 Argon from $2 to $4 per million input tokens and from $10 to $20 per million output tokens from that date, which doubles the API cost of the same usage.
+sources:
+  - title: What is ChatGPT Plus?
+    url: https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus
+    publisher: OpenAI
+  - title: ChatGPT pricing
+    url: https://chatgpt.com/pricing
+    publisher: OpenAI
+  - title: Claude plans and pricing
+    url: https://claude.com/pricing
+    publisher: Anthropic
+  - title: Google AI plans
+    url: https://one.google.com/intl/en_us/about/google-ai-plans/
+    publisher: Google
+  - title: OpenAI API pricing
+    url: https://platform.openai.com/docs/pricing
+    publisher: OpenAI
+  - title: Claude API pricing
+    url: https://docs.anthropic.com/en/docs/about-claude/pricing
+    publisher: Anthropic
+  - title: Gemini API pricing
+    url: https://ai.google.dev/gemini-api/docs/pricing
+    publisher: Google
+author: Editorial team
+published: 2026-11-01
+updated: 2026-11-01
+lastVerified: 2026-11-01
+status: published
+---
+
+The three mainstream $20-a-month AI chat plans are ChatGPT Plus from OpenAI, Claude Pro from Anthropic and Google AI Pro from Google. On price alone they are almost identical, so the real questions are how you pay, what you would use it for, and whether paying per use through the API would cost you less.
+
+Google's plan causes the most confusion because of its name. What used to be marketed as Gemini Advanced, and sold as Google One AI Premium, is now called Google AI Pro. If you search for "Gemini Advanced price" you are looking for this plan.
+
+This guide compares the list prices from each provider's official page, then works through a realistic office usage pattern to see what the same amount of chat would cost through each provider's API. All prices come from the official pages linked below. Last verified: November 1, 2026.
+
+If you want to plug in your own numbers, use the **[AI subscription vs API cost calculator](/ai-costs/ai-subscription-vs-api-calculator/)**. It runs the same arithmetic shown here.
+
+## The prices side by side
+
+| Plan | Monthly price | Annual option | Official page |
+|---|---|---|---|
+| ChatGPT Plus | $20 | Listed as monthly billing only | [OpenAI help centre](https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus), [chatgpt.com/pricing](https://chatgpt.com/pricing) |
+| Claude Pro | $20 | $17 a month billed annually ($200 a year) | [claude.com/pricing](https://claude.com/pricing) |
+| Google AI Pro | $19.99 | Check the plan page | [Google AI plans](https://one.google.com/intl/en_us/about/google-ai-plans/) |
+
+Over a year, monthly billing costs $240 for ChatGPT Plus and Claude Pro ($20 × 12) and $239.88 for Google AI Pro ($19.99 × 12). Claude Pro on annual billing is $200, which saves $40 a year over its monthly price, the only meaningful price gap between the three.
+
+Each provider also sells cheaper and more expensive tiers. OpenAI lists ChatGPT Go at $8, Google lists Google AI Plus at $4.99, and all three have higher tiers between roughly $100 and $200 or more a month for heavier use. This guide sticks to the middle tier most individuals and small offices start with.
+
+## What the plans include
+
+Plan contents change more often than prices, and the providers describe them in their own terms, so we do not restate feature lists that may already be out of date. Read the official pages for current details, especially:
+
+- **Which models you get.** Each plan gives access to that provider's own models in its chat app. Model line-ups and usage limits are set on the plan pages and change over time.
+- **Usage limits.** None of these plans is unlimited. Each provider describes its limits on its own page, and heavy use can hit them.
+- **Bundled extras.** Google AI Pro is sold as a Google One plan, so check the Google AI plans page for what else comes with it. ChatGPT Plus and Claude Pro are listed on [chatgpt.com/pricing](https://chatgpt.com/pricing) and [claude.com/pricing](https://claude.com/pricing).
+
+The practical test is simple: try the free tier of each with your own real tasks for a week, and pay for the one whose answers you edit least.
+
+## Worked example: subscription vs API
+
+Suppose one office worker sends 40 messages a day, 30 days a month. Each message, including the conversation history the app sends back to the model, averages 800 input tokens, and each reply averages 600 output tokens. That is 40 × 30 = 1,200 messages a month.
+
+We price this on one comparable model from each provider, using API prices per million tokens from the official pricing pages:
+
+- OpenAI GPT-6.1 Sol: $2 input, $10 output ([OpenAI API pricing](https://platform.openai.com/docs/pricing))
+- Claude Sonnet 5.5: $2 input, $10 output ([Claude API pricing](https://docs.anthropic.com/en/docs/about-claude/pricing))
+- Gemini 4 Argon: $2 input, $10 output now, rising to $4 input and $20 output from December 1, 2026 ([Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing))
+
+**Cost of one message at $2 / $10:**
+
+- Input: 800 × $2 ÷ 1,000,000 = $0.0016
+- Output: 600 × $10 ÷ 1,000,000 = $0.0060
+- Total: $0.0076 per message
+
+**Monthly:** 1,200 × $0.0076 = **$9.12**. That is the same for all three models at current prices, because their rates are identical.
+
+**Gemini 4 Argon from December 1, 2026, at $4 / $20:**
+
+- Input: 800 × $4 ÷ 1,000,000 = $0.0032
+- Output: 600 × $20 ÷ 1,000,000 = $0.0120
+- Total: $0.0152 per message, so 1,200 × $0.0152 = **$18.24** a month
+
+### Break-even messages per day
+
+The break-even is the plan price divided by (cost per message × 30 days). At $0.0076 a message, 30 days of one message a day costs $0.228.
+
+| Plan vs model | Calculation | Break-even |
+|---|---|---|
+| ChatGPT Plus ($20) vs GPT-6.1 Sol | $20 ÷ $0.228 | 87.7 messages a day |
+| Claude Pro monthly ($20) vs Claude Sonnet 5.5 | $20 ÷ $0.228 | 87.7 messages a day |
+| Claude Pro annual ($17) vs Claude Sonnet 5.5 | $17 ÷ $0.228 | 74.6 messages a day |
+| Google AI Pro ($19.99) vs Gemini 4 Argon, now | $19.99 ÷ $0.228 | 87.7 messages a day |
+| Google AI Pro ($19.99) vs Gemini 4 Argon, from Dec 1 | $19.99 ÷ ($0.0152 × 30 = $0.456) | 43.8 messages a day |
+
+At 40 messages a day, the API is cheaper in every case: $9.12 against about $20 now, and $18.24 against $19.99 for Gemini after December 1. The Gemini gap becomes small enough that a few longer conversations would tip it the other way.
+
+### Two caveats that change the answer
+
+**Token counts differ between providers.** Each provider uses its own tokenizer. Anthropic states that the tokenizer used from Claude 4.7 onward produces about 30% more tokens for the same text than earlier models. If the 800 and 600 token figures were measured on another provider's tokenizer, the same text could be about 1,040 input and 780 output tokens on Claude Sonnet 5.5: 1,040 × $2 ÷ 1,000,000 + 780 × $10 ÷ 1,000,000 = $0.00988 a message, or $11.86 a month. Still under $20.
+
+**Long conversations get expensive.** The input count includes the history the app resends. A thread that has grown to 5,000 input tokens costs 5,000 × $2 ÷ 1,000,000 + $0.0060 = $0.0160 a message on the $2 / $10 models, more than double our example.
+
+The API also does not come with a chat app. You need a tool that talks to it, and someone to set it up. For most individuals that cost in time is larger than the $10 a month difference.
+
+## Who should pick what
+
+- **You chat a lot, every day, and want no setup:** pick a subscription. Above about 75–90 short messages a day, or with long threads, the flat price wins on cost anyway.
+- **You already know you prefer Claude and will keep it a year:** Claude Pro on annual billing at $17 a month is the cheapest of the three.
+- **Your office already runs on Google accounts:** Google AI Pro at $19.99 is worth trialling first, since it is sold as a Google One plan. Check the plan page for what is bundled.
+- **You need ChatGPT specifically, or your team already uses it:** ChatGPT Plus at $20, billed monthly, so you can cancel any month.
+- **You use AI lightly, or inside your own tools and spreadsheets:** the API is likely cheaper. At 40 messages a day it costs about half a subscription at current prices.
+
+Before deciding, run your own message count and token sizes through the [subscription vs API calculator](/ai-costs/ai-subscription-vs-api-calculator/).

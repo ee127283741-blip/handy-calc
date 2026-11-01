@@ -1,0 +1,125 @@
+---
+title: How Many Words Is a Token? Real Counts From Real Text
+slug: how-many-words-is-a-token
+category: ai-productivity
+tool: llm-api-cost-calculator
+metaDescription: We ran an email, a product blurb, a CSV, code and Chinese through OpenAI's tokenizer to show how many words a token really is, and what it means for API costs.
+faqs:
+  - q: How many words are in 1,000 tokens?
+    a: For ordinary English prose, roughly 750 to 850 words. Our business email measured 0.86 words per token and our product description 0.76 on OpenAI's o200k_base tokenizer. Data, code and non-English text give far fewer words per token.
+  - q: Do Claude and Gemini count tokens the same way as ChatGPT?
+    a: No. Each provider uses its own tokenizer. Anthropic states that its tokenizer from Claude 4.7 onward produces about 30% more tokens for the same text than earlier models. Counts from OpenAI's tokenizer are only estimates for Claude and Gemini.
+  - q: Why does a spreadsheet use so many tokens?
+    a: Numbers, dates, commas and codes like invoice IDs break into many small tokens. Our 5-row CSV snippet used 101 tokens for 228 characters, about 2.3 characters per token, against about 5.2 for the business email.
+  - q: How do I get an exact token count?
+    a: Use the provider's own token-counting tool or API, or read the token usage reported in each API response. Those numbers are what you are billed on.
+  - q: Are Chinese characters one token each?
+    a: Not exactly. Our 35-character Traditional Chinese sentence was 28 tokens on o200k_base and 43 tokens on the older cl100k_base, so the newer tokenizer is much more efficient for Chinese.
+sources:
+  - title: tiktoken (OpenAI's tokenizer library)
+    url: https://github.com/openai/tiktoken
+    publisher: OpenAI
+  - title: js-tiktoken on npm
+    url: https://www.npmjs.com/package/js-tiktoken
+    publisher: npm
+  - title: OpenAI API pricing
+    url: https://platform.openai.com/docs/pricing
+    publisher: OpenAI
+  - title: Claude API pricing
+    url: https://docs.anthropic.com/en/docs/about-claude/pricing
+    publisher: Anthropic
+  - title: Gemini API pricing
+    url: https://ai.google.dev/gemini-api/docs/pricing
+    publisher: Google
+author: Editorial team
+published: 2026-11-01
+updated: 2026-11-01
+lastVerified: 2026-11-01
+status: published
+---
+
+AI models read and write text in tokens, not words, and API prices are quoted per million tokens. The usual rule of thumb is that one token is about three quarters of an English word, so 1,000 tokens is roughly 750 words.
+
+That rule is fine for ordinary prose and badly wrong for other kinds of text. Spreadsheets, invoice numbers, code and many non-English languages use far more tokens per word. If your work involves those, a cost estimate based on 0.75 words per token can be off by a factor of several.
+
+Rather than repeat the rule, we ran five pieces of everyday office text through a real tokenizer and counted. The results are below, followed by what they mean for a monthly API bill. Last verified: November 1, 2026.
+
+To turn your own word counts into a cost estimate, use the **[LLM API cost calculator](/ai-costs/llm-api-cost-calculator/)**. You can change its words-per-token ratio to match the figures in this guide.
+
+## How we counted
+
+We used js-tiktoken, the JavaScript port of OpenAI's [tiktoken](https://github.com/openai/tiktoken) library, with two encodings:
+
+- **o200k_base**: the encoding tiktoken maps to GPT-4o-family and newer OpenAI models.
+- **cl100k_base**: the older encoding used by GPT-4 and GPT-3.5-era models, included for comparison.
+
+Claude and Gemini use their own tokenizers, which are not published in this library. Anthropic's documentation states that the tokenizer used from Claude 4.7 onward produces about 30% more tokens for the same text than earlier Claude models. So treat every count below as exact for OpenAI's o200k_base and as an estimate for other providers.
+
+Words were counted by splitting on spaces. Characters include spaces, line breaks and punctuation. The five samples were written for this test:
+
+1. **Business email**: a 55-word reply to a supplier about a quote and delivery date.
+2. **Product description**: a 34-word listing for a handmade mug.
+3. **CSV snippet**: a header and four invoice rows (date, invoice number, customer, amount, status).
+4. **Code snippet**: a four-line JavaScript function.
+5. **Traditional Chinese**: one sentence asking a supplier to confirm a delivery date (我們下週二會寄出修改後的報價單，請確認交貨日期是否能在三月十四日之前。).
+
+## The results
+
+| Sample | Words | Characters | o200k_base tokens | cl100k_base tokens | Words per token (o200k) |
+|---|---|---|---|---|---|
+| Business email | 55 | 332 | 64 | 65 | 0.86 |
+| Product description | 34 | 197 | 45 | 46 | 0.76 |
+| CSV snippet | 9* | 228 | 101 | 101 | 0.09* |
+| Code snippet | 24 | 182 | 53 | 53 | 0.45 |
+| Traditional Chinese | n/a | 35 | 28 | 43 | 1.25 characters per token |
+
+\*Each CSV row has no spaces, so it counts as one "word". The useful figure is characters per token: 228 ÷ 101 = 2.3.
+
+What stands out:
+
+- **Plain English prose lands close to the rule.** The email came in at 55 ÷ 64 = 0.86 words per token and the product description at 34 ÷ 45 = 0.76. The common rule of 0.75 is slightly cautious for simple business writing, which is the safe direction for budgeting.
+- **Data is expensive.** The email averages 332 ÷ 64 = 5.2 characters per token. The CSV averages 2.3, so the same amount of text costs more than twice as many tokens. Dates, amounts and IDs split into small pieces.
+- **Code sits in between.** 24 ÷ 53 = 0.45 words per token, or 182 ÷ 53 = 3.4 characters per token.
+- **The newer tokenizer matters most for Chinese.** The sentence dropped from 43 tokens on cl100k_base to 28 on o200k_base, 35% fewer. For the English samples the two encodings differed by at most one token.
+
+## Converting token limits into words
+
+Using the measured ratios, here is what common token amounts hold. Each figure is tokens × words per token; pages assume 500 words per page.
+
+| Text type (ratio) | 1,000 tokens | 128,000 tokens | 1,000,000 tokens |
+|---|---|---|---|
+| Rule of thumb (0.75) | 750 words | 96,000 words (192 pages) | 750,000 words (1,500 pages) |
+| Business email (0.86) | 860 words | 110,080 words (220 pages) | 860,000 words (1,720 pages) |
+| Product copy (0.76) | 760 words | 97,280 words (195 pages) | 760,000 words (1,520 pages) |
+| Code (0.45) | 450 words | 57,600 words (115 pages) | 450,000 words (900 pages) |
+
+Going the other way, 1,000 words of email-style prose is 1,000 ÷ 0.86 = 1,163 tokens on o200k_base, and 1,000 ÷ 0.75 = 1,333 tokens by the rule of thumb. On Claude, adding about 30% to the measured figure gives roughly 1,163 × 1.3 = 1,512 tokens. That is an estimate, not a measured count.
+
+## What this means for cost
+
+Take a small online shop that wants an AI model to write 2,000 product descriptions like our sample. Each request sends a 150-word brief and gets back a 34-word description.
+
+Using the measured product description ratio of 0.76 words per token:
+
+- Input: 150 ÷ 0.76 = 197 tokens (rounded)
+- Output: 34 ÷ 0.76 = 45 tokens, which matches the count we measured
+
+On OpenAI's GPT-6.1 Sol at $2 per million input tokens and $10 per million output tokens ([OpenAI API pricing](https://platform.openai.com/docs/pricing)):
+
+- Input: 2,000 × 197 = 394,000 tokens × $2 ÷ 1,000,000 = $0.788
+- Output: 2,000 × 45 = 90,000 tokens × $10 ÷ 1,000,000 = $0.90
+- Total: **$1.69** for all 2,000 descriptions
+
+The same job on Claude Sonnet 5.5, which has the same $2 / $10 list price ([Claude API pricing](https://docs.anthropic.com/en/docs/about-claude/pricing)), would cost about the same if token counts matched. If Claude's tokenizer produces around 30% more tokens for this text, the estimate becomes 512,200 input tokens ($1.02) and 117,000 output tokens ($1.17), about **$2.20**. Still small, but a 30% gap matters at scale.
+
+Now consider a job that sends spreadsheet data instead. Summarising 1,000 invoice exports of 20,000 characters each at the CSV ratio of 2.3 characters per token is about 8,696 tokens per export, or 8.7 million input tokens in total. At $2 per million, that is $17.39 in input alone. Estimating the same text with the prose ratio of 5.2 characters per token would give 3.8 million tokens and $7.69, less than half the real figure.
+
+## Practical rules
+
+- For ordinary English emails and documents, budget **0.75 words per token**. It slightly overestimates tokens, which keeps estimates safe.
+- For spreadsheets, logs and anything full of numbers, count **characters** and use about **2–2.5 characters per token**.
+- For code, use about **3–3.5 characters per token**.
+- For Claude, add about **30%** to counts made with OpenAI's tokenizer as a cautious estimate.
+- For anything you will run at volume, test a sample with the provider's own token counter before committing to a budget. The usage figures in each API response are what you will actually be billed on.
+
+Run your own numbers in the [LLM API cost calculator](/ai-costs/llm-api-cost-calculator/), which compares current prices across OpenAI, Anthropic and Google models.

@@ -11,15 +11,15 @@ const jsonLd = [
 const popular = await popularCalculators();
 const groups = await calculatorsByCategory();
 ---
-<BaseLayout title={`${SITE_NAME} – Free Kitchen, DIY, Craft & Date Calculators`} description="Free calculators for cups to grams, oven temperatures and Gas Marks, paint, yarn and days between dates. Every formula is shown and every number is sourced." jsonLd={jsonLd}>
+<BaseLayout title={`${SITE_NAME} – AI Cost Calculators & Practical AI Guides`} description="Free AI cost calculators and practical guides for small businesses and office workers: API pricing, subscriptions vs API, and AI ROI, with dated official prices." jsonLd={jsonLd}>
   <section class="hero">
-    <p class="eyebrow">Kitchen · Home · Crafts · Calendar</p>
-    <h1>Free calculators with sourced answers</h1>
-    <p class="answer">{SITE_TAGLINE} Each tool shows its formula, a worked example and the sources behind its reference data.</p>
+    <p class="eyebrow">AI costs · Business · Productivity · Prompts</p>
+    <h1>Practical AI, priced and explained</h1>
+    <p class="answer">{SITE_TAGLINE} Each tool shows its formula, a worked example and the official, dated sources behind every price.</p>
     <form class="search" role="search" action="/calculators/" method="get">
       <label for="hero-q">Find a calculator</label>
       <div class="search-row">
-        <input id="hero-q" name="q" type="search" placeholder="e.g. flour, paint, gas mark" autocomplete="off" />
+        <input id="hero-q" name="q" type="search" placeholder="e.g. API cost, ChatGPT Plus, ROI" autocomplete="off" />
         <button type="submit" class="btn">Search</button>
       </div>
     </form>

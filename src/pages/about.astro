@@ -3,14 +3,14 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { SITE_NAME } from '../site';
 ---
 <PageLayout title="About" description={`What ${SITE_NAME} is, who maintains it, how calculators are built and checked, and how AI tools are used in making the site.`} updated="2026-11-01">
-  <p>{SITE_NAME} is a small collection of free calculators for everyday niche questions: how many grams are in a cup of flour, what Gas Mark 4 is in Fahrenheit, how much paint a room needs, how much yarn a blanket takes and how many days are between two dates.</p>
+  <p>{SITE_NAME} publishes practical AI guides and calculators for small businesses and office workers: what an AI API will cost per month, whether a ChatGPT, Claude or Google AI subscription beats paying per token, and whether an AI rollout pays for itself.</p>
   <h2>Who maintains this site</h2>
-  <p>The site is maintained by a small <a href="/authors/editorial-team/">Editorial team</a>. We do not claim professional credentials such as chef, contractor or certified fiber-arts qualifications.</p>
+  <p>The site is maintained by a small <a href="/authors/editorial-team/">Editorial team</a>. We are independent of OpenAI, Anthropic, Google and other AI providers, and we do not claim professional credentials such as accountancy or financial advice qualifications.</p>
   <h2>How we build calculators</h2>
   <ul>
     <li>Every calculator is a plain formula that runs in your browser. Nothing you type is sent to a server.</li>
-    <li>Reference values (for example ingredient weights) come from named, linked sources listed on each page.</li>
-    <li>Each calculator has automated tests that compare results with at least five known answers.</li>
+    <li>Prices come only from providers' official pricing pages, are stored in one place, and show the date they were last verified.</li>
+    <li>Each calculator has automated tests that compare results with known answers.</li>
     <li>Each page shows the formula, a worked example, its assumptions and limitations.</li>
   </ul>
   <h2>Use of AI</h2>

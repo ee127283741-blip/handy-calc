@@ -47,8 +47,27 @@ describe('ads build', () => {
   it('ON: slot counts per page type', () => {
     const read = (p: string) => readFileSync(join(ON, p, 'index.html'), 'utf8');
     expect(slots(read('.'))).toBe(1);
-    expect(slots(read('cooking'))).toBe(1);
-    expect(slots(read('cooking/cups-to-grams'))).toBe(4);
-    expect(read('cooking/cups-to-grams')).toContain('ad-sidebar');
+    expect(slots(read('ai-costs'))).toBe(1);
+    expect(slots(read('ai-costs/llm-api-cost-calculator'))).toBe(4);
+    expect(read('ai-costs/llm-api-cost-calculator')).toContain('ad-sidebar');
+  });
+
+  const guides = (dir: string) => readdirSync(join(dir, 'guides')).map((s) => readFileSync(join(dir, 'guides', s, 'index.html'), 'utf8'));
+
+  it('ON: guides have a slot right after the 2nd paragraph, at most 4 slots', () => {
+    const pages = guides(ON);
+    expect(pages.length).toBeGreaterThanOrEqual(1);
+    for (const html of pages) {
+      const body = html.slice(html.indexOf('<h1'));
+      const p2 = body.indexOf('</p>', body.indexOf('</p>') + 4) + 4;
+      expect(body.slice(p2).trimStart().startsWith('<aside class="ad-slot')).toBe(true);
+      expect(slots(html)).toBeLessThanOrEqual(4);
+    }
+  });
+
+  it('OFF: guides have no ad markup', () => {
+    const pages = guides(OFF);
+    expect(pages.length).toBeGreaterThanOrEqual(1);
+    for (const html of pages) expect(html).not.toMatch(/class="ad-slot|adsbygoogle/);
   });
 });

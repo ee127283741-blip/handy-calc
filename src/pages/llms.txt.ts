@@ -7,7 +7,7 @@ export const GET: APIRoute = async ({ site }) => {
   const abs = (p: string) => new URL(p, site).href;
   const calcs = await liveCalculators();
   const guides = await liveGuides();
-  const lines = [`# ${SITE_NAME}`, '', `> ${SITE_TAGLINE} Every calculator shows its formula, a worked example and cited sources.`, ''];
+  const lines = [`# ${SITE_NAME}`, '', `> ${SITE_TAGLINE} Every calculator shows its formula, a worked example and official, dated price sources.`, ''];
   for (const cat of CATEGORIES) {
     const items = calcs.filter((c) => c.data.category === cat.slug);
     if (!items.length) continue;

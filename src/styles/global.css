@@ -150,6 +150,8 @@ section:not(.hero) > .eyebrow:first-child { border-top: 1px solid var(--line); p
 table { border-collapse: collapse; width: 100%; margin: 1.25rem 0; font-size: .95rem; font-variant-numeric: tabular-nums; }
 th, td { border-bottom: 1px solid var(--line); padding: .6rem .75rem .6rem 0; text-align: left; }
 th { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.calc caption { text-align: left; font-weight: 600; margin-bottom: .5rem; }
+.calc tr.hl td { font-weight: 700; color: var(--accent); }
 .table-wrap { overflow-x: auto; }
 code { font-family: var(--mono); font-size: .9em; background: #fff; border: 1px solid var(--line); padding: .05rem .35rem; border-radius: var(--radius); }
 .formula { display: block; padding: 1rem 1.15rem; overflow-x: auto; }

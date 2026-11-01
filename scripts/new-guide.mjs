@@ -1,10 +1,11 @@
-// Usage: npm run new:guide -- --slug how-to-measure-flour [--category cooking]
+// Usage: npm run new:guide -- --slug how-to-write-a-system-prompt [--category ai-productivity] [--tool <calculator-slug>]
 import { existsSync, writeFileSync } from 'node:fs';
 import { parseArgs, today } from './args.mjs';
 
-const { slug, category = 'cooking' } = parseArgs();
-if (!/^[a-z0-9-]+$/.test(slug || '')) {
-  console.error('Usage: npm run new:guide -- --slug <kebab-slug> [--category cooking|home-diy|crafts|date-time|units]');
+const CATEGORIES = ['ai-costs', 'ai-business', 'ai-productivity', 'prompts'];
+const { slug, category = 'ai-productivity', tool } = parseArgs();
+if (!CATEGORIES.includes(category) || !/^[a-z0-9-]+$/.test(slug || '')) {
+  console.error(`Usage: npm run new:guide -- --slug <kebab-slug> [--category ${CATEGORIES.join('|')}] [--tool <calculator-slug>]`);
   process.exit(1);
 }
 const path = `src/content/guides/${slug}.mdx`;
@@ -13,18 +14,24 @@ writeFileSync(path, `---
 title: TODO Guide Title
 slug: ${slug}
 category: ${category}
-metaDescription: TODO one unique sentence (70–170 characters) describing what the reader will learn from this guide.
+${tool ? `tool: ${tool}\n` : ''}metaDescription: TODO one unique sentence (70–170 characters) describing what the reader will learn from this guide.
 sources:
   - title: TODO
     url: https://example.com/replace-me
     publisher: TODO
+faqs:
+  - q: TODO question one?
+    a: TODO self-contained answer.
 author: Editorial team
 published: ${today()}
 updated: ${today()}
+lastVerified: ${today()}
 status: draft
 ---
 
 TODO intro that answers the main question in the first paragraph.
+
+TODO second paragraph (an ad slot is inserted after it when ads are on).
 
 ## TODO question-style heading?
 

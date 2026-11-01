@@ -1,8 +1,6 @@
-import CupsToGrams from './CupsToGrams.astro';
-import OvenTemperature from './OvenTemperature.astro';
-import Paint from './Paint.astro';
-import Yarn from './Yarn.astro';
-import DaysBetween from './DaysBetween.astro';
+import LlmApiCost from './LlmApiCost.astro';
+import SubscriptionVsApi from './SubscriptionVsApi.astro';
+import AiRoi from './AiRoi.astro';
 
 // Map frontmatter `calculator:` names to widget components.
-export const WIDGETS: Record<string, any> = { CupsToGrams, OvenTemperature, Paint, Yarn, DaysBetween };
+export const WIDGETS: Record<string, any> = { LlmApiCost, SubscriptionVsApi, AiRoi };

@@ -4,7 +4,7 @@ const groups = (await calculatorsByCategory()).filter((g) => g.calcs.length);
 ---
 <form class="search" role="search" action="/calculators/" onsubmit="return false">
   <label for="tool-q">Search calculators</label>
-  <input id="tool-q" name="q" type="search" placeholder="e.g. flour, paint, gas mark" autocomplete="off" />
+  <input id="tool-q" name="q" type="search" placeholder="e.g. API cost, ChatGPT Plus, ROI" autocomplete="off" />
 </form>
 <div id="tool-list">
   {groups.map(({ cat, calcs }) => (

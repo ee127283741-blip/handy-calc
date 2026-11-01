@@ -1,0 +1,67 @@
+---
+title: LLM API Cost Calculator – Compare GPT, Claude & Gemini | Handy Calc
+slug: llm-api-cost-calculator
+category: ai-costs
+h1: LLM API Cost Calculator
+metaDescription: Estimate the cost per request and per month of OpenAI, Anthropic Claude and Google Gemini API models from tokens or words, with dated official prices.
+directAnswer: API cost per request = input tokens × input price + output tokens × output price, with prices quoted per million tokens. For example, 1,000 input and 500 output tokens on GPT-6.1 Sol ($2 / $10 per 1M) cost $0.007 per request, or $21 a month at 100 requests a day.
+primaryKeyword: llm api cost calculator
+secondaryKeywords: [openai api pricing calculator, claude api cost, gemini api cost, token cost calculator]
+calculator: LlmApiCost
+faqs:
+  - q: How many tokens is a word?
+    a: For typical English text one token is about 0.75 words, so 1,000 tokens is roughly 750 words. Code, numbers and other languages often use more tokens per word. Use the words-per-token field to adjust, or count tokens with the provider's own tokenizer for exact figures.
+  - q: Why do output tokens cost more than input tokens?
+    a: Generating text is more compute-intensive than reading it, so the models listed here charge between about five and eight times more per output token than per input token. Long answers, and thinking tokens that some models bill as output, drive most of the bill.
+  - q: Does this include prompt caching or batch discounts?
+    a: No. The calculator uses standard, uncached prices. Cached input is much cheaper (for example $0.10 instead of $2 per 1M tokens on GPT-6.1 Sol), and batch processing is often discounted, so treat the result as an upper estimate when those apply.
+  - q: Do Claude models count tokens differently?
+    a: Yes. Anthropic's documentation says the tokenizer used from Claude 4.7 onward produces about 30% more tokens for the same text than earlier models. If you estimate from words, a Claude bill can be higher than the same word count suggests on other models.
+  - q: How current are these prices?
+    a: Each price shows the date it was last checked against the provider's official pricing page, with a link. Scheduled changes, such as Gemini 4 Argon doubling on December 1, 2026, are applied automatically based on today's date.
+sources:
+  - title: OpenAI API pricing
+    url: https://platform.openai.com/docs/pricing
+    publisher: OpenAI
+  - title: Claude pricing
+    url: https://docs.anthropic.com/en/docs/about-claude/pricing
+    publisher: Anthropic
+  - title: Gemini Developer API pricing
+    url: https://ai.google.dev/gemini-api/docs/pricing
+    publisher: Google
+related: [ai-subscription-vs-api-calculator, ai-roi-calculator]
+author: Editorial team
+published: 2026-11-01
+updated: 2026-11-01
+status: published
+---
+
+## Worked example: a support-reply assistant
+
+A small business drafts 100 customer replies a day, every day. Each request sends about 1,000 input tokens (instructions plus the customer's email) and gets back about 500 output tokens.
+
+1. Cost per request on GPT-6.1 Sol: 1,000 × $2 / 1,000,000 + 500 × $10 / 1,000,000 = $0.002 + $0.005 = **$0.007**.
+2. Requests per month: 100 × 30 = 3,000.
+3. Monthly cost: 3,000 × $0.007 = **$21.00**.
+4. The same usage costs $1.05 a month on GPT-6 Luna or Claude Haiku 5.5, $4.65 on Gemini 3.5 Flash-Lite and $105 on GPT-6 Astra or Claude Fable 5.1.
+5. If you only know words: 750 words ÷ 0.75 words per token = 1,000 tokens.
+
+## How the cost calculation works
+
+<code class="formula">cost per request = (input tokens × input $/1M + output tokens × output $/1M) ÷ 1,000,000</code>
+
+<code class="formula">monthly cost = cost per request × requests per day × days per month</code>
+
+- **Tokens from words:** tokens = words ÷ words per token (default 0.75).
+- **Scheduled prices:** where a provider has announced a change, the price in effect on today's date is used and the upcoming change is listed under the table.
+- **Long prompts:** Claude Haiku 5.5 costs $0.50 input / $2.50 output per 1M tokens when a prompt exceeds 100K tokens; the calculator switches automatically. OpenAI prices shown are for prompts up to 272K input tokens.
+- **Limitations:** standard tier only; no caching, batch, tool-call, image, audio or search charges; taxes excluded.
+
+## Scheduled price changes
+
+| Model | Until | Then |
+|---|---|---|
+| Gemini 4 Argon | $2 / $10 through 2026-11-30 | $4 / $20 from 2026-12-01 |
+| Gemini 3.8 Flash | $0.75 / $3.75 through 2026-12-31 | $1.50 / $7.50 from 2027-01-01 |
+
+Prices are input / output in USD per 1M tokens.

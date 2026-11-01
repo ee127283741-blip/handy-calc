@@ -1,5 +1,5 @@
 export const SITE_NAME = 'Handy Calc';
-export const SITE_TAGLINE = 'Free, sourced calculators for the kitchen, home, crafts and calendar.';
+export const SITE_TAGLINE = 'Practical AI guides and calculators for small businesses and office workers.';
 
 export interface Category {
   slug: string;
@@ -9,14 +9,13 @@ export interface Category {
 }
 
 export const CATEGORIES: Category[] = [
-  { slug: 'cooking', name: 'Cooking & Baking', title: 'Cooking & Baking Conversion Calculators', description: 'Convert cups to grams by ingredient, oven temperatures and Gas Marks, with sourced reference data.' },
-  { slug: 'home-diy', name: 'Home & DIY', title: 'Home & DIY Calculators', description: 'Estimate materials for home projects such as paint, with clear formulas and adjustable assumptions.' },
-  { slug: 'crafts', name: 'Crafts', title: 'Crochet, Knitting & Sewing Calculators', description: 'Estimate yarn for blankets and other projects using Craft Yarn Council weight categories.' },
-  { slug: 'date-time', name: 'Date & Time', title: 'Date & Time Calculators', description: 'Count calendar days and business days between two dates.' },
-  { slug: 'units', name: 'Unit Conversion', title: 'Unit Conversion Calculators', description: 'Everyday length and weight conversions such as inches to centimeters and pounds to kilograms.' },
+  { slug: 'ai-costs', name: 'AI Costs & Pricing', title: 'AI Cost & Pricing Calculators', description: 'Estimate LLM API bills and compare AI subscriptions with API pricing, using official, dated price lists.' },
+  { slug: 'ai-business', name: 'AI for Business', title: 'AI for Business Calculators & Guides', description: 'Work out whether an AI rollout pays for itself, with conservative assumptions you can change.' },
+  { slug: 'ai-productivity', name: 'AI Productivity', title: 'AI Productivity Guides', description: 'Practical, tested advice for using AI tools in everyday office work.' },
+  { slug: 'prompts', name: 'Prompts & Templates', title: 'AI Prompts & Templates', description: 'Copy-ready prompts and templates for common small-business and office tasks.' },
 ];
 
 export const getCategory = (slug: string) => CATEGORIES.find((c) => c.slug === slug)!;
 
 /** Calculator slugs featured on the homepage and footer. */
-export const POPULAR = ['cups-to-grams', 'paint-calculator', 'oven-temperature-converter', 'days-between-dates', 'yarn-calculator'];
+export const POPULAR = ['llm-api-cost-calculator', 'ai-subscription-vs-api-calculator', 'ai-roi-calculator'];

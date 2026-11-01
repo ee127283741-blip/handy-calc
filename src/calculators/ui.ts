@@ -24,3 +24,11 @@ export function wire(root: HTMLElement, compute: () => string) {
   });
   return run;
 }
+
+/** Today's local date as YYYY-MM-DD. */
+export const todayIso = () => {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+};
+
+export const usd = (n: number) => `$${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: n < 1 ? 4 : 2 })}`;

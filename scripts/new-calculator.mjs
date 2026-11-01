@@ -1,8 +1,8 @@
-// Usage: npm run new:calculator -- --category cooking --slug butter-converter
+// Usage: npm run new:calculator -- --category ai-costs --slug embedding-cost-calculator
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { camel, parseArgs, pascal, today } from './args.mjs';
 
-const CATEGORIES = ['cooking', 'home-diy', 'crafts', 'date-time', 'units'];
+const CATEGORIES = ['ai-costs', 'ai-business', 'ai-productivity', 'prompts'];
 const { category, slug } = parseArgs();
 if (!CATEGORIES.includes(category) || !/^[a-z0-9-]+$/.test(slug || '')) {
   console.error(`Usage: npm run new:calculator -- --category <${CATEGORIES.join('|')}> --slug <kebab-slug>`);
