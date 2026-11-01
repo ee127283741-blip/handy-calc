@@ -6,6 +6,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      SITE_URL: https://handy-calc.pages.dev
+      PUBLIC_CF_BEACON_TOKEN: 61bd32d2c9d64ba8b32abb6e1e19a7c4
+      PUBLIC_ADS_ENABLED: "false"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -16,5 +20,9 @@ jobs:
       - run: npx astro check
       - run: npm test
       - run: npm run build
+      - name: Deploy to Cloudflare Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: npx wrangler pages deploy dist --project-name handy-calc --branch main --commit-hash ${{ github.sha }}
         env:
-          SITE_URL: ${{ vars.SITE_URL || 'https://PLACEHOLDER.pages.dev' }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
