@@ -22,14 +22,15 @@ const jsonLd = [{
 ---
 <BaseLayout title={`${cat.title} | ${SITE_NAME}`} description={cat.description} jsonLd={jsonLd}>
   <Breadcrumbs items={[{ name: cat.name, href: `/${cat.slug}/` }]} />
+  <p class="eyebrow">Category</p>
   <h1>{cat.title}</h1>
   <p class="answer">{cat.description}</p>
   {calcs.length > 0 ? (
     <ul class="cards">
-      {calcs.map((c) => <li><a href={calcUrl(c)}><strong>{c.data.h1}</strong></a><span>{c.data.metaDescription}</span></li>)}
+      {calcs.map((c) => <li><a href={calcUrl(c)}>{c.data.h1}</a><span>{c.data.metaDescription}</span></li>)}
     </ul>
   ) : (
-    <p>Tools for this category are coming soon. We publish a calculator only after its formula and reference data have been checked against sources, so this page lists nothing yet. Meanwhile, browse the <a href="/">other categories</a>.</p>
+    <p>Tools for this category are coming soon. We publish a calculator only after its formula and reference data have been checked against sources, so this page lists nothing yet. Meanwhile, browse <a href="/calculators/">all calculators</a>.</p>
   )}
   {guides.length > 0 && (
     <section><h2>Guides</h2><ul>{guides.map((g) => <li><a href={`/guides/${g.data.slug}/`}>{g.data.title}</a></li>)}</ul></section>

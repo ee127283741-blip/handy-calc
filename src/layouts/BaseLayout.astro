@@ -1,5 +1,7 @@
 ---
-import { SITE_NAME, CATEGORIES } from '../site';
+import { SITE_NAME } from '../site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import JsonLd from '../components/JsonLd.astro';
 import '../styles/global.css';
 interface Props { title: string; description: string; jsonLd?: object[]; noindex?: boolean }
@@ -23,7 +25,7 @@ const beacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
     <link rel="preload" href="/fonts/fraunces-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
-    <meta name="theme-color" content="#f5f0e6" />
+    <meta name="theme-color" content="#2C3B4D" />
     <meta name="google-site-verification" content="eFA1qwEN8-7_kB4VDWX4h-MqJBMHqiT-wKp0oMqi6-Q" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -34,29 +36,10 @@ const beacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="wrap">
-        <a class="logo" href="/" aria-label={SITE_NAME}>Handy <span>Calc</span></a>
-        <nav aria-label="Categories">
-          <ul>{CATEGORIES.map((c) => <li><a href={`/${c.slug}/`}>{c.name}</a></li>)}</ul>
-        </nav>
-      </div>
-    </header>
+    <Header />
     <main id="main" class="wrap">
       <slot />
     </main>
-    <footer class="site-footer">
-      <div class="wrap">
-        <ul>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/editorial-policy/">Editorial policy</a></li>
-          <li><a href="/privacy-policy/">Privacy policy</a></li>
-          <li><a href="/terms/">Terms of use</a></li>
-          <li><a href="/authors/editorial-team/">Editorial team</a></li>
-        </ul>
-        <p>© {new Date().getFullYear()} {SITE_NAME}. Results are estimates; always double-check important measurements.</p>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>

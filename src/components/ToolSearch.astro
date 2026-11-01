@@ -1,25 +1,42 @@
 ---
-import { liveCalculators, calcUrl } from '../lib';
-const calcs = await liveCalculators();
+import { calcUrl, calculatorsByCategory } from '../lib';
+const groups = (await calculatorsByCategory()).filter((g) => g.calcs.length);
 ---
-<form class="search" role="search" action="#" onsubmit="return false">
+<form class="search" role="search" action="/calculators/" onsubmit="return false">
   <label for="tool-q">Search calculators</label>
-  <input id="tool-q" type="search" placeholder="e.g. flour, paint, gas mark" autocomplete="off" />
+  <input id="tool-q" name="q" type="search" placeholder="e.g. flour, paint, gas mark" autocomplete="off" />
 </form>
-<ul class="cards" id="tool-list">
-  {calcs.map((c) => (
-    <li data-k={`${c.data.h1} ${c.data.primaryKeyword} ${c.data.secondaryKeywords.join(' ')}`.toLowerCase()}>
-      <a href={calcUrl(c)}><strong>{c.data.h1}</strong></a>
-      <span>{c.data.metaDescription}</span>
-    </li>
+<div id="tool-list">
+  {groups.map(({ cat, calcs }) => (
+    <section class="tool-group" aria-labelledby={`g-${cat.slug}`}>
+      <h2 id={`g-${cat.slug}`}><a href={`/${cat.slug}/`}>{cat.name}</a></h2>
+      <ul class="cards">
+        {calcs.map((c) => (
+          <li data-k={`${c.data.h1} ${c.data.primaryKeyword} ${c.data.secondaryKeywords.join(' ')} ${cat.name}`.toLowerCase()}>
+            <a href={calcUrl(c)}>{c.data.h1}</a>
+            <span>{c.data.metaDescription}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
   ))}
-</ul>
+  <p id="tool-none" hidden>No calculators match that search.</p>
+</div>
 <script>
   const q = document.getElementById('tool-q') as HTMLInputElement;
-  q.addEventListener('input', () => {
+  const filter = () => {
     const v = q.value.trim().toLowerCase();
-    document.querySelectorAll<HTMLLIElement>('#tool-list li').forEach((li) => {
-      li.hidden = !!v && !li.dataset.k!.includes(v);
+    let any = false;
+    document.querySelectorAll<HTMLElement>('.tool-group').forEach((g) => {
+      let shown = 0;
+      g.querySelectorAll<HTMLLIElement>('li').forEach((li) => { li.hidden = !!v && !li.dataset.k!.includes(v); if (!li.hidden) shown++; });
+      g.hidden = !shown;
+      any ||= !!shown;
     });
-  });
+    document.getElementById('tool-none')!.hidden = any;
+  };
+  q.value = new URLSearchParams(location.search).get('q') ?? '';
+  q.addEventListener('input', filter);
+  filter();
+  if (q.value || location.hash === '#tool-q') q.focus();
 </script>

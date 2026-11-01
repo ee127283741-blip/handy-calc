@@ -3,11 +3,12 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Sources from '../components/Sources.astro';
-import { SITE_NAME } from '../site';
+import { SITE_NAME, getCategory } from '../site';
 import { isoDate } from '../lib';
 interface Props { entry: CollectionEntry<'guides'> }
 const d = Astro.props.entry.data;
 const path = `/guides/${d.slug}/`;
+const cat = getCategory(d.category);
 const jsonLd = [{
   '@type': 'Article',
   headline: d.title,
@@ -20,7 +21,7 @@ const jsonLd = [{
 }];
 ---
 <BaseLayout title={`${d.title} | ${SITE_NAME}`} description={d.metaDescription} jsonLd={jsonLd}>
-  <Breadcrumbs items={[{ name: 'Guides', href: path }, { name: d.title, href: path }]} />
+  <Breadcrumbs items={[{ name: cat.name, href: `/${cat.slug}/` }, { name: d.title, href: path }]} />
   <article>
     <h1>{d.title}</h1>
     <slot />

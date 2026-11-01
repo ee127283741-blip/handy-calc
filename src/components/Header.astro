@@ -1,0 +1,44 @@
+---
+import { SITE_NAME } from '../site';
+import { calcUrl, calculatorsByCategory } from '../lib';
+const groups = await calculatorsByCategory();
+const path = Astro.url.pathname;
+const active = (slug: string) => path.startsWith(`/${slug}/`);
+---
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">{SITE_NAME}</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show menu" />
+    <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
+    <nav aria-label="Categories" class="nav">
+      <ul class="nav-cats">
+        {groups.map(({ cat, calcs }) => (
+          <li>
+            <details class="drop">
+              <summary aria-current={active(cat.slug) ? 'true' : undefined}>{cat.name}</summary>
+              <ul>
+                {calcs.map((c) => <li><a href={calcUrl(c)} aria-current={path === calcUrl(c) ? 'page' : undefined}>{c.data.h1}</a></li>)}
+                <li><a href={`/${cat.slug}/`}>All {cat.name} tools</a></li>
+              </ul>
+            </details>
+          </li>
+        ))}
+      </ul>
+      <div class="nav-actions">
+        <a class="nav-search" href="/calculators/#tool-q">Search</a>
+        <a class="btn-dark" href="/calculators/" aria-current={path === '/calculators/' ? 'page' : undefined}>All Calculators</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<script>
+  // Keep one dropdown open at a time; close on outside click or Escape. Works without JS too.
+  const drops = [...document.querySelectorAll<HTMLDetailsElement>('.drop')];
+  drops.forEach((d) => d.addEventListener('toggle', () => { if (d.open) drops.forEach((o) => o !== d && (o.open = false)); }));
+  document.addEventListener('click', (e) => drops.forEach((d) => !d.contains(e.target as Node) && (d.open = false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    const d = drops.find((o) => o.open);
+    if (d) { d.open = false; d.querySelector('summary')!.focus(); }
+  });
+</script>

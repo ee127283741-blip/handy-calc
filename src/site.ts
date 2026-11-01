@@ -17,3 +17,6 @@ export const CATEGORIES: Category[] = [
 ];
 
 export const getCategory = (slug: string) => CATEGORIES.find((c) => c.slug === slug)!;
+
+/** Calculator slugs featured on the homepage and footer. */
+export const POPULAR = ['cups-to-grams', 'paint-calculator', 'oven-temperature-converter', 'days-between-dates', 'yarn-calculator'];

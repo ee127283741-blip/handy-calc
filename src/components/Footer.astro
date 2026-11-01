@@ -1,0 +1,35 @@
+---
+import { CATEGORIES, SITE_NAME } from '../site';
+import { calcUrl, popularCalculators } from '../lib';
+const popular = (await popularCalculators()).slice(0, 5);
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-cols">
+      <div>
+        <p class="logo">{SITE_NAME}</p>
+        <p>Free calculators with the formula shown and every number sourced.</p>
+      </div>
+      <nav aria-labelledby="f-cats">
+        <h2 id="f-cats" class="eyebrow">Categories</h2>
+        <ul>{CATEGORIES.map((c) => <li><a href={`/${c.slug}/`}>{c.name}</a></li>)}</ul>
+      </nav>
+      <nav aria-labelledby="f-pop">
+        <h2 id="f-pop" class="eyebrow">Popular tools</h2>
+        <ul>{popular.map((c) => <li><a href={calcUrl(c)}>{c.data.h1}</a></li>)}</ul>
+      </nav>
+      <nav aria-labelledby="f-site">
+        <h2 id="f-site" class="eyebrow">Handy Calc</h2>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy-policy/">Privacy policy</a></li>
+          <li><a href="/terms/">Terms of use</a></li>
+          <li><a href="/editorial-policy/">Editorial policy</a></li>
+          <li><a href="/authors/editorial-team/">Editorial team</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="fine">© {new Date().getFullYear()} {SITE_NAME}. Results are estimates; always double-check important measurements.</p>
+  </div>
+</footer>
