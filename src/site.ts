@@ -1,4 +1,4 @@
-export const SITE_NAME = 'Handy Calc';
+export const SITE_NAME = 'ProofedPrompts';
 export const SITE_TAGLINE = 'Copy-ready AI prompts for design, video, images and writing, plus practical AI tutorials.';
 
 export interface Subtopic { slug: string; name: string; description: string }

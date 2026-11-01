@@ -2,7 +2,7 @@
 
 本文件說明 operator bot 如何新增 prompt（提示詞）、新增文章（tutorial / guide）、加入 prompt 效果示範圖（proof image），以及內容如何上線。
 
-網站定位：**Prompt 資料庫是主要產品**（網頁設計、視覺特效、互動、動態、影片剪輯、運鏡、圖像生成、寫作、產業別），加上 AI 知識教學文章，以及純前端的 **Idea → Prompt** 工具（`/idea-to-prompt/`）。網站名稱維持「Handy Calc」。
+網站定位：**Prompt 資料庫是主要產品**（網頁設計、視覺特效、互動、動態、影片剪輯、運鏡、圖像生成、寫作、產業別），加上 AI 知識教學文章，以及純前端的 **Idea → Prompt** 工具（`/idea-to-prompt/`）。網站名稱為「ProofedPrompts」（網址仍為 handy-calc.pages.dev，repo 與 Cloudflare 專案名稱不變）。
 
 ## 0. 原則
 

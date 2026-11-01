@@ -20,7 +20,7 @@ import { CATEGORIES, PROMPT_CATEGORIES, SITE_NAME } from '../site';
         <ul>{CATEGORIES.map((c) => <li><a href={`/${c.slug}/`}>{c.name}</a></li>)}</ul>
       </nav>
       <nav aria-labelledby="f-site">
-        <h2 id="f-site" class="eyebrow">Handy Calc</h2>
+        <h2 id="f-site" class="eyebrow">{SITE_NAME}</h2>
         <ul>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>

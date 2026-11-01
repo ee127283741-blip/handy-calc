@@ -1,4 +1,4 @@
-# Handy Calc
+# ProofedPrompts
 
 Static AI prompt library and tutorials site built with Astro (SSG), TypeScript and plain CSS. See `SPEC.md` for the spec and `PUBLISHING.md` (Traditional Chinese) for the publishing workflow.
 
