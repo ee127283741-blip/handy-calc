@@ -64,7 +64,7 @@ Pricing is a weekly subscription of $3.99 ([media-reported, Fortune](https://for
 
 The most serious challenge is ethical. Products rating appearance draw ethical scrutiny, and Fortune's July 2024 article raised mental-health concerns about looksmaxxing apps that rate teen boys' faces ([Fortune](https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/)). An app whose growth depends on young users comparing their faces carries a reputational and regulatory risk that a spreadsheet tool does not.
 
-Durability is the second question. Trend-driven apps can fade with the trend. A Chinese industry analysis later suggested revenue fell during 2024; there is no linked source for that analysis in this case's records, so treat it as a weak signal.
+Durability is the second question. Trend-driven apps can fade with the trend.
 
 ## How much money does Umax make?
 

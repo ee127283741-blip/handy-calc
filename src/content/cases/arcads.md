@@ -32,6 +32,7 @@ faq:
   - q: "Did Arcads raise outside funding?"
     a: "Not disclosed."
 sources:
+  - { title: "Arcads revenue and CEO interview", url: "https://getlatka.com/blog/arcads-revenue-ceo", publisher: "Latka", date: "2024-01" }
   - { title: "Arcads founder interview (Romain Torres)", url: "https://getlatka.com/interviews/arcads-romain-torres-2025", publisher: "Latka", date: "2025-11" }
   - { title: "Zero to $5M ARR in 1 year: generative AI with Romain Torres", url: "https://lets-talk-ads.simplecast.com/episodes/zero-to-5m-arr-in-1-year-generation-ai-with-romain-torres-co-founder-of-arcads-KlCZVasZ", publisher: "Let's Talk Ads podcast" }
 published: 2026-11-02
@@ -50,7 +51,7 @@ Arcads is a web app where marketers pick an AI actor, paste a script and render 
 
 ## How was Arcads built?
 
-The founders launched a simple script-to-video product aimed at app and digital-product advertisers. They started from about $5K a month in early 2024, per the case timeline (no linked source in this case's records). The product combines several generative models behind one interface rather than training a single proprietary model. Outside funding is not disclosed.
+The founders launched a simple script-to-video product aimed at app and digital-product advertisers. Torres told Latka the service did about $5K in MRR in its first week after launching in January 2024 ([founder-reported via Latka](https://getlatka.com/blog/arcads-revenue-ceo)). The product combines several generative models behind one interface rather than training a single proprietary model. Outside funding is not disclosed.
 
 ## How did Arcads market, sell and price its product?
 
@@ -68,7 +69,7 @@ The market challenge is competition: once AI actors became possible, many tools 
 
 Arcads had $10M ARR in November 2025, which implies about $833K a month ([founder-reported via Latka](https://getlatka.com/interviews/arcads-romain-torres-2025)). At that point it reported 6,000+ customers ([founder-reported via Latka](https://getlatka.com/interviews/arcads-romain-torres-2025)) and a team of 8 ([founder-reported via Latka](https://getlatka.com/interviews/arcads-romain-torres-2025)). Total revenue is not disclosed.
 
-Put on a timeline: about $5K a month at launch in early 2024 (no linked source); $5M ARR around April 2025 (founder-reported on the podcast); $6M ARR and about 4,000 paying customers in May 2025 (unverified); $10M ARR, 6,000+ customers and 8 people in November 2025 (founder-reported via Latka).
+Put on a timeline: about $5K in MRR in the first week after the January 2024 launch (founder-reported via Latka); $5M ARR around April 2025 (founder-reported on the podcast); $6M ARR and about 4,000 paying customers in May 2025 (unverified); $10M ARR, 6,000+ customers and 8 people in November 2025 (founder-reported via Latka).
 
 ## Why did Arcads work?
 

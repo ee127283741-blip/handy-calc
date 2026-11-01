@@ -29,6 +29,7 @@ faq:
   - q: "How does Suno make money?"
     a: "Free daily credits, with paid monthly plans that add credits and commercial-use rights."
 sources:
+  - { title: "Legally embattled AI music startup Suno raises at $2.45B valuation on $200M revenue", url: "https://techcrunch.com/2025/11/19/legally-embattled-ai-music-startup-suno-raises-at-2-45b-valuation-on-200m-revenue/", publisher: "TechCrunch", date: "2025-11" }
   - { title: "Suno: we've hit 2M paid subscribers and $300M annual revenue", url: "https://www.musicbusinessworldwide.com/suno-hits-2m-paid-subscribers-300m-annual-revenue/", publisher: "Music Business Worldwide", date: "2026-02" }
   - { title: "Suno reaches 2 million paid subscribers and $300M ARR in two years", url: "https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years", publisher: "Unite.AI", date: "2026-03" }
 published: 2026-11-02
@@ -59,7 +60,7 @@ Pricing gives free daily credits, with paid monthly plans that add credits and c
 
 Copyright disputes with record labels are a real business risk. A model that generates music raises questions about what it was trained on and who owns the results, and those questions have legal and financial consequences for the company.
 
-Scale is the other challenge. Training proprietary audio models is expensive, which is part of why Suno raised large rounds: in November 2025 it raised a $250M Series C at a $2.45B post-money valuation ([media-reported, Unite.AI](https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years)). Around then, about $200M in annual revenue was reported by the WSJ (no linked source in this case's records).
+Scale is the other challenge. Training proprietary audio models is expensive, which is part of why Suno raised large rounds: in November 2025 it raised a $250M Series C at a $2.45B post-money valuation ([media-reported, Unite.AI](https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years)). Around then, Suno told The Wall Street Journal it had hit about $200M in annual revenue ([founder-reported via the WSJ, TechCrunch, 2025-11](https://techcrunch.com/2025/11/19/legally-embattled-ai-music-startup-suno-raises-at-2-45b-valuation-on-200m-revenue/)).
 
 ## How much revenue does Suno make?
 

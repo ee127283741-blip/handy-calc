@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SITE_URL: https://ai-founder-atlas.pages.dev
-      PUBLIC_CF_BEACON_TOKEN: 61bd32d2c9d64ba8b32abb6e1e19a7c4
+      PUBLIC_CF_BEACON_TOKEN: ae19e95a9cad4726a150a25d981d6235
       PUBLIC_ADS_ENABLED: "false"
     steps:
       - uses: actions/checkout@v4

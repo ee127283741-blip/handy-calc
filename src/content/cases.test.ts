@@ -103,15 +103,18 @@ describe('case files', () => {
           expect(body.toLowerCase(), `${f}: label "${x.label}" missing from prose`).toContain(LABEL_TEXT[x.label!]);
         }
         if (figs.some((x) => x.label === 'not-disclosed')) expect(body, `${f}: says what is not disclosed`).toMatch(/not disclosed/i);
-        // A paragraph with a dollar figure must carry a source link, say plainly that it has none,
-        // or only repeat amounts already sourced in another paragraph (e.g. a timeline recap).
+        // A paragraph with a dollar figure must carry a source link or only repeat amounts already sourced in another paragraph (e.g. a timeline recap).
         const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter((p) => /\$\d/.test(p) && !p.startsWith('#'));
         const amounts = (p: string) => p.match(/\$[\d.,]+[KMB]?/g) ?? [];
-        const linked = (p: string) => /\]\(https:\/\//.test(p) || /no linked source/i.test(p);
+        const linked = (p: string) => /\]\(https:\/\//.test(p);
         const sourced = new Set(paras.filter(linked).flatMap(amounts));
         for (const p of paras.filter((p) => !linked(p))) {
           for (const a of amounts(p)) expect(sourced.has(a), `${f}: unsourced ${a} in: ${p.slice(0, 80)}`).toBe(true);
         }
+      });
+
+      it('never keeps unsourced claims', () => {
+        expect(body, `${f}: unsourced claims are cut, not labelled`).not.toMatch(/no linked source|no source in this case/i);
       });
 
       it('links to at least two other cases that exist', () => {

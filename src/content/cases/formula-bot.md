@@ -29,6 +29,7 @@ faq:
   - q: "How did Formula Bot get its first users?"
     a: "A free MVP shared on Reddit's r/excel and r/InternetIsBeautiful collected more than 10,000 upvotes."
 sources:
+  - { title: "I turned my side project into a $26K/month SaaS tool", url: "https://starterstory.com/stories/excelformulabot", publisher: "Starter Story", date: "2023-03" }
   - { title: "How David built an Excel Formula Bot powered by AI", url: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", publisher: "No Code Exits", date: "2022-11" }
   - { title: "Leveraging no-code and influencers to hit $3K MRR in 2 months", url: "https://www.indiehackers.com/post/leveraging-no-code-and-influencers-to-hit-3k-mrr-in-2-months-david-bressler-of-excelformulabot-9ffd4bc22b", publisher: "Indie Hackers" }
 published: 2026-11-02
@@ -57,7 +58,7 @@ Pricing was a free tier with limited uses, then a low-priced monthly subscriptio
 
 ## What challenges did Formula Bot face?
 
-API costs came first. He paid several thousand dollars in API costs before any revenue came in (no linked source for the exact amount in this case's records). A free tool that goes viral on Reddit is expensive when every request calls a paid model.
+API costs came first. Before the paywall launched, the viral traffic left him with what he called a hefty bill from OpenAI ([founder-reported, Starter Story](https://starterstory.com/stories/excelformulabot)). A free tool that goes viral on Reddit is expensive when every request calls a paid model.
 
 Durability is the second challenge. A single-purpose tool is easy to copy, which is part of why it later expanded to data analysis under the Formula Bot name.
 
