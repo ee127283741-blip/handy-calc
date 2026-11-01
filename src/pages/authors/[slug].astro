@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SITE_NAME } from '../../site';
+import { calcUrl, liveCalculators } from '../../lib';
+export async function getStaticPaths() {
+  return (await getCollection('authors')).map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const path = `/authors/${entry.data.slug}/`;
+const works = (await liveCalculators()).filter((c) => c.data.author === entry.data.name);
+const jsonLd = [{
+  '@type': 'Person',
+  name: entry.data.name,
+  url: new URL(path, Astro.site).href,
+  description: entry.data.description,
+  worksFor: { '@type': 'Organization', name: SITE_NAME, url: new URL('/', Astro.site).href },
+}];
+---
+<BaseLayout title={`${entry.data.name} | ${SITE_NAME}`} description={entry.data.description} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ name: entry.data.name, href: path }]} />
+  <h1>{entry.data.name}</h1>
+  <Content />
+  <h2>Calculators by the {entry.data.name}</h2>
+  <ul>{works.map((c) => <li><a href={calcUrl(c)}>{c.data.h1}</a></li>)}</ul>
+</BaseLayout>

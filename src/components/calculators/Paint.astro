@@ -1,0 +1,55 @@
+---
+import CalcShell from '../CalcShell.astro';
+---
+<CalcShell id="calc-paint" label="Paint calculator">
+  <fieldset>
+    <legend>Units</legend>
+    <label><input type="radio" name="unit" value="imperial" checked /> US (ft, gallons)</label>
+    <label><input type="radio" name="unit" value="metric" /> Metric (m, litres)</label>
+  </fieldset>
+  <div class="row">
+    <div><label for="pt-per">Room perimeter (<span class="u-len">ft</span>)</label><input id="pt-per" inputmode="decimal" value="48" /></div>
+    <div><label for="pt-h">Wall height (<span class="u-len">ft</span>)</label><input id="pt-h" inputmode="decimal" value="8" /></div>
+    <div><label for="pt-doors">Doors</label><input id="pt-doors" inputmode="numeric" value="1" /></div>
+    <div><label for="pt-win">Windows</label><input id="pt-win" inputmode="numeric" value="2" /></div>
+    <div><label for="pt-coats">Coats</label><input id="pt-coats" inputmode="numeric" value="2" /></div>
+    <div><label for="pt-cov">Coverage (<span class="u-cov">sq ft per gallon</span>)</label><input id="pt-cov" inputmode="decimal" value="350" /></div>
+  </div>
+</CalcShell>
+<script>
+  import { $, fmt, prefersImperial, wire } from '../../calculators/ui';
+  import { DEFAULT_COVERAGE, cansToBuy, paintNeeded, paintableArea } from '../../calculators/paint';
+  const root = document.getElementById('calc-paint')!;
+  const unitOf = () => (root.querySelector('input[name=unit]:checked') as HTMLInputElement).value as 'imperial' | 'metric';
+  const metricDefaults = { '#pt-per': '14', '#pt-h': '2.4', '#pt-cov': String(DEFAULT_COVERAGE.metric) };
+  let last = 'imperial';
+  const applyUnit = (u: string) => {
+    root.querySelectorAll('.u-len').forEach((e) => (e.textContent = u === 'imperial' ? 'ft' : 'm'));
+    root.querySelector('.u-cov')!.textContent = u === 'imperial' ? 'sq ft per gallon' : 'm² per litre';
+    if (u !== last) {
+      const imperialDefaults = { '#pt-per': '48', '#pt-h': '8', '#pt-cov': String(DEFAULT_COVERAGE.imperial) };
+      for (const [sel, v] of Object.entries(u === 'metric' ? metricDefaults : imperialDefaults)) $(root, sel).value = v;
+      last = u;
+    }
+  };
+  const setDefault = () => {
+    last = 'imperial';
+    if (!prefersImperial()) (root.querySelector('input[value=metric]') as HTMLInputElement).checked = true;
+    applyUnit(unitOf());
+  };
+  const num = (sel: string) => Number($(root, sel).value);
+  const run = wire(root, () => {
+    const unit = unitOf();
+    applyUnit(unit);
+    const i = { perimeter: num('#pt-per'), height: num('#pt-h'), doors: num('#pt-doors'), windows: num('#pt-win'), coats: num('#pt-coats'), coverage: num('#pt-cov'), unit };
+    if (Object.values(i).some((v) => typeof v === 'number' && !(v >= 0)) || i.coverage <= 0) return 'Enter positive numbers in every field';
+    const amount = paintNeeded(i);
+    const area = paintableArea(i);
+    return unit === 'imperial'
+      ? `${fmt(area, 0)} sq ft to paint → ${fmt(amount)} gallons (buy ${cansToBuy(amount, unit)} gal)`
+      : `${fmt(area, 1)} m² to paint → ${fmt(amount, 1)} litres (buy ${fmt(cansToBuy(amount, unit), 1)} L in 2.5 L tins)`;
+  });
+  setDefault();
+  root.addEventListener('calc-reset', setDefault);
+  run();
+</script>

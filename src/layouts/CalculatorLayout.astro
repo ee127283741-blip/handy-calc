@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AdSlot from '../components/AdSlot.astro';
+import Faq from '../components/Faq.astro';
+import Sources from '../components/Sources.astro';
+import { WIDGETS } from '../components/calculators';
+import { getCategory, SITE_NAME } from '../site';
+import { calcUrl, isoDate, liveCalculators } from '../lib';
+
+interface Props { entry: CollectionEntry<'calculators'> }
+const { entry } = Astro.props;
+const d = entry.data;
+const cat = getCategory(d.category);
+const Widget = WIDGETS[d.calculator];
+if (!Widget) throw new Error(`Unknown calculator component "${d.calculator}" in ${entry.id}`);
+const all = await liveCalculators();
+const related = d.related.map((s) => all.find((c) => c.data.slug === s)).filter((c) => !!c);
+const sameCat = all.filter((c) => c.data.category === d.category && c.data.slug !== d.slug && !d.related.includes(c.data.slug));
+const relatedList = [...related, ...sameCat].slice(0, 5);
+const url = new URL(calcUrl(entry), Astro.site).href;
+const authorUrl = new URL('/authors/editorial-team/', Astro.site).href;
+const jsonLd = [{
+  '@type': 'WebApplication',
+  name: d.h1,
+  url,
+  description: d.metaDescription,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any',
+  isAccessibleForFree: true,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  dateModified: isoDate(d.updated),
+  author: { '@type': 'Person', name: d.author, url: authorUrl },
+  publisher: { '@type': 'Organization', name: SITE_NAME, url: new URL('/', Astro.site).href },
+}];
+---
+<BaseLayout title={d.title} description={d.metaDescription} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ name: cat.name, href: `/${cat.slug}/` }, { name: d.h1, href: calcUrl(entry) }]} />
+  <article>
+    <h1>{d.h1}</h1>
+    <p class="answer">{d.directAnswer}</p>
+    <Widget />
+    <AdSlot id="A" />
+    <slot />
+    <AdSlot id="B" />
+    <Faq faqs={d.faqs} />
+    <section aria-labelledby="related">
+      <h2 id="related">Related calculators</h2>
+      <ul>
+        {relatedList.map((c) => <li><a href={calcUrl(c)}>{c.data.h1}</a></li>)}
+        <li><a href={`/${cat.slug}/`}>All {cat.name.toLowerCase()} calculators</a></li>
+      </ul>
+    </section>
+    <Sources sources={d.sources} />
+    <p class="meta">
+      Written by <a href="/authors/editorial-team/">{d.author}</a>{d.reviewedBy && <> · Reviewed by {d.reviewedBy}</>}
+      · Last updated: <time datetime={isoDate(d.updated)}>{isoDate(d.updated)}</time>
+      · <a href="/editorial-policy/">Editorial policy</a>
+    </p>
+    <p class="disclaimer">Disclaimer: results are estimates for general guidance only. Check product labels, recipes and project instructions before relying on them.</p>
+  </article>
+</BaseLayout>

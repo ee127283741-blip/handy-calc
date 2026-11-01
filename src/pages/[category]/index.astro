@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { CATEGORIES, SITE_NAME, type Category } from '../../site';
+import { calcUrl, liveCalculators, liveGuides } from '../../lib';
+
+export function getStaticPaths() {
+  return CATEGORIES.map((cat) => ({ params: { category: cat.slug }, props: { cat } }));
+}
+const { cat } = Astro.props as { cat: Category };
+const calcs = (await liveCalculators()).filter((c) => c.data.category === cat.slug);
+const guides = (await liveGuides()).filter((g) => g.data.category === cat.slug);
+const url = new URL(`/${cat.slug}/`, Astro.site).href;
+const jsonLd = [{
+  '@type': 'CollectionPage',
+  name: cat.title,
+  url,
+  description: cat.description,
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: new URL('/', Astro.site).href },
+  mainEntity: { '@type': 'ItemList', itemListElement: calcs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(calcUrl(c), Astro.site).href, name: c.data.h1 })) },
+}];
+---
+<BaseLayout title={`${cat.title} | ${SITE_NAME}`} description={cat.description} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ name: cat.name, href: `/${cat.slug}/` }]} />
+  <h1>{cat.title}</h1>
+  <p class="answer">{cat.description}</p>
+  {calcs.length > 0 ? (
+    <ul class="cards">
+      {calcs.map((c) => <li><a href={calcUrl(c)}><strong>{c.data.h1}</strong></a><span>{c.data.metaDescription}</span></li>)}
+    </ul>
+  ) : (
+    <p>Tools for this category are coming soon. We publish a calculator only after its formula and reference data have been checked against sources, so this page lists nothing yet. Meanwhile, browse the <a href="/">other categories</a>.</p>
+  )}
+  {guides.length > 0 && (
+    <section><h2>Guides</h2><ul>{guides.map((g) => <li><a href={`/guides/${g.data.slug}/`}>{g.data.title}</a></li>)}</ul></section>
+  )}
+</BaseLayout>

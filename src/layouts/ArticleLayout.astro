@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Sources from '../components/Sources.astro';
+import { SITE_NAME } from '../site';
+import { isoDate } from '../lib';
+interface Props { entry: CollectionEntry<'guides'> }
+const d = Astro.props.entry.data;
+const path = `/guides/${d.slug}/`;
+const jsonLd = [{
+  '@type': 'Article',
+  headline: d.title,
+  description: d.metaDescription,
+  url: new URL(path, Astro.site).href,
+  datePublished: isoDate(d.published),
+  dateModified: isoDate(d.updated),
+  author: { '@type': 'Person', name: d.author, url: new URL('/authors/editorial-team/', Astro.site).href },
+  publisher: { '@type': 'Organization', name: SITE_NAME },
+}];
+---
+<BaseLayout title={`${d.title} | ${SITE_NAME}`} description={d.metaDescription} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ name: 'Guides', href: path }, { name: d.title, href: path }]} />
+  <article>
+    <h1>{d.title}</h1>
+    <slot />
+    <Sources sources={d.sources} />
+    <p class="meta">Written by <a href="/authors/editorial-team/">{d.author}</a> · Last updated: <time datetime={isoDate(d.updated)}>{isoDate(d.updated)}</time> · <a href="/editorial-policy/">Editorial policy</a></p>
+  </article>
+</BaseLayout>

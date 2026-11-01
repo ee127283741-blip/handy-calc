@@ -1,0 +1,31 @@
+---
+import CalcShell from '../CalcShell.astro';
+---
+<CalcShell id="calc-yarn" label="Yarn calculator">
+  <p>Use any one length unit (inches or cm) for all sizes, and grams or yards for the yarn amounts.</p>
+  <div class="row">
+    <div><label for="y-sw">Swatch width</label><input id="y-sw" inputmode="decimal" value="4" /></div>
+    <div><label for="y-sh">Swatch height</label><input id="y-sh" inputmode="decimal" value="4" /></div>
+    <div><label for="y-sy">Yarn used by swatch (g or yd)</label><input id="y-sy" inputmode="decimal" value="5" /></div>
+  </div>
+  <div class="row">
+    <div><label for="y-pw">Project width</label><input id="y-pw" inputmode="decimal" value="36" /></div>
+    <div><label for="y-ph">Project height</label><input id="y-ph" inputmode="decimal" value="48" /></div>
+    <div><label for="y-skein">Amount per skein (same unit)</label><input id="y-skein" inputmode="decimal" value="100" /></div>
+    <div><label for="y-buf">Extra buffer (%)</label><input id="y-buf" inputmode="decimal" value="10" /></div>
+  </div>
+</CalcShell>
+<script>
+  import { $, fmt, wire } from '../../calculators/ui';
+  import { skeinsNeeded, yarnNeeded } from '../../calculators/yarn';
+  const root = document.getElementById('calc-yarn')!;
+  const num = (sel: string) => Number($(root, sel).value);
+  const run = wire(root, () => {
+    const i = { swatchWidth: num('#y-sw'), swatchHeight: num('#y-sh'), swatchYarn: num('#y-sy'), projectWidth: num('#y-pw'), projectHeight: num('#y-ph'), bufferPct: num('#y-buf') };
+    const skein = num('#y-skein');
+    if (Object.values(i).some((v) => !(v >= 0)) || !(i.swatchWidth * i.swatchHeight > 0) || !(skein > 0)) return 'Enter positive numbers in every field';
+    const total = yarnNeeded(i);
+    return `About ${fmt(total, 0)} (g or yd) → ${skeinsNeeded(total, skein)} skeins`;
+  });
+  run();
+</script>

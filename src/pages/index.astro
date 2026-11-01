@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ToolSearch from '../components/ToolSearch.astro';
+import { CATEGORIES, SITE_NAME, SITE_TAGLINE } from '../site';
+const home = new URL('/', Astro.site).href;
+const jsonLd = [
+  { '@type': 'WebSite', name: SITE_NAME, url: home, description: SITE_TAGLINE },
+  { '@type': 'Organization', name: SITE_NAME, url: home, logo: new URL('/favicon.svg', Astro.site).href },
+];
+---
+<BaseLayout title={`${SITE_NAME} – Free Kitchen, DIY, Craft & Date Calculators`} description="Free calculators for cups to grams, oven temperatures and Gas Marks, paint, yarn and days between dates. Every formula is shown and every number is sourced." jsonLd={jsonLd}>
+  <h1>Free niche calculators with sourced answers</h1>
+  <p class="answer">{SITE_TAGLINE} Each tool shows its formula, a worked example and the sources behind its reference data.</p>
+  <ToolSearch />
+  <h2>Browse by category</h2>
+  <ul class="cards">
+    {CATEGORIES.map((c) => <li><a href={`/${c.slug}/`}><strong>{c.name}</strong></a><span>{c.description}</span></li>)}
+  </ul>
+</BaseLayout>

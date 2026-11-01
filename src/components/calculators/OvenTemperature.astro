@@ -1,0 +1,48 @@
+---
+import CalcShell from '../CalcShell.astro';
+---
+<CalcShell id="calc-oven" label="Oven temperature converter">
+  <div class="row">
+    <div>
+      <label for="ov-val">Temperature</label>
+      <input id="ov-val" inputmode="decimal" value="350" />
+    </div>
+    <div>
+      <label for="ov-from">From</label>
+      <select id="ov-from">
+        <option value="F">°F (Fahrenheit)</option>
+        <option value="C">°C (Celsius)</option>
+        <option value="G">Gas Mark</option>
+      </select>
+    </div>
+  </div>
+  <label class="check"><input type="checkbox" id="ov-fan" /> Also show fan / convection oven setting</label>
+</CalcShell>
+<script>
+  import { $, fmt, prefersImperial, wire } from '../../calculators/ui';
+  import { cToF, fToC, fToGasMark, gasMarkToF, fanAdjustC } from '../../calculators/ovenTemperature';
+  const root = document.getElementById('calc-oven')!;
+  const val = $(root, '#ov-val');
+  const from = $<HTMLSelectElement>(root, '#ov-from');
+  const fan = $(root, '#ov-fan');
+  const setDefault = () => {
+    if (!prefersImperial()) { from.value = 'C'; val.value = '180'; }
+  };
+  const gm = (m: number | null) => (m === null ? 'no Gas Mark equivalent' : `Gas Mark ${m === 0.25 ? '¼' : m === 0.5 ? '½' : m}`);
+  const run = wire(root, () => {
+    const s = val.value.trim();
+    const n = s === '1/4' ? 0.25 : s === '1/2' ? 0.5 : Number(s);
+    if (!s || Number.isNaN(n)) return 'Enter a temperature';
+    let f: number;
+    if (from.value === 'G') {
+      try { f = gasMarkToF(n); } catch { return 'Gas Mark must be 1/4, 1/2 or 1–10'; }
+    } else f = from.value === 'F' ? n : cToF(n);
+    const c = fToC(f);
+    let text = `${fmt(f, 0)} °F = ${fmt(c, 0)} °C ≈ ${gm(fToGasMark(f))}`;
+    if (fan.checked) text += ` · Fan oven: about ${fmt(fanAdjustC(c), 0)} °C`;
+    return text;
+  });
+  setDefault();
+  root.addEventListener('calc-reset', setDefault);
+  run();
+</script>

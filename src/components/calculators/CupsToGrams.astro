@@ -1,0 +1,43 @@
+---
+import CalcShell from '../CalcShell.astro';
+import { INGREDIENTS } from '../../calculators/cupsToGrams';
+---
+<CalcShell id="calc-cups" label="Cups to grams calculator">
+  <fieldset>
+    <legend>Convert</legend>
+    <label><input type="radio" name="dir" value="c2g" checked /> Cups → grams</label>
+    <label><input type="radio" name="dir" value="g2c" /> Grams → cups</label>
+  </fieldset>
+  <div class="row">
+    <div>
+      <label for="cg-amount" id="cg-amount-label">Amount (cups)</label>
+      <input id="cg-amount" name="amount" inputmode="decimal" value="1" aria-describedby="cg-hint" />
+      <small id="cg-hint">Fractions like 1 1/2 or 3/4 work.</small>
+    </div>
+    <div>
+      <label for="cg-ing">Ingredient</label>
+      <select id="cg-ing" name="ing">
+        {INGREDIENTS.map((i) => <option value={i.id}>{i.name}</option>)}
+      </select>
+    </div>
+  </div>
+</CalcShell>
+<script>
+  import { $, fmt, wire } from '../../calculators/ui';
+  import { cupsToGrams, getIngredient, gramsToCups, parseAmount } from '../../calculators/cupsToGrams';
+  const root = document.getElementById('calc-cups')!;
+  const amount = $(root, '#cg-amount');
+  const ing = $<HTMLSelectElement>(root, '#cg-ing');
+  const label = $(root, '#cg-amount-label');
+  const run = wire(root, () => {
+    const dir = (root.querySelector('input[name=dir]:checked') as HTMLInputElement).value;
+    label.textContent = dir === 'c2g' ? 'Amount (cups)' : 'Amount (grams)';
+    const n = parseAmount(amount.value);
+    if (!(n >= 0)) return 'Enter a number, e.g. 1 1/2';
+    const name = getIngredient(ing.value).name.toLowerCase();
+    return dir === 'c2g'
+      ? `${amount.value} cup(s) of ${name} ≈ ${fmt(cupsToGrams(n, ing.value), 0)} g`
+      : `${fmt(n)} g of ${name} ≈ ${fmt(gramsToCups(n, ing.value))} cups`;
+  });
+  run();
+</script>

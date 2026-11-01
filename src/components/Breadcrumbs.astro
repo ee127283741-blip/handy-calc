@@ -1,0 +1,19 @@
+---
+import JsonLd from './JsonLd.astro';
+export interface Crumb { name: string; href: string }
+interface Props { items: Crumb[] }
+const { items } = Astro.props;
+const all = [{ name: 'Home', href: '/' }, ...items];
+const ld = {
+  '@type': 'BreadcrumbList',
+  itemListElement: all.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: new URL(c.href, Astro.site).href })),
+};
+---
+<nav aria-label="Breadcrumb" class="crumbs">
+  <ol>
+    {all.map((c, i) => (
+      <li>{i === all.length - 1 ? <span aria-current="page">{c.name}</span> : <a href={c.href}>{c.name}</a>}</li>
+    ))}
+  </ol>
+</nav>
+<JsonLd data={ld} />

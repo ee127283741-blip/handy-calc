@@ -1,0 +1,15 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE_NAME } from '../site';
+interface Props { title: string; description: string; updated: string }
+const { title, description, updated } = Astro.props;
+---
+<BaseLayout title={`${title} | ${SITE_NAME}`} description={description}>
+  <Breadcrumbs items={[{ name: title, href: Astro.url.pathname }]} />
+  <article>
+    <h1>{title}</h1>
+    <slot />
+    <p class="meta">Last updated: <time datetime={updated}>{updated}</time></p>
+  </article>
+</BaseLayout>

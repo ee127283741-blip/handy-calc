@@ -1,0 +1,11 @@
+---
+// Ads stay fully off until PUBLIC_ADS_ENABLED=true (after AdSense approval). When off, nothing is rendered.
+interface Props { id: 'A' | 'B' | 'sidebar' }
+const { id } = Astro.props;
+const enabled = import.meta.env.PUBLIC_ADS_ENABLED === 'true';
+---
+{enabled && (
+  <aside class="ad-slot" data-ad-slot={id} aria-label="Advertisement">
+    <span class="ad-label">Advertisement</span>
+  </aside>
+)}

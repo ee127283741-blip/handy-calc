@@ -1,0 +1,18 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE_NAME } from '../site';
+---
+<PageLayout title="About" description={`What ${SITE_NAME} is, who maintains it, how calculators are built and checked, and how AI tools are used in making the site.`} updated="2026-11-01">
+  <p>{SITE_NAME} is a small collection of free calculators for everyday niche questions: how many grams are in a cup of flour, what Gas Mark 4 is in Fahrenheit, how much paint a room needs, how much yarn a blanket takes and how many days are between two dates.</p>
+  <h2>Who maintains this site</h2>
+  <p>The site is maintained by a small <a href="/authors/editorial-team/">Editorial team</a>. We do not claim professional credentials such as chef, contractor or certified fiber-arts qualifications.</p>
+  <h2>How we build calculators</h2>
+  <ul>
+    <li>Every calculator is a plain formula that runs in your browser. Nothing you type is sent to a server.</li>
+    <li>Reference values (for example ingredient weights) come from named, linked sources listed on each page.</li>
+    <li>Each calculator has automated tests that compare results with at least five known answers.</li>
+    <li>Each page shows the formula, a worked example, its assumptions and limitations.</li>
+  </ul>
+  <h2>Use of AI</h2>
+  <p>We use AI tools (large language models) to help draft page text and code. AI output is never published unchecked: numbers and formulas are verified against the cited sources and by tests. Read more in our <a href="/editorial-policy/">editorial policy</a>.</p>
+</PageLayout>

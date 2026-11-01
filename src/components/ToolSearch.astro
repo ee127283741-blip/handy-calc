@@ -1,0 +1,25 @@
+---
+import { liveCalculators, calcUrl } from '../lib';
+const calcs = await liveCalculators();
+---
+<form class="search" role="search" action="#" onsubmit="return false">
+  <label for="tool-q">Search calculators</label>
+  <input id="tool-q" type="search" placeholder="e.g. flour, paint, gas mark" autocomplete="off" />
+</form>
+<ul class="cards" id="tool-list">
+  {calcs.map((c) => (
+    <li data-k={`${c.data.h1} ${c.data.primaryKeyword} ${c.data.secondaryKeywords.join(' ')}`.toLowerCase()}>
+      <a href={calcUrl(c)}><strong>{c.data.h1}</strong></a>
+      <span>{c.data.metaDescription}</span>
+    </li>
+  ))}
+</ul>
+<script>
+  const q = document.getElementById('tool-q') as HTMLInputElement;
+  q.addEventListener('input', () => {
+    const v = q.value.trim().toLowerCase();
+    document.querySelectorAll<HTMLLIElement>('#tool-list li').forEach((li) => {
+      li.hidden = !!v && !li.dataset.k!.includes(v);
+    });
+  });
+</script>
