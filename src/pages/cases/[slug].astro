@@ -13,7 +13,8 @@ const d = entry.data;
 const { Content } = await render(entry);
 const ind = INDUSTRIES.find((i) => i.slug === d.industry)!;
 const path = caseUrl(entry);
-const cards = [
+type Card = { name: string; value: string | undefined; label?: keyof typeof LABEL_NAME; sourceUrl?: string; sourceDate?: string };
+const cards: Card[] = [
   { name: 'Monthly revenue', ...d.mrr, value: d.mrr.display },
   { name: 'Total revenue', ...d.totalRevenue, value: d.totalRevenue.display },
   { name: 'Team size', ...d.teamSize, value: d.teamSize.display },
