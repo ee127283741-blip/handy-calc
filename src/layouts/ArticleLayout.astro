@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AdSlot from '../components/AdSlot.astro';
 import Sources from '../components/Sources.astro';
 import { SITE_NAME, getCategory } from '../site';
 import { isoDate } from '../lib';
@@ -25,7 +26,9 @@ const jsonLd = [{
   <article>
     <h1>{d.title}</h1>
     <slot />
+    <AdSlot />
     <Sources sources={d.sources} />
     <p class="meta">Written by <a href="/authors/editorial-team/">{d.author}</a> · Last updated: <time datetime={isoDate(d.updated)}>{isoDate(d.updated)}</time> · <a href="/editorial-policy/">Editorial policy</a></p>
+    <AdSlot />
   </article>
 </BaseLayout>

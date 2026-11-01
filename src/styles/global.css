@@ -180,5 +180,11 @@ code { font-family: var(--mono); font-size: .9em; background: #fff; border: 1px 
 .hero .eyebrow { margin: 0; }
 .hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.4rem); margin: .75rem 0 1.25rem; font-weight: 700; }
 
-.ad-slot { min-height: 280px; margin: 2rem 0; }
-.ad-label { font-size: .75rem; color: var(--muted); }
+.ad-slot { min-height: 280px; margin: 2.5rem 0; }
+.ad-label { display: block; font-size: .75rem; color: var(--muted); margin-bottom: .25rem; }
+.ad-sidebar { display: none; }
+@media (min-width: 1200px) {
+  .ad-slot { min-height: 250px; }
+  .ad-layout { display: grid; grid-template-columns: minmax(0, 44rem) 300px; justify-content: space-between; gap: 3rem; }
+  .ad-sidebar { display: block; position: sticky; top: calc(var(--header-h) + 1.5rem); align-self: start; min-height: 600px; margin: 2.25rem 0 0; }
+}

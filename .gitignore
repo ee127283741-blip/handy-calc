@@ -3,3 +3,5 @@ dist/
 .astro/
 .env
 lighthouse/
+dist-test-off/
+dist-test-on/

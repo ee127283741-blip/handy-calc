@@ -3,6 +3,7 @@ import { SITE_NAME } from '../site';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import JsonLd from '../components/JsonLd.astro';
+import { ADS_ON, ADSENSE_CLIENT } from '../ads';
 import '../styles/global.css';
 interface Props { title: string; description: string; jsonLd?: object[]; noindex?: boolean }
 const { title, description, jsonLd = [], noindex = false } = Astro.props;
@@ -32,6 +33,9 @@ const beacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
     <JsonLd data={jsonLd} />
     {beacon && (
       <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: beacon })}></script>
+    )}
+    {ADS_ON && (
+      <script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`} crossorigin="anonymous"></script>
     )}
   </head>
   <body>

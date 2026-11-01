@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdSlot from '../../components/AdSlot.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { CATEGORIES, SITE_NAME, type Category } from '../../site';
 import { calcUrl, liveCalculators, liveGuides } from '../../lib';
@@ -32,6 +33,7 @@ const jsonLd = [{
   ) : (
     <p>Tools for this category are coming soon. We publish a calculator only after its formula and reference data have been checked against sources, so this page lists nothing yet. Meanwhile, browse <a href="/calculators/">all calculators</a>.</p>
   )}
+  <AdSlot />
   {guides.length > 0 && (
     <section><h2>Guides</h2><ul>{guides.map((g) => <li><a href={`/guides/${g.data.slug}/`}>{g.data.title}</a></li>)}</ul></section>
   )}

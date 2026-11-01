@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AdSlot from '../components/AdSlot.astro';
+import { ADS_ON } from '../ads';
 import Faq from '../components/Faq.astro';
 import Sources from '../components/Sources.astro';
 import { WIDGETS } from '../components/calculators';
@@ -19,6 +20,8 @@ const all = await liveCalculators();
 const related = d.related.map((s) => all.find((c) => c.data.slug === s)).filter((c) => !!c);
 const sameCat = all.filter((c) => c.data.category === d.category && c.data.slug !== d.slug && !d.related.includes(c.data.slug));
 const relatedList = [...related, ...sameCat].slice(0, 5);
+// With ads off there is no wrapper, so the layout is unchanged.
+const Wrap = ADS_ON ? 'div' : Fragment;
 const url = new URL(calcUrl(entry), Astro.site).href;
 const authorUrl = new URL('/authors/editorial-team/', Astro.site).href;
 const jsonLd = [{
@@ -37,13 +40,14 @@ const jsonLd = [{
 ---
 <BaseLayout title={d.title} description={d.metaDescription} jsonLd={jsonLd}>
   <Breadcrumbs items={[{ name: cat.name, href: `/${cat.slug}/` }, { name: d.h1, href: calcUrl(entry) }]} />
+  <Wrap class={ADS_ON ? 'ad-layout' : undefined}>
   <article>
     <h1>{d.h1}</h1>
     <p class="answer">{d.directAnswer}</p>
     <Widget />
-    <AdSlot id="A" />
+    <AdSlot />
     <slot />
-    <AdSlot id="B" />
+    <AdSlot />
     <Faq faqs={d.faqs} />
     <section aria-labelledby="related">
       <h2 id="related">Related calculators</h2>
@@ -53,6 +57,7 @@ const jsonLd = [{
       </ul>
     </section>
     <Sources sources={d.sources} />
+    <AdSlot />
     <p class="meta">
       Written by <a href="/authors/editorial-team/">{d.author}</a>{d.reviewedBy && <> · Reviewed by {d.reviewedBy}</>}
       · Last updated: <time datetime={isoDate(d.updated)}>{isoDate(d.updated)}</time>
@@ -60,4 +65,6 @@ const jsonLd = [{
     </p>
     <p class="disclaimer">Disclaimer: results are estimates for general guidance only. Check product labels, recipes and project instructions before relying on them.</p>
   </article>
+  <AdSlot sidebar />
+  </Wrap>
 </BaseLayout>

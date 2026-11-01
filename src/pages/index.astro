@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AdSlot from '../components/AdSlot.astro';
 import { SITE_NAME, SITE_TAGLINE } from '../site';
 import { calcUrl, calculatorsByCategory, popularCalculators } from '../lib';
 const home = new URL('/', Astro.site).href;
@@ -30,6 +31,7 @@ const groups = await calculatorsByCategory();
       {popular.map((c) => <li><a href={calcUrl(c)}>{c.data.h1}</a><span>{c.data.metaDescription}</span></li>)}
     </ul>
   </section>
+  <AdSlot />
   <section aria-labelledby="browse">
     <p class="eyebrow">Browse</p>
     <h2 id="browse">Calculators by category</h2>
