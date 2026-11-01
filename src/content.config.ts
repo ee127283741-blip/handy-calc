@@ -26,6 +26,9 @@ const cases = defineCollection({
     company: z.string(),
     founders: z.array(z.string()).min(1),
     summary: z.string().min(70).max(200),
+    // Keyword-first workflow (PUBLISHING.md): must appear in title, H1, first paragraph (summary) and meta description.
+    primaryKeyword: z.string().min(3),
+    secondaryKeywords: z.array(z.string()).default([]),
     industry: z.enum(INDUSTRY_SLUGS),
     productType: z.enum(PRODUCT_TYPE_NAMES),
     appSubcategory: z.string().optional(),
@@ -36,7 +39,11 @@ const cases = defineCollection({
     totalRevenue: money,
     revenueRange: z.enum(REVENUE_RANGE_SLUGS),
     metrics: z.array(metric).min(1),
+    // 2-3 sentence direct answer shown at the top (AEO); FAQ is rendered and emitted as FAQPage JSON-LD.
+    tldr: z.string().min(100).max(600),
+    faq: z.array(z.object({ q: z.string().endsWith('?'), a: z.string().min(10) })).min(3),
     sources: z.array(z.object({ title: z.string(), url: z.string().url(), publisher: z.string(), date: dateish.optional() })).min(1),
+    published: z.coerce.date(),
     updated: z.coerce.date(),
   }),
 });

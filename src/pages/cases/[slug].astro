@@ -1,5 +1,7 @@
 ---
 import { render, type CollectionEntry } from 'astro:content';
+import type { Article, FAQPage, WithContext } from 'schema-dts';
+import { OG_SIZE } from '../../lib/og';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AdSlot from '../../components/AdSlot.astro';
@@ -22,19 +24,31 @@ const cards: Card[] = [
   ...d.metrics,
 ];
 const related = (await allCases()).filter((c) => c.data.slug !== d.slug && c.data.industry === d.industry).slice(0, 3);
-const jsonLd = [{
+const authorUrl = new URL('/authors/editorial-team/', Astro.site).href;
+const image = { url: new URL(`/og/${d.slug}.png`, Astro.site).href, alt: `${d.title} – ${SITE_NAME} case study`, ...OG_SIZE };
+const article: WithContext<Article> = {
+  '@context': 'https://schema.org',
   '@type': 'Article',
   headline: d.title,
   description: d.summary,
   url: new URL(path, Astro.site).href,
+  image: { '@type': 'ImageObject', url: image.url, width: String(image.width), height: String(image.height) },
+  datePublished: isoDate(d.published),
   dateModified: isoDate(d.updated),
+  keywords: [d.primaryKeyword, ...d.secondaryKeywords].join(', '),
   about: { '@type': 'Organization', name: d.company, founder: d.founders.map((name) => ({ '@type': 'Person', name })), ...(d.foundedYear ? { foundingDate: String(d.foundedYear) } : {}) },
-  author: { '@type': 'Organization', name: SITE_NAME },
+  author: { '@type': 'Organization', name: 'Editorial team', url: authorUrl },
   publisher: { '@type': 'Organization', name: SITE_NAME },
   citation: d.sources.map((s) => s.url),
-}];
+};
+const faqPage: WithContext<FAQPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: d.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+const jsonLd = [article, faqPage];
 ---
-<BaseLayout title={`${d.title} | ${SITE_NAME}`} description={d.summary} jsonLd={jsonLd}>
+<BaseLayout title={`${d.title} | ${SITE_NAME}`} description={d.summary} jsonLd={jsonLd} ogType="article" image={image}>
   <Breadcrumbs items={[{ name: ind.name, href: `/industries/${ind.slug}/` }, { name: d.company, href: path }]} />
   <article class="case">
     <p class="eyebrow">
@@ -43,19 +57,27 @@ const jsonLd = [{
     </p>
     <h1>{d.title}</h1>
     <p class="answer">{d.summary}</p>
-    <p class="meta">Founder{d.founders.length > 1 ? 's' : ''}: {d.founders.join(', ')}</p>
-    <ul class="metric-cards" aria-label="Key numbers">
-      {cards.map((m) => (
-        <li>
-          <span class="m-name">{m.name}</span>
-          <strong>{m.value}</strong>
-          {m.label && <span class={`m-label l-${m.label}`}>{m.labelNote ?? LABEL_NAME[m.label]}</span>}
-          {m.sourceUrl && <a class="m-src" href={m.sourceUrl} rel="nofollow noopener" target="_blank">Source{m.sourceDate && `, ${m.sourceDate}`}</a>}
-        </li>
-      ))}
-    </ul>
+    <div class="tldr" role="note" aria-label="TL;DR"><strong>TL;DR:</strong> {d.tldr}</div>
+    <p class="meta">Founder{d.founders.length > 1 ? 's' : ''}: {d.founders.join(', ')} · By <a href="/authors/editorial-team/" rel="author">Editorial team</a> · Updated <time datetime={isoDate(d.updated)}>{isoDate(d.updated)}</time></p>
     <AdSlot />
     <div class="case-body"><Content /></div>
+    <section aria-labelledby="faq">
+      <h2 id="faq">Frequently asked questions</h2>
+      {d.faq.map((f) => <><h3>{f.q}</h3><p>{f.a}</p></>)}
+    </section>
+    <aside class="data-box" aria-labelledby="data-summary">
+      <h2 id="data-summary">{d.company}: data summary</h2>
+      <ul class="metric-cards">
+        {cards.map((m) => (
+          <li>
+            <span class="m-name">{m.name}</span>
+            <strong>{m.value}</strong>
+            {m.label && <span class={`m-label l-${m.label}`}>{m.labelNote ?? LABEL_NAME[m.label]}</span>}
+            {m.sourceUrl && <a class="m-src" href={m.sourceUrl} rel="nofollow noopener" target="_blank">Source{m.sourceDate && `, ${m.sourceDate}`}</a>}
+          </li>
+        ))}
+      </ul>
+    </aside>
     <section aria-labelledby="sources">
       <h2 id="sources">Sources</h2>
       <ol>{d.sources.map((s) => <li><a href={s.url} rel="nofollow noopener">{s.title}</a> – {s.publisher}{s.date && `, ${s.date}`}</li>)}</ol>

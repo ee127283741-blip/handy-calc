@@ -1,4 +1,4 @@
-export const SITE_NAME = 'ProofedPrompts';
+export const SITE_NAME = 'AI Founder Atlas';
 export const SITE_TAGLINE = 'Real AI startup case studies with sourced, dated revenue numbers, by industry and product type.';
 
 export interface Taxon { slug: string; name: string; description: string }
@@ -40,3 +40,6 @@ export const REVENUE_RANGES = [
   { slug: 'not-disclosed', name: 'Not disclosed' },
 ] as const;
 export const REVENUE_RANGE_SLUGS = REVENUE_RANGES.map((r) => r.slug) as unknown as [string, ...string[]];
+
+/** Production URL; astro.config.mjs uses SITE_URL from the environment and falls back to this. */
+export const SITE_URL = 'https://ai-founder-atlas.pages.dev';

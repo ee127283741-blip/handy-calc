@@ -2,7 +2,7 @@
 
 本文件說明 operator bot 如何新增 prompt（提示詞）、新增文章（tutorial / guide）、加入 prompt 效果示範圖（proof image），以及內容如何上線。
 
-網站定位：**Prompt 資料庫是主要產品**（網頁設計、視覺特效、互動、動態、影片剪輯、運鏡、圖像生成、寫作、產業別），加上 AI 知識教學文章，以及純前端的 **Idea → Prompt** 工具（`/idea-to-prompt/`）。網站名稱為「ProofedPrompts」（網址仍為 handy-calc.pages.dev，repo 與 Cloudflare 專案名稱不變）。
+網站定位：**Prompt 資料庫是主要產品**（網頁設計、視覺特效、互動、動態、影片剪輯、運鏡、圖像生成、寫作、產業別），加上 AI 知識教學文章，以及純前端的 **Idea → Prompt** 工具（`/idea-to-prompt/`）。網站名稱為「AI Founder Atlas」，正式網址 https://ai-founder-atlas.pages.dev（Cloudflare Pages 專案名稱 `ai-founder-atlas`）。
 
 ## 0. 原則
 
@@ -10,6 +10,55 @@
 - **不花錢**：不買網域、不用付費工具/API。網站任何地方**都不呼叫 AI API**（Idea → Prompt 是 `src/lib/ideaToPrompt.ts` 的規則＋模板純函式）。
 - **不捏造**：數字、價格、搜尋量都要有來源；查不到就寫「查不到」。作者一律為 `Editorial team`，不可捏造人物或資歷。
 - 寧缺勿濫：避免 scaled content abuse / doorway pages。不要做只換一個字的 prompt（例如「Landing page prompt for dentists」「…for plumbers」），改用變數。
+
+## 0.1 AI 創業案例寫作標準（每日新增 case 必讀）
+
+檔案：`src/content/cases/<slug>.md`，網址 `/cases/<slug>/`。`src/content/cases.test.ts` 會強制檢查以下規則，不符合 `npm test` 會失敗。
+
+**關鍵字優先流程（寫任何字之前先做）：**
+
+1. 先定 `primaryKeyword`（1 個，小寫，例如 `photo ai revenue`）與 `secondaryKeywords`（3–5 個長尾，例如 `pieter levels photo ai`、`photo ai mrr`）。候選來源：`/workspace/seo-audit/keywords.md`。
+2. 用 Google autocomplete 檢查是否為真實搜尋詞：`curl -s 'https://suggestqueries.google.com/complete/search?client=firefox&q=photo%20ai%20revenue'`。若 autocomplete 給出更自然的寫法（例：`base44 acquisition` 而非 `base44 acquisition wix`；`gamma ai revenue` 而非 `gamma app revenue`），改用它。沒有建議的詞可以保留，但不要編造搜尋量。
+3. 關鍵字裡的人名、公司名要跟 frontmatter `founders`／`company` 一致；不一致時只有在找到來源時才改 frontmatter，否則改關鍵字。
+4. `primaryKeyword` 必須（不分大小寫）出現在：`title`（= `<title>` 與 H1）、`summary`（= 首段 `<p class="answer">` 與 meta description）。`npm test` 會在原始檔與 build 後的 HTML 兩邊都檢查；og:image alt 由 title 產生，所以也會包含。
+5. H2 一律是「公司名＋主題問句」（例 `How much revenue does Photo AI make?`），仍須符合下方 8 章順序。
+6. FAQ 3–5 題，問句盡量用 secondaryKeywords 的長尾說法；答案只能用本文已有、附來源的事實。
+7. 改寫 title／summary 時**數字、日期、來源標籤不可變動或新增**。
+
+**自動產生的 SEO 輸出：** `/og/<slug>.png`（build 時用 satori + resvg 產生 1200×630 純文字卡片，不用 AI 圖）、`og:type=article`、`twitter:card=summary_large_image`、Article JSON-LD（`datePublished` = `published`、`dateModified` = `updated`、`image`、`author`，型別用 `schema-dts` 檢查）、FAQPage JSON-LD、sitemap `lastmod` = `updated`。CI 另有 Lighthouse CI job（`lighthouserc.json`，對 `dist/` 起靜態伺服器跑，assertion 只警告，不擋部署）。
+
+**Frontmatter**（schema 在 `src/content.config.ts`）：除既有欄位（`mrr`、`totalRevenue`、`teamSize`、`metrics`、`sources`…）外必填：
+
+- `tldr`：2–3 句的直接答案（AEO），包含公司做什麼、最關鍵的營收數字＋日期＋來源標籤。顯示在頁首。
+- `primaryKeyword`、`secondaryKeywords`、`published`（首次發布日，`YYYY-MM-DD`）：見上方關鍵字流程。
+- `faq`：3–5 題，`q` 用真實搜尋問句並以 `?` 結尾，`a` 是可獨立引用的答案（含標籤）。會渲染成 FAQ 區塊並輸出 FAQPage JSON-LD（與 Article JSON-LD 並列）。
+- 每個數字：`label`（founder-reported / verified / media-reported / unverified）＋ `sourceUrl`，日期只寫 `YYYY-MM`；沒有數字就寫 `Not disclosed` 並用 `not-disclosed`。
+
+**本文：長篇敘事章節，流暢段落，禁止條列（`-`、`*`、`1.`）與 H1/H3。** 結構固定：
+
+1. 開頭（無標題）：場景或對比的 hook，≥50 字。
+2. 8 個 H2，**全部是真實搜尋問句、以 `?` 結尾**，依序涵蓋：
+   1. 為什麼創辦／解決什麼痛點（例：`Why did Pieter Levels start Photo AI?`）
+   2. 產品怎麼運作（`How does X work?`）
+   3. 怎麼做出來（含 `built`）
+   4. 行銷、銷售、定價（含 market / price / sell / customers）
+   5. 轉折與挑戰（含 challenge / risk / hard）
+   6. 成果：營收＋日期（含 revenue / money / make）
+   7. 分析為什麼成功（`Why did X work?`）
+   8. 給讀者的教訓（含 learn / lessons）
+3. 每章 ≥40 字，全文 ≥450 字（目標 800 字以上，但**不可為了字數灌水或補事實**）。
+
+**數字與來源規則（最重要）：**
+
+- frontmatter 每個有數字的 figure，其 `sourceUrl` 必須以 markdown 連結出現在本文，且本文要出現它的標籤文字，例如 `$100K a month ([founder-reported, Indie Hackers](https://…))`。
+- 任何含 `$數字` 的段落必須有來源連結；若只是回顧（timeline）可重複前文已附來源的同一數字；真的沒有來源的數字必須寫明 `no linked source`。
+- 有 `Not disclosed` 的欄位，本文要明說 not disclosed。
+- 絕不誇大、不推估、不加入來源沒有的事實；分析與教訓段落只能是對既有事實的解讀。
+- 寫可獨立被引用的事實句（主詞＋數字＋日期＋標籤＋來源），方便 AI 引擎摘錄。
+
+**站內連結：** 本文至少連到 2 個其他存在的 case（`[Photo AI](/cases/photo-ai/)`），優先同產業或同策略。
+
+**自動產生：** TL;DR 框、作者（Editorial team）＋ Updated 日期、FAQ、文末「data summary」數據框（由 frontmatter 產生）、Sources 列表，不需在本文手寫。
 
 ## 1. 新增 prompt
 
@@ -109,7 +158,7 @@ npm run preview   # 本機預覽 http://localhost:4321
 
 - Build command：`npm run build`，Output directory：`dist`，Node 版本：20（環境變數 `NODE_VERSION=20`）。
 - 環境變數：
-  - `SITE_URL`：正式網址，例如 `https://<project>.pages.dev`（預設 `https://PLACEHOLDER.pages.dev`，影響 canonical、sitemap、robots、llms.txt、RSS）。
+  - `SITE_URL`：正式網址，例如 `https://<project>.pages.dev`（預設 `https://ai-founder-atlas.pages.dev`，影響 canonical、sitemap、robots、llms.txt、RSS）。
   - `PUBLIC_ADS_ENABLED`：維持 `false`，AdSense 核准前不可開啟；`false` 時 `AdSlot` 完全不輸出。開啟後每頁最多 4 個廣告位；prompt 頁只在 prompt 與 Copy 按鈕**之後**放 1 個。
   - `PUBLIC_CF_BEACON_TOKEN`：Cloudflare Web Analytics token；有設定才會載入 beacon。
 

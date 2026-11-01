@@ -182,4 +182,6 @@ code { font-family: var(--mono); font-size: .9em; background: #fff; border: 1px 
 .l-not-disclosed { color: var(--muted); }
 .l-unverified { color: #9a3412; border-color: #9a3412; border-style: dashed; }
 .m-src { font-size: .82rem; }
-#founding-date--timeline + ul { border-left: 2px solid var(--accent); padding-left: 1.25rem; list-style: none; }
+.tldr { background: var(--card); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.25rem 0; max-width: 44rem; line-height: 1.55; }
+.case-body p { max-width: 44rem; line-height: 1.7; }
+.data-box { border: 1px solid var(--line); border-radius: var(--radius); padding: 0 1.25rem 1rem; margin: 2.5rem 0; }

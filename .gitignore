@@ -5,3 +5,4 @@ dist/
 lighthouse/
 dist-test-off/
 dist-test-on/
+.lighthouseci/

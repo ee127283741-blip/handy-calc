@@ -54,6 +54,68 @@ describe('site build (ads off)', () => {
   const read = (p: string) => readFileSync(join(OFF, p), 'utf8');
   const caseUrls = () => readdirSync(join(OFF, 'cases'), { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).map((s) => `/cases/${s}/`);
 
+  it('uses the AI Founder Atlas name and URL in meta, structured data, RSS and llms.txt', () => {
+    const home = read('index.html');
+    expect(home).toContain('<link rel="canonical" href="https://ai-founder-atlas.pages.dev/"');
+    expect(home).toMatch(/"@type":"WebSite","name":"AI Founder Atlas"/);
+    expect(home).toMatch(/"@type":"Organization","name":"AI Founder Atlas"/);
+    expect(read('rss.xml')).toContain('<title>AI Founder Atlas: AI startup case library</title>');
+    expect(read('llms.txt').startsWith('# AI Founder Atlas')).toBe(true);
+    expect(read('sitemap-0.xml')).toContain('<loc>https://ai-founder-atlas.pages.dev/</loc>');
+    for (const f of files(OFF).filter((f) => /\.(html|xml|txt|json)$/.test(f))) expect(readFileSync(f, 'utf8'), f).not.toMatch(/ProofedPrompts|handy-calc|PLACEHOLDER/);
+  });
+
+  it('case pages have TL;DR, byline, FAQ and Article + FAQPage JSON-LD', () => {
+    for (const u of caseUrls()) {
+      const html = read(join(u, 'index.html'));
+      expect(html, u).toContain('class="tldr"');
+      expect(html, u).toContain('rel="author"');
+      expect(html, u).toContain('id="faq"');
+      expect(html, u).toContain('"@type":"Article"');
+      expect(html, u).toContain('"@type":"FAQPage"');
+      expect(html, u).toContain('id="data-summary"');
+    }
+  });
+
+  it('case pages carry the primary keyword, article OG tags, a 1200x630 OG image and dated Article JSON-LD', () => {
+    const DIR = join(__dirname, 'content', 'cases');
+    for (const u of caseUrls()) {
+      const slug = u.split('/')[2];
+      const kw = readFileSync(join(DIR, `${slug}.md`), 'utf8').match(/^primaryKeyword: "(.+)"$/m)![1].toLowerCase();
+      const html = read(join(u, 'index.html'));
+      const tag = (re: RegExp) => (html.match(re)?.[1] ?? '').replace(/&#39;/g, "'").replace(/&amp;/g, '&').toLowerCase();
+      expect(tag(/<title>([^<]*)<\/title>/), `${u} title`).toContain(kw);
+      expect(tag(/<h1>([^<]*)<\/h1>/), `${u} h1`).toContain(kw);
+      expect(tag(/<p class="answer">([^<]*)<\/p>/), `${u} first paragraph`).toContain(kw);
+      expect(tag(/<meta name="description" content="([^"]*)"/), `${u} meta description`).toContain(kw);
+      expect(tag(/<meta property="og:image:alt" content="([^"]*)"/), `${u} og:image:alt`).toContain(kw);
+      expect(html, u).toContain('<meta property="og:type" content="article"');
+      expect(html, u).toContain('<meta name="twitter:card" content="summary_large_image"');
+      expect(html, u).toContain(`<meta property="og:image" content="https://ai-founder-atlas.pages.dev/og/${slug}.png"`);
+      const png = readFileSync(join(OFF, 'og', `${slug}.png`));
+      expect(png.subarray(1, 4).toString(), `${slug}.png`).toBe('PNG');
+      expect([png.readUInt32BE(16), png.readUInt32BE(20)], `${slug}.png size`).toEqual([1200, 630]);
+      const ld = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
+      const article = ld.find((x) => x['@type'] === 'Article');
+      expect(article.datePublished, u).toMatch(/^\d{4}-\d\d-\d\d$/);
+      expect(article.dateModified, u).toMatch(/^\d{4}-\d\d-\d\d$/);
+      expect(article.image.url, u).toContain(`/og/${slug}.png`);
+      expect(article.author.name, u).toBe('Editorial team');
+      const faq = ld.find((x) => x['@type'] === 'FAQPage');
+      expect(faq.mainEntity.length, u).toBeGreaterThanOrEqual(3);
+      expect(faq.mainEntity.length, u).toBeLessThanOrEqual(5);
+    }
+  });
+
+  it('sitemap lastmod for each case equals its updated date', () => {
+    const xml = read('sitemap-0.xml');
+    const DIR = join(__dirname, 'content', 'cases');
+    for (const u of caseUrls()) {
+      const updated = readFileSync(join(DIR, `${u.split('/')[2]}.md`), 'utf8').match(/^updated: (.+)$/m)![1].trim();
+      expect(xml, u).toContain(`<loc>https://ai-founder-atlas.pages.dev${u}</loc><lastmod>${updated}T`);
+    }
+  });
+
   it('search index lists every case', () => {
     const index: { url: string; type: string; title: string; category: string; description: string }[] = JSON.parse(read('search-index.json'));
     expect(index.map((e) => e.url).sort()).toEqual(caseUrls().sort());

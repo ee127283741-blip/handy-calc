@@ -5,8 +5,8 @@ import Footer from '../components/Footer.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { ADS_ON, ADSENSE_CLIENT } from '../ads';
 import '../styles/global.css';
-interface Props { title: string; description: string; jsonLd?: object[]; noindex?: boolean }
-const { title, description, jsonLd = [], noindex = false } = Astro.props;
+interface Props { title: string; description: string; jsonLd?: object[]; noindex?: boolean; ogType?: 'website' | 'article'; image?: { url: string; alt: string; width: number; height: number } }
+const { title, description, jsonLd = [], noindex = false, ogType = 'website', image } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const beacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 ---
@@ -19,12 +19,22 @@ const beacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    {image && (
+      <>
+        <meta property="og:image" content={image.url} />
+        <meta property="og:image:width" content={String(image.width)} />
+        <meta property="og:image:height" content={String(image.height)} />
+        <meta property="og:image:alt" content={image.alt} />
+        <meta name="twitter:image" content={image.url} />
+        <meta name="twitter:image:alt" content={image.alt} />
+      </>
+    )}
+    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
     <link rel="preload" href="/fonts/inter-tight-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="theme-color" content="#0B3B5C" />
     <meta name="google-site-verification" content="eFA1qwEN8-7_kB4VDWX4h-MqJBMHqiT-wKp0oMqi6-Q" />

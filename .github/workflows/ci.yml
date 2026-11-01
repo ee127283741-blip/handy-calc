@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SITE_URL: https://handy-calc.pages.dev
+      SITE_URL: https://ai-founder-atlas.pages.dev
       PUBLIC_CF_BEACON_TOKEN: 61bd32d2c9d64ba8b32abb6e1e19a7c4
       PUBLIC_ADS_ENABLED: "false"
     steps:
@@ -22,7 +22,24 @@ jobs:
       - run: npm run build
       - name: Deploy to Cloudflare Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: npx wrangler pages deploy dist --project-name handy-calc --branch main --commit-hash ${{ github.sha }}
+        run: npx wrangler pages deploy dist --project-name ai-founder-atlas --branch main --commit-hash ${{ github.sha }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  lighthouse:
+    # Runs in parallel with build/deploy; assertions are warnings, so it never blocks a deploy.
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    env:
+      SITE_URL: https://ai-founder-atlas.pages.dev
+      PUBLIC_ADS_ENABLED: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Lighthouse CI (static server on dist/)
+        run: npx lhci autorun --config=./lighthouserc.json

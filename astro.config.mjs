@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { readdirSync, readFileSync } from 'node:fs';
 
-const site = process.env.SITE_URL || 'https://PLACEHOLDER.pages.dev';
+const site = process.env.SITE_URL || 'https://ai-founder-atlas.pages.dev';
 
 // Path -> `updated` date from content frontmatter; other pages get the build date.
 function contentDates() {
