@@ -2,7 +2,8 @@
 title: How Many Words Is a Token? Real Counts From Real Text
 slug: how-many-words-is-a-token
 category: ai-productivity
-tool: llm-api-cost-calculator
+subtopic: writing
+alsoIn: [ai-costs, prompting]
 metaDescription: We ran an email, a product blurb, a CSV, code and Chinese through OpenAI's tokenizer to show how many words a token really is, and what it means for API costs.
 faqs:
   - q: How many words are in 1,000 tokens?
@@ -44,7 +45,7 @@ That rule is fine for ordinary prose and badly wrong for other kinds of text. Sp
 
 Rather than repeat the rule, we ran five pieces of everyday office text through a real tokenizer and counted. The results are below, followed by what they mean for a monthly API bill. Last verified: November 1, 2026.
 
-To turn your own word counts into a cost estimate, use the **[LLM API cost calculator](/ai-costs/llm-api-cost-calculator/)**. You can change its words-per-token ratio to match the figures in this guide.
+To turn your own word counts into a cost estimate, multiply tokens by the provider's per-million-token price, as the worked examples below show.
 
 ## How we counted
 
@@ -122,4 +123,4 @@ Now consider a job that sends spreadsheet data instead. Summarising 1,000 invoic
 - For Claude, add about **30%** to counts made with OpenAI's tokenizer as a cautious estimate.
 - For anything you will run at volume, test a sample with the provider's own token counter before committing to a budget. The usage figures in each API response are what you will actually be billed on.
 
-Run your own numbers in the [LLM API cost calculator](/ai-costs/llm-api-cost-calculator/), which compares current prices across OpenAI, Anthropic and Google models.
+Run your own numbers with the formula above and the official pricing pages linked in the sources, and see [ChatGPT Plus vs Claude Pro vs Google AI Pro](/guides/chatgpt-plus-vs-claude-pro-vs-google-ai-pro/) if a flat subscription might suit you better.

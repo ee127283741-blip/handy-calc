@@ -9,7 +9,6 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "vitest run",
-    "new:calculator": "node scripts/new-calculator.mjs",
     "new:guide": "node scripts/new-guide.mjs"
   },
   "dependencies": {

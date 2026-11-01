@@ -1,32 +1,35 @@
 ---
-import { SITE_NAME } from '../site';
-import { calcUrl, calculatorsByCategory } from '../lib';
-const groups = await calculatorsByCategory();
+import { CATEGORIES, PROMPT_CATEGORIES, SITE_NAME } from '../site';
 const path = Astro.url.pathname;
-const active = (slug: string) => path.startsWith(`/${slug}/`);
+const menus = [
+  { name: 'Prompts', base: '/prompts/', all: 'All prompts', links: PROMPT_CATEGORIES.map((c) => ({ name: c.name, href: `/prompts/${c.slug}/` })) },
+  { name: 'Tutorials', base: '', all: 'All tutorials', links: CATEGORIES.map((c) => ({ name: c.name, href: `/${c.slug}/` })) },
+];
+const inMenu = (m: (typeof menus)[number]) => m.links.some((l) => path.startsWith(l.href)) || (!!m.base && path === m.base);
 ---
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="/">{SITE_NAME}</a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show menu" />
     <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
-    <nav aria-label="Categories" class="nav">
+    <nav aria-label="Main" class="nav">
       <ul class="nav-cats">
-        {groups.map(({ cat, calcs }) => (
+        {menus.map((m) => (
           <li>
             <details class="drop">
-              <summary aria-current={active(cat.slug) ? 'true' : undefined}>{cat.name}</summary>
+              <summary aria-current={inMenu(m) ? 'true' : undefined}>{m.name}</summary>
               <ul>
-                {calcs.map((c) => <li><a href={calcUrl(c)} aria-current={path === calcUrl(c) ? 'page' : undefined}>{c.data.h1}</a></li>)}
-                <li><a href={`/${cat.slug}/`}>All {cat.name} tools</a></li>
+                {m.links.map((l) => <li><a href={l.href} aria-current={path === l.href ? 'page' : undefined}>{l.name}</a></li>)}
+                <li><a href={m.base || '/calculators/'}>{m.all}</a></li>
               </ul>
             </details>
           </li>
         ))}
+        <li><a class="nav-link" href="/idea-to-prompt/" aria-current={path === '/idea-to-prompt/' ? 'page' : undefined}>Idea → Prompt</a></li>
       </ul>
       <div class="nav-actions">
         <a class="nav-search" href="/calculators/#tool-q">Search</a>
-        <a class="btn-dark" href="/calculators/" aria-current={path === '/calculators/' ? 'page' : undefined}>All Calculators</a>
+        <a class="btn-dark" href="/calculators/" aria-current={path === '/calculators/' ? 'page' : undefined}>Browse all</a>
       </div>
     </nav>
   </div>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import AdSlot from '../../../components/AdSlot.astro';
+import { PROMPT_CATEGORIES, SITE_NAME, type PromptCategory } from '../../../site';
+import { allPrompts, promptUrl } from '../../../lib';
+
+export function getStaticPaths() {
+  return PROMPT_CATEGORIES.map((cat) => ({ params: { cat: cat.slug }, props: { cat } }));
+}
+const { cat } = Astro.props as { cat: PromptCategory };
+const list = (await allPrompts()).filter((p) => p.data.category === cat.slug).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const abs = (p: string) => new URL(p, Astro.site).href;
+const path = `/prompts/${cat.slug}/`;
+const title = `${cat.name} Prompts`;
+const jsonLd = [{
+  '@type': 'CollectionPage',
+  name: title,
+  url: abs(path),
+  description: cat.description,
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: abs('/') },
+  mainEntity: { '@type': 'ItemList', itemListElement: list.map((p, n) => ({ '@type': 'ListItem', position: n + 1, url: abs(promptUrl(p)), name: p.data.title })) },
+}];
+---
+<BaseLayout title={`${title}: Copy-Ready AI Prompts | ${SITE_NAME}`} description={cat.description} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ name: 'Prompts', href: '/prompts/' }, { name: cat.name, href: path }]} />
+  <p class="eyebrow">Prompt library</p>
+  <h1>{title}</h1>
+  <p class="answer">{cat.description}</p>
+  <p>{cat.intro}</p>
+  <ul class="cards">
+    {list.map((p) => <li><a href={promptUrl(p)}>{p.data.title}</a><span>{p.data.purpose}</span><span class="count">{p.data.tools.slice(0, 3).join(' · ')}</span></li>)}
+  </ul>
+  <AdSlot />
+  <h2>Other prompt categories</h2>
+  <ul>
+    {PROMPT_CATEGORIES.filter((c) => c.slug !== cat.slug).map((c) => <li><a href={`/prompts/${c.slug}/`}>{c.name}</a></li>)}
+    <li><a href="/idea-to-prompt/">Idea → Prompt</a>: expand your own idea into a detailed prompt</li>
+  </ul>
+</BaseLayout>

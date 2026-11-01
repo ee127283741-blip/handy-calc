@@ -2,39 +2,73 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { CATEGORIES, SITE_NAME, type Category } from '../../site';
-import { calcUrl, liveCalculators, liveGuides } from '../../lib';
+import { CATEGORIES, SITE_NAME, getCategory, type Category } from '../../site';
+import { TYPE_LABEL, allItems, inCategory, type Item } from '../../lib';
 
 export function getStaticPaths() {
   return CATEGORIES.map((cat) => ({ params: { category: cat.slug }, props: { cat } }));
 }
 const { cat } = Astro.props as { cat: Category };
-const calcs = (await liveCalculators()).filter((c) => c.data.category === cat.slug);
-const guides = (await liveGuides()).filter((g) => g.data.category === cat.slug);
-const url = new URL(`/${cat.slug}/`, Astro.site).href;
+const all = await allItems();
+const items = all.filter((i) => inCategory(i, cat.slug));
+const own = new Set(cat.subtopics.map((s) => s.slug));
+const sections = cat.subtopics.map((sub) => ({ sub, list: items.filter((i) => i.subtopic === sub.slug) }));
+const other = items.filter((i) => !i.subtopic || !own.has(i.subtopic));
+// For subtopics with nothing yet: point to the closest existing pages (this hub first, then anything).
+const closest = (items.length ? items : all.filter((i) => i.type !== 'prompt')).slice(0, 2);
+const related = cat.related.map(getCategory);
+const label = (i: Item) => TYPE_LABEL[i.type];
+const abs = (p: string) => new URL(p, Astro.site).href;
+const url = abs(`/${cat.slug}/`);
 const jsonLd = [{
   '@type': 'CollectionPage',
   name: cat.title,
   url,
   description: cat.description,
-  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: new URL('/', Astro.site).href },
-  mainEntity: { '@type': 'ItemList', itemListElement: calcs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(calcUrl(c), Astro.site).href, name: c.data.h1 })) },
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: abs('/') },
+  mainEntity: { '@type': 'ItemList', itemListElement: items.map((i, n) => ({ '@type': 'ListItem', position: n + 1, url: abs(i.url), name: i.title })) },
 }];
 ---
 <BaseLayout title={`${cat.title} | ${SITE_NAME}`} description={cat.description} jsonLd={jsonLd}>
   <Breadcrumbs items={[{ name: cat.name, href: `/${cat.slug}/` }]} />
-  <p class="eyebrow">Category</p>
+  <p class="eyebrow">Tutorials</p>
   <h1>{cat.title}</h1>
   <p class="answer">{cat.description}</p>
-  {calcs.length > 0 ? (
-    <ul class="cards">
-      {calcs.map((c) => <li><a href={calcUrl(c)}>{c.data.h1}</a><span>{c.data.metaDescription}</span></li>)}
-    </ul>
-  ) : (
-    <p>Tools for this category are coming soon. We publish a calculator only after its formula and reference data have been checked against sources, so this page lists nothing yet. Meanwhile, browse <a href="/calculators/">all calculators</a>.</p>
+  {cat.intro.map((p) => <p>{p}</p>)}
+  {sections.map(({ sub, list }) => (
+    <section aria-labelledby={`s-${sub.slug}`}>
+      <h2 id={`s-${sub.slug}`}>{sub.name}</h2>
+      <p>{sub.description}</p>
+      {list.length > 0 ? (
+        <ul class="cards">
+          {list.map((i) => <li><a href={i.url}>{i.title}</a><span>{i.description}</span><span class="count">{label(i)}</span></li>)}
+        </ul>
+      ) : (
+        <p>Closest pages so far: {closest.map((i, n) => <>{n > 0 && ', '}<a href={i.url}>{i.title}</a></>)}.</p>
+      )}
+    </section>
+  ))}
+  {other.length > 0 && (
+    <section aria-labelledby="also">
+      <h2 id="also">Also useful for {cat.name.toLowerCase()}</h2>
+      <ul class="cards">
+        {other.map((i) => <li><a href={i.url}>{i.title}</a><span>{i.description}</span><span class="count">{label(i)}</span></li>)}
+      </ul>
+    </section>
   )}
   <AdSlot />
-  {guides.length > 0 && (
-    <section><h2>Guides</h2><ul>{guides.map((g) => <li><a href={`/guides/${g.data.slug}/`}>{g.data.title}</a></li>)}</ul></section>
-  )}
+  <section aria-labelledby="questions">
+    <h2 id="questions">Key questions</h2>
+    <dl>
+      {cat.keyQuestions.map((k) => <><dt><a href={k.href}>{k.q}</a></dt><dd>{k.a}</dd></>)}
+    </dl>
+  </section>
+  <section aria-labelledby="related">
+    <h2 id="related">Related topics</h2>
+    <ul>
+      {related.map((c) => <li><a href={`/${c.slug}/`}>{c.name}</a>: {c.description}</li>)}
+      <li><a href="/prompts/">Prompt library</a>: copy-ready prompts for design, video, images and writing</li>
+      <li><a href="/calculators/">Browse all prompts &amp; tutorials</a></li>
+    </ul>
+  </section>
 </BaseLayout>

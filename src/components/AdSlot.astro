@@ -1,11 +1,11 @@
 ---
 // Renders nothing unless ads are on (see src/ads.ts).
 import { ADS_ON, ADSENSE_CLIENT } from '../ads';
-interface Props { slot?: string; sidebar?: boolean }
-const { slot, sidebar = false } = Astro.props;
+interface Props { slot?: string }
+const { slot } = Astro.props;
 ---
 {ADS_ON && (
-  <aside class:list={['ad-slot', { 'ad-sidebar': sidebar }]}>
+  <aside class="ad-slot">
     <span class="ad-label">Advertisement</span>
     <ins class="adsbygoogle" style="display:block" data-ad-client={ADSENSE_CLIENT} data-ad-slot={slot} data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script is:inline>(window.adsbygoogle = window.adsbygoogle || []).push({});</script>

@@ -1,10 +1,10 @@
 ---
 name: Editorial team
 slug: editorial-team
-description: The small editorial team that builds, fact-checks and maintains the AI guides and calculators on this site, with AI assistance.
+description: The small editorial team that builds, fact-checks and maintains the prompt library and AI tutorials on this site, with AI assistance.
 ---
 
-The Editorial team is the group responsible for every calculator and guide on this site. We are not
+The Editorial team is the group responsible for every prompt and tutorial on this site. We are not
 presenting ourselves as accountants, financial advisers or employees of any AI provider, and we do
 not claim credentials we do not hold.
 

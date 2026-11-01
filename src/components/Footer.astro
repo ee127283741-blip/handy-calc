@@ -1,22 +1,23 @@
 ---
-import { CATEGORIES, SITE_NAME } from '../site';
-import { calcUrl, popularCalculators } from '../lib';
-const popular = (await popularCalculators()).slice(0, 5);
+import { CATEGORIES, PROMPT_CATEGORIES, SITE_NAME } from '../site';
 ---
 <footer class="site-footer">
   <div class="wrap">
     <div class="foot-cols">
       <div>
         <p class="logo">{SITE_NAME}</p>
-        <p>Practical AI guides and calculators for small businesses and office workers. Every price is sourced and dated.</p>
+        <p>Copy-ready AI prompts and practical AI tutorials. Prices and facts are sourced and dated.</p>
       </div>
       <nav aria-labelledby="f-cats">
-        <h2 id="f-cats" class="eyebrow">Categories</h2>
-        <ul>{CATEGORIES.map((c) => <li><a href={`/${c.slug}/`}>{c.name}</a></li>)}</ul>
+        <h2 id="f-cats" class="eyebrow">Prompts</h2>
+        <ul>
+          <li><a href="/idea-to-prompt/">Idea → Prompt</a></li>
+          {PROMPT_CATEGORIES.map((c) => <li><a href={`/prompts/${c.slug}/`}>{c.name}</a></li>)}
+        </ul>
       </nav>
       <nav aria-labelledby="f-pop">
-        <h2 id="f-pop" class="eyebrow">Popular tools</h2>
-        <ul>{popular.map((c) => <li><a href={calcUrl(c)}>{c.data.h1}</a></li>)}</ul>
+        <h2 id="f-pop" class="eyebrow">Tutorials</h2>
+        <ul>{CATEGORIES.map((c) => <li><a href={`/${c.slug}/`}>{c.name}</a></li>)}</ul>
       </nav>
       <nav aria-labelledby="f-site">
         <h2 id="f-site" class="eyebrow">Handy Calc</h2>
@@ -30,6 +31,6 @@ const popular = (await popularCalculators()).slice(0, 5);
         </ul>
       </nav>
     </div>
-    <p class="fine">© {new Date().getFullYear()} {SITE_NAME}. Results are estimates; check current prices on each provider's official page before you buy.</p>
+    <p class="fine">© {new Date().getFullYear()} {SITE_NAME}. Check AI output and current prices on each provider's official page before you rely on them.</p>
   </div>
 </footer>

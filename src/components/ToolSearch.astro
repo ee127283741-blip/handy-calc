@@ -1,42 +1,48 @@
 ---
-import { calcUrl, calculatorsByCategory } from '../lib';
-const groups = (await calculatorsByCategory()).filter((g) => g.calcs.length);
+import { CATEGORIES, PROMPT_CATEGORIES } from '../site';
+import { TYPE_LABEL, allItems } from '../lib';
+const items = await allItems();
+const groups = [
+  ...PROMPT_CATEGORIES.map((c) => ({ href: `/prompts/${c.slug}/`, slug: c.slug, name: `${c.name} prompts` })),
+  ...CATEGORIES.map((c) => ({ href: `/${c.slug}/`, slug: c.slug, name: c.name })),
+].map((g) => ({ ...g, list: items.filter((i) => i.category === g.slug) })).filter((g) => g.list.length);
 ---
 <form class="search" role="search" action="/calculators/" onsubmit="return false">
-  <label for="tool-q">Search calculators</label>
-  <input id="tool-q" name="q" type="search" placeholder="e.g. API cost, ChatGPT Plus, ROI" autocomplete="off" />
+  <label for="tool-q">Search prompts and tutorials</label>
+  <input id="tool-q" name="q" type="search" placeholder="e.g. landing page, camera orbit, tokens" autocomplete="off" />
 </form>
+<ul id="tool-results" class="cards" hidden></ul>
+<p id="tool-none" hidden>Nothing matches that search.</p>
 <div id="tool-list">
-  {groups.map(({ cat, calcs }) => (
-    <section class="tool-group" aria-labelledby={`g-${cat.slug}`}>
-      <h2 id={`g-${cat.slug}`}><a href={`/${cat.slug}/`}>{cat.name}</a></h2>
+  {groups.map(({ href, slug, name, list }) => (
+    <section aria-labelledby={`g-${slug}`} class="tool-group">
+      <h2 id={`g-${slug}`}><a href={href}>{name}</a></h2>
       <ul class="cards">
-        {calcs.map((c) => (
-          <li data-k={`${c.data.h1} ${c.data.primaryKeyword} ${c.data.secondaryKeywords.join(' ')} ${cat.name}`.toLowerCase()}>
-            <a href={calcUrl(c)}>{c.data.h1}</a>
-            <span>{c.data.metaDescription}</span>
-          </li>
-        ))}
+        {list.map((i) => <li><a href={i.url}>{i.title}</a><span>{i.description}</span><span class="count">{TYPE_LABEL[i.type]}</span></li>)}
       </ul>
     </section>
   ))}
-  <p id="tool-none" hidden>No calculators match that search.</p>
 </div>
 <script>
+  type Entry = { title: string; url: string; type: string; category: string; description: string };
   const q = document.getElementById('tool-q') as HTMLInputElement;
-  const filter = () => {
-    const v = q.value.trim().toLowerCase();
-    let any = false;
-    document.querySelectorAll<HTMLElement>('.tool-group').forEach((g) => {
-      let shown = 0;
-      g.querySelectorAll<HTMLLIElement>('li').forEach((li) => { li.hidden = !!v && !li.dataset.k!.includes(v); if (!li.hidden) shown++; });
-      g.hidden = !shown;
-      any ||= !!shown;
-    });
-    document.getElementById('tool-none')!.hidden = any;
+  const results = document.getElementById('tool-results')!;
+  let index: Promise<Entry[]> | undefined;
+  const load = () => (index ??= fetch('/search-index.json').then((r) => r.json() as Promise<Entry[]>));
+  const LABEL: Record<string, string> = { tool: 'Tool', guide: 'Tutorial', prompt: 'Prompt' };
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
+  const run = async () => {
+    const words = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    document.getElementById('tool-list')!.hidden = !!words.length;
+    if (!words.length) { results.hidden = true; document.getElementById('tool-none')!.hidden = true; return; }
+    const hits = (await load()).filter((e) => words.every((w) => `${e.title} ${e.description} ${e.category} ${e.type}`.toLowerCase().includes(w)));
+    results.innerHTML = hits.map((e) => `<li><a href="${e.url}">${esc(e.title)}</a><span>${esc(e.description)}</span><span class="count">${LABEL[e.type]}</span></li>`).join('');
+    results.hidden = !hits.length;
+    document.getElementById('tool-none')!.hidden = !!hits.length;
   };
+  q.addEventListener('focus', load, { once: true });
+  q.addEventListener('input', run);
   q.value = new URLSearchParams(location.search).get('q') ?? '';
-  q.addEventListener('input', filter);
-  filter();
+  if (q.value) run();
   if (q.value || location.hash === '#tool-q') q.focus();
 </script>

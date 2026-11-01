@@ -2,17 +2,20 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { SITE_NAME } from '../site';
 ---
-<PageLayout title="About" description={`What ${SITE_NAME} is, who maintains it, how calculators are built and checked, and how AI tools are used in making the site.`} updated="2026-11-01">
-  <p>{SITE_NAME} publishes practical AI guides and calculators for small businesses and office workers: what an AI API will cost per month, whether a ChatGPT, Claude or Google AI subscription beats paying per token, and whether an AI rollout pays for itself.</p>
+<PageLayout title="About" description={`What ${SITE_NAME} is, who maintains it, how prompts and tutorials are made and checked, and how AI tools are used in making the site.`} updated="2026-11-01">
+  <p>{SITE_NAME} publishes a library of detailed, copy-ready AI prompts for web design, visual effects, interaction, motion, video, camera moves, images, writing and specific industries, plus practical AI tutorials for office work and small businesses. The free <a href="/idea-to-prompt/">Idea → Prompt</a> tool turns a rough idea into a structured brief.</p>
   <h2>Who maintains this site</h2>
   <p>The site is maintained by a small <a href="/authors/editorial-team/">Editorial team</a>. We are independent of OpenAI, Anthropic, Google and other AI providers, and we do not claim professional credentials such as accountancy or financial advice qualifications.</p>
-  <h2>How we build calculators</h2>
+  <p>(The name is a leftover from the site's first life as a calculator site.)</p>
+  <h2>How we make prompts</h2>
   <ul>
-    <li>Every calculator is a plain formula that runs in your browser. Nothing you type is sent to a server.</li>
-    <li>Prices come only from providers' official pricing pages, are stored in one place, and show the date they were last verified.</li>
-    <li>Each calculator has automated tests that compare results with known answers.</li>
-    <li>Each page shows the formula, a worked example, its assumptions and limitations.</li>
+    <li>Every prompt is written by the editorial team and run in at least one of the tools it lists before it is published.</li>
+    <li>Variables are marked as <code>{'{{variable_name}}'}</code> and explained with an example, so you know exactly what to replace.</li>
+    <li>Example images are only shown when we generated them ourselves, and each one says how it was made.</li>
+    <li>Idea → Prompt uses fixed rules and templates in your browser. It does not call any AI service, and nothing you type is sent to a server.</li>
   </ul>
+  <h2>How we write tutorials</h2>
+  <p>Tutorials cite official sources, show any arithmetic step by step, and state the date facts such as prices were last verified.</p>
   <h2>Use of AI</h2>
-  <p>We use AI tools (large language models) to help draft page text and code. AI output is never published unchecked: numbers and formulas are verified against the cited sources and by tests. Read more in our <a href="/editorial-policy/">editorial policy</a>.</p>
+  <p>We use AI tools (large language models) to help draft page text and code. AI output is never published unchecked: facts are checked against the cited sources and prompts are tested before publishing. Read more in our <a href="/editorial-policy/">editorial policy</a>.</p>
 </PageLayout>

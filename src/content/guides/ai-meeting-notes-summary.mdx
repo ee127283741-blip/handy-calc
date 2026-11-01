@@ -1,0 +1,120 @@
+---
+title: How to Summarize Meeting Notes with AI (and Check the Summary)
+slug: ai-meeting-notes-summary
+category: ai-productivity
+subtopic: meetings
+alsoIn: [prompting]
+metaDescription: A copy-and-edit prompt for turning meeting notes or transcripts into decisions and action items with AI, a worked example, and a six-step check for errors.
+faqs:
+  - q: Can I paste a meeting transcript into ChatGPT, Claude or Gemini?
+    a: Technically yes, but first check that attendees agreed to recording, that your company policy allows it, and what your plan does with the data. Consumer and business plans handle data differently.
+  - q: What mistakes do AI meeting summaries make?
+    a: The common ones are reporting a discussion as a decision, assigning a task to the wrong person, inventing or shifting due dates, and dropping caveats like "if the budget is approved". Our check targets each of these.
+  - q: How long a transcript can I paste?
+    a: Limits are set in tokens. As a rough guide, 9,000 words of English is about 12,000 tokens using the 0.75 words-per-token rule, which fits easily in current assistants' context windows.
+  - q: Do I need a dedicated meeting note-taker app?
+    a: Not to summarise. If you already have notes or a transcript, a general assistant with a good prompt does the summarising. Dedicated apps mainly add recording, transcription and integration with calendars.
+  - q: How much time does this save?
+    a: It depends on how long you spend writing recaps now and how long the check takes. Time both for a week, then use the worked formulas in our guide to AI time savings rather than relying on a general estimate.
+sources:
+  - title: Prompting best practices (long documents)
+    url: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices
+    publisher: Anthropic
+  - title: Prompt design strategies
+    url: https://ai.google.dev/gemini-api/docs/prompting-strategies
+    publisher: Google
+  - title: Gemini Apps Privacy Hub
+    url: https://support.google.com/gemini/answer/13594961
+    publisher: Google
+  - title: Claude API pricing
+    url: https://docs.anthropic.com/en/docs/about-claude/pricing
+    publisher: Anthropic
+author: Editorial team
+published: 2026-11-01
+updated: 2026-11-01
+lastVerified: 2026-11-01
+status: published
+---
+
+AI assistants are good at turning rough meeting notes or a transcript into a tidy recap: decisions, action items and open questions, in a consistent format. They are less reliable at the details that matter most afterwards, such as who agreed to do what and by when.
+
+This guide gives a prompt you can copy, a worked example using messy notes, and a six-step check that takes a few minutes and catches the usual errors. It works with ChatGPT, Claude or Gemini, and with typed notes or an exported transcript. You do not need a dedicated note-taking app unless you also want recording and transcription.
+
+## Before you paste anything
+
+Three quick checks:
+
+- **Consent.** If you have a recording or transcript, make sure attendees knew the meeting was being recorded. Rules vary by country and by company.
+- **Data settings.** Consumer and business AI plans treat your data differently. For example, Google says some Gemini app chats are reviewed by human reviewers unless Keep Activity is off, and asks users not to enter confidential information they would not want a reviewer to see ([Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961)). Read [Is it safe to put company data into ChatGPT, Claude or Gemini?](/guides/is-it-safe-to-put-company-data-in-chatgpt/) before using a personal account for work meetings.
+- **Remove what you do not need.** Salary figures, health details and HR matters discussed in passing can usually be cut before pasting without affecting the summary.
+
+## The prompt
+
+```text
+Below are notes from a [MEETING TYPE] on [DATE] with [ATTENDEES AND ROLES].
+"""
+[PASTE NOTES OR TRANSCRIPT]
+"""
+Write a recap for [AUDIENCE] with these sections:
+1. Decisions: only items the notes show were agreed. Quote the line that shows it.
+2. Action items: a table with Owner | Task | Due date. If the owner or date
+   is not stated, write "not stated". Do not guess.
+3. Open questions: anything raised but not settled, including conditions
+   such as "if budget is approved".
+4. Anything unclear in the notes that I should confirm.
+Keep it under [250] words. Use names exactly as they appear in the notes.
+```
+
+Why each part is there:
+
+- **Notes first, instructions after.** Anthropic recommends putting long inputs above the question, and says queries at the end can improve response quality by up to 30 percent in its tests ([Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)).
+- **Attendees and roles.** Without them the AI cannot tell that "Sam" and "Samantha from finance" are the same person.
+- **"Quote the line that shows it."** This makes each decision checkable in seconds and discourages the model from upgrading a suggestion into a decision.
+- **"Not stated" instead of guessing.** Missing owners and dates are normal in real notes. You want them flagged, not filled in.
+- **Section 4.** It turns ambiguity into a short list for you to confirm, instead of hiding it in confident wording.
+
+## Worked example
+
+Here is a realistic set of notes from a 30-minute operations call, typed quickly:
+
+```text
+ops call 28 oct - Priya, Tom, Jess (finance), Marco
+- new courier: Tom says ParcelFast cheaper, Jess wants to see invoices first
+- agreed: switch from 1 dec IF Jess ok's the cost comparison
+- website stock errors again - Marco to look, maybe next wk
+- Priya: holiday rota needs doing before mid nov
+- Jess - Q4 budget review, sends sheet friday
+- printer lease up in jan, nobody sure who has contract
+```
+
+A good recap from the prompt above should contain:
+
+- **Decisions:** one conditional decision only: switch courier from 1 December, if Jess approves the cost comparison, with the "agreed:" line quoted. It should not list "switch courier" as unconditional.
+- **Action items:** Tom to send the cost comparison (owner inferred; check), Jess to review it (date not stated), Marco to investigate stock errors (date "maybe next week", so effectively not stated), Priya to do the holiday rota by mid-November, Jess to send the budget sheet Friday.
+- **Open questions:** who holds the printer lease contract; whether ParcelFast is actually cheaper.
+- **To confirm:** which Friday the budget sheet is due; whether Tom or someone else prepares the comparison.
+
+When you read the output, look for the three errors this example is designed to tempt: dropping the "IF" from the courier decision, turning "maybe next wk" into a firm date, and assigning the printer contract to someone. If the draft contains any of these, the prompt's rules were not followed, so correct it and say which rule was broken.
+
+## The six-step check
+
+Do this before sending the recap. It takes a few minutes for a typical meeting.
+
+1. **Decisions against quotes.** Each decision should have a quoted line. If the quote does not say "agreed", "decided" or equivalent, move it to open questions.
+2. **Owners against attendee list.** Every owner must be a person who was present or explicitly named.
+3. **Dates against the notes.** Search the notes for each due date. Vague timing ("soon", "next week maybe") should read "not stated" or be confirmed with the owner.
+4. **Conditions kept.** Search the notes for "if", "unless" and "depends". Each condition should survive in the recap.
+5. **Numbers exact.** Prices, quantities and percentages should match the notes character for character.
+6. **Nothing added.** Read the recap once asking only "is this in the notes?" Remove anything that is not.
+
+If the same error appears in several meetings, add a rule for it to your prompt and save the improved version with your other [office prompt templates](/guides/ai-prompt-templates-for-office-work/).
+
+## Long meetings and transcripts
+
+Transcripts are much longer than notes. As a rough guide, using the common rule of 0.75 English words per token, a 9,000-word transcript is 9,000 ÷ 0.75 = **12,000 tokens**. That fits in current assistants' context windows, but long inputs make it easier for details in the middle to be missed. For long meetings, ask for a summary per agenda item first, then a combined recap. Google's prompting guide recommends this kind of breaking down of complex tasks into steps ([Google](https://ai.google.dev/gemini-api/docs/prompting-strategies)).
+
+If you run summaries through the API, the cost is small. On Claude Haiku 5.5 at $0.10 per million input tokens ([Claude API pricing](https://docs.anthropic.com/en/docs/about-claude/pricing)), 12,000 tokens costs 12,000 × $0.10 ÷ 1,000,000 = $0.0012. Anthropic notes its newer tokenizer produces about 30% more tokens for the same text, which would make it about $0.0016. See [How many words is a token?](/guides/how-many-words-is-a-token/) for measured ratios.
+
+## Is it worth it?
+
+The saving is the time you spend writing recaps now, minus the time the check takes. If a recap used to take 20 minutes and now takes 5 to prompt and check, that is 15 minutes per meeting. See [how much time AI really saves a small business](/guides/ai-time-savings-small-business-roi/) for the formulas and a full worked example you can repeat with your own figures, including checking time.

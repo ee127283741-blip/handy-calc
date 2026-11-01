@@ -1,44 +1,52 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdSlot from '../components/AdSlot.astro';
-import { SITE_NAME, SITE_TAGLINE } from '../site';
-import { calcUrl, calculatorsByCategory, popularCalculators } from '../lib';
+import { CATEGORIES, PROMPT_CATEGORIES, SITE_NAME, SITE_TAGLINE } from '../site';
+import { allPrompts, liveGuides, promptUrl } from '../lib';
 const home = new URL('/', Astro.site).href;
 const jsonLd = [
   { '@type': 'WebSite', name: SITE_NAME, url: home, description: SITE_TAGLINE },
   { '@type': 'Organization', name: SITE_NAME, url: home, logo: new URL('/favicon.svg', Astro.site).href },
 ];
-const popular = await popularCalculators();
-const groups = await calculatorsByCategory();
+const prompts = await allPrompts();
+const count = (slug: string) => prompts.filter((p) => p.data.category === slug).length;
+const guides = (await liveGuides()).sort((a, b) => b.data.updated.valueOf() - a.data.updated.valueOf()).slice(0, 6);
 ---
-<BaseLayout title={`${SITE_NAME} – AI Cost Calculators & Practical AI Guides`} description="Free AI cost calculators and practical guides for small businesses and office workers: API pricing, subscriptions vs API, and AI ROI, with dated official prices." jsonLd={jsonLd}>
+<BaseLayout title={`${SITE_NAME} – AI Prompt Library, Idea → Prompt Tool & AI Tutorials`} description="Copy-ready AI prompts for web design, motion, video, camera moves, images and writing, a free Idea → Prompt generator, and practical AI tutorials." jsonLd={jsonLd}>
   <section class="hero">
-    <p class="eyebrow">AI costs · Business · Productivity · Prompts</p>
-    <h1>Practical AI, priced and explained</h1>
-    <p class="answer">{SITE_TAGLINE} Each tool shows its formula, a worked example and the official, dated sources behind every price.</p>
+    <p class="eyebrow">Prompts · Design · Video · Images · Writing</p>
+    <h1>Better prompts, ready to copy</h1>
+    <p class="answer">{SITE_TAGLINE} Turn a rough idea into a detailed brief in seconds.</p>
+    <p class="hero-cta"><a class="btn btn-lg" href="/idea-to-prompt/">Try Idea → Prompt</a> <a href="/prompts/">or browse {prompts.length} prompts</a></p>
     <form class="search" role="search" action="/calculators/" method="get">
-      <label for="hero-q">Find a calculator</label>
+      <label for="hero-q">Search prompts and tutorials</label>
       <div class="search-row">
-        <input id="hero-q" name="q" type="search" placeholder="e.g. API cost, ChatGPT Plus, ROI" autocomplete="off" />
+        <input id="hero-q" name="q" type="search" placeholder="e.g. landing page, orbit shot, product photo" autocomplete="off" />
         <button type="submit" class="btn">Search</button>
       </div>
     </form>
   </section>
-  <section aria-labelledby="popular">
-    <p class="eyebrow">Most used</p>
-    <h2 id="popular">Popular calculators</h2>
+  <section aria-labelledby="cats">
+    <p class="eyebrow">Prompt library</p>
+    <h2 id="cats">Prompt categories</h2>
     <ul class="cards">
-      {popular.map((c) => <li><a href={calcUrl(c)}>{c.data.h1}</a><span>{c.data.metaDescription}</span></li>)}
+      {PROMPT_CATEGORIES.map((c) => <li><a href={`/prompts/${c.slug}/`}>{c.name}</a><span>{c.description}</span><span class="count">{count(c.slug)} prompts</span></li>)}
+    </ul>
+  </section>
+  <section aria-labelledby="latest">
+    <p class="eyebrow">New</p>
+    <h2 id="latest">Latest prompts</h2>
+    <ul class="cards">
+      {prompts.slice(0, 6).map((p) => <li><a href={promptUrl(p)}>{p.data.title}</a><span>{p.data.purpose}</span></li>)}
     </ul>
   </section>
   <AdSlot />
-  <section aria-labelledby="browse">
-    <p class="eyebrow">Browse</p>
-    <h2 id="browse">Calculators by category</h2>
+  <section aria-labelledby="tutorials">
+    <p class="eyebrow">Learn</p>
+    <h2 id="tutorials">AI tutorials</h2>
     <ul class="cards">
-      {groups.map(({ cat, calcs }) => (
-        <li><a href={`/${cat.slug}/`}>{cat.name}</a><span>{cat.description}</span><span class="count">{calcs.length ? `${calcs.length} ${calcs.length === 1 ? 'tool' : 'tools'}` : 'Coming soon'}</span></li>
-      ))}
+      {guides.map((g) => <li><a href={`/guides/${g.data.slug}/`}>{g.data.title}</a><span>{g.data.metaDescription}</span></li>)}
     </ul>
+    <p>Browse by topic: {CATEGORIES.map((c, n) => <>{n > 0 && ' · '}<a href={`/${c.slug}/`}>{c.name}</a></>)}</p>
   </section>
 </BaseLayout>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import { PROMPT_CATEGORIES, SITE_NAME } from '../../site';
+import { allPrompts, promptUrl } from '../../lib';
+const all = await allPrompts();
+const groups = PROMPT_CATEGORIES.map((cat) => ({ cat, n: all.filter((p) => p.data.category === cat.slug).length }));
+const abs = (p: string) => new URL(p, Astro.site).href;
+const jsonLd = [{
+  '@type': 'CollectionPage',
+  name: 'AI Prompt Library',
+  url: abs('/prompts/'),
+  description: 'Copy-ready AI prompts for web design, visual effects, interaction, motion, video, camera moves, images, writing and industry tasks.',
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: abs('/') },
+  mainEntity: { '@type': 'ItemList', itemListElement: groups.map(({ cat }, n) => ({ '@type': 'ListItem', position: n + 1, url: abs(`/prompts/${cat.slug}/`), name: `${cat.name} Prompts` })) },
+}];
+---
+<BaseLayout title={`AI Prompt Library: ${all.length} Copy-Ready Prompts | ${SITE_NAME}`} description="Copy-ready AI prompts for web design, visual effects, interaction, motion, video, camera moves, images, writing and industry tasks, with marked variables." jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ name: 'Prompts', href: '/prompts/' }]} />
+  <p class="eyebrow">Prompt library</p>
+  <h1>AI prompt library</h1>
+  <p class="answer">Detailed, copy-ready prompts with every variable marked, so you only fill in what is specific to you. Each one lists the tools it suits and tips for better results.</p>
+  <p>Every prompt is written and tested by our editorial team. Variables appear as <mark>{'{{like_this}}'}</mark>; replace them before you run the prompt. If nothing here fits, describe your idea in <a href="/idea-to-prompt/">Idea → Prompt</a> to get a tailored brief.</p>
+  <ul class="cards">
+    {groups.map(({ cat, n }) => <li><a href={`/prompts/${cat.slug}/`}>{cat.name}</a><span>{cat.description}</span><span class="count">{n} prompts</span></li>)}
+  </ul>
+  <AdSlot />
+  <h2>Latest prompts</h2>
+  <ul class="cards">
+    {all.slice(0, 6).map((p) => <li><a href={promptUrl(p)}>{p.data.title}</a><span>{p.data.purpose}</span></li>)}
+  </ul>
+  <h2>Learn to write your own</h2>
+  <ul>
+    <li><a href="/guides/how-to-write-a-good-ai-prompt/">How to write a good AI prompt</a></li>
+    <li><a href="/guides/ai-prompt-templates-for-office-work/">AI prompt templates for office work</a></li>
+    <li><a href="/prompting/">All prompting tutorials</a></li>
+  </ul>
+</BaseLayout>
