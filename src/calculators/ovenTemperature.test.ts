@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cToF, fToC, fToGasMark, gasMarkToF } from './ovenTemperature';
+import { cToF, fToC, fToGasMark, gasMarkToF, fanAdjustC } from './ovenTemperature';
 
 describe('oven temperature', () => {
   it('converts Fahrenheit to Celsius', () => {
@@ -25,5 +25,10 @@ describe('oven temperature', () => {
     expect(fToGasMark(400)).toBe(6);
     expect(fToGasMark(250)).toBe(0.5);
     expect(fToGasMark(100)).toBeNull();
+  });
+  it('applies the fan oven offset (default 20 °C, editable)', () => {
+    expect(fanAdjustC(180)).toBe(160);
+    expect(fanAdjustC(180, 25)).toBe(155);
+    expect(fanAdjustC(180, 0)).toBe(180);
   });
 });

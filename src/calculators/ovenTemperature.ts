@@ -33,5 +33,6 @@ export const GAS_MARK_TABLE = [
   { mark: '9', f: 475, c: 240 },
 ];
 
-/** Fan (convection) ovens: common guidance is to reduce by 20 °C (about 25 °F). */
-export const fanAdjustC = (c: number) => c - 20;
+/** Fan (convection) ovens: general rule of thumb is to reduce by 20 °C (about 25 °F). */
+export const FAN_OFFSET_C = 20;
+export const fanAdjustC = (c: number, offsetC = FAN_OFFSET_C) => c - offsetC;

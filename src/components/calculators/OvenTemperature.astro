@@ -17,6 +17,11 @@ import CalcShell from '../CalcShell.astro';
     </div>
   </div>
   <label class="check"><input type="checkbox" id="ov-fan" /> Also show fan / convection oven setting</label>
+  <div>
+    <label for="ov-fanoff">Fan oven reduction (°C)</label>
+    <input id="ov-fanoff" inputmode="decimal" value="20" />
+    <small>20 °C lower is a general rule of thumb. Check your oven's manual.</small>
+  </div>
 </CalcShell>
 <script>
   import { $, fmt, prefersImperial, wire } from '../../calculators/ui';
@@ -25,6 +30,7 @@ import CalcShell from '../CalcShell.astro';
   const val = $(root, '#ov-val');
   const from = $<HTMLSelectElement>(root, '#ov-from');
   const fan = $(root, '#ov-fan');
+  const fanOff = $(root, '#ov-fanoff');
   const setDefault = () => {
     if (!prefersImperial()) { from.value = 'C'; val.value = '180'; }
   };
@@ -39,7 +45,11 @@ import CalcShell from '../CalcShell.astro';
     } else f = from.value === 'F' ? n : cToF(n);
     const c = fToC(f);
     let text = `${fmt(f, 0)} °F = ${fmt(c, 0)} °C ≈ ${gm(fToGasMark(f))}`;
-    if (fan.checked) text += ` · Fan oven: about ${fmt(fanAdjustC(c), 0)} °C`;
+    if (fan.checked) {
+      const off = Number(fanOff.value);
+      if (!fanOff.value.trim() || Number.isNaN(off) || off < 0) return 'Enter a fan oven reduction of 0 or more';
+      text += ` · Fan oven: about ${fmt(fanAdjustC(c, off), 0)} °C`;
+    }
     return text;
   });
   setDefault();
