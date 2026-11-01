@@ -9,19 +9,19 @@ productType: App
 appSubcategory: Mobile-Health
 foundedYear: 2024
 foundedDate: "2024"
-teamSize: { display: "7 employees plus contractors", label: media-reported, sourceUrl: "https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/", sourceDate: "2026-03-02" }
+teamSize: { display: "7 employees plus contractors", label: media-reported, sourceUrl: "https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/", sourceDate: "2026-03" }
 mrr: { value: null, display: "Not disclosed", label: not-disclosed }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: not-disclosed
 metrics:
-  - { name: "Trailing-12-month sales at acquisition", value: "Over $40M", label: verified, sourceUrl: "https://news.myfitnesspal.com/myfitnesspal-expands-its-position-as-the-leading-player-in-digital-nutrition-tracking-with-cal-ai-acquisition/", sourceDate: "2026-03-02" }
-  - { name: "2026 revenue projection (Forbes)", value: "$50M", label: media-reported, sourceUrl: "https://www.forbes.com/sites/zoyahasan/2026/03/06/this-u30-kept-launching-apps-until-one-worked-then-sold-it-to-myfitnesspal/", sourceDate: "2026-03-06" }
+  - { name: "Trailing-12-month sales at acquisition", value: "Over $40M", label: verified, sourceUrl: "https://news.myfitnesspal.com/myfitnesspal-expands-its-position-as-the-leading-player-in-digital-nutrition-tracking-with-cal-ai-acquisition/", sourceDate: "2026-03" }
+  - { name: "2026 revenue projection (Forbes)", value: "$50M", label: media-reported, sourceUrl: "https://www.forbes.com/sites/zoyahasan/2026/03/06/this-u30-kept-launching-apps-until-one-worked-then-sold-it-to-myfitnesspal/", sourceDate: "2026-03" }
   - { name: "Revenue (May 2025)", value: "About $10M collected year-to-date; $35M was a forward 12-month projection", label: founder-reported, sourceUrl: "https://getlatka.com/blog/how-cal-ai-achieved-35-million-revenue-in-just-one-year", sourceDate: "2025-05" }
-  - { name: "Acquisition", value: "Deal closed 2025-12, announced 2026-03-02, terms undisclosed", label: verified, sourceUrl: "https://news.myfitnesspal.com/myfitnesspal-expands-its-position-as-the-leading-player-in-digital-nutrition-tracking-with-cal-ai-acquisition/", sourceDate: "2026-03-02" }
+  - { name: "Acquisition", value: "Deal closed 2025-12, announced 2026-03, terms undisclosed", label: verified, sourceUrl: "https://news.myfitnesspal.com/myfitnesspal-expands-its-position-as-the-leading-player-in-digital-nutrition-tracking-with-cal-ai-acquisition/", sourceDate: "2026-03" }
 sources:
-  - { title: "MyFitnessPal expands its position in digital nutrition tracking with Cal AI acquisition", url: "https://news.myfitnesspal.com/myfitnesspal-expands-its-position-as-the-leading-player-in-digital-nutrition-tracking-with-cal-ai-acquisition/", publisher: "MyFitnessPal (press release)", date: "2026-03-02" }
-  - { title: "MyFitnessPal has acquired Cal AI, the viral calorie app built by teens", url: "https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/", publisher: "TechCrunch", date: "2026-03-02" }
-  - { title: "This U30 kept launching apps until one worked, then sold it to MyFitnessPal", url: "https://www.forbes.com/sites/zoyahasan/2026/03/06/this-u30-kept-launching-apps-until-one-worked-then-sold-it-to-myfitnesspal/", publisher: "Forbes", date: "2026-03-06" }
+  - { title: "MyFitnessPal expands its position in digital nutrition tracking with Cal AI acquisition", url: "https://news.myfitnesspal.com/myfitnesspal-expands-its-position-as-the-leading-player-in-digital-nutrition-tracking-with-cal-ai-acquisition/", publisher: "MyFitnessPal (press release)", date: "2026-03" }
+  - { title: "MyFitnessPal has acquired Cal AI, the viral calorie app built by teens", url: "https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/", publisher: "TechCrunch", date: "2026-03" }
+  - { title: "This U30 kept launching apps until one worked, then sold it to MyFitnessPal", url: "https://www.forbes.com/sites/zoyahasan/2026/03/06/this-u30-kept-launching-apps-until-one-worked-then-sold-it-to-myfitnesspal/", publisher: "Forbes", date: "2026-03" }
   - { title: "How Cal AI achieved $35 million revenue in just one year", url: "https://getlatka.com/blog/how-cal-ai-achieved-35-million-revenue-in-just-one-year", publisher: "Latka", date: "2025-05" }
 updated: 2026-11-02
 ---
@@ -51,7 +51,7 @@ Not disclosed.
 - **2024:** App launched.
 - **May 2025:** About $10M collected year-to-date; the widely quoted $35M was a forward 12-month projection.
 - **Dec 2025:** Acquisition by MyFitnessPal closed.
-- **2 Mar 2026:** Acquisition announced; terms undisclosed.
+- **Mar 2026:** Acquisition announced; terms undisclosed.
 
 ## Team size
 Seven employees plus contractors at acquisition (TechCrunch).

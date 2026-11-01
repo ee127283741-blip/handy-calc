@@ -13,7 +13,7 @@ const d = entry.data;
 const { Content } = await render(entry);
 const ind = INDUSTRIES.find((i) => i.slug === d.industry)!;
 const path = caseUrl(entry);
-type Card = { name: string; value: string | undefined; label?: keyof typeof LABEL_NAME; sourceUrl?: string; sourceDate?: string };
+type Card = { name: string; value: string | undefined; label?: keyof typeof LABEL_NAME; labelNote?: string; sourceUrl?: string; sourceDate?: string };
 const cards: Card[] = [
   { name: 'Monthly revenue', ...d.mrr, value: d.mrr.display },
   { name: 'Total revenue', ...d.totalRevenue, value: d.totalRevenue.display },
@@ -49,7 +49,7 @@ const jsonLd = [{
         <li>
           <span class="m-name">{m.name}</span>
           <strong>{m.value}</strong>
-          {m.label && <span class={`m-label l-${m.label}`}>{LABEL_NAME[m.label]}</span>}
+          {m.label && <span class={`m-label l-${m.label}`}>{m.labelNote ?? LABEL_NAME[m.label]}</span>}
           {m.sourceUrl && <a class="m-src" href={m.sourceUrl} rel="nofollow noopener" target="_blank">Source{m.sourceDate && `, ${m.sourceDate}`}</a>}
         </li>
       ))}
@@ -58,7 +58,7 @@ const jsonLd = [{
     <div class="case-body"><Content /></div>
     <section aria-labelledby="sources">
       <h2 id="sources">Sources</h2>
-      <ol>{d.sources.map((s) => <li><a href={s.url} rel="nofollow noopener">{s.title}</a> – {s.publisher}, {s.date}</li>)}</ol>
+      <ol>{d.sources.map((s) => <li><a href={s.url} rel="nofollow noopener">{s.title}</a> – {s.publisher}{s.date && `, ${s.date}`}</li>)}</ol>
       <p class="meta">Labels: <strong>Founder-reported</strong> = stated by the founder or company; <strong>Verified</strong> = backed by a payment-processor screenshot, TrustMRR or a public platform count; <strong>Media-reported</strong> = published by a news outlet or third party. "Implied" monthly figures are annual figures divided by 12. We never estimate numbers ourselves.</p>
     </section>
     {related.length > 0 && (

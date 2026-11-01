@@ -10,16 +10,16 @@ appSubcategory: Mobile-Lifestyle
 foundedYear: 2023
 foundedDate: "December 2023"
 teamSize: { display: "Not disclosed", label: not-disclosed }
-mrr: { value: 500000, display: "~$500K/month subscription revenue (unverified founder claim)", label: unverified, sourceUrl: "https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/", sourceDate: "2024-07-01" }
+mrr: { value: 500000, display: "~$500K/month subscription revenue (unverified founder claim)", label: unverified, sourceUrl: "https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/", sourceDate: "2024-07" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 250k-1m
 metrics:
-  - { name: "Total downloads", value: "7M+", label: founder-reported, sourceUrl: "https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/", sourceDate: "2024-07-01" }
-  - { name: "Weekly price", value: "$3.99", label: media-reported, sourceUrl: "https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/", sourceDate: "2024-07-01" }
-  - { name: "Social impressions", value: "1B+", label: founder-reported, sourceUrl: "https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/", sourceDate: "2024-07-01" }
+  - { name: "Total downloads", value: "7M+", label: founder-reported, sourceUrl: "https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/", sourceDate: "2024-07" }
+  - { name: "Weekly price", value: "$3.99", label: media-reported, sourceUrl: "https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/", sourceDate: "2024-07" }
+  - { name: "Social impressions", value: "1B+", label: founder-reported, sourceUrl: "https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/", sourceDate: "2024-07" }
 sources:
-  - { title: "Looksmaxxing apps rate teen boys' faces", url: "https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/", publisher: "Fortune", date: "2024-07-01" }
-  - { title: "Looksmaxxing: Blake Anderson", url: "https://whop.com/blog/looksmaxxing-blake-anderson/", publisher: "Whop", date: "2024" }
+  - { title: "Looksmaxxing apps rate teen boys' faces", url: "https://fortune.com/2024/07/01/looksmaxxing-apps-rate-teen-boys-faces-mental-health/", publisher: "Fortune", date: "2024-07" }
+  - { title: "Looksmaxxing: Blake Anderson", url: "https://whop.com/blog/looksmaxxing-blake-anderson/", publisher: "Whop" }
 updated: 2026-11-02
 ---
 

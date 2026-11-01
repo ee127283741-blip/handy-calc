@@ -8,17 +8,17 @@ industry: productivity
 productType: SaaS
 foundedYear: 2023
 foundedDate: "March 2023"
-teamSize: { display: "4", label: media-reported, sourceUrl: "https://lemonsqueezy.com/case-study/typing-mind", sourceDate: "2023-08-29" }
+teamSize: { display: "4", label: media-reported, sourceUrl: "https://lemonsqueezy.com/case-study/typing-mind", sourceDate: "2023-08" }
 mrr: { value: null, display: "Not disclosed", label: not-disclosed }
 totalRevenue: { value: 500000, display: "$500K+ total (about one year after launch)", label: founder-reported, sourceUrl: "https://starterstory.com/typingmind-breakdown", sourceDate: "2024-02" }
 revenueRange: not-disclosed
 metrics:
-  - { name: "Revenue in first ~4 months", value: "$200K+", label: media-reported, sourceUrl: "https://lemonsqueezy.com/case-study/typing-mind", sourceDate: "2023-08-29" }
+  - { name: "Revenue in first ~4 months", value: "$200K+", label: media-reported, sourceUrl: "https://lemonsqueezy.com/case-study/typing-mind", sourceDate: "2023-08" }
   - { name: "Total revenue after ~1 year", value: "$500K+", label: founder-reported, sourceUrl: "https://starterstory.com/typingmind-breakdown", sourceDate: "2024-02" }
-  - { name: "Return customer rate", value: "70%", label: media-reported, sourceUrl: "https://lemonsqueezy.com/case-study/typing-mind", sourceDate: "2023-08-29" }
+  - { name: "Return customer rate", value: "70%", label: media-reported, sourceUrl: "https://lemonsqueezy.com/case-study/typing-mind", sourceDate: "2023-08" }
 sources:
-  - { title: "Typing Mind experiences 1300% increase in MRR with Lemon Squeezy", url: "https://lemonsqueezy.com/case-study/typing-mind", publisher: "Lemon Squeezy", date: "2023-08-29" }
-  - { title: "How Tony Dinh built TypingMind to $500K revenue in one year", url: "https://starterstory.com/typingmind-breakdown", publisher: "Starter Story", date: "2024" }
+  - { title: "Typing Mind experiences 1300% increase in MRR with Lemon Squeezy", url: "https://lemonsqueezy.com/case-study/typing-mind", publisher: "Lemon Squeezy", date: "2023-08" }
+  - { title: "How Tony Dinh built TypingMind to $500K revenue in one year", url: "https://starterstory.com/typingmind-breakdown", publisher: "Starter Story" }
 updated: 2026-11-02
 ---
 

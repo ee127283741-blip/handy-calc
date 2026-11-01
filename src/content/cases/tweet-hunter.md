@@ -13,14 +13,14 @@ mrr: { value: null, display: "Not disclosed", label: not-disclosed }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: not-disclosed
 metrics:
-  - { name: "ARR ~4 months after MVP", value: "$150K", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850", sourceDate: "2021" }
-  - { name: "Annual revenue (Tweet Hunter + Taplio combined, 2022)", value: "~$1M", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tweethunter-hits-1m-arr-8fc16ece7e", sourceDate: "2022" }
-  - { name: "Sale terms", value: "$2M cash + earn-out", label: founder-reported, sourceUrl: "https://blog.lempire.com/how-i-turn-my-middle-school-mate-into-a-multi-millionaire/", sourceDate: "2023-01-16" }
+  - { name: "ARR ~4 months after MVP", value: "$150K", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850" }
+  - { name: "Annual revenue (Tweet Hunter + Taplio combined, 2022)", value: "~$1M", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tweethunter-hits-1m-arr-8fc16ece7e" }
+  - { name: "Sale terms", value: "$2M cash + earn-out", label: media-reported, sourceUrl: "https://blog.lempire.com/how-i-turn-my-middle-school-mate-into-a-multi-millionaire/" }
 sources:
-  - { title: "I built Tweet Hunter's MVP in 2 weeks; 4 months later it grew to $150K ARR (AMA)", url: "https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850", publisher: "Indie Hackers", date: "2021" }
-  - { title: "TweetHunter hits $1M ARR", url: "https://www.indiehackers.com/post/tweethunter-hits-1m-arr-8fc16ece7e", publisher: "Indie Hackers", date: "2022" }
-  - { title: "Tweet Hunter acquired for $2M + earn-out", url: "https://www.indiehackers.com/post/tweet-hunter-acquired-for-2m-earn-out-0709cae13a", publisher: "Indie Hackers", date: "2022" }
-  - { title: "How I turned my middle-school mate into a multi-millionaire", url: "https://blog.lempire.com/how-i-turn-my-middle-school-mate-into-a-multi-millionaire/", publisher: "lempire blog", date: "2023" }
+  - { title: "I built Tweet Hunter's MVP in 2 weeks; 4 months later it grew to $150K ARR (AMA)", url: "https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850", publisher: "Indie Hackers" }
+  - { title: "TweetHunter hits $1M ARR", url: "https://www.indiehackers.com/post/tweethunter-hits-1m-arr-8fc16ece7e", publisher: "Indie Hackers" }
+  - { title: "Tweet Hunter acquired for $2M + earn-out", url: "https://www.indiehackers.com/post/tweet-hunter-acquired-for-2m-earn-out-0709cae13a", publisher: "Indie Hackers" }
+  - { title: "How I turned my middle-school mate into a multi-millionaire", url: "https://blog.lempire.com/how-i-turn-my-middle-school-mate-into-a-multi-millionaire/", publisher: "lempire blog" }
 updated: 2026-11-02
 ---
 
@@ -47,7 +47,7 @@ Not disclosed.
 
 ## Founding date & timeline
 - **2021:** MVP built in two weeks; $150K ARR four months later.
-- **2022:** Tweet Hunter and Taplio together reached about $1M annual revenue; both sold to Lempire for $2M cash plus earn-out (founder-reported in a tweet on 16 Jan 2023).
+- **2022:** Tweet Hunter and Taplio together reached about $1M annual revenue; both sold to Lempire for $2M cash plus earn-out (media-reported by Indie Hackers and the lempire blog).
 
 ## Team size
 Not disclosed.

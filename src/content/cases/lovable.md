@@ -9,17 +9,17 @@ productType: SaaS
 foundedYear: 2023
 foundedDate: "2023 (public launch late 2024)"
 teamSize: { display: "Not disclosed", label: not-disclosed }
-mrr: { value: 8330000, display: "≈$8.3M/month, implied from $100M ARR", label: media-reported, sourceUrl: "https://thenextweb.com/news/vibe-coding-platform-lovable-becomes-historys-fastest-growing-software-startup", sourceDate: "2025-07-24" }
+mrr: { value: 8330000, display: "≈$8.3M/month, implied from $100M ARR", label: media-reported, sourceUrl: "https://thenextweb.com/news/vibe-coding-platform-lovable-becomes-historys-fastest-growing-software-startup", sourceDate: "2025-07" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 1m-10m
 metrics:
-  - { name: "ARR", value: "$100M", label: media-reported, sourceUrl: "https://thenextweb.com/news/vibe-coding-platform-lovable-becomes-historys-fastest-growing-software-startup", sourceDate: "2025-07-24" }
-  - { name: "Time from $1M to $100M ARR", value: "8 months", label: media-reported, sourceUrl: "https://techcrunch.com/2025/08/14/loveable-projects-1b-in-arr-within-next-12-months", sourceDate: "2025-08-14" }
-  - { name: "Users", value: "Nearly 8M", label: founder-reported, sourceUrl: "https://techcrunch.com/2025/11/10/lovable-says-its-nearing-8-million-users-as-the-year-old-ai-coding-startup-eyes-more-corporate-employees", sourceDate: "2025-11-10" }
+  - { name: "ARR", value: "$100M", label: media-reported, sourceUrl: "https://thenextweb.com/news/vibe-coding-platform-lovable-becomes-historys-fastest-growing-software-startup", sourceDate: "2025-07" }
+  - { name: "Time from $1M to $100M ARR", value: "8 months", label: media-reported, sourceUrl: "https://techcrunch.com/2025/08/14/loveable-projects-1b-in-arr-within-next-12-months", sourceDate: "2025-08" }
+  - { name: "Users", value: "Nearly 8M", label: founder-reported, sourceUrl: "https://techcrunch.com/2025/11/10/lovable-says-its-nearing-8-million-users-as-the-year-old-ai-coding-startup-eyes-more-corporate-employees", sourceDate: "2025-11" }
 sources:
-  - { title: "Vibe coding platform Lovable becomes history's fastest-growing software startup", url: "https://thenextweb.com/news/vibe-coding-platform-lovable-becomes-historys-fastest-growing-software-startup", publisher: "The Next Web", date: "2025-07-24" }
-  - { title: "Lovable projects $1B in ARR within next 12 months", url: "https://techcrunch.com/2025/08/14/loveable-projects-1b-in-arr-within-next-12-months", publisher: "TechCrunch", date: "2025-08-14" }
-  - { title: "Lovable says it's nearing 8 million users", url: "https://techcrunch.com/2025/11/10/lovable-says-its-nearing-8-million-users-as-the-year-old-ai-coding-startup-eyes-more-corporate-employees", publisher: "TechCrunch", date: "2025-11-10" }
+  - { title: "Vibe coding platform Lovable becomes history's fastest-growing software startup", url: "https://thenextweb.com/news/vibe-coding-platform-lovable-becomes-historys-fastest-growing-software-startup", publisher: "The Next Web", date: "2025-07" }
+  - { title: "Lovable projects $1B in ARR within next 12 months", url: "https://techcrunch.com/2025/08/14/loveable-projects-1b-in-arr-within-next-12-months", publisher: "TechCrunch", date: "2025-08" }
+  - { title: "Lovable says it's nearing 8 million users", url: "https://techcrunch.com/2025/11/10/lovable-says-its-nearing-8-million-users-as-the-year-old-ai-coding-startup-eyes-more-corporate-employees", publisher: "TechCrunch", date: "2025-11" }
 updated: 2026-11-02
 ---
 

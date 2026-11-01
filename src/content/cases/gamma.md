@@ -8,16 +8,16 @@ industry: productivity
 productType: SaaS
 foundedYear: 2020
 foundedDate: "2020"
-teamSize: { display: "~50", label: media-reported, sourceUrl: "https://www.businesswire.com/news/home/20251110805751/en", sourceDate: "2025-11-10" }
-mrr: { value: 8330000, display: "≈$8.3M/month, implied from $100M ARR", label: founder-reported, sourceUrl: "https://www.businesswire.com/news/home/20251110805751/en", sourceDate: "2025-11-10" }
+teamSize: { display: "~50", label: media-reported, sourceUrl: "https://www.businesswire.com/news/home/20251110805751/en", sourceDate: "2025-11" }
+mrr: { value: 8330000, display: "≈$8.3M/month, implied from $100M ARR", label: founder-reported, sourceUrl: "https://www.businesswire.com/news/home/20251110805751/en", sourceDate: "2025-11" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 1m-10m
 metrics:
-  - { name: "ARR", value: "$100M+", label: founder-reported, sourceUrl: "https://www.businesswire.com/news/home/20251110805751/en", sourceDate: "2025-11-10" }
-  - { name: "Valuation (Series B)", value: "$2.1B", label: media-reported, sourceUrl: "https://www.businesswire.com/news/home/20251110805751/en", sourceDate: "2025-11-10" }
+  - { name: "ARR", value: "$100M+", label: founder-reported, sourceUrl: "https://www.businesswire.com/news/home/20251110805751/en", sourceDate: "2025-11" }
+  - { name: "Valuation (Series B)", value: "$2.1B", label: media-reported, sourceUrl: "https://www.businesswire.com/news/home/20251110805751/en", sourceDate: "2025-11" }
   - { name: "Funding before $100M ARR", value: "$23M", label: founder-reported, sourceUrl: "https://gamma.app/insights/how-we-built-a-usd100m-business-differently", sourceDate: "2025-11" }
 sources:
-  - { title: "Gamma surpasses $100M ARR, raises at $2.1B valuation", url: "https://www.businesswire.com/news/home/20251110805751/en", publisher: "Business Wire", date: "2025-11-10" }
+  - { title: "Gamma surpasses $100M ARR, raises at $2.1B valuation", url: "https://www.businesswire.com/news/home/20251110805751/en", publisher: "Business Wire", date: "2025-11" }
   - { title: "How we built a $100M business differently", url: "https://gamma.app/insights/how-we-built-a-usd100m-business-differently", publisher: "Gamma", date: "2025-11" }
 updated: 2026-11-02
 ---

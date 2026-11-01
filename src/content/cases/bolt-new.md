@@ -9,16 +9,16 @@ productType: SaaS
 foundedYear: 2018
 foundedDate: "2018 (StackBlitz); Bolt.new launched October 2024"
 teamSize: { display: "Not disclosed", label: not-disclosed }
-mrr: { value: 333000, display: "≈$333K/month, implied from $4M ARR", label: media-reported, sourceUrl: "https://evilmartians.com/chronicles/bolt-new-from-stackblitz-how-they-surfed-the-ai-wave-with-no-wipeouts", sourceDate: "2024-11-12" }
+mrr: { value: 333000, display: "≈$333K/month, implied from $4M ARR", label: media-reported, sourceUrl: "https://evilmartians.com/chronicles/bolt-new-from-stackblitz-how-they-surfed-the-ai-wave-with-no-wipeouts", sourceDate: "2024-11" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 250k-1m
 metrics:
-  - { name: "ARR ~4 weeks after launch", value: "$4M", label: media-reported, sourceUrl: "https://evilmartians.com/chronicles/bolt-new-from-stackblitz-how-they-surfed-the-ai-wave-with-no-wipeouts", sourceDate: "2024-11-12" }
-  - { name: "Weekly users", value: "100K+", label: media-reported, sourceUrl: "https://evilmartians.com/chronicles/bolt-new-from-stackblitz-how-they-surfed-the-ai-wave-with-no-wipeouts", sourceDate: "2024-12-02" }
-  - { name: "StackBlitz ARR before Bolt", value: "Under $1M", label: founder-reported, sourceUrl: "https://thenewstack.io/?p=22777034", sourceDate: "2025" }
+  - { name: "ARR ~4 weeks after launch", value: "$4M", label: media-reported, sourceUrl: "https://evilmartians.com/chronicles/bolt-new-from-stackblitz-how-they-surfed-the-ai-wave-with-no-wipeouts", sourceDate: "2024-11" }
+  - { name: "Weekly users", value: "100K+", label: media-reported, sourceUrl: "https://evilmartians.com/chronicles/bolt-new-from-stackblitz-how-they-surfed-the-ai-wave-with-no-wipeouts", sourceDate: "2024-12" }
+  - { name: "StackBlitz ARR before Bolt", value: "Under $1M", label: founder-reported, sourceUrl: "https://thenewstack.io/?p=22777034" }
 sources:
-  - { title: "bolt.new from StackBlitz: how they surfed the AI wave", url: "https://evilmartians.com/chronicles/bolt-new-from-stackblitz-how-they-surfed-the-ai-wave-with-no-wipeouts", publisher: "Evil Martians", date: "2024-12-02" }
-  - { title: "Interview with Eric Simons", url: "https://thenewstack.io/?p=22777034", publisher: "The New Stack", date: "2025" }
+  - { title: "bolt.new from StackBlitz: how they surfed the AI wave", url: "https://evilmartians.com/chronicles/bolt-new-from-stackblitz-how-they-surfed-the-ai-wave-with-no-wipeouts", publisher: "Evil Martians", date: "2024-12" }
+  - { title: "Interview with Eric Simons", url: "https://thenewstack.io/?p=22777034", publisher: "The New Stack" }
 updated: 2026-11-02
 ---
 

@@ -9,18 +9,18 @@ productType: SaaS
 foundedYear: 2025
 foundedDate: "Early 2025"
 teamSize: { display: "Not disclosed", label: not-disclosed }
-mrr: { value: 8330000, display: "≈$8.3M/month, implied from ~$100M ARR", label: media-reported, sourceUrl: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", sourceDate: "2026-03-04" }
+mrr: { value: 8330000, display: "≈$8.3M/month, implied from ~$100M ARR", label: media-reported, sourceUrl: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", sourceDate: "2026-03" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 1m-10m
 metrics:
   - { name: "Acquisition price (cash)", value: "$80M", label: unverified, sourceUrl: "https://techradar.com/pro/website-building/wix-jumps-on-the-vibe-coding-bandwagon-with-a-new-acquisition", sourceDate: "2025-06" }
-  - { name: "ARR at end of 2025 (Wix earnings call)", value: "~$59M", label: media-reported, sourceUrl: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", sourceDate: "2026-03-04" }
-  - { name: "ARR (Wix earnings call)", value: "~$100M", label: media-reported, sourceUrl: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", sourceDate: "2026-03-04" }
-  - { name: "Earn-out payments", value: "$38M (in Wix shares, Q1 2026)", label: media-reported, sourceUrl: "https://en.globes.co.il/en/article-1001542919", sourceDate: "2026" }
+  - { name: "ARR at end of 2025 (Wix earnings call)", value: "~$59M", label: media-reported, sourceUrl: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", sourceDate: "2026-03" }
+  - { name: "ARR (Wix earnings call)", value: "~$100M", label: media-reported, sourceUrl: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", sourceDate: "2026-03" }
+  - { name: "Earn-out payments", value: "$38M (in Wix shares, Q1 2026)", label: media-reported, sourceUrl: "https://en.globes.co.il/en/article-1001542919" }
 sources:
   - { title: "Wix jumps on the vibe coding bandwagon with a new acquisition", url: "https://techradar.com/pro/website-building/wix-jumps-on-the-vibe-coding-bandwagon-with-a-new-acquisition", publisher: "TechRadar", date: "2025-06" }
-  - { title: "Wix.com Q4 2025 earnings call transcript", url: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", publisher: "MarketBeat", date: "2026-03-04" }
-  - { title: "Wix pays $38m earnout payments for Base44", url: "https://en.globes.co.il/en/article-1001542919", publisher: "Globes", date: "2026" }
+  - { title: "Wix.com Q4 2025 earnings call transcript", url: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", publisher: "MarketBeat", date: "2026-03" }
+  - { title: "Wix pays $38m earnout payments for Base44", url: "https://en.globes.co.il/en/article-1001542919", publisher: "Globes" }
 updated: 2026-11-02
 ---
 

@@ -9,15 +9,15 @@ productType: SaaS
 foundedYear: 2023
 foundedDate: "February 2023"
 teamSize: { display: "Founder + 2 employees (2023-05)", label: unverified, sourceUrl: "https://www.indiehackers.com/post/how-a-college-student-reached-64-000-mo-in-6-months-by-being-an-ai-first-mover-ba7981f6e1", sourceDate: "2023-05" }
-mrr: { value: 64000, display: "$64,000 MRR", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/how-a-college-student-reached-64-000-mo-in-6-months-by-being-an-ai-first-mover-ba7981f6e1", sourceDate: "2023-05-13" }
+mrr: { value: 64000, display: "$64,000 MRR", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/how-a-college-student-reached-64-000-mo-in-6-months-by-being-an-ai-first-mover-ba7981f6e1", sourceDate: "2023-05" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 50k-250k
 metrics:
-  - { name: "MRR at launch", value: "$0", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/how-a-college-student-reached-64-000-mo-in-6-months-by-being-an-ai-first-mover-ba7981f6e1", sourceDate: "2023-02-07" }
-  - { name: "MRR three months later", value: "$64,000", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/how-a-college-student-reached-64-000-mo-in-6-months-by-being-an-ai-first-mover-ba7981f6e1", sourceDate: "2023-05-13" }
+  - { name: "MRR at launch", value: "$0", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/how-a-college-student-reached-64-000-mo-in-6-months-by-being-an-ai-first-mover-ba7981f6e1", sourceDate: "2023-02" }
+  - { name: "MRR three months later", value: "$64,000", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/how-a-college-student-reached-64-000-mo-in-6-months-by-being-an-ai-first-mover-ba7981f6e1", sourceDate: "2023-05" }
   - { name: "Current ARR", value: "Not disclosed", label: not-disclosed }
 sources:
-  - { title: "How a college student reached $64,000/mo in 6 months by being an AI first mover", url: "https://www.indiehackers.com/post/how-a-college-student-reached-64-000-mo-in-6-months-by-being-an-ai-first-mover-ba7981f6e1", publisher: "Indie Hackers", date: "2023" }
+  - { title: "How a college student reached $64,000/mo in 6 months by being an AI first mover", url: "https://www.indiehackers.com/post/how-a-college-student-reached-64-000-mo-in-6-months-by-being-an-ai-first-mover-ba7981f6e1", publisher: "Indie Hackers" }
 updated: 2026-11-02
 ---
 
@@ -28,7 +28,7 @@ Elsaid wanted to chat with a long PDF. Once that worked, he realised businesses 
 A quick launch on X right as ChatGPT hype peaked in early 2023. He has said being early to the market mattered more than anything else.
 
 ## Tools & tech stack
-OpenAI models for answers, LangChain to orchestrate retrieval, Pinecone as the vector store for customer documents, and Vercel for hosting (per a founder tweet and a 5to9 write-up).
+Not disclosed.
 
 ## Marketing
 Launch tweets and demos that went viral, then word of mouth and an embeddable widget that advertises the product on every customer site.
@@ -37,14 +37,14 @@ Launch tweets and demos that went viral, then word of mouth and an embeddable wi
 Monthly self-serve plans; early on most revenue came from the higher-priced business plan.
 
 ## Monthly revenue
-**$64,000 MRR** on 13 May 2023, up from $0 on 7 February 2023 (founder-reported).
+**$64,000 MRR** in May 2023, up from $0 in February 2023 (founder-reported).
 
 ## Total revenue
 Not disclosed.
 
 ## Founding date & timeline
-- **7 Feb 2023:** $0 MRR at launch.
-- **13 May 2023:** $64K MRR.
+- **Feb 2023:** $0 MRR at launch.
+- **May 2023:** $64K MRR.
 - **Later:** Grew into an AI support-agent platform; later ARR figures come from podcasts without clear dates.
 
 ## Team size

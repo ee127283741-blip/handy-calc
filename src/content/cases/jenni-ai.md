@@ -8,19 +8,19 @@ industry: education
 productType: SaaS
 foundedYear: null
 foundedDate: "Not disclosed"
-teamSize: { display: "23 (9 until late 2024)", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
-mrr: { value: 833000, display: "≈$833K/month, implied from $10M+ ARR", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
+teamSize: { display: "23 (9 until late 2024)", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12" }
+mrr: { value: 833000, display: "≈$833K/month, implied from $10M+ ARR", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12" }
 totalRevenue: { value: null, display: "Not disclosed (2023: ~$1.8M, 2024: ~$8M annual revenue)", label: not-disclosed }
 revenueRange: 250k-1m
 metrics:
-  - { name: "Annual revenue 2023", value: "~$1.8M", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
-  - { name: "Annual revenue 2024", value: "~$8M", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
-  - { name: "ARR (single source: TMTPost)", value: "$10M+", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
-  - { name: "ARR (ARR Club)", value: "$8M", label: media-reported, sourceUrl: "https://www.arr.club/jenni/jenni-ai-arr-at-8m-hit-4m-users", sourceDate: "2025" }
-  - { name: "Revenue from one viral tweet (Jul 2022)", value: "~$10K in a day", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
+  - { name: "Annual revenue 2023", value: "~$1.8M", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12" }
+  - { name: "Annual revenue 2024", value: "~$8M", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12" }
+  - { name: "ARR (single source: TMTPost)", value: "$10M+", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12" }
+  - { name: "ARR (ARR Club)", value: "$8M", label: media-reported, sourceUrl: "https://www.arr.club/jenni/jenni-ai-arr-at-8m-hit-4m-users" }
+  - { name: "Revenue from one viral tweet (Jul 2022)", value: "~$10K in a day", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12" }
 sources:
-  - { title: "Jenni AI profile", url: "https://en.tmtpost.com/post/7814928", publisher: "TMTPost", date: "2025-12-19" }
-  - { title: "Jenni AI ARR at $8M, hit 4M users", url: "https://www.arr.club/jenni/jenni-ai-arr-at-8m-hit-4m-users", publisher: "ARR Club", date: "2025" }
+  - { title: "Jenni AI profile", url: "https://en.tmtpost.com/post/7814928", publisher: "TMTPost", date: "2025-12" }
+  - { title: "Jenni AI ARR at $8M, hit 4M users", url: "https://www.arr.club/jenni/jenni-ai-arr-at-8m-hit-4m-users", publisher: "ARR Club" }
 updated: 2026-11-02
 ---
 

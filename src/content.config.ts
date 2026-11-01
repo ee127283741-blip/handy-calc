@@ -11,8 +11,10 @@ const authors = defineCollection({
 // Provenance of a number. 'not-disclosed' only when there is no number.
 export const LABELS = ['founder-reported', 'verified', 'media-reported', 'unverified', 'not-disclosed'] as const;
 const label = z.enum(LABELS);
-const dateish = z.string().regex(/^\d{4}(-\d{2}(-\d{2})?)?$/);
-const sourced = { label, sourceUrl: z.string().url().optional(), sourceDate: dateish.optional() };
+// Year-month only, and only when the source makes it reasonably clear; otherwise omit.
+const dateish = z.string().regex(/^\d{4}-\d{2}$/);
+// labelNote: optional display override for the label, e.g. 'Founder-reported via Latka'.
+const sourced = { label, labelNote: z.string().optional(), sourceUrl: z.string().url().optional(), sourceDate: dateish.optional() };
 const money = z.object({ value: z.number().nullable(), display: z.string(), ...sourced });
 const metric = z.object({ name: z.string(), value: z.string(), ...sourced });
 
@@ -34,7 +36,7 @@ const cases = defineCollection({
     totalRevenue: money,
     revenueRange: z.enum(REVENUE_RANGE_SLUGS),
     metrics: z.array(metric).min(1),
-    sources: z.array(z.object({ title: z.string(), url: z.string().url(), publisher: z.string(), date: dateish })).min(1),
+    sources: z.array(z.object({ title: z.string(), url: z.string().url(), publisher: z.string(), date: dateish.optional() })).min(1),
     updated: z.coerce.date(),
   }),
 });

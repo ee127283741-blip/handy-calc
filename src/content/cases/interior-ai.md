@@ -15,8 +15,8 @@ revenueRange: not-disclosed
 metrics:
   - { name: "Product Hunt launch", value: "Not disclosed", label: not-disclosed }
 sources:
-  - { title: "Interior AI launches", url: "https://hunted.space/product/interiorai/launches/interior-ai", publisher: "Hunted Space", date: "2022" }
-  - { title: "Interior AI on Product Hunt", url: "https://www.producthunt.com/p/interiorai/interior-ai", publisher: "Product Hunt", date: "2022" }
+  - { title: "Interior AI launches", url: "https://hunted.space/product/interiorai/launches/interior-ai", publisher: "Hunted Space" }
+  - { title: "Interior AI on Product Hunt", url: "https://www.producthunt.com/p/interiorai/interior-ai", publisher: "Product Hunt" }
 updated: 2026-11-02
 ---
 

@@ -8,15 +8,15 @@ industry: careers-hr
 productType: SaaS
 foundedYear: 2023
 foundedDate: "2023"
-teamSize: { display: "Small team (started with freelancers and part-timers)", label: founder-reported, sourceUrl: "https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/", sourceDate: "2024-02-20" }
+teamSize: { display: "Small team (started with freelancers and part-timers)", label: founder-reported, sourceUrl: "https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/", sourceDate: "2024-02" }
 mrr: { value: null, display: "Not disclosed", label: not-disclosed }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: not-disclosed
 metrics:
-  - { name: "Photos required per order", value: "15–17 uploads", label: founder-reported, sourceUrl: "https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/", sourceDate: "2024-02-20" }
+  - { name: "Photos required per order", value: "15–17 uploads", label: founder-reported, sourceUrl: "https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/", sourceDate: "2024-02" }
 sources:
-  - { title: "Danny Postma, Founder of HeadshotPro – Interview Series", url: "https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/", publisher: "Unite.AI", date: "2024-02-20" }
-  - { title: "Danny Postma built and sold an AI writing tool for $1M in 8 months", url: "https://www.indiehackers.com/post/danny-postma-built-and-sold-ai-writing-tool-for-1m-in-8-months-full-story-7da7a7edf7", publisher: "Indie Hackers", date: "2022" }
+  - { title: "Danny Postma, Founder of HeadshotPro – Interview Series", url: "https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/", publisher: "Unite.AI", date: "2024-02" }
+  - { title: "Danny Postma built and sold an AI writing tool for $1M in 8 months", url: "https://www.indiehackers.com/post/danny-postma-built-and-sold-ai-writing-tool-for-1m-in-8-months-full-story-7da7a7edf7", publisher: "Indie Hackers" }
 updated: 2026-11-02
 ---
 

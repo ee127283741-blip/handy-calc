@@ -10,7 +10,7 @@ const SECTIONS = [
   'Monthly revenue', 'Total revenue', 'Founding date & timeline', 'Team size', 'Key takeaways',
 ];
 const LABELS = ['founder-reported', 'verified', 'media-reported', 'unverified'];
-const DATE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
+const DATE = /^\d{4}-\d{2}$/; // year-month only; dates are optional
 const ND = 'Not disclosed';
 
 const files = readdirSync(DIR).filter((f) => f.endsWith('.md'));
@@ -21,8 +21,8 @@ const read = (f: string) => {
   return { fm: parse(m[1]), body: m[2] };
 };
 
-interface Figure { value: unknown; display?: string; label?: string; sourceUrl?: string; sourceDate?: string }
-/** A figure is either fully sourced (url + date + allowed label) or explicitly "Not disclosed". */
+interface Figure { value: unknown; display?: string; label?: string; sourceUrl?: string; sourceDate?: string; labelNote?: string }
+/** A figure is either fully sourced (url + allowed label, optional year-month date) or explicitly "Not disclosed". */
 function check(where: string, f: Figure) {
   const shown = String(f.display ?? f.value);
   const undisclosed = f.value === null || f.value === ND || shown === ND || shown.startsWith(ND);
@@ -33,7 +33,7 @@ function check(where: string, f: Figure) {
   }
   expect(LABELS, `${where}: label`).toContain(f.label);
   expect(f.sourceUrl, `${where}: sourceUrl`).toMatch(/^https:\/\//);
-  expect(f.sourceDate, `${where}: sourceDate`).toMatch(DATE);
+  if (f.sourceDate !== undefined) expect(f.sourceDate, `${where}: sourceDate`).toMatch(DATE);
   return 0;
 }
 
@@ -63,10 +63,10 @@ describe('case files', () => {
         expect(fm.foundedYear === null || Number.isInteger(fm.foundedYear), `${f}: foundedYear`).toBe(true);
         if (fm.appSubcategory) expect(fm.productType, `${f}: appSubcategory only for apps`).toBe('App');
         if (fm.mrr.value === null) expect(fm.revenueRange).toBe('not-disclosed');
-        for (const s of fm.sources) { expect(s.url).toMatch(/^https:\/\//); expect(String(s.date)).toMatch(DATE); }
+        for (const s of fm.sources) { expect(s.url).toMatch(/^https:\/\//); if (s.date !== undefined) expect(String(s.date)).toMatch(DATE); }
       });
 
-      it('every numeric metric is sourced (url + date + label) or "Not disclosed"', () => {
+      it('every numeric metric is sourced (url + label, dated if known) or "Not disclosed"', () => {
         check(`${f} mrr`, fm.mrr);
         check(`${f} totalRevenue`, fm.totalRevenue);
         check(`${f} teamSize`, fm.teamSize);

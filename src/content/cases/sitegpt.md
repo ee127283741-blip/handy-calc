@@ -7,18 +7,18 @@ summary: "Bhanu Teja turned a side feature into SiteGPT, a chatbot trained on a 
 industry: customer-support
 productType: SaaS
 foundedYear: 2023
-foundedDate: "30 March 2023"
-teamSize: { display: "2 founders, 0 employees", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10-08" }
-mrr: { value: 15000, display: "~$15K MRR", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10-08" }
+foundedDate: "March 2023"
+teamSize: { display: "2 founders, 0 employees", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10" }
+mrr: { value: 15000, display: "~$15K MRR", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 10k-50k
 metrics:
-  - { name: "MRR within first month", value: "$10K+", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10-08" }
-  - { name: "MRR lost to churn in month two", value: "~$5K", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10-08" }
-  - { name: "Launch-day visitors", value: "~15K", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10-08" }
+  - { name: "MRR within first month", value: "$10K+", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10" }
+  - { name: "MRR lost to churn in month two", value: "~$5K", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10" }
+  - { name: "Launch-day visitors", value: "~15K", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10" }
 sources:
-  - { title: "How my AI side project grew to $15K MRR in just a few months", url: "https://www.starterstory.com/stories/sitegpt", publisher: "Starter Story", date: "2023-10-08" }
-  - { title: "From side hustle to AI star: SiteGPT's rise to $15K MRR", url: "https://www.indiehackers.com/post/from-side-hustle-to-ai-star-sitegpts-rise-to-15k-mrr-ff15fee186", publisher: "Indie Hackers", date: "2023" }
+  - { title: "How my AI side project grew to $15K MRR in just a few months", url: "https://www.starterstory.com/stories/sitegpt", publisher: "Starter Story", date: "2023-10" }
+  - { title: "From side hustle to AI star: SiteGPT's rise to $15K MRR", url: "https://www.indiehackers.com/post/from-side-hustle-to-ai-star-sitegpts-rise-to-15k-mrr-ff15fee186", publisher: "Indie Hackers" }
 updated: 2026-11-02
 ---
 
@@ -44,7 +44,7 @@ About **$15K MRR** roughly six months after launch (founder-reported, Oct 2023).
 Not disclosed with a dated primary source.
 
 ## Founding date & timeline
-- **30 Mar 2023:** Launch; ~15K visitors on day one.
+- **Mar 2023:** Launch; ~15K visitors on day one.
 - **Apr 2023:** Passed $10K MRR, then lost ~$5K to churn.
 - **Oct 2023:** ~$15K MRR.
 

@@ -14,12 +14,12 @@ mrr: { value: null, display: "Not disclosed", label: not-disclosed }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: not-disclosed
 metrics:
-  - { name: "Chrome Web Store users", value: "1,000,000+", label: verified, sourceUrl: "https://chromewebstore.google.com/detail/merlin-ask-ai-to-research/camppjleccjaphfdbohjdohecfnoikec?hl=en", sourceDate: "2026-11-02" }
-  - { name: "Total funding raised", value: "$8.36M", label: media-reported, sourceUrl: "https://www.cbinsights.com/company/foyer-tech/financials", sourceDate: "2026-11-02" }
+  - { name: "Chrome Web Store users", value: "1,000,000+", label: verified, sourceUrl: "https://chromewebstore.google.com/detail/merlin-ask-ai-to-research/camppjleccjaphfdbohjdohecfnoikec?hl=en", sourceDate: "2026-11" }
+  - { name: "Total funding raised", value: "$8.36M", label: media-reported, sourceUrl: "https://www.cbinsights.com/company/foyer-tech/financials", sourceDate: "2026-11" }
 sources:
-  - { title: "Merlin – Ask AI to Research, Write & Review", url: "https://chromewebstore.google.com/detail/merlin-ask-ai-to-research/camppjleccjaphfdbohjdohecfnoikec?hl=en", publisher: "Chrome Web Store", date: "2026-11-02" }
-  - { title: "Merlin AI reaches milestone, surpassing 1 million users within 11 months", url: "https://www.newsfilecorp.com/release/187348/Merlin-AI-Reaches-Milestone-Surpassing-1-Million-Users-Within-11-Months", publisher: "Newsfile (press release)", date: "2023" }
-  - { title: "Foyer Tech financials", url: "https://www.cbinsights.com/company/foyer-tech/financials", publisher: "CB Insights", date: "2026-11-02" }
+  - { title: "Merlin – Ask AI to Research, Write & Review", url: "https://chromewebstore.google.com/detail/merlin-ask-ai-to-research/camppjleccjaphfdbohjdohecfnoikec?hl=en", publisher: "Chrome Web Store", date: "2026-11" }
+  - { title: "Merlin AI reaches milestone, surpassing 1 million users within 11 months", url: "https://www.newsfilecorp.com/release/187348/Merlin-AI-Reaches-Milestone-Surpassing-1-Million-Users-Within-11-Months", publisher: "Newsfile (press release)" }
+  - { title: "Foyer Tech financials", url: "https://www.cbinsights.com/company/foyer-tech/financials", publisher: "CB Insights", date: "2026-11" }
 updated: 2026-11-02
 ---
 

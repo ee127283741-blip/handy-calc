@@ -8,17 +8,17 @@ industry: productivity
 productType: Tool
 foundedYear: 2022
 foundedDate: "July 2022 (MVP); September 2022 (paid launch)"
-teamSize: { display: "1 (solo, no-code)", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11-24" }
-mrr: { value: 3300, display: "$3.3K MRR", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11-24" }
-totalRevenue: { value: 22000, display: "$22K since paid launch", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11-24" }
+teamSize: { display: "1 (solo, no-code)", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
+mrr: { value: 3300, display: "$3.3K MRR", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
+totalRevenue: { value: 22000, display: "$22K since paid launch", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
 revenueRange: under-10k
 metrics:
-  - { name: "Paying users", value: "1,600", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11-24" }
-  - { name: "Website visitors", value: "1.1M", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11-24" }
+  - { name: "Paying users", value: "1,600", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
+  - { name: "Website visitors", value: "1.1M", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
   - { name: "Current MRR", value: "Not disclosed", label: not-disclosed }
 sources:
-  - { title: "How David built an Excel Formula Bot powered by AI", url: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", publisher: "No Code Exits", date: "2022-11-24" }
-  - { title: "Leveraging no-code and influencers to hit $3K MRR in 2 months", url: "https://www.indiehackers.com/post/leveraging-no-code-and-influencers-to-hit-3k-mrr-in-2-months-david-bressler-of-excelformulabot-9ffd4bc22b", publisher: "Indie Hackers", date: "2022" }
+  - { title: "How David built an Excel Formula Bot powered by AI", url: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", publisher: "No Code Exits", date: "2022-11" }
+  - { title: "Leveraging no-code and influencers to hit $3K MRR in 2 months", url: "https://www.indiehackers.com/post/leveraging-no-code-and-influencers-to-hit-3k-mrr-in-2-months-david-bressler-of-excelformulabot-9ffd4bc22b", publisher: "Indie Hackers" }
 updated: 2026-11-02
 ---
 

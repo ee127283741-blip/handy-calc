@@ -17,8 +17,8 @@ metrics:
   - { name: "Profit margin", value: "Not disclosed", label: not-disclosed }
 sources:
   - { title: "Pieter Levels just passed $100,000 a month in revenue with Photo AI", url: "https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG", publisher: "Indie Hackers", date: "2024-09" }
-  - { title: "New $420K/mo revenue record (Lex Fridman)", url: "https://levels.io/new-420k-mo-revenue-record-lex-fridman", publisher: "levels.io", date: "2024" }
-  - { title: "Photo AI case study: 0 to $132K MRR in 18 months", url: "https://www.indiehackers.com/post/photo-ai-by-pieter-levels-complete-dive-case-study-0-to-132k-mrr-in-18-months-3a9a2b1579", publisher: "Indie Hackers", date: "2024" }
+  - { title: "New $420K/mo revenue record (Lex Fridman)", url: "https://levels.io/new-420k-mo-revenue-record-lex-fridman", publisher: "levels.io" }
+  - { title: "Photo AI case study: 0 to $132K MRR in 18 months", url: "https://www.indiehackers.com/post/photo-ai-by-pieter-levels-complete-dive-case-study-0-to-132k-mrr-in-18-months-3a9a2b1579", publisher: "Indie Hackers" }
 updated: 2026-11-02
 ---
 
