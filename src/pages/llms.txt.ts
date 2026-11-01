@@ -7,7 +7,7 @@ export const GET: APIRoute = async ({ site }) => {
   const abs = (p: string) => new URL(p, site).href;
   const lines = [`# ${SITE_NAME}`, '', `> ${SITE_TAGLINE} Every number links to a dated source.`, ''];
   const cases = await allCases();
-  lines.push('## AI startup case library', '', `- [Case library](${abs('/')}): ${cases.length} real AI startup cases; every number is sourced, dated and labelled founder-reported, verified or media-reported, or marked "Not disclosed"`);
+  lines.push('## AI startup case library', '', `- [Case library](${abs('/')}): ${cases.length} real AI startup cases; every number is sourced, dated and labelled founder-reported, verified, media-reported or unverified (a quoted figure we could not confirm against its original source), or marked "Not disclosed"`);
   for (const ind of INDUSTRIES) {
     const list = cases.filter((c) => c.data.industry === ind.slug);
     if (!list.length) continue;

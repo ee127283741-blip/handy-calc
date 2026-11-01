@@ -1,0 +1,6 @@
+---
+import CaseListPage from '../../components/CaseListPage.astro';
+import { allCases } from '../../lib';
+const cases = await allCases();
+---
+<CaseListPage name="All AI startup cases" description="Every AI startup case study in the library: idea, stack, marketing, pricing and sourced revenue figures." crumbs={[{ name: 'Cases', href: '/cases/' }]} cases={cases} />

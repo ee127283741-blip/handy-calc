@@ -7,8 +7,9 @@ const authors = defineCollection({
   schema: z.object({ name: z.string(), slug: z.string(), description: z.string() }),
 });
 
+// Provenance of a number. 'unverified' = quoted figure we could not confirm against the original source.
 // Provenance of a number. 'not-disclosed' only when there is no number.
-export const LABELS = ['founder-reported', 'verified', 'media-reported', 'not-disclosed'] as const;
+export const LABELS = ['founder-reported', 'verified', 'media-reported', 'unverified', 'not-disclosed'] as const;
 const label = z.enum(LABELS);
 const dateish = z.string().regex(/^\d{4}(-\d{2}(-\d{2})?)?$/);
 const sourced = { label, sourceUrl: z.string().url().optional(), sourceDate: dateish.optional() };

@@ -20,7 +20,7 @@ const jsonLd = [
   <section class="hero">
     <p class="eyebrow">AI startup case library</p>
     <h1>How real AI startups got started</h1>
-    <p class="answer">{cases.length} case studies of AI products, mostly indie and bootstrapped. Every revenue number links to its source, is dated and labelled founder-reported, verified or media-reported. Where nothing is public we say "Not disclosed".</p>
+    <p class="answer">{cases.length} case studies of AI products, mostly indie and bootstrapped. Every revenue number links to its source, is dated and labelled founder-reported, verified, media-reported or unverified (a quoted figure we could not confirm against its original source). Where nothing is public we say "Not disclosed".</p>
   </section>
   <form class="filters" id="case-filters" aria-label="Filter cases">
     <label>Industry<select name="industry"><option value="">All</option>{inds.map((i) => <option value={i.slug}>{i.name}</option>)}</select></label>

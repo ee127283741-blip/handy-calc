@@ -9,7 +9,7 @@ const SECTIONS = [
   'Origin of the idea', 'How they started', 'Tools & tech stack', 'Marketing', 'Sales & pricing',
   'Monthly revenue', 'Total revenue', 'Founding date & timeline', 'Team size', 'Key takeaways',
 ];
-const LABELS = ['founder-reported', 'verified', 'media-reported'];
+const LABELS = ['founder-reported', 'verified', 'media-reported', 'unverified'];
 const DATE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
 const ND = 'Not disclosed';
 

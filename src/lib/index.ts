@@ -9,5 +9,5 @@ export async function allCases() {
 export const caseUrl = (c: CollectionEntry<'cases'>) => `/cases/${c.data.slug}/`;
 export const subSlug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 export const LABEL_NAME: Record<string, string> = {
-  'founder-reported': 'Founder-reported', verified: 'Verified', 'media-reported': 'Media-reported', 'not-disclosed': 'Not disclosed',
+  'founder-reported': 'Founder-reported', verified: 'Verified', 'media-reported': 'Media-reported', unverified: 'Unverified', 'not-disclosed': 'Not disclosed',
 };

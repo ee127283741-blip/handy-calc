@@ -7,16 +7,17 @@ summary: "Damon Chen bought a premium domain and launched PDF.ai, a chat-with-yo
 industry: productivity
 productType: SaaS
 foundedYear: 2023
-foundedDate: "2023"
+foundedDate: "2023-06-06 (launch)"
 teamSize: { display: "Not disclosed", label: not-disclosed }
 mrr: { value: 25070, display: "$25,070 revenue in September 2023", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d", sourceDate: "2023-09" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 10k-50k
 metrics:
   - { name: "Profit, September 2023", value: "$17,600", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d", sourceDate: "2023-09" }
-  - { name: "Customers", value: "Not disclosed", label: not-disclosed }
+  - { name: "Paying users", value: "1,250+", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d", sourceDate: "2023-10" }
 sources:
   - { title: "PDF AI tool made $25K in MRR last month", url: "https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d", publisher: "Indie Hackers", date: "2023-10" }
+  - { title: "Damon Chen on LinkedIn: It's hard to believe, but my AI to-do app…", url: "https://www.linkedin.com/posts/damengchen_its-hard-to-believe-but-my-ai-to-do-app-activity-7112506239783235585-qUTV", publisher: "LinkedIn (Damon Chen)", date: "2023-09" }
   - { title: "How Damon Chen scaled PDF AI", url: "https://www.starterstory.com/pdf-ai-breakdown", publisher: "Starter Story", date: "2024" }
 updated: 2026-11-02
 ---
@@ -37,13 +38,13 @@ The domain did a lot of work: it is easy to remember and ranks for its own name.
 Monthly subscription with a free tier; lifetime deals were offered early on.
 
 ## Monthly revenue
-**$25,070** in September 2023, with $17,600 profit (founder-reported).
+**$25,070** in September 2023, with $17,600 profit and more than 1,250 paying users (founder-reported).
 
 ## Total revenue
 Not disclosed.
 
 ## Founding date & timeline
-- **2023:** Domain bought and product launched.
+- **6 Jun 2023:** Product launched on the PDF.ai domain.
 - **Sep 2023:** $25K revenue in the month.
 
 ## Team size

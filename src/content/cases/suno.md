@@ -9,16 +9,16 @@ productType: SaaS
 foundedYear: 2022
 foundedDate: "2022"
 teamSize: { display: "Not disclosed", label: not-disclosed }
-mrr: { value: 25000000, display: "≈$25M/month, implied from $300M ARR", label: founder-reported, sourceUrl: "https://www.musicbusinessworldwide.com/suno-hits-2m-paid-subscribers-300m-annual-revenue/", sourceDate: "2026-02-25" }
+mrr: { value: 25000000, display: "≈$25M/month, implied from $300M ARR", label: founder-reported, sourceUrl: "https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years", sourceDate: "2026-03-02" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 10m-plus
 metrics:
-  - { name: "Annual recurring revenue", value: "$300M", label: founder-reported, sourceUrl: "https://www.musicbusinessworldwide.com/suno-hits-2m-paid-subscribers-300m-annual-revenue/", sourceDate: "2026-02-25" }
-  - { name: "Paid subscribers", value: "2M", label: founder-reported, sourceUrl: "https://www.musicbusinessworldwide.com/suno-hits-2m-paid-subscribers-300m-annual-revenue/", sourceDate: "2026-02-25" }
-  - { name: "Series C post-money valuation", value: "$2.45B", label: media-reported, sourceUrl: "https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years", sourceDate: "2025-11" }
+  - { name: "Annual recurring revenue", value: "$300M", label: founder-reported, sourceUrl: "https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years", sourceDate: "2026-03-02" }
+  - { name: "Paid subscribers", value: "2M", label: founder-reported, sourceUrl: "https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years", sourceDate: "2026-03-02" }
+  - { name: "Series C post-money valuation", value: "$2.45B", label: media-reported, sourceUrl: "https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years", sourceDate: "2026-03-02" }
 sources:
   - { title: "Suno: we've hit 2M paid subscribers and $300M annual revenue", url: "https://www.musicbusinessworldwide.com/suno-hits-2m-paid-subscribers-300m-annual-revenue/", publisher: "Music Business Worldwide", date: "2026-02" }
-  - { title: "Suno reaches 2 million paid subscribers and $300M ARR in two years", url: "https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years", publisher: "Unite.AI", date: "2026-02" }
+  - { title: "Suno reaches 2 million paid subscribers and $300M ARR in two years", url: "https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years", publisher: "Unite.AI", date: "2026-03-02" }
 updated: 2026-11-02
 ---
 

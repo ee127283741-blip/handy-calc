@@ -9,11 +9,11 @@ productType: SaaS
 foundedYear: 2022
 foundedDate: "January 2022"
 teamSize: { display: "Not disclosed", label: not-disclosed }
-mrr: { value: 1670000, display: "≈$1.7M/month, implied from ~$20M ARR", label: media-reported, sourceUrl: "https://www.arr.club/signal/opusclip-20m-arr-softbank-mar-2025", sourceDate: "2025-03" }
+mrr: { value: 1670000, display: "≈$1.7M/month, implied from ~$20M ARR (unverified)", label: unverified, sourceUrl: "https://www.arr.club/signal/opusclip-20m-arr-softbank-mar-2025", sourceDate: "2025-03" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 1m-10m
 metrics:
-  - { name: "ARR", value: "~$20M", label: media-reported, sourceUrl: "https://www.arr.club/signal/opusclip-20m-arr-softbank-mar-2025", sourceDate: "2025-03" }
+  - { name: "ARR", value: "~$20M", label: unverified, sourceUrl: "https://www.arr.club/signal/opusclip-20m-arr-softbank-mar-2025", sourceDate: "2025-03" }
   - { name: "Funding from SoftBank Vision Fund 2", value: "$20M", label: media-reported, sourceUrl: "https://netinfluencer.com/opusclip-secures-20m-usd-from-softbank-vision-fund-2-launches-ai-video-search-tool", sourceDate: "2025-03" }
 sources:
   - { title: "OpusClip $20M ARR, SoftBank, March 2025", url: "https://www.arr.club/signal/opusclip-20m-arr-softbank-mar-2025", publisher: "ARR Club", date: "2025-03" }
@@ -37,7 +37,7 @@ Product-led growth among podcasters and YouTubers, plus creator partnerships and
 Freemium with monthly credit-based plans by minutes of video processed.
 
 ## Monthly revenue
-About **$1.7M/month**, implied from the ~$20M ARR reported in March 2025.
+About **$1.7M/month**, implied from the ~$20M ARR reported in March 2025 (unverified: ARR Club repeats it from a newsletter we could not check).
 
 ## Total revenue
 Not disclosed.

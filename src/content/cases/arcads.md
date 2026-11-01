@@ -8,13 +8,14 @@ industry: marketing-advertising
 productType: SaaS
 foundedYear: 2024
 foundedDate: "Early 2024"
-teamSize: { display: "~5 engineers", label: founder-reported, sourceUrl: "https://getlatka.com/interviews/arcads-romain-torres-2025", sourceDate: "2025-05" }
-mrr: { value: 500000, display: "≈$500K/month, implied from $6M ARR", label: founder-reported, sourceUrl: "https://getlatka.com/interviews/arcads-romain-torres-2025", sourceDate: "2025-05" }
+teamSize: { display: "~5 engineers", label: unverified, sourceUrl: "https://getlatka.com/interviews/arcads-romain-torres-2025", sourceDate: "2025-05" }
+mrr: { value: 500000, display: "≈$500K/month, implied from $6M ARR (unverified)", label: unverified, sourceUrl: "https://getlatka.com/interviews/arcads-romain-torres-2025", sourceDate: "2025-05" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 250k-1m
 metrics:
-  - { name: "ARR", value: "$6M", label: founder-reported, sourceUrl: "https://getlatka.com/interviews/arcads-romain-torres-2025", sourceDate: "2025-05" }
-  - { name: "Paying customers", value: "~4,000", label: founder-reported, sourceUrl: "https://getlatka.com/interviews/arcads-romain-torres-2025", sourceDate: "2025-05" }
+  - { name: "ARR (Latka)", value: "$6M", label: unverified, sourceUrl: "https://getlatka.com/interviews/arcads-romain-torres-2025", sourceDate: "2025-05" }
+  - { name: "ARR (Let's Talk Ads podcast)", value: "$5M", label: founder-reported, sourceUrl: "https://lets-talk-ads.simplecast.com/episodes/zero-to-5m-arr-in-1-year-generation-ai-with-romain-torres-co-founder-of-arcads-KlCZVasZ", sourceDate: "2025" }
+  - { name: "Paying customers", value: "~4,000", label: unverified, sourceUrl: "https://getlatka.com/interviews/arcads-romain-torres-2025", sourceDate: "2025-05" }
   - { name: "Outside funding", value: "Not disclosed", label: not-disclosed }
 sources:
   - { title: "Arcads founder interview (Romain Torres)", url: "https://getlatka.com/interviews/arcads-romain-torres-2025", publisher: "Latka", date: "2025-05" }
@@ -38,7 +39,7 @@ They use their own product: paid social ads made with Arcads, plus influencer ma
 Self-serve monthly plans based on the number of videos, with higher tiers for agencies.
 
 ## Monthly revenue
-About **$500K/month**, implied from the $6M ARR the founder reported in May 2025.
+About **$500K/month**, implied from a $6M ARR figure attributed to a May 2025 Latka interview (unverified: the Latka page no longer shows it). The founder separately gave $5M ARR on the Let's Talk Ads podcast.
 
 ## Total revenue
 Not disclosed.

@@ -15,7 +15,8 @@ revenueRange: 250k-1m
 metrics:
   - { name: "Annual revenue 2023", value: "~$1.8M", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
   - { name: "Annual revenue 2024", value: "~$8M", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
-  - { name: "ARR", value: "$10M+", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
+  - { name: "ARR (single source: TMTPost)", value: "$10M+", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
+  - { name: "ARR (ARR Club)", value: "$8M", label: media-reported, sourceUrl: "https://www.arr.club/jenni/jenni-ai-arr-at-8m-hit-4m-users", sourceDate: "2025" }
   - { name: "Revenue from one viral tweet (Jul 2022)", value: "~$10K in a day", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12-19" }
 sources:
   - { title: "Jenni AI profile", url: "https://en.tmtpost.com/post/7814928", publisher: "TMTPost", date: "2025-12-19" }
@@ -39,7 +40,7 @@ A viral tweet in July 2022 brought the first surge. After that, the company ran 
 Freemium with a monthly subscription for unlimited use; students convert around deadlines.
 
 ## Monthly revenue
-About **$833K/month**, implied from the reported $10M+ ARR (media-reported, Dec 2025).
+About **$833K/month**, implied from the $10M+ ARR reported by TMTPost in December 2025. That is the only source for the figure; ARR Club gives a lower $8M ARR.
 
 ## Total revenue
 Not disclosed as a lifetime figure. Reported annual revenue was about $1.8M in 2023 and about $8M in 2024.

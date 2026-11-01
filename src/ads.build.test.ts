@@ -52,7 +52,7 @@ describe('ads build', () => {
 
 describe('site build (ads off)', () => {
   const read = (p: string) => readFileSync(join(OFF, p), 'utf8');
-  const caseUrls = () => readdirSync(join(OFF, 'cases')).map((s) => `/cases/${s}/`);
+  const caseUrls = () => readdirSync(join(OFF, 'cases'), { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).map((s) => `/cases/${s}/`);
 
   it('search index lists every case', () => {
     const index: { url: string; type: string; title: string; category: string; description: string }[] = JSON.parse(read('search-index.json'));

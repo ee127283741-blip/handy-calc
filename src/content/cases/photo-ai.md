@@ -8,15 +8,16 @@ industry: creative-media
 productType: SaaS
 foundedYear: 2023
 foundedDate: "2023 (grew out of Avatar AI, late 2022)"
-teamSize: { display: "1 (solo founder)", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG", sourceDate: "2024-08" }
-mrr: { value: 100000, display: "$100K+/month (monthly revenue; founder notes it is not strict MRR)", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG", sourceDate: "2024-08" }
+teamSize: { display: "1 (solo founder)", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG", sourceDate: "2024-09" }
+mrr: { value: 100000, display: "$100K+/month (monthly revenue; founder notes it is not strict MRR)", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG", sourceDate: "2024-09" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 50k-250k
 metrics:
-  - { name: "Monthly revenue milestone", value: "$100,000+", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG", sourceDate: "2024-08" }
+  - { name: "Monthly revenue milestone", value: "$100,000+", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG", sourceDate: "2024-09" }
   - { name: "Profit margin", value: "Not disclosed", label: not-disclosed }
 sources:
-  - { title: "Pieter Levels just passed $100,000 a month in revenue with Photo AI", url: "https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG", publisher: "Indie Hackers", date: "2024-08" }
+  - { title: "Pieter Levels just passed $100,000 a month in revenue with Photo AI", url: "https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG", publisher: "Indie Hackers", date: "2024-09" }
+  - { title: "New $420K/mo revenue record (Lex Fridman)", url: "https://levels.io/new-420k-mo-revenue-record-lex-fridman", publisher: "levels.io", date: "2024" }
   - { title: "Photo AI case study: 0 to $132K MRR in 18 months", url: "https://www.indiehackers.com/post/photo-ai-by-pieter-levels-complete-dive-case-study-0-to-132k-mrr-in-18-months-3a9a2b1579", publisher: "Indie Hackers", date: "2024" }
 updated: 2026-11-02
 ---
@@ -37,7 +38,7 @@ Almost all distribution came from building in public on X: screenshots of new fe
 Subscription plans that include a number of trained models and photo credits per month, with discounted annual plans. Because many customers pay yearly, Levels prefers to quote monthly revenue rather than MRR.
 
 ## Monthly revenue
-Levels reported passing **$100K a month** in revenue in August 2024 (founder-reported). Higher figures circulate in third-party write-ups but are not used here.
+Levels reported passing **$100K a month** in revenue in September 2024 (founder-reported). Higher figures circulate in third-party write-ups but are not used here.
 
 ## Total revenue
 Not disclosed.
@@ -45,7 +46,7 @@ Not disclosed.
 ## Founding date & timeline
 - **Late 2022:** Avatar generator experiment after Stable Diffusion's release.
 - **2023:** Rebuilt and positioned as Photo AI.
-- **Aug 2024:** Founder reports $100K+/month.
+- **Sep 2024:** Founder reports $100K+/month.
 
 ## Team size
 One person. Levels runs the product himself and automates support and operations where possible.

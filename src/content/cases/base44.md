@@ -13,9 +13,10 @@ mrr: { value: 8330000, display: "≈$8.3M/month, implied from ~$100M ARR", label
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 1m-10m
 metrics:
-  - { name: "Acquisition price (cash)", value: "$80M", label: media-reported, sourceUrl: "https://techradar.com/pro/website-building/wix-jumps-on-the-vibe-coding-bandwagon-with-a-new-acquisition", sourceDate: "2025-06" }
+  - { name: "Acquisition price (cash)", value: "$80M", label: unverified, sourceUrl: "https://techradar.com/pro/website-building/wix-jumps-on-the-vibe-coding-bandwagon-with-a-new-acquisition", sourceDate: "2025-06" }
+  - { name: "ARR at end of 2025 (Wix earnings call)", value: "~$59M", label: media-reported, sourceUrl: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", sourceDate: "2026-03-04" }
   - { name: "ARR (Wix earnings call)", value: "~$100M", label: media-reported, sourceUrl: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", sourceDate: "2026-03-04" }
-  - { name: "Earn-out payments", value: "$38M", label: media-reported, sourceUrl: "https://en.globes.co.il/en/article-1001542919", sourceDate: "2026" }
+  - { name: "Earn-out payments", value: "$38M (in Wix shares, Q1 2026)", label: media-reported, sourceUrl: "https://en.globes.co.il/en/article-1001542919", sourceDate: "2026" }
 sources:
   - { title: "Wix jumps on the vibe coding bandwagon with a new acquisition", url: "https://techradar.com/pro/website-building/wix-jumps-on-the-vibe-coding-bandwagon-with-a-new-acquisition", publisher: "TechRadar", date: "2025-06" }
   - { title: "Wix.com Q4 2025 earnings call transcript", url: "https://www.marketbeat.com/earnings/reports/2026-3-4-wixcom-ltd-stock/", publisher: "MarketBeat", date: "2026-03-04" }
