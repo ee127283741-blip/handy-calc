@@ -6,14 +6,14 @@ const groups = INDUSTRIES.map((c) => ({ href: `/industries/${c.slug}/`, slug: c.
   .filter((g) => g.list.length);
 ---
 <form class="search" role="search" action="/" onsubmit="return false">
-  <label for="tool-q">Search AI startup cases</label>
-  <input id="tool-q" name="q" type="search" placeholder="e.g. photo app, chatbot, SaaS" autocomplete="off" />
+  <label for="case-q">Search AI startup cases</label>
+  <input id="case-q" name="q" type="search" placeholder="e.g. photo app, chatbot, SaaS" autocomplete="off" />
 </form>
-<ul id="tool-results" class="cards" hidden></ul>
-<p id="tool-none" hidden>Nothing matches that search.</p>
-<div id="tool-list">
+<ul id="case-results" class="cards" hidden></ul>
+<p id="case-none" hidden>Nothing matches that search.</p>
+<div id="case-list">
   {groups.map(({ href, slug, name, list }) => (
-    <section aria-labelledby={`g-${slug}`} class="tool-group">
+    <section aria-labelledby={`g-${slug}`} class="case-group">
       <h2 id={`g-${slug}`}><a href={href}>{name}</a></h2>
       <ul class="cards">
         {list.map((c) => <li><a href={caseUrl(c)}>{c.data.title}</a><span>{c.data.summary}</span><span class="count">{c.data.productType}</span></li>)}
@@ -23,23 +23,23 @@ const groups = INDUSTRIES.map((c) => ({ href: `/industries/${c.slug}/`, slug: c.
 </div>
 <script>
   type Entry = { title: string; url: string; type: string; category: string; description: string };
-  const q = document.getElementById('tool-q') as HTMLInputElement;
-  const results = document.getElementById('tool-results')!;
+  const q = document.getElementById('case-q') as HTMLInputElement;
+  const results = document.getElementById('case-results')!;
   let index: Promise<Entry[]> | undefined;
   const load = () => (index ??= fetch('/search-index.json').then((r) => r.json() as Promise<Entry[]>));
   const esc = (s: string) => s.replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
   const run = async () => {
     const words = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
-    document.getElementById('tool-list')!.hidden = !!words.length;
-    if (!words.length) { results.hidden = true; document.getElementById('tool-none')!.hidden = true; return; }
+    document.getElementById('case-list')!.hidden = !!words.length;
+    if (!words.length) { results.hidden = true; document.getElementById('case-none')!.hidden = true; return; }
     const hits = (await load()).filter((e) => words.every((w) => `${e.title} ${e.description} ${e.category} ${e.type}`.toLowerCase().includes(w)));
     results.innerHTML = hits.map((e) => `<li><a href="${e.url}">${esc(e.title)}</a><span>${esc(e.description)}</span><span class="count">${esc(e.type)}</span></li>`).join('');
     results.hidden = !hits.length;
-    document.getElementById('tool-none')!.hidden = !!hits.length;
+    document.getElementById('case-none')!.hidden = !!hits.length;
   };
   q.addEventListener('focus', load, { once: true });
   q.addEventListener('input', run);
   q.value = new URLSearchParams(location.search).get('q') ?? '';
   if (q.value) run();
-  if (q.value || location.hash === '#tool-q') q.focus();
+  if (q.value || location.hash === '#case-q') q.focus();
 </script>

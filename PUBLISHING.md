@@ -59,6 +59,40 @@
 
 **站內連結：** 本文至少連到 2 個其他存在的 case（`[Photo AI](/cases/photo-ai/)`），優先同產業或同策略。
 
+## 0.2 SEO／GEO／AEO 補充知識（2026-11 整理）
+
+`SPEC.md` 第 4 節是技術設定，0.1 是案例的硬性規則；本節補寫作面的 SEO／GEO／AEO 知識。衝突時：0.1 ＞ 本節 ＞ SPEC。整理自 [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo)（MIT）的 seo-geo／seo-content／seo-cluster、[GEO 論文](https://arxiv.org/abs/2311.09735)、[AutoGEO（ICLR 2026）](https://github.com/cxcscmu/AutoGEO)、[awesome-generative-engine-optimization](https://github.com/amplifying-ai/awesome-generative-engine-optimization)。第三方研究的百分比只當方向參考，不可寫進網站內容。
+
+**核心觀念：GEO／AEO 就是 SEO。** Google 的 [AI optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)（2026-05 發布）明說：AI Overviews／AI Mode 用的是同一套排名與品質系統，沒有另外的「AI 索引」。頁面必須先能被 Google 收錄、可顯示摘要，才有機會被 AI 引用。所以先把 Google 排名做好，AI 引用會跟著來。
+
+**Google 明說「不需要做」的事（不要浪費時間）：**
+- 為 AI 另做 `llms.txt` 或特殊標記：對 Google 排名與引用沒有幫助（站上已有的 `llms.txt` 保留，可能對其他 AI 有用，但不要再投入）。
+- 把內容切成小塊、為 AI 改寫特定句型、塞一堆長尾關鍵字變體。
+- 製造假的品牌提及（在論壇、部落格自己貼自己）。
+- 寫到某個字數目標：字數不是排名因素。0.1 的字數下限是「內容夠完整」的底線，不是目標。
+- 假更新日期：只改 `updated` 不改內容會被視為作弊（同第 3 節）。
+
+**真正有效的事（寫每篇 case 都要做到）：**
+1. **獨特、第一手、非大路貨的內容**。Google 的例子：「首購族 7 個訣竅」是大路貨；「我們為什麼放棄驗屋還省了錢」是第一手經驗。對本站來說，就是**別人沒整理過的數字時間軸、來源比對、互相矛盾的說法**；「Why did X work?」分析段要提出具體、有依據的觀點，不要寫人人都會寫的通則。
+2. **答案往前放**。AI 引用大多來自頁面前段：TL;DR 與首段就要有最關鍵的數字＋日期＋標籤；每個 H2 的**第一句**就直接回答該問句，再展開敘事。
+3. **引用來源、具體數字、引述**是 GEO 論文中提升 AI 可見度最有效的三招（關鍵字堆砌無效）。前兩項 0.1 已強制；引述可用：每章最多一句、25 字以內的創辦人原話，加引號並附來源連結。
+4. **實體寫清楚**：首次提到時寫全名，例如「Pieter Levels, the founder of Photo AI」，不要只寫「he」「the app」。公司名、創辦人名、產品名全文一致，跟 frontmatter 相同。AI 要能判斷「這段在講誰」才會引用。
+5. **新鮮度**：AI 偏好近期更新的頁面。每 90 天（第 6 節）檢查每個 case 有沒有新數字；**有新的、有來源的數字才更新**，並照第 3 節保留舊數字當時間軸。
+6. **Who／How／Why 自我檢查**（Google [helpful content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)）：誰寫的（Editorial team，About 有說明）、怎麼做的（來源與標籤公開）、為什麼存在（幫讀者了解這家公司怎麼賺錢，不是為了搶點擊）。三題答不出好答案的案例不要做。
+
+**選題：主題群組（hub-and-spoke），不要零散寫。**
+- `industries/` 頁面是「主題中心」（hub），每個 case 是「分支」（spoke）。新 case 優先補**已有 2 篇以上的產業**，或一次規劃同一產業 3 篇，讓 hub 頁變強。
+- 選題前用 Google autocomplete 試這些修飾詞，找真實問句：`revenue`、`how much`、`founder`、`how it works`、`pricing`、`alternative`、`vs`、`acquisition`、`open source`。
+- 搜尋結果前 10 名高度重疊的兩個關鍵字＝同一篇；不要拆成兩篇近似頁（呼應 0「寧缺勿濫」）。
+- 開源公司是好題材：GitHub 星數、貢獻者、release 時間都是公開可連結的數字。星數一律寫成「X GitHub stars as of YYYY-MM（[verified, GitHub](repo 連結)）」，它是熱度不是營收，不可拿來推估營收。
+
+**技術面（已做好，改動時別弄壞）：**
+- 內容是 Astro 靜態 HTML。很多 AI 爬蟲不執行 JavaScript，所以**正文與數字不可只靠前端 JS 才出現**。
+- `robots.txt` 用 `User-agent: *` 全部允許。AI **搜尋引用**看的是 `OAI-SearchBot`（ChatGPT）、`Claude-SearchBot`（Claude）、`PerplexityBot`、`Googlebot`（AI Overviews／AI Mode）；`GPTBot`、`ClaudeBot`、`Google-Extended` 是**訓練用**，擋不擋都不影響 AI 搜尋引用。不要擋搜尋用的爬蟲。
+- 本文規定不用條列（0.1），比較型資料改由 frontmatter 產生的 data summary 表格呈現。
+
+**站外（選配，不花錢、不造假才做）：** AI 引用跟「品牌在 Reddit、YouTube、Wikipedia 被提到」的關聯比反向連結強。只能用真實、有價值的方式出現（例如在相關討論中回答問題並揭露身分），不可自導自演或大量貼連結。
+
 **自動產生：** TL;DR 框、作者（Editorial team）＋ Updated 日期、FAQ、文末「data summary」數據框（由 frontmatter 產生）、Sources 列表，不需在本文手寫。
 
 ## 1. 新增 case
@@ -101,11 +135,10 @@ npm run preview   # 本機預覽 http://localhost:4321
 
 ## 5. 上線
 
-1. 開分支、commit、開 PR → GitHub Actions CI（`.github/workflows/ci.yml`：astro check、vitest、build）必須全綠。
-2. Cloudflare Pages 會為 PR 建立 preview 網址，檢查頁面。
-3. Merge（或 `git push` 到 `main`）→ Cloudflare Pages 自動部署 production 到 `*.pages.dev`。
-4. sitemap（含 lastmod）、`llms.txt`、`rss.xml`、`search-index.json` 都在 build 時自動重建，不需手動改。
-5. 選配：在 Google Search Console 用 URL Inspection 請求索引。
+1. 開分支、commit、開 PR → GitHub Actions CI（`.github/workflows/ci.yml`：astro check、vitest、build）必須全綠。PR 不會部署，要看頁面請在本機 `npm run preview`。
+2. Merge（或 `git push` 到 `main`）→ CI 通過後用 `wrangler pages deploy` 部署 production 到 Cloudflare Pages 專案 `ai-founder-atlas`。不要手動跑 wrangler deploy。
+3. sitemap（含 lastmod）、`llms.txt`、`rss.xml`、`search-index.json` 都在 build 時自動重建，不需手動改。
+4. 選配：在 Google Search Console 用 URL Inspection 請求索引。
 
 ### Cloudflare Pages 設定（第一次）
 
@@ -120,5 +153,4 @@ npm run preview   # 本機預覽 http://localhost:4321
 - 每 90 天依 GSC 查詢資料更新內容；只有實質修改才更新 `updated` 日期。
 - 定期檢查所有 `sources` 連結是否仍為 200。
 - 文章中的價格至少每月對照官方頁面查證一次，並更新 `lastVerified`。
-- 舊網址不要重用：料理／DIY／手作／日期頁面以 301 導回首頁；已刪除的 3 個 AI 計算機以 301 導到對應文章（見 `public/_redirects`）。
-- `/calculators/` 網址保留作為「Browse all」總目錄。
+- 舊網址不要重用、`public/_redirects` 的舊規則不要刪：計算機時期與提示詞時期的網址都已 301 導向（見 `SPEC.md` 第 6 節）。

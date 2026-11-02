@@ -154,8 +154,8 @@ code { font-family: var(--mono); font-size: .9em; background: #fff; border: 1px 
 .search input { width: 100%; max-width: 28rem; font: inherit; padding: .6rem 1rem; min-height: 48px; border: 1px solid var(--muted); border-radius: var(--radius); background: #fff; color: var(--fg); }
 .search-row { display: flex; gap: .5rem; max-width: 34rem; }
 .search-row .btn { min-height: 48px; }
-.tool-group h2 a { color: inherit; text-decoration: none; }
-.tool-group h2 a:hover { color: var(--link); text-decoration: underline; }
+.case-group h2 a { color: inherit; text-decoration: none; }
+.case-group h2 a:hover { color: var(--link); text-decoration: underline; }
 
 .hero { padding: clamp(2.5rem, 7vw, 5.5rem) 0 3rem; max-width: 48rem; }
 .hero .eyebrow { margin: 0; }
