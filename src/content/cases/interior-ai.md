@@ -85,6 +85,8 @@ In his version 2.0 Product Hunt post, Levels reported 1,000+ recurring customers
 
 [HeadshotPro](/cases/headshotpro/) applies the same "one image proves it" logic to business headshots and also sells to companies. The difference is investment: HeadshotPro spent a year on custom models, while Interior AI improved quality by adding depth and segmentation on top of models Levels already used. Both show that a narrow vertical with a professional buyer pays more reliably than a general image generator.
 
+[BasedLabs](/cases/basedlabs/) went the opposite way to Interior AI, building many free AI image and video tools as search landing pages instead of one vertical.
+
 ## What are the lessons from Interior AI?
 
 - **Pick a vertical where one picture sells it.** Before-and-after images do the marketing for free.

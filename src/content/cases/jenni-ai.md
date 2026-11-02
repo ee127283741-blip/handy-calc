@@ -83,6 +83,8 @@ The timeline: a viral tweet in July 2022 brought about $10K in a day; about $1.8
 
 [Formula Bot](/cases/formula-bot/) shows the same "pick one job" pattern in spreadsheets. Both started broader and found their business by narrowing to a specific, painful task. Jenni AI got there by asking churned users why they left, and finding that students and researchers were the ones who stayed.
 
+[Textero](/cases/textero/) competes for the same students with an AI writing assistant and shows how fragile a Google-dependent student product can be.
+
 ## What can founders learn from Jenni AI's pivots?
 
 - **Follow the users who stay.** Churn interviews revealed students and researchers as Jenni AI's real market.

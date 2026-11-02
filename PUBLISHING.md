@@ -95,6 +95,18 @@
 
 **自動產生：** TL;DR 框、作者（Editorial team）＋ Updated 日期、FAQ、文末「data summary」數據框（由 frontmatter 產生）、Sources 列表，不需在本文手寫。
 
+## 0.3 AI 工具介紹頁（What is X?）
+
+檔案：`src/content/explainers/<slug>.md`，網址 `/what-is/<slug>/`，總覽 `/what-is/`。`src/content/explainers.test.ts` 會檢查以下規則。
+
+- 目的：回答主流 AI 工具的「X 是什麼」搜尋（例 `what is claude`、`chatgpt dots`），並把讀者導到相關的創業案例。
+- `primaryKeyword` 用 Google autocomplete 確認，必須出現在 `title` 與 `summary`。
+- 4–7 個問句 H2，第一個必須是 `What is X?`／`What are X?`；至少一張表格；至少 2 個站內連結（`/cases/...` 或 `/what-is/...`）；`relatedCases` 只能填存在的案例。
+- **事實只能來自官方頁面或主流媒體**，寫之前打開確認。方案與價格變動很快：`pricing` 要附官方 `sourceUrl` 和 `checked` 日期，本文也要連到同一個來源；有 `$` 的段落或表格必須附來源連結。官方頁面只顯示當地貨幣時，不寫價格、只寫方案內容。
+- 不寫官方沒說的功能、不比較「誰比較好」，比較段只寫各家定位與差異。
+- 檔名避免 `claude.md`：macOS 檔名不分大小寫，會被 Claude Code 當成 `CLAUDE.md` 讀入（Claude 的介紹頁 slug 用 `claude-ai`）。
+- 每季重新檢查價格與方案，更新 `pricing.checked` 與 `updated`。
+
 ## 1. 新增 case
 
 1. 選公司：必須有至少一個可公開連結的營收／成長數字來源（創辦人訪談、主流媒體、官方公告）。沒有來源就不做這個案例。

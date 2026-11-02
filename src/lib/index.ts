@@ -6,6 +6,11 @@ export const isoDate = (d: Date) => d.toISOString().slice(0, 10);
 export async function allCases() {
   return (await getCollection('cases')).sort((a, b) => a.data.company.localeCompare(b.data.company));
 }
+/** All "What is X?" explainers, alphabetical by tool name. */
+export async function allExplainers() {
+  return (await getCollection('explainers')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+}
+export const explainerUrl = (e: CollectionEntry<'explainers'>) => `/what-is/${e.data.slug}/`;
 export const caseUrl = (c: CollectionEntry<'cases'>) => `/cases/${c.data.slug}/`;
 export const subSlug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 export const LABEL_NAME: Record<string, string> = {

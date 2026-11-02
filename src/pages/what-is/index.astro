@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SITE_NAME } from '../../site';
+import { EXPLAINER_TYPES } from '../../content.config';
+import { allExplainers, explainerUrl } from '../../lib';
+const all = await allExplainers();
+const groups = EXPLAINER_TYPES.map((t) => ({ type: t, list: all.filter((e) => e.data.type === t) })).filter((g) => g.list.length);
+---
+<BaseLayout title={`AI tools explained: what is Claude, Codex, Gemini and more? | ${SITE_NAME}`} description="Plain-English explainers for the AI tools founders use: what each one is, who makes it, what it costs and which startups in our library build with it.">
+  <Breadcrumbs items={[{ name: 'AI tools explained', href: '/what-is/' }]} />
+  <h1>AI tools explained</h1>
+  <p class="answer">Plain-English answers to "what is…?" for the AI assistants, coding agents and search tools that founders in our case library use. Every page lists who makes the tool, what it does, its plans with the date we checked them, and links to official sources.</p>
+  {groups.map((g) => (
+    <section aria-label={g.type}>
+      <h2>{g.type}</h2>
+      <ul class="cards">
+        {g.list.map((e) => <li><a href={explainerUrl(e)}>{e.data.title}</a><span>{e.data.summary}</span><span class="count">{e.data.maker}</span></li>)}
+      </ul>
+    </section>
+  ))}
+</BaseLayout>

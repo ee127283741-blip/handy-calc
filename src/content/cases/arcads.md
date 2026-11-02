@@ -89,6 +89,8 @@ Put on a timeline: about $5K in MRR in the first week after the January 2024 lau
 
 [Leadmore AI](/cases/leadmore-ai/) shows the other side of the marketing budget. It sells distribution on Reddit rather than content production. Arcads bets that the bottleneck for performance marketers is the number of ad variants they can test; Leadmore AI bets it is getting attention in the right community. Both grew small: Arcads reached $10M ARR with a team of 8, bootstrapped and profitable, according to its co-founder.
 
+[Poppy AI](/cases/poppy-ai/) sells another AI tool to ad makers and creators, an AI whiteboard that grew to about $400K a month through affiliates ([founder-reported, Starter Story](https://www.starterstory.com/stories/poppyai-write-emails-that-sell)).
+
 ## What are the key takeaways from Arcads?
 
 - **Sell to buyers who measure ROI daily.** Performance marketers see within days whether an ad works, so a good tool proves itself fast.

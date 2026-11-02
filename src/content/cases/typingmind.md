@@ -83,6 +83,8 @@ All three sell a better way to use models that other companies build. [Magai](/c
 
 [Merlin](/cases/merlin/) puts AI inside the browser where people already work, rather than in a separate chat app. And like [PDF.ai](/cases/pdf-ai/), TypingMind shows how much a fast launch to an existing X audience is worth when a new API opens.
 
+For two more one-person AI tools sold to power users, see [AudioPen](/cases/audiopen/), which turns voice notes into text, and [Lychee](/cases/lychee/), which replaces spreadsheets for everyday users.
+
 ## What can founders learn from TypingMind?
 
 - **Build on heavy users' complaints.** The best wedge is the feature power users keep asking the platform for.

@@ -1,0 +1,91 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import type { Article, FAQPage, WithContext } from 'schema-dts';
+import { OG_SIZE } from '../../lib/og';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import { SITE_NAME } from '../../site';
+import { allCases, allExplainers, caseUrl, explainerUrl, isoDate } from '../../lib';
+export async function getStaticPaths() {
+  return (await allExplainers()).map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+}
+const { entry } = Astro.props as { entry: CollectionEntry<'explainers'> };
+const d = entry.data;
+const { Content } = await render(entry);
+const path = explainerUrl(entry);
+const cases = (await allCases()).filter((c) => d.relatedCases.includes(c.data.slug));
+const others = (await allExplainers()).filter((e) => e.data.slug !== d.slug);
+const glance = [
+  { name: 'Made by', value: d.maker },
+  { name: 'Type', value: d.type },
+  { name: 'Pricing', value: d.pricing.display, href: d.pricing.sourceUrl, note: `checked ${isoDate(d.pricing.checked)}` },
+  { name: 'Official site', value: new URL(d.officialUrl).hostname.replace(/^www\./, ''), href: d.officialUrl },
+];
+const image = { url: new URL(`/og/what-is/${d.slug}.png`, Astro.site).href, alt: `${d.title} – ${SITE_NAME}`, ...OG_SIZE };
+const article: WithContext<Article> = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: d.title,
+  description: d.summary,
+  url: new URL(path, Astro.site).href,
+  image: { '@type': 'ImageObject', url: image.url, width: String(image.width), height: String(image.height) },
+  datePublished: isoDate(d.published),
+  dateModified: isoDate(d.updated),
+  keywords: [d.primaryKeyword, ...d.secondaryKeywords].join(', '),
+  about: { '@type': 'SoftwareApplication', name: d.name, applicationCategory: d.type, url: d.officialUrl, creator: { '@type': 'Organization', name: d.maker } },
+  author: { '@type': 'Organization', name: 'Editorial team', url: new URL('/authors/editorial-team/', Astro.site).href },
+  publisher: { '@type': 'Organization', name: SITE_NAME },
+  citation: d.sources.map((s) => s.url),
+};
+const faqPage: WithContext<FAQPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: d.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<BaseLayout title={`${d.title} | ${SITE_NAME}`} description={d.summary} jsonLd={[article, faqPage]} ogType="article" image={image}>
+  <Breadcrumbs items={[{ name: 'AI tools explained', href: '/what-is/' }, { name: d.name, href: path }]} />
+  <article class="case">
+    <p class="eyebrow"><a href="/what-is/">AI tools explained</a> · {d.type}</p>
+    <h1>{d.title}</h1>
+    <p class="answer">{d.summary}</p>
+    <div class="tldr" role="note" aria-label="TL;DR"><strong>TL;DR:</strong> {d.tldr}</div>
+    <p class="meta">By <a href="/authors/editorial-team/" rel="author">Editorial team</a> · Updated <time datetime={isoDate(d.updated)}>{isoDate(d.updated)}</time></p>
+    <div class="table-wrap">
+      <table class="glance" aria-label={`${d.name} at a glance`}>
+        <caption>{d.name} at a glance</caption>
+        <tbody>
+          {glance.map((g) => (
+            <tr>
+              <th scope="row">{g.name}</th>
+              <td>{g.href ? <a href={g.href} rel="nofollow noopener" target="_blank">{g.value}</a> : g.value}{g.note && <span class="meta"> ({g.note})</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <AdSlot />
+    <div class="case-body"><Content /></div>
+    <section aria-labelledby="faq">
+      <h2 id="faq">Frequently asked questions</h2>
+      {d.faq.map((f) => <><h3>{f.q}</h3><p>{f.a}</p></>)}
+    </section>
+    {cases.length > 0 && (
+      <section aria-labelledby="built-with">
+        <h2 id="built-with">AI startups in our library connected to {d.name}</h2>
+        <ul>{cases.map((c) => <li><a href={caseUrl(c)}>{c.data.title}</a></li>)}</ul>
+      </section>
+    )}
+    <section aria-labelledby="sources">
+      <h2 id="sources">Sources</h2>
+      <ol>{d.sources.map((s) => <li><a href={s.url} rel="nofollow noopener">{s.title}</a> – {s.publisher}{s.date && `, ${s.date}`}</li>)}</ol>
+      <p class="meta">AI products change fast. Plans, prices and model names on this page were checked on the official pages on the date shown; check them again before you buy.</p>
+    </section>
+    <section aria-labelledby="more-tools">
+      <h2 id="more-tools">More AI tools explained</h2>
+      <ul>{others.map((e) => <li><a href={explainerUrl(e)}>{e.data.title}</a></li>)}</ul>
+    </section>
+    <p class="meta">Last updated: <time datetime={isoDate(d.updated)}>{isoDate(d.updated)}</time></p>
+  </article>
+</BaseLayout>

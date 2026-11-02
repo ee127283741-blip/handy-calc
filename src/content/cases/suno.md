@@ -82,6 +82,8 @@ All three sell a creative result to people who are not professionals at making i
 
 The difference is what each company owns. Photo AI rents GPU models and keeps its own code minimal, run by one person. Suno trains its own audio models and raised large rounds to pay for that, which makes song quality its own product decision but also puts it at the centre of copyright disputes. Shulman said in February 2026 that over 100 million people had used Suno ([founder-reported, Music Business Worldwide](https://www.musicbusinessworldwide.com/suno-hits-2m-paid-subscribers-300m-annual-revenue/)), a consumer scale none of the solo-founder cases in this library come close to.
 
+[neural frames](/cases/neural-frames/) covers the visual side of AI music: one founder generating audio-reactive videos for songs that already exist.
+
 ## What lessons does Suno hold for founders?
 
 - **Turn a skill into a prompt.** Most people who want to make a song never learned an instrument; that is the market.

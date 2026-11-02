@@ -15,6 +15,7 @@ const inMenu = (m: (typeof menus)[number]) => path.startsWith(m.base);
     <nav aria-label="Main" class="nav">
       <ul class="nav-cats">
         <li><a class="nav-link" href="/" aria-current={path === '/' ? 'page' : undefined}>Case library</a></li>
+        <li><a class="nav-link" href="/what-is/" aria-current={path.startsWith('/what-is/') ? 'page' : undefined}>AI tools explained</a></li>
         {menus.map((m) => (
           <li>
             <details class="drop">

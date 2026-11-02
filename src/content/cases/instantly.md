@@ -101,6 +101,8 @@ Growth brought other problems. Raul named scaling the database and support for t
 
 Staying bootstrapped was a choice, not a fallback. Raul turned down investor interest because he valued freedom and not having a board, and he said it was hard even to spend money when acquisition was that cheap ([founder-reported, Latka](https://getlatka.com/companies/instantly-ai/interviews/instantly-ai-raul-kaevand-2022)). [Harvey](/cases/harvey/) took the opposite, venture-funded path, raising large rounds to sell AI to law firms. The contrast shows two workable models: Instantly's near-zero acquisition cost made outside money unnecessary, while Harvey's long enterprise sales cycles made it essential.
 
+[Rytr](/cases/rytr/) is the other case here that used AppSumo to seed its launch before building SEO.
+
 ## What are the takeaways from Instantly?
 
 - **Attack the invoice you resent paying.** Per-account pricing was the agency's own pain, so the team knew exactly what to remove.

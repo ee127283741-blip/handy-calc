@@ -85,6 +85,8 @@ All four launched in 2023 on the same idea: an AI that answers from your own con
 
 [My AskAI](/cases/my-askai/) shows where the category went next. Instead of a widget on the website, it plugs into help desks like Intercom and Zendesk and competes on price with their built-in AI. The lesson across the four is that the first-mover window in AI is short: Chatbase's own founder expected competition within months, and the later entrants each needed a sharper angle, whether a domain, a niche or an integration.
 
+[Coachvox AI](/cases/coachvox-ai/) uses the same "train AI on your content" idea for creators instead of support teams, cloning a coach rather than a help centre.
+
 ## What are the lessons from Chatbase?
 
 - **Speed beats research in a brand-new market.** Elsaid skipped validation because the demand was obvious, and shipping first is what made Chatbase go viral.

@@ -107,6 +107,8 @@ Harvey is the clearest venture-scale case in this library, and the contrast with
 
 [Gamma](/cases/gamma/) sits in between. It also passed $100M ARR in 2025, but with about 50 people and $23M in initial funding ([founder-reported, Gamma](https://gamma.app/insights/how-we-built-a-usd100m-business-differently)), because product-led growth sells itself. Harvey had 350 employees at the same revenue milestone. The difference is the buyer: a law firm buys through partners, IT and compliance, not through a free trial.
 
+[EchoBase AI](/cases/echobase-ai/) tried to sell AI to consultants on a tiny budget and shut down in 2024, which shows the other end of the professional-services market.
+
 ## What lessons does Harvey offer founders?
 
 - **Pair domain expertise with AI expertise.** A litigator and an AI researcher could build what neither could alone.

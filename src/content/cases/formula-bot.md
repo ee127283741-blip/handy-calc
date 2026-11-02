@@ -89,6 +89,8 @@ All three were built on Bubble by founders who are not developers. [Magai](/case
 
 Their pricing reflects their users. Formula Bot's free limit covers 97% of people and charges only power users, a classic freemium funnel for a consumer-sized task. My AskAI charges businesses on conversation volume, and Magai sells one subscription for many models. The cheaper and more frequent the task, the more a generous free tier makes sense.
 
+[Lychee](/cases/lychee/) attacks the same spreadsheet pain from the other side, replacing the spreadsheet for people who never wanted one.
+
 ## Which takeaways from Formula Bot fit any side project?
 
 - **Your day job can be the idea.** Twelve years of Excel work told Bressler both the problem and the accuracy bar.

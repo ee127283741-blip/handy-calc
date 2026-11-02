@@ -85,6 +85,8 @@ All three are interfaces to models other companies build. [TypingMind](/cases/ty
 
 That placement is Merlin's distribution advantage and its risk. A free daily allowance of model queries made it easy to try, and the Chrome Web Store did the discovery. But browsers and model makers can add the same features natively, so Merlin has to keep adding tools, such as social media writing and code explanations, faster than the platforms do.
 
+[Bluedot](/cases/bluedot/) and [Recall](/cases/recall/) are two smaller AI Chrome extensions: one writes Google Meet notes without a bot, the other turns what you read into a knowledge base.
+
 ## What takeaways does Merlin offer extension builders?
 
 - **Put AI where people already work.** A browser sidebar removes the step of opening another app.

@@ -78,6 +78,8 @@ All three sell growth to people who live on outreach and audiences, and all thre
 
 The difference is how much each depends on one platform. Tweet Hunter answered that risk by cloning itself to LinkedIn as Taplio. Leadmore AI charges refundable credits per action, which lowers the risk for buyers rather than for the company. For another tool sold to people who publish constantly, see [Arcads](/cases/arcads/).
 
+[ChatSEO](/cases/chatseo/) is a newer example of a founder turning his own public expertise, in SEO, into an AI tool his audience pays for.
+
 ## What are the takeaways from Tweet Hunter?
 
 - **Package the method you are known for.** If you grow an audience in public, a tool built on your method has a market waiting.

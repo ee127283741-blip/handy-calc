@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { INDUSTRIES, PRODUCT_TYPES, SITE_NAME, SITE_TAGLINE } from '../site';
-import { allCases, caseUrl } from '../lib';
+import { allCases, allExplainers, caseUrl, explainerUrl } from '../lib';
 
 // llms.txt index (https://llmstxt.org/), rebuilt from content collections on every build.
 export const GET: APIRoute = async ({ site }) => {
@@ -14,6 +14,8 @@ export const GET: APIRoute = async ({ site }) => {
     lines.push(`- [${ind.name}](${abs(`/industries/${ind.slug}/`)}): ${ind.description}`);
     for (const c of list) lines.push(`  - [${c.data.title}](${abs(caseUrl(c))}) (${c.data.productType}): ${c.data.summary}`);
   }
+  lines.push('', '## AI tools explained', '', `- [AI tools explained](${abs('/what-is/')}): plain-English explainers of mainstream AI tools, with plans checked on official pages`);
+  for (const e of await allExplainers()) lines.push(`  - [${e.data.title}](${abs(explainerUrl(e))}) (${e.data.type}, by ${e.data.maker}): ${e.data.summary}`);
   lines.push('', '## Product types', '', `- [All product types](${abs('/types/')})`);
   for (const t of PRODUCT_TYPES) lines.push(`- [${t.name}](${abs(`/types/${t.slug}/`)}): ${t.description}`);
   lines.push('');

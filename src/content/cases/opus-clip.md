@@ -84,6 +84,8 @@ The timeline: founded in January 2022; pivot to AI clipping in 2023; about $20M 
 
 [Suno](/cases/suno/) shows the consumer end of the same trend: AI that turns non-experts into makers. All three spread because their output is made to be posted, so every clip, ad or song is a demonstration. OpusClip's reported 10 million users and 57 billion views on its clips in a year show how far that loop can go.
 
+[Vidon.ai](/cases/vidon-ai/) repurposes written blog posts into video instead, and [neural frames](/cases/neural-frames/) generates music videos for musicians.
+
 ## What lessons does OpusClip hold?
 
 - **Pivot toward the job users repeat most.** Clipping long videos into shorts is a weekly task for creators.

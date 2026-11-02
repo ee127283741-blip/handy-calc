@@ -89,6 +89,8 @@ SiteGPT and [Chatbase](/cases/chatbase/) launched weeks apart in 2023 with nearl
 
 [My AskAI](/cases/my-askai/) took the third route. Instead of a chatbot on the website, it plugged into help desks like Intercom and Zendesk, and grew slowly through Google search rather than one big launch. Put side by side, the three cases suggest that a viral launch buys attention, but retention comes from a narrow buyer with a painful, recurring problem.
 
+[Recall](/cases/recall/) is another small AI product that went viral, then had to fix retention after the launch spike faded.
+
 ## What can founders learn from SiteGPT?
 
 - **Watch your own product for spin-offs.** SiteGPT was a Feather feature that turned out to be the bigger business.

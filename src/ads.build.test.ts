@@ -118,7 +118,7 @@ describe('site build (ads off)', () => {
 
   it('search index lists every case', () => {
     const index: { url: string; type: string; title: string; category: string; description: string }[] = JSON.parse(read('search-index.json'));
-    expect(index.map((e) => e.url).sort()).toEqual(caseUrls().sort());
+    expect(index.map((e) => e.url).filter((u) => u.startsWith('/cases/')).sort()).toEqual(caseUrls().sort());
     for (const e of index) expect(e.title && e.type && e.category && e.description).toBeTruthy();
   });
 

@@ -87,6 +87,8 @@ Running a fast-growing consumer product alone means every support ticket and out
 
 The build choices differ too. Photo AI keeps its own code as simple as possible and leans on hosted GPU APIs for the AI. HeadshotPro's team spent about a year on its own chain of models, filtering bad selfies before training and restoring faces afterwards, because people know exactly what their own face should look like. Levels optimised for shipping speed; HeadshotPro optimised for quality on one narrow output.
 
+For a smaller rival focused only on professional headshots, see [BetterPic](/cases/betterpic/).
+
 ## What can founders learn from Photo AI?
 
 - **Sell the result, not the AI.** "Photos of you" is easy to understand; "a fine-tuned diffusion model" is not.

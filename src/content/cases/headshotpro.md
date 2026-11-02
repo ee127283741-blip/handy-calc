@@ -89,6 +89,8 @@ HeadshotPro's revenue is not disclosed by any primary source we could verify, an
 
 Both founders tested several products before one stuck. Levels expanded an avatar experiment into Photo AI; Postma ran Stock AI, ProfilePicture.AI and Deep Agency before HeadshotPro. [Interior AI](/cases/interior-ai/) shows the same "photos of X" pattern applied to rooms.
 
+[BetterPic](/cases/betterpic/) is a direct rival that grew from about $1,500 to $20,016 a month with SEO and a pricing change ([founder-reported, Starter Story](https://www.starterstory.com/stories/betterpic)), and [AiApply](/cases/aiapply/) sells the rest of the job application to the same job seekers.
+
 ## What are the key lessons from HeadshotPro?
 
 - **Follow sales, not press.** Deep Agency got the attention; HeadshotPro got the customers, so that is where Postma went.
