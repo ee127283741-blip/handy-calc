@@ -11,6 +11,7 @@ productType: SaaS
 foundedYear: null
 foundedDate: "Not disclosed"
 teamSize: { display: "Not disclosed", label: not-disclosed }
+pricing: { display: "Credit-based; unused credits can be refunded at any time", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/hitting-30k-mrr-with-an-ai-marketing-product-n59ORJCYjnZC61Q096UL", sourceDate: "2025-12" }
 mrr: { value: 30000, display: "Over $30K MRR", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/hitting-30k-mrr-with-an-ai-marketing-product-n59ORJCYjnZC61Q096UL", sourceDate: "2025-12" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 10k-50k
@@ -34,54 +35,53 @@ published: 2026-11-02
 updated: 2026-11-02
 ---
 
-Richard Wang sells a tool for marketing on Reddit, and he grew it the same way he tells customers to grow: by sharing useful knowledge on platforms like Reddit, following up with real conversations and inviting interested people into a private community. Leadmore AI is a small, independent product with no ad budget in its story. Its founder's rule is to talk to users for weeks before writing code. In December 2025 he reported Leadmore AI at over $30K in monthly recurring revenue and still growing quickly ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/hitting-30k-mrr-with-an-ai-marketing-product-n59ORJCYjnZC61Q096UL)).
+Richard Wang sells a tool for marketing on Reddit, and he grew it the same way he tells customers to grow: by sharing useful knowledge on platforms like Reddit, following up with real conversations and inviting interested people into a private community. There is no ad budget in Leadmore AI's story. Its founder's rule is to talk to users for weeks before writing code. In December 2025 he reported it at over $30K in monthly recurring revenue and still growing quickly ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/hitting-30k-mrr-with-an-ai-marketing-product-n59ORJCYjnZC61Q096UL)).
 
-## Why did Richard Wang start Leadmore AI?
+## What does Leadmore AI do?
 
-Wang spent more than five years in engineering and product roles at leading tech companies before becoming an independent founder. He chose to build in AI because he believes it will overturn many assumptions behind the traditional and mobile internet and open an entirely new market. His method for picking ideas starts with real user needs, which he finds by watching conversations and behaviour on social media, and with an honest question about where he understands an industry better than most people. Leadmore AI, a B2B product for AI marketing on Reddit, came out of that process.
+Leadmore AI is a B2B AI marketing tool for Reddit. Users can post, comment and discover the subreddits that are relevant to their product, and each of those actions costs credits. Unused credits can be refunded at any time, so a customer pays only for what the AI actually does for them.
 
-## How does Leadmore AI work?
+Wang spent more than five years in engineering and product roles at leading tech companies before going independent. He chose AI because he believes it will overturn many assumptions behind the traditional and mobile internet and open an entirely new market. Leadmore AI is one of three products he is building, alongside a consumer AI entertainment community and Modelfox AI, a product for GEO, or generative engine optimisation.
 
-Leadmore AI helps businesses market on Reddit with AI. Users can post, comment and discover the subreddits that are relevant to their product. Each of those actions is paid for with credits, so a customer pays for what the AI actually does on their behalf. Wang describes it as a B2B product focused on AI marketing, and it sits alongside a GEO product he was preparing to launch.
+## How does Richard Wang validate an idea before coding?
 
-## How was Leadmore AI built?
+He treats code as the last step. His process, in order ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/hitting-30k-mrr-with-an-ai-marketing-product-n59ORJCYjnZC61Q096UL)):
 
-Wang does not start by building. He first shares a demo, or just the idea, on social platforms to see whether potential users show up, then talks to them directly to check that their real needs match his assumptions. He aims for 50 to 100 conversations, though he says even ten deep ones change how well you understand the problem. Ideally he also tests whether people will pay before writing any code. Only then does he build, and with vibe coding he says a basic MVP can often ship in one or two weeks.
+| Step | What Wang does |
+|---|---|
+| Find the idea | Watch real conversations and behaviour on social media, and pick an area where he knows the industry better than most |
+| Validate | Share a demo, or just the idea, on social platforms and see who shows up |
+| Talk to users | Aim for 50 to 100 people; even ten deep conversations sharpen priorities |
+| Test payment | Check that people will actually pay before writing code |
+| Build | Ship a minimal MVP with vibe coding, often in one or two weeks |
 
-Leadmore AI runs on a serverless architecture: Next.js as the full-stack frontend, Go with the Gin framework for high-performance APIs, MongoDB for core data, ClickHouse for analytics and Function Compute for background tasks.
+Leadmore AI itself runs on a serverless stack: Next.js for the full-stack frontend, Go with the Gin framework for APIs, MongoDB for core data, ClickHouse for analytics and Function Compute for background tasks.
 
-## How does Leadmore AI market and price its product?
+## Why does Leadmore AI care most about retention?
 
-Most of Leadmore AI's users come from content and direct outreach. The team writes about its industry on social platforms such as Reddit, shares practical knowledge and explains the value of the product. When someone shows interest, they follow up with a direct conversation, and engaged users are invited into a private community. After people start using the product, the team keeps talking to them about their needs and pain points, which improves the product and drives word of mouth.
+Wang describes revenue as new users multiplied by conversion rate multiplied by retention, and retention is the number he watches most. Weak retention means the product is not delivering enough value, so only once it is healthy does the team push hard on acquisition and conversion.
 
-Pricing is credit-based. Users buy credits and spend them on actions such as posting, commenting and discovering subreddits, and any unused credits can be refunded at any time. Wang describes revenue as new users multiplied by conversion rate multiplied by retention, and says retention is the number he cares about most. If retention is weak, the product is not delivering enough value, so only once it is healthy does the team push hard on acquisition and conversion.
+Acquisition itself is content and conversation. The team writes about its industry on platforms such as Reddit, shares practical knowledge and explains what the product does. Interested people get a direct conversation, and engaged users are invited into a private community. After they start using Leadmore AI, the team keeps talking to them about pain points, which improves the product and drives word of mouth.
 
-## What challenges did Leadmore AI face?
-
-The main challenge Wang describes is the pull to add features. As a product grows, competitors appear and some ship a long list of features, which makes a founder wonder whether to copy them. With a team of one or two people, that is almost impossible to do well. Wang says this is exactly when building requires subtraction, not addition.
-
-He also wishes he had applied that rule from the start. If he could do it again, he would cut his first MVP from three features to one, which he believes would have let him ship within two weeks and move much faster overall.
-
-## How much revenue does Leadmore AI make?
+## What revenue has Leadmore AI reported?
 
 Leadmore AI was doing over $30K MRR in December 2025 and, in Wang's words, still growing very quickly ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/hitting-30k-mrr-with-an-ai-marketing-product-n59ORJCYjnZC61Q096UL)). Total revenue, team size and the founding date are not disclosed.
 
-At the same time Wang was working on two other products: a consumer AI entertainment community and Modelfox AI, a marketing product for GEO, or generative engine optimisation. He said Modelfox AI was a rough demo due to launch within two weeks.
+Wang's main regret is about scope, not growth. As competitors appeared, some with long feature lists, he felt the pull to match them. With one or two people that is almost impossible to do well.
 
-## Why did Leadmore AI work?
+> "Human nature pushes you to want more, but this is exactly when product building requires subtraction, not addition." — Richard Wang ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/hitting-30k-mrr-with-an-ai-marketing-product-n59ORJCYjnZC61Q096UL))
 
-The founder used his own product's method to grow it. Leadmore AI sells Reddit marketing, and Wang grew it with content, conversations and community on platforms like Reddit. That is both a growth channel and constant proof that the approach works.
+If he started again, he would cut his first MVP from three features to one, which he believes would have let him ship within two weeks.
 
-Refundable credits lower the risk of trying it. A customer only pays for the actions they use and can get unused credits back, which makes the first purchase an easy decision for a business that is unsure whether Reddit marketing will work.
+## How does Leadmore AI compare with Tweet Hunter and Arcads?
 
-Validation came before code. By talking to many potential users and testing willingness to pay before building, Wang reduced the chance of building something nobody wanted. For another marketing tool built around a single social network, see [Tweet Hunter](/cases/tweet-hunter/), and for an AI startup in the same marketing and advertising category, see [Arcads](/cases/arcads/).
+[Tweet Hunter](/cases/tweet-hunter/) and Leadmore AI both sell growth on one social network, X for Tweet Hunter and Reddit for Leadmore AI, and both grew by using their own method in public. The pricing differs. Leadmore AI charges refundable credits per action, which lowers the risk for a business that is not sure Reddit marketing will work, while subscription tools ask for a monthly commitment up front.
 
-## What can founders learn from Leadmore AI?
+[Arcads](/cases/arcads/) sits in the same marketing category but sells content production, AI-generated video ads, rather than distribution. Leadmore AI's bet is that the scarce resource is attention in the right community, not more content. Wang's next product, Modelfox AI, extends that bet to AI search engines.
 
-Spend real time on user research first. Wang recommends one to three months of talking to users before building, and says that building first is a flawed default for many indie developers.
+## What can indie founders learn from Leadmore AI?
 
-Treat operations and growth as core skills. He argues that for indie founders today, operational ability can matter as much as development skill, and that founders who lack it should find a cofounder who has it.
-
-Do not chase trends. Wang's advice is to build around the industry where you have a real advantage and keep iterating in one direction.
-
-Ship less. Cutting the first version to a single feature is the change he would make if he started again.
+- **Research for months, build for weeks.** Wang recommends one to three months of user conversations before writing code.
+- **Treat growth as a core skill.** He argues operations can matter as much as development, and founders who lack it should find a cofounder who has it.
+- **Ship one feature, not three.** Subtraction is the change he would make to his first MVP.
+- **Do not chase trends.** Build where you already have an industry advantage and keep iterating in one direction.

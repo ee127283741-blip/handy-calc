@@ -23,6 +23,15 @@ const cards: Card[] = [
   { name: 'Founded', label: d.foundedYear ? undefined : 'not-disclosed', value: d.foundedDate },
   ...d.metrics,
 ];
+// "At a glance" table under the TL;DR: the facts readers scan for first.
+const revenue = d.mrr.value !== null ? { name: 'Revenue', ...d.mrr } : { name: 'Revenue', ...d.totalRevenue };
+const glance = [
+  revenue,
+  { name: 'Team size', ...d.teamSize },
+  { name: 'Pricing', ...d.pricing },
+  { name: 'Founded', display: d.foundedDate, label: undefined, sourceUrl: undefined, sourceDate: undefined, labelNote: undefined },
+  { name: d.founders.length > 1 ? 'Founders' : 'Founder', display: d.founders.join(', '), label: undefined, sourceUrl: undefined, sourceDate: undefined, labelNote: undefined },
+];
 const related = (await allCases()).filter((c) => c.data.slug !== d.slug && c.data.industry === d.industry).slice(0, 3);
 const authorUrl = new URL('/authors/editorial-team/', Astro.site).href;
 const image = { url: new URL(`/og/${d.slug}.png`, Astro.site).href, alt: `${d.title} – ${SITE_NAME} case study`, ...OG_SIZE };
@@ -59,6 +68,19 @@ const jsonLd = [article, faqPage];
     <p class="answer">{d.summary}</p>
     <div class="tldr" role="note" aria-label="TL;DR"><strong>TL;DR:</strong> {d.tldr}</div>
     <p class="meta">Founder{d.founders.length > 1 ? 's' : ''}: {d.founders.join(', ')} · By <a href="/authors/editorial-team/" rel="author">Editorial team</a> · Updated <time datetime={isoDate(d.updated)}>{isoDate(d.updated)}</time></p>
+    <div class="table-wrap">
+      <table class="glance" aria-label={`${d.company} at a glance`}>
+        <caption>{d.company} at a glance</caption>
+        <tbody>
+          {glance.map((g) => (
+            <tr>
+              <th scope="row">{g.name}</th>
+              <td>{g.display}{g.label && g.label !== 'not-disclosed' && <span class={`m-label l-${g.label}`}>{g.labelNote ?? LABEL_NAME[g.label]}</span>}{g.sourceUrl && <> <a class="m-src" href={g.sourceUrl} rel="nofollow noopener" target="_blank">Source{g.sourceDate && `, ${g.sourceDate}`}</a></>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
     <AdSlot />
     <div class="case-body"><Content /></div>
     <section aria-labelledby="faq">

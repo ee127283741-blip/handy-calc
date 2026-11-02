@@ -11,6 +11,7 @@ productType: SaaS
 foundedYear: null
 foundedDate: "Not disclosed"
 teamSize: { display: "23 (9 until late 2024)", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12" }
+pricing: { display: "Not disclosed", label: not-disclosed }
 mrr: { value: 833000, display: "≈$833K/month, implied from $10M+ ARR", label: media-reported, sourceUrl: "https://en.tmtpost.com/post/7814928", sourceDate: "2025-12" }
 totalRevenue: { value: null, display: "Not disclosed (2023: ~$1.8M, 2024: ~$8M annual revenue)", label: not-disclosed }
 revenueRange: 250k-1m
@@ -39,50 +40,52 @@ updated: 2026-11-02
 
 David Park says he spent about ten years on failed ventures before Jenni AI. Even Jenni did not start as the product it became: it first targeted content agencies and SEO writers. What turned it around was looking at who stayed. Students and researchers were the most loyal users, so the team rebuilt the product for them. TMTPost reported in December 2025 that it had passed $10M in ARR ([media-reported, TMTPost](https://en.tmtpost.com/post/7814928)) with a small team.
 
-## Why did the founders build Jenni AI?
+## Why did Jenni AI stop selling to marketers?
 
 Jenni first targeted content agencies and SEO writers, then became a general AI writer once GPT-3 arrived. A general AI writer competes with every other AI writer, though, and the real pain turned out to be narrower. Students and researchers need to write long, formal, cited text under deadlines, and generic tools did not handle citations or academic tone.
 
-## How does Jenni AI work?
+> "They weren’t looking for marketing creativity. They needed structure, citations and academic rigor." — David Park ([founder-reported, TMTPost](https://en.tmtpost.com/post/7814928))
+
+## What does Jenni AI do for academic writers?
 
 Large language models sit behind an editor with features built for academia: autocomplete in an academic tone, support for more than 1,700 citation styles, a document library, and citations that link generated text back to source passages in uploaded papers. Writing grounded in the user's own sources is the key difference from a general chatbot.
 
-## How was Jenni AI built and repositioned?
-
 Usage data showed students and researchers were the most loyal users, so the team refocused on academic writing. The team stayed small for years: nine people until late 2024, 23 afterwards ([media-reported, TMTPost](https://en.tmtpost.com/post/7814928)). Repositioning meant building features a general writer would never prioritise, such as citation styles and source-linked text. The founding year is not disclosed.
 
-## How did Jenni AI market and price its product?
+## How did Jenni AI reach students on TikTok?
 
 A viral tweet in July 2022 brought the first surge, about $10K of revenue in a day ([media-reported, TMTPost](https://en.tmtpost.com/post/7814928)). After that, the company ran many single-purpose TikTok and Instagram accounts posting short, deadline-themed videos aimed at students.
 
 Pricing is freemium with a monthly subscription for unlimited use; students convert around deadlines.
 
-## What challenges did Jenni AI face?
+## What nearly stalled Jenni AI?
 
 The first challenge was positioning: a general AI writer had no clear audience and lots of competition. The pivot to academic writing solved that.
 
 The second is data quality for outsiders. The $10M+ ARR figure comes from a single source, TMTPost, while ARR Club gives a lower $8M ARR ([media-reported, ARR Club](https://www.arr.club/jenni/jenni-ai-arr-at-8m-hit-4m-users)). Readers should note the disagreement.
 
-## How much revenue does Jenni AI make?
+## How much revenue does Jenni AI earn?
 
 TMTPost reported $10M+ ARR in December 2025, which implies about $833K a month ([media-reported, TMTPost](https://en.tmtpost.com/post/7814928)). Reported annual revenue was about $1.8M in 2023 ([media-reported, TMTPost](https://en.tmtpost.com/post/7814928)) and about $8M in 2024 ([media-reported, TMTPost](https://en.tmtpost.com/post/7814928)). Lifetime total revenue is not disclosed.
 
 The timeline: a viral tweet in July 2022 brought about $10K in a day; about $1.8M revenue in 2023 after the pivot to academic writing; about $8M in 2024; $10M+ ARR reported in 2025.
 
-## Why did Jenni AI work?
+| When | Milestone | Source |
+|---|---|---|
+| July 2022 | One viral tweet brings about $10K in a day | [TMTPost](https://en.tmtpost.com/post/7814928) |
+| 2023 | About $1.8M annual revenue | [TMTPost](https://en.tmtpost.com/post/7814928) |
+| 2024 | About $8M annual revenue; team of 9 | [TMTPost](https://en.tmtpost.com/post/7814928) |
+| December 2025 | $10M+ ARR reported; team of 23 | [TMTPost](https://en.tmtpost.com/post/7814928) |
 
-It followed the users who stay, not the ones it planned for. Retention data revealed the real market.
+## How does Jenni AI compare with PDF.ai and Formula Bot?
 
-Narrow positioning, academic writing, beat a generic AI writer. Citations and source-grounded writing are features a general tool has little reason to build.
+[PDF.ai](/cases/pdf-ai/) is Jenni AI's closest cousin. PDF.ai worked with the TikTok team behind Jenni AI and also ran an affiliate program, and both products serve people working through long documents. The difference is depth: PDF.ai answers questions about a document, while Jenni AI helps write one, with citations and academic structure.
 
-A many-accounts short-video strategy replaced paid ads, and deadline-themed content reached students exactly when they were ready to pay. [PDF.ai](/cases/pdf-ai/) also serves people working with documents, and [Gamma](/cases/gamma/) shows another productivity tool that grew after adding AI.
+[Formula Bot](/cases/formula-bot/) shows the same "pick one job" pattern in spreadsheets. Both started broader and found their business by narrowing to a specific, painful task. Jenni AI got there by asking churned users why they left, and finding that students and researchers were the ones who stayed.
 
-For a very different path in a professional market, see [Harvey](/cases/harvey/), the venture-backed legal AI company.
+## What can founders learn from Jenni AI's pivots?
 
-## What can founders learn from Jenni AI?
-
-Follow the users who stay, not the ones you planned for.
-
-Narrow positioning (academic) beats a generic AI writer. Build the features your niche needs and others ignore.
-
-A many-accounts short-video strategy can replace paid ads. And persistence matters: Park's decade of failed ventures preceded this one.
+- **Follow the users who stay.** Churn interviews revealed students and researchers as Jenni AI's real market.
+- **Specialise as models commoditise.** Citations and academic rigor are harder to copy than general writing.
+- **Short video can be a whole channel.** Many single-purpose TikTok and Instagram accounts reached students directly.
+- **Stay long enough to find it.** Park describes years of failing before the product that worked.

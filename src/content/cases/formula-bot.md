@@ -3,7 +3,7 @@ title: "Formula Bot revenue: AI Excel formulas built with no code"
 slug: formula-bot
 company: Formula Bot (formerly Excel Formula Bot)
 founders: [David Bressler]
-summary: "David Bressler built Excel Formula Bot on Bubble and OpenAI while working a full-time job. Formula Bot revenue reached $3.3K MRR and 1.6K paying users within months."
+summary: "David Bressler built Excel Formula Bot on Bubble and OpenAI while working a full-time job. Formula Bot revenue passed $14K MRR within seven months of its paid launch."
 primaryKeyword: "formula bot revenue"
 secondaryKeywords: ["formula bot ai excel", "formula bot david bressler", "formula bot no code", "formula bot mrr"]
 industry: productivity
@@ -11,17 +11,20 @@ productType: Tool
 foundedYear: 2022
 foundedDate: "July 2022 (MVP); September 2022 (paid launch)"
 teamSize: { display: "1 (solo, no-code)", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
-mrr: { value: 3300, display: "$3.3K MRR", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
+pricing: { display: "Free for 5 formula requests a month; unlimited for $6.99/month (2023)", label: founder-reported, sourceUrl: "https://starterstory.com/stories/excelformulabot", sourceDate: "2023-03" }
+mrr: { value: 14000, display: "$14K+ MRR (March 2023)", label: founder-reported, sourceUrl: "https://starterstory.com/stories/excelformulabot", sourceDate: "2023-03" }
 totalRevenue: { value: 22000, display: "$22K since paid launch", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
-revenueRange: under-10k
+revenueRange: 10k-50k
 metrics:
   - { name: "Paying users", value: "1,600", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
   - { name: "Website visitors", value: "1.1M", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
-  - { name: "Current MRR", value: "Not disclosed", label: not-disclosed }
-tldr: "Formula Bot (originally Excel Formula Bot) turns plain-English requests into spreadsheet formulas, and was built by David Bressler on Bubble and OpenAI while he worked a full-time job. By November 2022 it had $3.3K MRR, 1,600 paying users and $22K in revenue since its September launch (all founder-reported). It was built without code in about a month."
+  - { name: "MRR, November 2022", value: "$3.3K", label: founder-reported, sourceUrl: "https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with", sourceDate: "2022-11" }
+  - { name: "Revenue in February 2023", value: "$22K", label: founder-reported, sourceUrl: "https://starterstory.com/stories/excelformulabot", sourceDate: "2023-03" }
+  - { name: "Total marketing spend to date", value: "$5K", label: founder-reported, sourceUrl: "https://starterstory.com/stories/excelformulabot", sourceDate: "2023-03" }
+tldr: "Formula Bot (originally Excel Formula Bot) turns plain-English requests into spreadsheet formulas, and was built by David Bressler on Bubble and OpenAI while he worked a full-time job. It had $3.3K MRR in November 2022 and passed $14K MRR by March 2023, seven months after its paid launch (founder-reported). He says he had spent only $5K on marketing, relying on Reddit, virality and influencers."
 faq:
   - q: "How much revenue did Formula Bot make?"
-    a: "$3.3K MRR and $22K total since its September 2022 paid launch, as of November 2022 (founder-reported). Current MRR is not disclosed."
+    a: "$14K+ MRR in March 2023, up from $3.3K MRR in November 2022, with $22K revenue in February 2023 (founder-reported, Starter Story and No Code Exits)."
   - q: "How many users did Formula Bot have?"
     a: "1,600 paying users and 1.1M website visitors as of November 2022 (founder-reported)."
   - q: "What was Formula Bot built with?"
@@ -36,50 +39,59 @@ published: 2026-11-02
 updated: 2026-11-02
 ---
 
-Formula Bot did not need a team, a funding round or a line of code. David Bressler built it on Bubble while working a full-time job, connected it to OpenAI, and posted a free version on Reddit. The post collected more than 10,000 upvotes. Within months of the paid launch it had $3.3K MRR and 1,600 paying users ([founder-reported, No Code Exits](https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with)). It is a small number next to the giants in this library, and that is the point: it shows how cheaply an AI idea can now be validated.
+Formula Bot did not need a team, a funding round or a line of code. David Bressler built it on Bubble while on paternity leave from his job as a Director of Analytics, connected it to OpenAI, and posted a free version on Reddit. Seven months after the paid launch it had passed $14K in monthly recurring revenue, and he says he had spent only $5K on marketing ([founder-reported, Starter Story](https://starterstory.com/stories/excelformulabot)).
 
-## Why did David Bressler build Formula Bot?
+## How did paternity leave produce an AI spreadsheet tool?
 
-Bressler saw how many people struggle to write spreadsheet formulas and how well GPT-3 translated plain English into them. Turning a sentence into a working formula was a narrow, obvious job. The pain is universal in office work: you know what you want the spreadsheet to do, but not the syntax to make it do it.
+In May 2022 Bressler's second child was born, and while on leave he started experimenting with AI. He asked OpenAI a basic Excel question, how to sum column A, and the right formula came back in seconds. Harder questions were right only about 85% of the time. That is good enough for many things, but not for data work, and with 12+ years in marketing analytics he believed he could make the output far more accurate.
 
-## How does Formula Bot work?
+He searched for an AI Excel formula generator and found none. With about a billion Excel users in the world, he skipped formal validation and moved fast, believing strongly in first-mover advantage in AI. Formula Bot translates plain-English instructions into Excel and Google Sheets formulas, on a website and through add-ons.
 
-A user types what they want in plain English, for example a calculation across columns, and the app returns a working formula using OpenAI for generation. It started with Excel formulas; later it was renamed Formula Bot and expanded to data analysis.
+## What did Formula Bot run on without any code?
 
-## How was Formula Bot built?
+Everything was no-code. Bressler, a data analyst rather than a developer, first used Bubble in July 2022 and built a rough single-page MVP within a couple of weeks.
 
-It was built without code: Bubble for the app, OpenAI for generation, Stripe for payments, Sendinblue for email and Localize.js for translation. The first version took about a month, and he built it alone ([founder-reported, No Code Exits](https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with)). A rough free MVP went up in July 2022. About a month later he added sign-up and subscriptions, with the paid launch in September 2022.
+> "There is not one line of code that I wrote on the entire website." — David Bressler ([founder-reported, Starter Story](https://starterstory.com/stories/excelformulabot))
 
-## How did Formula Bot market and price itself?
+| Part | What Formula Bot used |
+|---|---|
+| App | Bubble |
+| AI | OpenAI |
+| Payments | Stripe |
+| Email | Sendinblue |
+| Translation | Localize.js |
 
-The MVP was shared on Reddit's r/excel and r/InternetIsBeautiful, where it collected more than 10,000 upvotes. After that came a TikTok video that went viral, a Product Hunt launch, and creators who featured it without being paid. By November 2022 the site had 1.1M visitors ([founder-reported, No Code Exits](https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with)).
+Because he did not outsource development, he paid only for API requests, hosting and Bubble ([founder-reported, No Code Exits](https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with)). The MVP had no paywall and no login: an input box, a button, the formula and a copy button.
 
-Pricing was a free tier with limited uses, then a low-priced monthly subscription.
+## What happened when the free version went viral?
 
-## What challenges did Formula Bot face?
+Bressler shared it on Reddit's Excel community, where users gave a lot of feedback, and it spread to r/InternetIsBeautiful and then TikTok, Instagram and Twitter. The cost of that virality arrived quickly: with no paywall or login, he got a hefty bill from OpenAI and had to build a real product so he would not end up deep in debt. While he built it, a tip page brought in a couple of thousand dollars from a couple of hundred users ([founder-reported, Starter Story](https://starterstory.com/stories/excelformulabot)).
 
-API costs came first. Before the paywall launched, the viral traffic left him with what he called a hefty bill from OpenAI ([founder-reported, Starter Story](https://starterstory.com/stories/excelformulabot)). A free tool that goes viral on Reddit is expensive when every request calls a paid model.
-
-Durability is the second challenge. A single-purpose tool is easy to copy, which is part of why it later expanded to data analysis under the Formula Bot name.
+The paid version launched in September 2022 with login and checkout. The first sale arrived within five minutes. A Product Hunt launch in the first week, with a launch discount, made several thousand dollars that week. After that, influencer marketing became the main channel, which is how millions of visitors came for so little spend.
 
 ## How much revenue did Formula Bot make?
 
-In November 2022 Formula Bot had $3.3K MRR ([founder-reported, No Code Exits](https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with)) and 1,600 paying users ([founder-reported](https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with)). It had made $22K between the September launch and November 2022 ([founder-reported, No Code Exits](https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with)). Later figures exist in secondary sources but are not dated well enough to use, so current MRR is not disclosed.
+In November 2022, two months after the paid launch, Formula Bot had $3.3K MRR, 1,600 paying users and $22K in revenue since launch ([founder-reported, No Code Exits](https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with)). By March 2023 it had passed $14K MRR, revenue had grown every month, and February 2023 brought $22K ([founder-reported, Starter Story](https://starterstory.com/stories/excelformulabot)).
 
-The timeline: a free MVP on Reddit in July 2022; the paid launch in September 2022; $3.3K MRR and 1.6K paying users in November 2022; later renamed and expanded.
+| When | Milestone | Source |
+|---|---|---|
+| May 2022 | Idea during paternity leave | [Starter Story](https://starterstory.com/stories/excelformulabot) |
+| July 2022 | Free MVP on Bubble, shared on Reddit | [No Code Exits](https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with) |
+| September 2022 | Paid launch; first sale within five minutes | [Starter Story](https://starterstory.com/stories/excelformulabot) |
+| November 2022 | $3.3K MRR, 1,600 paying users, 1.1M visitors | [No Code Exits](https://nocodeexits.substack.com/p/14-no-code-excel-formula-bot-with) |
+| March 2023 | $14K+ MRR; $22K revenue in February | [Starter Story](https://starterstory.com/stories/excelformulabot) |
 
-## Why did Formula Bot work?
+Pricing is simple. The website is free for five formula requests a month, which Bressler says is enough for 97% of users. The other 3%, heavy Excel users, pay $6.99 a month for unlimited requests ([founder-reported, Starter Story](https://starterstory.com/stories/excelformulabot)). He built the business while keeping his full-time job and supporting his family, with no outside funding.
 
-A narrow job ("write my formula") is easy to explain and share. The product description fits in a Reddit title.
+## How does Formula Bot compare with Magai and My AskAI?
 
-No-code was enough to validate an AI product. The hard part, the model, was an API; the rest was standard web plumbing that Bubble handles.
+All three were built on Bubble by founders who are not developers. [Magai](/cases/magai/) shows the long-term cost: Dustin Stout eventually rebuilt his whole app on custom code. [My AskAI](/cases/my-askai/) stayed mostly on Bubble but had to move to the Enterprise tier after outages. Formula Bot's single-purpose tool is the simplest of the three, which is part of why one person could run it with a full-time job.
 
-Communities like Reddit can launch a product for free, when the product is genuinely useful to that community. [Gamma](/cases/gamma/) shows the same office-pain logic at far larger scale, and [SiteGPT](/cases/sitegpt/) another quick side project that launched through communities.
+Their pricing reflects their users. Formula Bot's free limit covers 97% of people and charges only power users, a classic freemium funnel for a consumer-sized task. My AskAI charges businesses on conversation volume, and Magai sells one subscription for many models. The cheaper and more frequent the task, the more a generous free tier makes sense.
 
-## What can founders learn from Formula Bot?
+## Which takeaways from Formula Bot fit any side project?
 
-A narrow job is easy to explain and share. Start with one task you can describe in a sentence.
-
-No-code is enough to validate an AI product. Build the cheapest version that proves people pay.
-
-Communities like Reddit can launch a product for free. And plan for API costs: a viral free tier can cost real money before revenue arrives.
+- **Your day job can be the idea.** Twelve years of Excel work told Bressler both the problem and the accuracy bar.
+- **Gate usage before you go viral.** A free tool with no login turned popularity into a large OpenAI bill.
+- **Charge the 3% who need it most.** Five free requests a month kept the funnel wide; heavy users paid.
+- **Shareable products need little ad spend.** Reddit, virality and influencers brought millions of visitors for $5K.

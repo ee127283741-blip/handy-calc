@@ -11,6 +11,7 @@ productType: SaaS
 foundedYear: null
 foundedDate: "After the sale of CocoAI; exact date not disclosed"
 teamSize: { display: "Not disclosed", label: not-disclosed }
+pricing: { display: "Monthly and annual subscription plans with a free trial", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/validating-via-services-before-building-a-27k-mrr-product-7FrT6FXChPOiUK4PbXFp", sourceDate: "2026-01" }
 mrr: { value: 27000, display: "$27K MRR (early December 2025)", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/validating-via-services-before-building-a-27k-mrr-product-7FrT6FXChPOiUK4PbXFp", sourceDate: "2025-12" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 10k-50k
@@ -36,52 +37,49 @@ updated: 2026-11-02
 
 Most founders build a product and then look for customers. Romàn Czerny did it the other way round. Before Gojiberry AI had a single line of product code, he and his team sold customers a promise of high-intent leads, then spent a whole summer finding those leads by hand. Only once that proved people would pay did they automate it. By the beginning of December 2025, Gojiberry AI was at $27K in monthly recurring revenue ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/validating-via-services-before-building-a-27k-mrr-product-7FrT6FXChPOiUK4PbXFp)).
 
-## Why did Romàn Czerny start Gojiberry AI?
+## Where did the Gojiberry AI idea come from?
 
-The idea came from Czerny's previous company. CocoAI sold WhatsApp tools to e-commerce businesses, and the team noticed that e-commerce founders who were active on LinkedIn, especially around topics like email marketing, converted much better than others. So they started finding those founders by hand, searching for people engaging with specific keywords and topics. It worked very well but took enormous time. After CocoAI was sold for seven figures, the question was simple: why not turn the system that helped sell it into a product of its own?
+From the growth engine of Czerny's previous company. CocoAI sold WhatsApp tools to e-commerce businesses, and the team noticed that e-commerce founders who were active on LinkedIn, especially around topics like email marketing, converted much better than others. So they found those founders by hand, searching for people engaging with specific keywords. It worked, but it ate time. After CocoAI was sold for seven figures, the obvious next step was to turn that system into a product of its own.
 
-## How does Gojiberry AI work?
+Gojiberry AI is the result: an intent-based LinkedIn outreach tool. Instead of messaging a static list, it looks for buying signals, such as prospects engaging with relevant topics, so B2B teams reach people when they are ready to talk. The goal is booked meetings, not dashboards.
 
-Gojiberry AI is an intent-based LinkedIn outreach tool. Instead of sending messages to a static list, it looks for buying signals, such as prospects engaging with relevant topics, and helps B2B teams reach them when they are ready to engage. The goal is qualified conversations and booked meetings rather than raw data. Czerny says the hard part is that a real buying signal needs context, judgment and timing, not just scraped profile data.
+## Can you sell a product before you build it?
 
-## How was Gojiberry AI built?
+Gojiberry AI did. The team told customers it would deliver high-intent leads and then searched LinkedIn manually, with help from virtual assistants in Pakistan and India. Finding 100 qualified prospects often took several hours, sometimes up to five ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/validating-via-services-before-building-a-27k-mrr-product-7FrT6FXChPOiUK4PbXFp)). Czerny calls it painful and completely unscalable, but it proved two things: demand was real, and customers were happy with the results.
 
-The first version was a service, not software. The team told customers it would deliver high-intent leads and then searched LinkedIn for them manually, with help from several virtual assistants in Pakistan and India. Finding 100 qualified prospects often took several hours, sometimes up to five ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/validating-via-services-before-building-a-27k-mrr-product-7FrT6FXChPOiUK4PbXFp)). Czerny calls it painful and completely unscalable, but it proved that demand was real and that customers were happy with the results.
+Turning that into software was the hard part. A person can tell when a LinkedIn interaction signals real interest. Teaching a system to make that call, with context and timing, without losing quality took many iterations. Czerny is not technical, so his CTO leads the build on AWS, Framer and Firebase, with models from Gemini, Claude and ChatGPT.
 
-Turning that human process into a reliable product took many iterations. Czerny is not technical, so his CTO leads the build. The stack includes AWS, Framer and Firebase, with models from Gemini, Claude and ChatGPT.
+## Which channels grew Gojiberry AI?
 
-## How does Gojiberry AI market and price its product?
+Almost all of them, at once. Czerny describes the strategy as showing up everywhere, every day:
 
-Gojiberry AI's growth is spread across many channels. On Reddit, the team built trust by sharing real data and results in SaaS communities. On LinkedIn it combined inbound content with outbound campaigns run on its own tool, and it sent thousands of cold emails a day using leads from Sales Navigator and Gojiberry AI. It layered YouTube tutorials, newsletter sponsorships, webinars and building in public on X on top. The channel Czerny singles out is partnerships with B2B influencers on LinkedIn, because the customers already spend their time there and trust those voices.
+| Channel | What Gojiberry AI did |
+|---|---|
+| Reddit | Shared real data and transparent results in SaaS communities |
+| LinkedIn | Inbound content plus outbound campaigns run on its own tool |
+| Cold email | Thousands of emails a day to leads from Sales Navigator and Gojiberry AI |
+| Influencers | Partnerships with trusted B2B voices on LinkedIn |
+| Other | YouTube tutorials, newsletter sponsorships, webinars, building in public on X |
 
-The product is subscription SaaS sold on monthly and annual plans, with a free trial. As customer teams grow and rely more on outreach, they upgrade, which gives Gojiberry AI built-in expansion revenue. The team also designed the product so customers see results quickly, which helps convert trials.
+> "No single channel was a silver bullet, but we found working with B2B influencers on LinkedIn particularly helpful." — Romàn Czerny ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/validating-via-services-before-building-a-27k-mrr-product-7FrT6FXChPOiUK4PbXFp))
 
-## What challenges did Gojiberry AI face?
+The product is subscription SaaS on monthly and annual plans, with a free trial. As customer teams rely more on intent-based outreach they upgrade, which gives Gojiberry AI built-in expansion revenue. Showing results fast, in the form of qualified conversations and booked meetings, made trials easier to convert.
 
-Automation was the first hard problem. A person can tell when a LinkedIn interaction signals real buying interest. Teaching software to make that call without losing quality took time and many iterations.
-
-Focus was the second. Czerny says the team first tried to serve too many customer profiles at once, which slowed everything down. Things became easier once they concentrated on users who truly valued intent-based outreach. If he started over, he says he would validate pricing and positioning earlier and narrow the ideal customer profile faster.
-
-## How much revenue does Gojiberry AI make?
+## What is Gojiberry AI's revenue today?
 
 Gojiberry AI reached $27K MRR at the beginning of December 2025 and made $35,000 in sales the same month ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/validating-via-services-before-building-a-27k-mrr-product-7FrT6FXChPOiUK4PbXFp)). The founder did not say how the December sales figure splits between monthly and annual plans. Total revenue and team size are not disclosed.
 
-The timeline: Czerny started online business in 2019; built CocoAI in 2023 and later sold it for seven figures; ran Gojiberry AI's lead service by hand for a summer; then launched the software and reached $27K MRR by early December 2025 ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/validating-via-services-before-building-a-27k-mrr-product-7FrT6FXChPOiUK4PbXFp)).
+The path there ran through one big correction. Czerny says the team first tried to serve too many customer profiles at once, which slowed product decisions, messaging and growth. Things became easier once they focused on users who truly valued intent-based outreach. If he started again, he would validate pricing and positioning earlier and narrow the ideal customer profile faster.
 
-## Why did Gojiberry AI work?
+## How does Gojiberry AI compare with Instantly and Tweet Hunter?
 
-The product was proven before it existed. Selling a manual service first meant Gojiberry AI knew exactly what customers would pay for, and the software only had to automate a process that already worked.
+[Instantly](/cases/instantly/) and Gojiberry AI both sell outbound, but they bet on opposite ends of it. Instantly is built for volume: sending large amounts of cold email cheaply. Gojiberry AI is built for timing: fewer messages, sent to people already showing interest on LinkedIn. Gojiberry AI still uses cold email at scale for its own growth, which suggests the two approaches work best together.
 
-The founders had already used the tactic to win. LinkedIn intent signals had driven sales at CocoAI, so Czerny was building on first-hand evidence rather than a guess.
+Both, like [Tweet Hunter](/cases/tweet-hunter/), sell by doing what they sell. Tweet Hunter grew on X with the audience-building methods it teaches, and Gojiberry AI runs its own LinkedIn outbound with Gojiberry AI. The difference is the starting point. Czerny was not guessing: the LinkedIn tactic had already helped CocoAI reach a seven-figure exit before he turned it into a product.
 
-The tool markets itself. Running outbound campaigns with Gojiberry AI to sell Gojiberry AI shows prospects the product working on them. Combined with influencers whom the target customers already trust, that gave a small team wide reach. For another sales tool built around outbound at scale, see [Instantly](/cases/instantly/), and for a growth tool built on a single social network, see [Tweet Hunter](/cases/tweet-hunter/).
+## What are the lessons from Gojiberry AI?
 
-## What can founders learn from Gojiberry AI?
-
-Sell the outcome by hand before you automate it. A summer of manual work gave Gojiberry AI paying customers, proof of demand and a precise spec for the product.
-
-Pick one customer profile and one use case. Czerny's own advice is that trying to serve everyone slows down product decisions, messaging and growth.
-
-Build on a tactic you have already seen work. The best product ideas often come from the growth engine of a previous business.
-
-Show results fast. Designing for quick wins, such as booked meetings, made trials easier to convert and fuelled word of mouth.
+- **Sell the outcome by hand first.** A summer of manual lead finding produced paying customers and an exact spec for the software.
+- **Productise a tactic you have already seen work.** The best ideas often hide in the growth engine of your last business.
+- **Pick one customer profile.** Serving too many profiles slowed everything until the team narrowed down.
+- **Show results in the trial.** Booked meetings, not data, are what convert a free trial.

@@ -134,6 +134,12 @@ table { border-collapse: collapse; width: 100%; margin: 1.25rem 0; font-size: .9
 th, td { border-bottom: 1px solid var(--line); padding: .6rem .75rem .6rem 0; text-align: left; }
 th { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .table-wrap { overflow-x: auto; }
+.glance { max-width: 44rem; }
+.glance caption { text-align: left; font-weight: 600; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding-bottom: .4rem; }
+.glance th { width: 9rem; vertical-align: top; }
+.glance .m-label { margin-left: .5rem; }
+.case-body blockquote { border-left: 4px solid var(--accent); margin: 1.5rem 0; padding: .25rem 0 .25rem 1.25rem; font-size: 1.1rem; }
+.case-body blockquote p { margin: .4rem 0; }
 code { font-family: var(--mono); font-size: .9em; background: #fff; border: 1px solid var(--line); padding: .05rem .35rem; border-radius: var(--radius); }
 .meta { color: var(--muted); font-size: .88rem; }
 

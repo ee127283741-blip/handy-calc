@@ -21,7 +21,7 @@
 2. 用 Google autocomplete 檢查是否為真實搜尋詞：`curl -s 'https://suggestqueries.google.com/complete/search?client=firefox&q=photo%20ai%20revenue'`。若 autocomplete 給出更自然的寫法（例：`base44 acquisition` 而非 `base44 acquisition wix`；`gamma ai revenue` 而非 `gamma app revenue`），改用它。沒有建議的詞可以保留，但不要編造搜尋量。
 3. 關鍵字裡的人名、公司名要跟 frontmatter `founders`／`company` 一致；不一致時只有在找到來源時才改 frontmatter，否則改關鍵字。
 4. `primaryKeyword` 必須（不分大小寫）出現在：`title`（= `<title>` 與 H1）、`summary`（= 首段 `<p class="answer">` 與 meta description）。`npm test` 會在原始檔與 build 後的 HTML 兩邊都檢查；og:image alt 由 title 產生，所以也會包含。
-5. H2 一律是「公司名＋主題問句」（例 `How much revenue does Photo AI make?`），仍須符合下方 8 章順序。
+5. H2 一律是真實搜尋問句（以 `?` 結尾），至少 3 個 H2 含公司名；**句型要變化**，同一句型（把公司名換成 X 後）全站最多 3 篇使用（測試會擋）。
 6. FAQ 3–5 題，問句盡量用 secondaryKeywords 的長尾說法；答案只能用本文已有、附來源的事實。
 7. 改寫 title／summary 時**數字、日期、來源標籤不可變動或新增**。
 
@@ -33,20 +33,20 @@
 - `primaryKeyword`、`secondaryKeywords`、`published`（首次發布日，`YYYY-MM-DD`）：見上方關鍵字流程。
 - `faq`：3–5 題，`q` 用真實搜尋問句並以 `?` 結尾，`a` 是可獨立引用的答案（含標籤）。會渲染成 FAQ 區塊並輸出 FAQPage JSON-LD（與 Article JSON-LD 並列）。
 - 每個數字：`label`（founder-reported / verified / media-reported / unverified）＋ `sourceUrl`，日期只寫 `YYYY-MM`；沒有數字就寫 `Not disclosed` 並用 `not-disclosed`。
+- `pricing`：定價（例 `"$49, $89 and $199 a month"`），附 `label`＋`sourceUrl`；查不到就 `Not disclosed`。會和營收、團隊人數、成立時間、創辦人一起顯示在頁首的「At a glance」表格。
 
-**本文：長篇敘事章節，流暢段落，禁止條列（`-`、`*`、`1.`）與 H1/H3。** 結構固定：
+**本文寫法（2026-11 改版）：給「先掃再讀」的英語系讀者。** 不再是固定 8 章的模板，而是依每個案例最有趣的地方安排章節。
 
-1. 開頭（無標題）：場景或對比的 hook，≥50 字。
-2. 8 個 H2，**全部是真實搜尋問句、以 `?` 結尾**，依序涵蓋：
-   1. 為什麼創辦／解決什麼痛點（例：`Why did Pieter Levels start Photo AI?`）
-   2. 產品怎麼運作（`How does X work?`）
-   3. 怎麼做出來（含 `built`）
-   4. 行銷、銷售、定價（含 market / price / sell / customers）
-   5. 轉折與挑戰（含 challenge / risk / hard）
-   6. 成果：營收＋日期（含 revenue / money / make）
-   7. 分析為什麼成功（`Why did X work?`）
-   8. 給讀者的教訓（含 learn / lessons）
-3. 每章 ≥40 字，全文 ≥450 字（目標 800 字以上，但**不可為了字數灌水或補事實**）。
+1. 開頭（無標題）：場景、反差或一個具體數字的 hook，≥50 字。
+2. **5–7 個 H2**，全部是問句。必備三章，其餘自由：
+   - **營收章**：H2 含 revenue / make / earn / MRR / ARR，放營收數字、日期與時間軸。
+   - **比較章**：H2 含 compare / vs / different / alternatives，**把這家公司和至少 2 個站內案例放在一起比**（定價、通路、團隊、成長速度），寫出我們自己的觀察。這是別的網站沒有、最容易被引用的部分。
+   - **重點整理章（最後一章）**：H2 含 learn / lessons / takeaways，用 **3–5 點條列**，每點一句粗體結論＋一兩句說明。舊版的「Why did X work?」與「lessons」合併到這裡，不要兩章講同一件事。
+   - 其他章自由選：起源、產品怎麼運作、怎麼做出來、怎麼拿到第一批客戶、定價、轉折、技術選擇……只寫這個案例真正有料的部分。
+3. **至少 1 張表格**（時間軸、定價方案、技術工具或比較表）。表格裡有 `$` 數字時，同一表格要附來源連結（例如加一欄 Source）。
+4. **1–2 句創辦人原話**，用 pull quote 格式獨立一行：`> "原話" — 名字 ([founder-reported, 來源](https://…))`。原話必須逐字出現在來源裡（寫之前打開來源確認），30 字以內，不可改寫、不可拼接。找不到可核對的創辦人原話時，才可改用公司正式聲明（新聞稿、官方部落格）的原句，並標明是公司聲明（例 `— Merlin AI announcement`）；投資人或第三方的話不算。
+5. 條列與表格可以用，但段落仍是主體；不可用 H1／H3。每章 ≥40 字，全文 ≥450 字（目標 800–1,200 字，**不可為了字數灌水或補事實**）。
+6. 句子短、主詞明確、先講結論。避免同一篇裡重複同一個觀點。
 
 **數字與來源規則（最重要）：**
 
@@ -57,7 +57,7 @@
 - 絕不誇大、不推估、不加入來源沒有的事實；分析與教訓段落只能是對既有事實的解讀。
 - 寫可獨立被引用的事實句（主詞＋數字＋日期＋標籤＋來源），方便 AI 引擎摘錄。
 
-**站內連結：** 本文至少連到 2 個其他存在的 case（`[Photo AI](/cases/photo-ai/)`），優先同產業或同策略。
+**站內連結：** 本文至少連到 2 個其他存在的 case（`[Photo AI](/cases/photo-ai/)`），且比較章本身要連到至少 2 個，優先同產業或同策略。
 
 ## 0.2 SEO／GEO／AEO 補充知識（2026-11 整理）
 
@@ -89,7 +89,7 @@
 **技術面（已做好，改動時別弄壞）：**
 - 內容是 Astro 靜態 HTML。很多 AI 爬蟲不執行 JavaScript，所以**正文與數字不可只靠前端 JS 才出現**。
 - `robots.txt` 用 `User-agent: *` 全部允許。AI **搜尋引用**看的是 `OAI-SearchBot`（ChatGPT）、`Claude-SearchBot`（Claude）、`PerplexityBot`、`Googlebot`（AI Overviews／AI Mode）；`GPTBot`、`ClaudeBot`、`Google-Extended` 是**訓練用**，擋不擋都不影響 AI 搜尋引用。不要擋搜尋用的爬蟲。
-- 本文規定不用條列（0.1），比較型資料改由 frontmatter 產生的 data summary 表格呈現。
+- 頁首「At a glance」表格與文末 data summary 都由 frontmatter 自動產生；本文的表格與條列見 0.1。
 
 **站外（選配，不花錢、不造假才做）：** AI 引用跟「品牌在 Reddit、YouTube、Wikipedia 被提到」的關聯比反向連結強。只能用真實、有價值的方式出現（例如在相關討論中回答問題並揭露身分），不可自導自演或大量貼連結。
 
@@ -99,10 +99,11 @@
 
 1. 選公司：必須有至少一個可公開連結的營收／成長數字來源（創辦人訪談、主流媒體、官方公告）。沒有來源就不做這個案例。
 2. 依 0.1 的關鍵字流程定 `primaryKeyword`／`secondaryKeywords`。
-3. 建立 `src/content/cases/<slug>.md`（`slug` 小寫、連字號，與檔名一致），可複製一個既有案例當範本，再把所有內容換掉。
-4. 填 frontmatter（schema：`src/content.config.ts`；格式錯誤會 build fail），本文依 0.1 的 8 章結構撰寫。
-5. 至少連到 2 個既有案例；必要時也在相關舊案例加回連。
-6. 跑第 4 節的本機驗證。
+3. 建立 `src/content/cases/<slug>.md`（`slug` 小寫、連字號，與檔名一致），可複製一個既有案例當範本，再把所有內容換掉。**章節不要照抄範本的 H2**，依這個案例的重點重新安排。
+4. 填 frontmatter（schema：`src/content.config.ts`；格式錯誤會 build fail），本文依 0.1 的寫法撰寫。
+5. `src/content/cases.test.ts` 裡的案例總數（`has exactly N cases`）要一起加 1。
+6. 至少連到 2 個既有案例；並在相關舊案例的比較章加回連。
+7. 跑第 4 節的本機驗證。
 
 ## 2. 案例研究流程
 

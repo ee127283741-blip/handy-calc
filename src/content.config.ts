@@ -35,6 +35,8 @@ const cases = defineCollection({
     foundedYear: z.number().int().nullable(),
     foundedDate: z.string(),
     teamSize: z.object({ display: z.string(), ...sourced }),
+    // Shown in the "At a glance" table at the top of the case; 'Not disclosed' when no sourced pricing exists.
+    pricing: z.object({ display: z.string(), ...sourced }),
     mrr: money,
     totalRevenue: money,
     revenueRange: z.enum(REVENUE_RANGE_SLUGS),

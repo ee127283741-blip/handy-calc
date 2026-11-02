@@ -11,6 +11,7 @@ productType: SaaS
 foundedYear: 2023
 foundedDate: "March 2023"
 teamSize: { display: "2 founders, 0 employees", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10" }
+pricing: { display: "Paid plans only from day one; no free plan", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10" }
 mrr: { value: 15000, display: "~$15K MRR", label: founder-reported, sourceUrl: "https://www.starterstory.com/stories/sitegpt", sourceDate: "2023-10" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 10k-50k
@@ -35,48 +36,62 @@ published: 2026-11-02
 updated: 2026-11-02
 ---
 
-SiteGPT began as a side feature nobody planned to sell. Bhanu Teja was building a blogging product, Feather, and prototyped a "chat with this site" feature. People asked about the feature more than the product. So he spun it out, launched it in March 2023, and passed $10K MRR within the first month ([founder-reported, Starter Story](https://www.starterstory.com/stories/sitegpt)). Then, in month two, about $5K of that MRR churned away. The recovery is as instructive as the launch.
+SiteGPT began as a feature, not a company. In March 2023 Bhanu Teja Pachipulusu was running Feather, a blogging platform at around $4K MRR, and wondered whether his customers could chat with their own blogs. The feature looked too big to keep inside Feather, so he launched it on its own. Within a month SiteGPT passed $10K MRR, more than Feather had reached in a year ([founder-reported, Starter Story](https://www.starterstory.com/stories/sitegpt)).
 
-## Why did Bhanu Teja start SiteGPT?
+## How did a blogging tool feature become SiteGPT?
 
-The "chat with this site" feature drew more interest than the main product, so it became its own business. The pain it solves belongs to businesses with lots of website content and lots of repetitive visitor questions: a chatbot trained on their own pages can answer those questions instead of a person.
+Pachipulusu's Twitter timeline was full of AI content in March 2023, and he looked for a way to use it for Feather customers. Every one of them had a blog, so he started building a way for readers to chat with it. As he worked, he realised anyone with a website could use the same thing, and he spun it out.
 
-## How does SiteGPT work?
+SiteGPT is an AI chatbot platform: a business adds its website link, and SiteGPT creates a chatbot trained on all the content on that site. At launch that was the only feature. The plan was to improve it later, and only if people used it.
 
-A business points SiteGPT at its website. The content is indexed with Pinecone for vector search, and OpenAI generates answers grounded in the retrieved pages. Visitors chat with a bot that knows the site's content, so common questions are answered on the page instead of in a support inbox.
+## What did it take to build SiteGPT in three weeks?
 
-## How was SiteGPT built?
+He built a bare-minimum version in two to three weeks and found the chat platform much harder than expected, with few resources available at the time, so he built everything from scratch. He also felt time pressure: every day he delayed the launch, he saw a similar product appear.
 
-He built it during March 2023 using Remix on Cloudflare Workers, Fauna as the database, OpenAI for answers and Pinecone for vector search. Every piece is a hosted service, so a small team could ship it in weeks. The team stayed tiny: two founders, no employees ([founder-reported, Starter Story](https://www.starterstory.com/stories/sitegpt)).
+| Part | What SiteGPT used at launch |
+|---|---|
+| App framework | Remix |
+| Hosting | Cloudflare Workers |
+| Database | Fauna |
+| AI | OpenAI |
+| Vector search | Pinecone |
+| Payments | Paddle |
 
-## How did SiteGPT market and price itself?
+Cloudflare and Fauna cost nothing extra because Feather already used them. The bills he worried about were OpenAI and Pinecone, so he priced SiteGPT a little high to avoid a surprise. He offered no free plan, because he knew he lacked the skills to convert free users into paying customers.
 
-He launched on 30 March with a tweet to about 10K followers, a Show HN post that reached the front page, and a Product Hunt launch that finished number one of the day. Launch day brought about 15K visitors ([founder-reported, Starter Story](https://www.starterstory.com/stories/sitegpt)). After that came building in public on X, mostly word of mouth, and later free tools and content ("engineering as marketing") for search traffic.
+## How did one launch week bring 40,000 visitors?
 
-Pricing was paid-only from day one with no free plan, priced high enough to cover unpredictable API costs.
+Pachipulusu had about 10,000 Twitter followers and had built all his products in public for three and a half years. He teased the launch for days, then launched with a tweet on 30 March 2023. It took off. His first customers arrived within an hour, and about 15,000 people visited on launch day ([founder-reported, Starter Story](https://www.starterstory.com/stories/sitegpt)).
 
-## What challenges did SiteGPT face after its launch?
+The week stacked up from there. A Show HN post reached the front page of Hacker News on 2 April. On 5 April he launched on Product Hunt with no planning and finished as the number one product of the day and number four of the week. Traffic passed 40,000 visitors in under a week. It was not all good news: after Hacker News, someone attacked both SiteGPT and Feather, and a Twitter friend had to show him how to detect and stop the attacks.
 
-Launch spikes churn. In April 2023 SiteGPT passed $10K MRR, then lost about $5K to churn in month two ([founder-reported, Starter Story](https://www.starterstory.com/stories/sitegpt)). Many customers who signed up in the excitement of launch week did not stay. The fix was steadier channels: word of mouth and search traffic from free tools.
+## How much revenue did SiteGPT make after the hype?
 
-Competition was the other challenge; similar chatbot builders appeared quickly, including [Chatbase](/cases/chatbase/).
+SiteGPT crossed $10K MRR in less than a month, then lost about $5K MRR to churn the next month, almost 50% of customers ([founder-reported, Starter Story](https://www.starterstory.com/stories/sitegpt)). Five months later it was hovering around $15K MRR, run by two founders with no employees. Total revenue is not disclosed.
 
-## How much MRR does SiteGPT make?
+| When (2023) | Milestone |
+|---|---|
+| March | Feature prototype inside Feather, then spun out |
+| 30 March | Launch tweet; about 15,000 visitors on day one |
+| Early April | Hacker News front page; number one on Product Hunt |
+| First month | $10K+ MRR |
+| Second month | About $5K MRR lost to churn |
+| October | About $15K MRR |
+| Source | [founder-reported, Starter Story](https://www.starterstory.com/stories/sitegpt) |
 
-SiteGPT reached about $15K MRR roughly six months after launch, as of October 2023 ([founder-reported, Starter Story](https://www.starterstory.com/stories/sitegpt)). Total revenue is not disclosed with a dated primary source. Coverage also appeared on [Indie Hackers](https://www.indiehackers.com/post/from-side-hustle-to-ai-star-sitegpts-rise-to-15k-mrr-ff15fee186).
+> "I quickly realized that the hype can get you only so far and now it’s time to try and find the real customers." — Bhanu Teja Pachipulusu ([founder-reported, Starter Story](https://www.starterstory.com/stories/sitegpt))
 
-The timeline: launch in March 2023 with about 15K visitors on day one; $10K MRR passed in April 2023, then about $5K lost to churn; about $15K MRR in October 2023.
+After the launch hype faded, signups started coming from real businesses with the problem SiteGPT solves. In October 2023 he said he was still searching for product-market fit.
 
-## Why did SiteGPT work?
+## How does SiteGPT compare with Chatbase and My AskAI?
 
-It followed demand. The feature people asked about became the company. It launched through several communities at once, X, Hacker News and Product Hunt, so the first day reached far more people than one channel would.
+SiteGPT and [Chatbase](/cases/chatbase/) launched weeks apart in 2023 with nearly the same promise, a chatbot trained on your content, and both rode a viral tweet. The results show how much timing mattered. Chatbase went first and reached $64,000 MRR by May 2023 ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/how-a-college-student-reached-64-000-mo-in-6-months-by-being-an-ai-first-mover-ba7981f6e1)). SiteGPT, launched in late March into a market already filling up, hit $10K MRR fast and then saw half its customers churn.
 
-Paid-only pricing filtered out tyre-kickers when API costs were real. [PDF.ai](/cases/pdf-ai/) shows another document-chat product in the same 2023 wave.
+[My AskAI](/cases/my-askai/) took the third route. Instead of a chatbot on the website, it plugged into help desks like Intercom and Zendesk, and grew slowly through Google search rather than one big launch. Put side by side, the three cases suggest that a viral launch buys attention, but retention comes from a narrow buyer with a painful, recurring problem.
 
 ## What can founders learn from SiteGPT?
 
-Watch which feature people ask about, then spin it out.
-
-Launch spikes churn; plan for month two. Do not treat launch-week MRR as a baseline.
-
-Paid-only filters out tyre-kickers when API costs are real. Free plans are a choice, not a requirement.
+- **Watch your own product for spin-offs.** SiteGPT was a Feather feature that turned out to be the bigger business.
+- **Build in public before you need it.** Three and a half years of public building gave the launch tweet an audience.
+- **Expect the launch spike to churn.** Half of SiteGPT's first-month customers left; real buyers came after the hype.
+- **Price for unknown costs.** Paid-only plans set a little high protected the margin when API bills were unpredictable.

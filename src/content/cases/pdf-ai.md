@@ -11,10 +11,13 @@ productType: SaaS
 foundedYear: 2023
 foundedDate: "2023-06 (launch)"
 teamSize: { display: "Not disclosed", label: not-disclosed }
+pricing: { display: "Free tier; $15/month paid plan; $50/month Enterprise (2023)", label: media-reported, sourceUrl: "https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d", sourceDate: "2023-10" }
 mrr: { value: 25070, display: "$25,070 revenue in September 2023", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d", sourceDate: "2023-09" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 10k-50k
 metrics:
+  - { name: "Cost of the PDF.ai domain", value: "$10,000", label: media-reported, sourceUrl: "https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d", sourceDate: "2023-10" }
+  - { name: "Monthly website visitors, September 2023", value: "About 1,000,000", label: media-reported, sourceUrl: "https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d", sourceDate: "2023-09" }
   - { name: "Profit, September 2023", value: "$17,600", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d", sourceDate: "2023-09" }
   - { name: "Paying users", value: "1,250+", label: unverified, sourceUrl: "https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d", sourceDate: "2023-10" }
 tldr: "PDF.ai is a chat-with-your-documents tool that Damon Chen launched in June 2023 on a premium exact-match domain. It made $25,070 in revenue and $17,600 in profit in September 2023 (founder-reported). A figure of 1,250+ paying users is unverified."
@@ -35,44 +38,54 @@ published: 2026-11-02
 updated: 2026-11-02
 ---
 
-"Chat with your PDF" was one of the most crowded ideas of 2023: dozens of tools did the same thing with the same models. Damon Chen's edge was not technical. It was a name. He acquired the PDF.ai domain, shipped quickly, and in September 2023 the product made $25,070 in revenue and $17,600 in profit ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)).
+"Chat with your PDF" was one of the most crowded ideas of 2023: dozens of tools did the same thing with the same models. Damon Chen's edge was not technical. It was a name. He paid $10,000 for the PDF.ai domain ([media-reported, Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)), launched in June 2023, and in September 2023 the product made $25,070 in revenue and $17,600 in profit ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)).
 
-## Why did Damon Chen start PDF.ai?
+## Can a domain name be a startup's main advantage?
 
-"Chat with your PDF" was one of the first clear consumer uses of GPT models. Chen, who already ran Testimonial.to, bet that a memorable exact-match domain would win search and word of mouth in a crowded category. The user pain is plain: long documents take time to read, and people want answers from them quickly.
+For PDF.ai it was. The product is a simple web app: upload a document, ask questions, read the answers. Any team with access to the same language models could build it, and many did. Chen, who already ran Testimonial.to, bet that a short exact-match domain would win search and word of mouth instead.
 
-## How does PDF.ai work?
+The bet paid off in traffic. By September 2023 PDF.ai had about 1,000,000 monthly website visitors, around 350,000 of them from organic search, and more than half of that organic traffic came from the keyword "PDF AI" and close variants like "AI PDF" ([media-reported, Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)). The name is the keyword people type.
 
-A user uploads a document and asks questions. LLM APIs with retrieval over uploaded documents find relevant passages and answer, wrapped in a simple upload-and-chat web app. There is little to learn: upload, ask, read the answer. That simplicity matters in a category where users can try a competitor in a minute.
+## How did PDF.ai grow beyond search?
 
-## How was PDF.ai built?
+Search was one of four growth channels in an Indie Hackers breakdown of the business ([media-reported, Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)):
 
-He acquired the PDF.ai domain, shipped a version quickly and launched it to his X audience in June 2023. The product uses LLM APIs rather than proprietary models, which kept the build short; the money went into the domain instead of engineering. Team size is not disclosed.
+| Channel | What PDF.ai did |
+|---|---|
+| Domain and SEO | Ranked for its own name; over 50% of organic traffic from "PDF AI" keywords |
+| Press and referrals | A free mention on La Vanguardia, a large Spanish news site, brought traffic and a strong backlink |
+| Short video | Hired a full-time influencer to post daily on Instagram (20,000+ followers in four months) and worked with the TikTok team behind Jenni AI |
+| Affiliates | 30% commission on all payments for 12 months; one affiliate page drew 14,000+ visits a month |
 
-## How did PDF.ai market and price itself?
+Chen also posted his progress publicly on LinkedIn, where he described the product in plain terms:
 
-The domain did a lot of work: it is easy to remember and ranks for its own name. Early lifetime deals brought upfront cash and reviews. Pricing is a monthly subscription with a free tier; lifetime deals were offered early on. Chen also shared progress on [LinkedIn](https://www.linkedin.com/posts/damengchen_its-hard-to-believe-but-my-ai-to-do-app-activity-7112506239783235585-qUTV), and the business was later profiled by [Starter Story](https://www.starterstory.com/pdf-ai-breakdown).
+> "It's hard to believe, but my AI 'to-do' app (PDF.ai) is now generating $25k MRR ($300k ARR)" — Damon Chen ([founder-reported, LinkedIn](https://www.linkedin.com/posts/damengchen_its-hard-to-believe-but-my-ai-to-do-app-activity-7112506239783235585-qUTV))
 
-## What challenges did PDF.ai face?
+## How is PDF.ai priced?
 
-Competition was the defining challenge: many products offered the same feature on the same models, so differentiation had to come from brand and distribution. API costs are the other: every question costs money, which is why profit matters more than revenue. The paying-user count of 1,250+ is unverified ([unverified, Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)).
+PDF.ai combined a free tier with a paid subscription at $15 a month and an Enterprise plan at $50 a month in 2023 ([media-reported, Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)). The free tier feeds a product that spreads by people sharing it, while the paid plans cover the model costs of heavy use. About four months after launch, the business had over 1,250 paying users, a figure that is unverified ([unverified, Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)). Team size is not disclosed.
 
-## How much revenue does PDF.ai make?
+## How much revenue and profit did PDF.ai make?
 
-PDF.ai made $25,070 in revenue in September 2023 ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)), with $17,600 profit ([founder-reported](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)). Total revenue is not disclosed. The gap between revenue and profit is the cost of running the business, mostly model APIs.
+PDF.ai made $25,070 in revenue in September 2023, with $17,600 in profit ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d)). That is a profit margin of about 70% in a month when the product was paying for model APIs on every question. Total revenue is not disclosed.
 
-The timeline: launched on the PDF.ai domain in June 2023; $25,070 in revenue in the month of September 2023.
+| When | Milestone | Source |
+|---|---|---|
+| 6 June 2023 | PDF.ai launches on its premium domain | [Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d) |
+| September 2023 | $25,070 revenue, $17,600 profit, about 1,000,000 monthly visitors | [Indie Hackers](https://www.indiehackers.com/post/pdf-ai-tool-made-25k-in-mrr-last-month-07148fa17d) |
+| September 2023 | Chen posts that PDF.ai is at $25K MRR ($300K ARR) | [LinkedIn](https://www.linkedin.com/posts/damengchen_its-hard-to-believe-but-my-ai-to-do-app-activity-7112506239783235585-qUTV) |
 
-## Why did PDF.ai work?
+Publishing profit as well as revenue is rare among AI founders, and it answers the question most readers of "chat with your PDF" stories have: whether a thin layer on top of model APIs can keep any margin.
 
-In a crowded category, brand and domain can be the edge. When products are similar, the one people remember wins.
+## How does PDF.ai differ from Chatbase and Jenni AI?
 
-An existing audience plus a fast launch beat a long build. [Chatbase](/cases/chatbase/) won the same category with timing, and [TypingMind](/cases/typingmind/) with an X audience and speed.
+[Chatbase](/cases/chatbase/) started as "ChatGPT for your PDFs" too, months earlier, and won on timing: it was first and went viral. PDF.ai arrived when the idea was already crowded, so it competed on brand and search instead. The two cases show two ways to win the same idea: be first, or be the name people remember.
 
-## What can founders learn from PDF.ai?
+[Jenni AI](/cases/jenni-ai/) is the closer cousin in marketing. PDF.ai worked with the TikTok team behind Jenni AI and, like Jenni AI, ran an affiliate program, so both products lean on short-form video and commissions rather than paid ads. For another founder who launched quickly to an existing audience, see [TypingMind](/cases/typingmind/).
 
-In a crowded category, brand and domain can be the edge.
+## Which lessons from PDF.ai apply to crowded markets?
 
-Existing audience plus fast launch beats a long build.
-
-Track profit, not only revenue: API costs are real. Chen's September 2023 numbers show both, which is rarer and more useful than a revenue headline alone.
+- **In a crowded category, own the keyword.** A $10,000 domain that matches the search term brought most of PDF.ai's organic traffic.
+- **Stack cheap channels.** Search, press mentions, daily short video and affiliates each added traffic without a big ad budget.
+- **Report profit, not just revenue.** Chen's $17,600 profit on $25,070 revenue shows a model-API product can keep real margin.
+- **Make the product easy to try.** A free tier and a one-step upload let curious visitors become users in seconds.

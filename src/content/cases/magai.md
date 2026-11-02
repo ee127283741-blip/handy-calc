@@ -11,6 +11,7 @@ productType: SaaS
 foundedYear: null
 foundedDate: "After ChatGPT's launch; exact date not disclosed"
 teamSize: { display: "Not disclosed", label: not-disclosed }
+pricing: { display: "One subscription with every model and feature; plans differ only by usage volume", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/from-broke-to-100k-mrr-in-four-years-hS1wen0srjGNIWZxSnV9", sourceDate: "2026-02" }
 mrr: { value: 100000, display: "Nearly $100K MRR", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/from-broke-to-100k-mrr-in-four-years-hS1wen0srjGNIWZxSnV9", sourceDate: "2026-02" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 50k-250k
@@ -36,54 +37,58 @@ published: 2026-11-02
 updated: 2026-11-02
 ---
 
-When ChatGPT came out, Dustin Stout had two failed products behind him, little left in savings, and a real risk of losing his home. He could not code. What he did have was more than a decade of blogging and social media, and an email list of nearly 100,000 people. He used no-code tools to build Magai, a single place to use the best AI models, and by February 2026 it was close to $100K in monthly recurring revenue ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/from-broke-to-100k-mrr-in-four-years-hS1wen0srjGNIWZxSnV9)).
+When ChatGPT came out, Dustin Stout had two failed products behind him, depleted savings and a real chance of losing his home. He could not code. What he did have was more than a decade of blogging and social media, and an email list of nearly 100,000 people. He used no-code tools to build Magai, one place to use the best AI models, and by February 2026 it was close to $100K in monthly recurring revenue ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/from-broke-to-100k-mrr-in-four-years-hS1wen0srjGNIWZxSnV9)).
 
-## Why did Dustin Stout start Magai?
+## What made a failed actor build an AI platform?
 
-Stout started using ChatGPT obsessively and kept hitting the same frustrations: he could not reach the model he wanted, and the interface felt clunky. He built the product he wanted for himself, which is why every feature in the first version existed because he personally needed it. The broader problem was subscription sprawl. People who wanted the best AI for writing, images and video were paying for several tools and juggling API keys. Magai bundles them into one product. The name is a blend of "magic" and "AI".
+Stout was supposed to be an actor. After auditions dried up in Hollywood he worked as a youth director and then designed t-shirts at a print shop, where he taught himself web design and discovered social media. By 2014 he was a full-time marketing consultant. In 2020 he left the product company he had co-founded, and two failed products followed.
 
-## How does Magai work?
+> "Rock bottom is a powerful motivator." — Dustin Stout ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/from-broke-to-100k-mrr-in-four-years-hS1wen0srjGNIWZxSnV9))
 
-Magai is an all-in-one AI platform. A user signs up once and gets access to leading text, image and video models, with audio planned, in a single interface. There is no need to manage separate subscriptions or API keys. Behind the scenes, Magai handles the API relationships and billing with each AI provider, so the user only sees one product and one bill.
+Then ChatGPT arrived, and Stout used it obsessively. He kept hitting the same walls: he could not reach the model he wanted, and the interface felt clunky. The wider problem was subscription sprawl, with people paying for several AI tools and juggling API keys. Magai bundles the leading text, image and video models into one interface for one price. The name is "magic" plus "AI".
 
-## How was Magai built?
+## How do you build an AI product without writing code?
 
-Stout built Magai before AI coding tools made it easy for non-developers to ship software. The first version took about two months and used no code at all ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/hitting-20k-mrr-in-6-months-without-marketing-xM7jCg4vt06pAJNFWgJy)). He pieced it together with Bubble, webhooks, Zapier and other automation tools, working nights and weekends with no funding and no team.
+Stout built Magai before AI coding tools made that easy. The first version took about two months and no code at all ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/hitting-20k-mrr-in-6-months-without-marketing-xM7jCg4vt06pAJNFWgJy)). He combined Bubble, webhooks, Zapier and other automation tools, working nights and weekends with no funding and no team, and he built only features he personally needed.
 
-As Magai grew it hit the limits of Bubble. Stout's engineers built custom Python and Node.js proxy servers to push the no-code app further, and eventually the company rebuilt the whole application from scratch. Version 3 runs on Node.js and Supabase, is optimised for Vercel, and uses Stripe for payments and ConvertKit for email. Stout says he would launch on no-code again, but would plan for the rebuild much earlier.
+Growth broke that foundation. Magai hit Bubble's ceiling, and his engineers added custom Python and Node.js proxy servers to push it further, until the company had to rebuild the whole application.
 
-## How did Magai market and price its product?
+| Stage | Magai's stack |
+|---|---|
+| Version 1 | Bubble, webhooks, Zapier and other no-code automation |
+| Stretching no-code | Custom Python and Node.js proxy servers around Bubble |
+| Version 3 (ready early February 2026) | Node.js, Supabase, Vercel, Stripe for payments, ConvertKit for email |
 
-Stout says Magai grew through word of mouth, with no paid ads. Before launch he had spent years building an audience by blogging and posting on social media, an approach he learned from the author Michael Hyatt. By the time Magai went live he had an email list of nearly 100,000 subscribers and relationships with experts and influencers who helped spread the word. He also built in public, sharing the messy progress as well as the wins, so early users felt part of the story and recommended it to others.
+Stout says he would launch on no-code again because it let him validate the idea fast with no technical resources. What he would change is timing: plan for the rebuild from the start, because success will require it. In March 2026 he said version 3 was still being rolled out to users slowly.
 
-The business model is one subscription with everything included. There are no feature gates: the only difference between plans is how much a user can use. Magai pays the AI providers based on consumption, so usage-based plans keep its costs in line with its revenue. Stout says the company focuses on retention over acquisition.
+## How did Magai grow with no paid ads?
 
-## What challenges did Magai face?
+Stout says Magai grew through word of mouth built on trust, with no paid ads and no growth hacks. That trust took a decade. He learned from the author Michael Hyatt that you can build a platform by consistently giving value, and by launch day he had nearly 100,000 email subscribers and real relationships with experts and influencers who helped spread the word ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/from-broke-to-100k-mrr-in-four-years-hS1wen0srjGNIWZxSnV9)).
 
-The hardest technical problem was building on a foundation that could not scale. The workarounds that kept the Bubble version alive only held for so long, and the full rebuild consumed a lot of time and money. In March 2026, Stout said the fully custom version 3, ready in early February, was still being rolled out to users slowly.
+He also built in public, sharing the messy middle as well as the wins, so early users felt part of the story and became evangelists. The pricing is designed to keep them. Magai sells one subscription with every model, tool and feature included, and plans differ only by usage volume. Magai pays the AI providers based on what users consume and focuses on retention over acquisition.
 
-The personal challenge was building while broke. Every decision carried weight because failure meant losing his home. Stout says that pressure was crushing but also clarifying: there was no room for vanity metrics, and every feature had to matter. He says the discipline it forced still shapes how the company operates.
+## How did Magai revenue grow to nearly $100K MRR?
 
-## How much revenue does Magai make?
+Magai went from $0 to $20K MRR in its first six months without marketing and was at $23K MRR in October 2023 ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/hitting-20k-mrr-in-6-months-without-marketing-xM7jCg4vt06pAJNFWgJy)). In February 2026 Stout said it was right on the cusp of $100K MRR ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/from-broke-to-100k-mrr-in-four-years-hS1wen0srjGNIWZxSnV9)). Total revenue and team size are not disclosed.
 
-Magai grew from $0 to $20K MRR in its first six months without paid marketing, and was at $23K MRR in October 2023 ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/hitting-20k-mrr-in-6-months-without-marketing-xM7jCg4vt06pAJNFWgJy)). In February 2026, Stout said Magai was right on the cusp of $100K MRR ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/from-broke-to-100k-mrr-in-four-years-hS1wen0srjGNIWZxSnV9)). Total revenue and team size are not disclosed.
+| When | Milestone | Source |
+|---|---|---|
+| After ChatGPT's release | First version built with no code in about two months | [Indie Hackers](https://www.indiehackers.com/post/hitting-20k-mrr-in-6-months-without-marketing-xM7jCg4vt06pAJNFWgJy) |
+| First six months | $0 to $20K MRR without paid marketing | [Indie Hackers](https://www.indiehackers.com/post/hitting-20k-mrr-in-6-months-without-marketing-xM7jCg4vt06pAJNFWgJy) |
+| October 2023 | $23K MRR | [Indie Hackers](https://www.indiehackers.com/post/hitting-20k-mrr-in-6-months-without-marketing-xM7jCg4vt06pAJNFWgJy) |
+| February 2026 | Nearly $100K MRR; fully custom version 3 ready | [Indie Hackers](https://www.indiehackers.com/post/tech/from-broke-to-100k-mrr-in-four-years-hS1wen0srjGNIWZxSnV9) |
 
-The timeline: the first version was built with no code in about two months after ChatGPT's release; $20K MRR within six months; $23K MRR in October 2023; nearly $100K MRR in February 2026; a fully custom version 3 ready in early February 2026 ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/from-broke-to-100k-mrr-in-four-years-hS1wen0srjGNIWZxSnV9)).
+The pressure behind those numbers was personal. Every decision carried weight because failure meant losing his home, and Stout says that forced a discipline the company still runs on: no vanity metrics, and every feature has to matter.
 
-## Why did Magai work?
+## How is Magai different from TypingMind and Merlin?
 
-The audience came before the product. A list of nearly 100,000 subscribers and years of public writing meant Magai launched to people who already trusted Stout. That is why "no marketing" worked: the marketing had been done over the previous decade.
+All three sell a better way to use the same frontier models. [TypingMind](/cases/typingmind/) gives users a polished chat interface but asks them to bring their own API keys, and it launched with one-time licences. Magai takes the opposite approach: no API keys at all, one monthly subscription, and Magai handles every provider relationship and bill. [Merlin](/cases/merlin/) puts AI inside the browser, where people already work.
 
-The pricing removes a decision. Because every plan includes every model and feature, a new user does not have to guess which tier they need. They choose how much they will use, and Magai absorbs the complexity of many AI vendors.
+The difference is who carries the complexity. TypingMind's buyers accept setup in exchange for control over model costs. Magai's buyers pay for convenience, which suits Stout's target of everyday workers rather than developers, but it also means Magai's margin depends on what its users consume. Its distribution is different too: TypingMind and Magai both launched to audiences their founders already had, while Magai's came from a decade of blogging and email rather than X.
 
-No-code bought speed at the right moment. Building in two months let Stout catch the first wave of interest in ChatGPT alternatives. The rebuild later was expensive, but it was paid for by a product that had already proven demand. For a similar bet on a better interface for AI models, see [TypingMind](/cases/typingmind/), and for another AI tool sold to everyday office workers, see [Merlin](/cases/merlin/).
+## What can founders learn from Magai's story?
 
-## What can founders learn from Magai?
-
-Build distribution before you need it. Stout's email list and relationships were his real launch advantage, and they took years to build.
-
-Simple pricing can be a feature. One subscription with usage-based plans is easy to understand and keeps costs aligned with revenue when every request costs money.
-
-Use no-code to validate, but plan the rebuild early. Magai's experience shows both sides: no-code got it to market fast, and outgrowing it was painful.
-
-Build in public. Sharing the honest progress, not only the wins, turned early users into people who recommended the product.
+- **Build the audience before the product.** An email list of nearly 100,000 people is why "no marketing" worked.
+- **Make pricing a non-decision.** One subscription with every feature removes the hardest choice for a new user.
+- **Validate on no-code, but plan the rebuild.** Bubble got Magai to market in two months; outgrowing it was slow and expensive.
+- **Build in public.** Sharing the honest progress turned early users into the product's marketing.

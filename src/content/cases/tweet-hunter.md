@@ -11,6 +11,7 @@ productType: SaaS
 foundedYear: 2021
 foundedDate: "2021"
 teamSize: { display: "Not disclosed", label: not-disclosed }
+pricing: { display: "Not disclosed", label: not-disclosed }
 mrr: { value: null, display: "Not disclosed", label: not-disclosed }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: not-disclosed
@@ -37,52 +38,49 @@ published: 2026-11-02
 updated: 2026-11-02
 ---
 
-Most founders struggle to find their first hundred customers. Tibo had them before the product existed: they were the people already watching him grow his own X account. Tweet Hunter took the private swipe file he used for that growth, added AI writing help, and sold it back to the audience that had watched it work. The MVP took about two weeks; four months later it was at $150K ARR ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850)). In 2022 he sold it.
+Most founders struggle to find their first hundred customers. Tibo had them before the product existed: they were the people already watching him grow his own X account. Tweet Hunter took the kind of viral-tweet library he used for that growth, added AI writing help and a scheduler, and sold it back to the audience that had watched it work. The MVP took about two weeks. Four months later it was at $150K ARR ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850)), and in 2022 he sold it.
 
-## Why did Tibo build Tweet Hunter?
+## How did Tibo's own X audience become Tweet Hunter's market?
 
-Tibo was growing his own X account and kept a swipe file of tweets that performed well. Turning that library plus AI writing help into a tool for other creators was the product. The pain he solved was the blank page: creators, founders and agencies who wanted to grow on X did not know what to post, or how to phrase it so it would spread.
+Tibo and his cofounder Tom had worked on a startup together five years earlier. In January 2021 they decided to try again and set up Pony Express, a product studio for tools that help makers and creators grow. After a few attempts, they noticed a pattern:
 
-## How does Tweet Hunter work?
+> "After a few attempts, we realized every time we made sales, it was coming from my Twitter followers" — Tibo ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850))
 
-Tweet Hunter is a web app with a large searchable database of high-performing tweets, GPT-3-based writing help, scheduling and a light CRM for audience engagement. A user searches for proven tweets on a topic for inspiration, drafts their own with AI assistance, schedules it, and then manages replies and relationships with the people who engage. It covers the whole loop from idea to audience.
+So they built for that audience. The pain was the blank page: creators, founders and agencies who wanted to grow on X did not know what to post, or how to phrase it so it would spread.
 
-## How was Tweet Hunter built?
+## What was inside Tweet Hunter?
 
-The MVP was built in about two weeks and sold to his own followers. Speed was possible because the core asset, the library of high-performing tweets, already existed as his swipe file, and the AI writing layer used GPT-3 rather than a custom model. The same team later built Taplio, a LinkedIn version. Team size is not disclosed.
+Tweet Hunter started as a searchable library of viral tweets to help people figure out what to write. It grew into what Tibo called an AI-powered tweet inspiration machine paired with a scheduler. A user could search proven tweets on a topic, draft their own with AI help, schedule it, and manage the people who engaged. The core asset was the library of high-performing tweets; the AI layer used GPT-3 rather than a custom model.
 
-## How did Tweet Hunter market and sell itself?
+The same team later built Taplio, a LinkedIn version of the product. Team size is not disclosed.
 
-The founder's own growth on X was the proof and the channel, along with affiliate and creator partnerships. Every viral tweet he posted demonstrated what the tool promised. Affiliates, often creators themselves, carried the same message to their own audiences.
+## How did a two-week MVP reach $150K ARR?
 
-Sales were monthly subscriptions aimed at creators, founders and agencies.
+The MVP took about two weeks and was sold first to Tibo's own followers. From there, his growth on X was both the proof and the channel. Every viral tweet he posted demonstrated what the tool promised, and affiliate and creator partnerships carried the same message to other audiences.
 
-## What challenges did Tweet Hunter face?
+| When | Milestone | Source |
+|---|---|---|
+| January 2021 | Tibo and Tom start the Pony Express product studio | [Indie Hackers](https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850) |
+| 2021 | Tweet Hunter MVP built in about two weeks | [Indie Hackers](https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850) |
+| October 2021 | $150K ARR, about four months after the MVP | [Indie Hackers](https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850) |
+| 2022 | About $1M annual revenue with Taplio combined | [Indie Hackers](https://www.indiehackers.com/post/tweethunter-hits-1m-arr-8fc16ece7e) |
+| 2022 | Tweet Hunter and Taplio sold to Lempire for $2M cash plus earn-out | [lempire blog](https://blog.lempire.com/how-i-turn-my-middle-school-mate-into-a-multi-millionaire/) |
 
-A product built on one platform depends on that platform. Tweet Hunter's answer was to clone the winning product to a second platform, building Taplio for LinkedIn, which spread the risk across two networks.
+## How much revenue did Tweet Hunter make before the sale?
 
-The hardest decision came at the end. In 2022 Tweet Hunter and Taplio were both sold to Lempire for $2M cash plus earn-out ([media-reported, lempire blog](https://blog.lempire.com/how-i-turn-my-middle-school-mate-into-a-multi-millionaire/); also covered by [Indie Hackers](https://www.indiehackers.com/post/tweet-hunter-acquired-for-2m-earn-out-0709cae13a)). Selling early buys certainty; the founder later said he regretted it.
+Tweet Hunter reached $150K ARR about four months after the MVP ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850)). In 2022, Tweet Hunter and Taplio together made about $1M in annual revenue ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tweethunter-hits-1m-arr-8fc16ece7e)). A dated monthly figure is not disclosed, and total revenue is not disclosed.
 
-## How much revenue did Tweet Hunter make?
+The same year, both products were sold to Lempire for $2M cash plus an earn-out ([media-reported, lempire blog](https://blog.lempire.com/how-i-turn-my-middle-school-mate-into-a-multi-millionaire/); also covered by [Indie Hackers](https://www.indiehackers.com/post/tweet-hunter-acquired-for-2m-earn-out-0709cae13a)). Selling early bought certainty. The founder later said he regretted it.
 
-Tweet Hunter reached $150K ARR about four months after the MVP ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/i-built-tweet-hunters-mvp-in-2-weeks-4-months-later-it-grew-to-150k-arr-ama-a6ae1ee850)). In 2022, Tweet Hunter and Taplio combined made about $1M in annual revenue ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tweethunter-hits-1m-arr-8fc16ece7e)). A dated monthly figure is not disclosed, and total revenue is not disclosed.
+## How does Tweet Hunter compare with Leadmore AI and Instantly?
 
-The timeline: in 2021, the MVP was built in two weeks and reached $150K ARR four months later. In 2022, the two products together reached about $1M annual revenue and were sold to Lempire for $2M cash plus earn-out (media-reported).
+All three sell growth to people who live on outreach and audiences, and all three grew by doing what they sell. Tweet Hunter used Tibo's X account as its demo. [Leadmore AI](/cases/leadmore-ai/) applies the same idea to Reddit and grows through content in the communities its customers want to reach. [Instantly](/cases/instantly/) sells cold email and was itself built with cheap, high-volume outbound.
 
-## Why did Tweet Hunter work?
+The difference is how much each depends on one platform. Tweet Hunter answered that risk by cloning itself to LinkedIn as Taplio. Leadmore AI charges refundable credits per action, which lowers the risk for buyers rather than for the company. For another tool sold to people who publish constantly, see [Arcads](/cases/arcads/).
 
-Your own audience growth can be the product demo. Tibo did not need to explain the product; his account was the explanation.
+## What are the takeaways from Tweet Hunter?
 
-The core asset was data, not the model. GPT-3 was available to every competitor, but a curated library of high-performing tweets was his. AI writing on top of proven examples is more useful than AI writing from nothing.
-
-And a second platform doubled the opportunity with little new invention. Compare [Arcads](/cases/arcads/), another tool for people who publish constantly, and [TypingMind](/cases/typingmind/), another product launched to an existing X audience.
-
-For another tool sold to people who live on outreach and audience growth, see [Instantly](/cases/instantly/), the bootstrapped cold-email platform, and for marketing on Reddit instead of X, see [Leadmore AI](/cases/leadmore-ai/).
-
-## What can founders learn from Tweet Hunter?
-
-Your own audience growth can be the product demo. If you are good at something publicly, a tool that packages your method has a built-in market.
-
-Clone a winning product to a second platform (X to LinkedIn). Once a format works, adjacent platforms are cheaper experiments than new ideas.
-
-Selling early buys certainty; the founder later said he regretted it. Weigh the guaranteed cash against what the company might become, and decide with eyes open.
+- **Package the method you are known for.** If you grow an audience in public, a tool built on your method has a market waiting.
+- **Own the data, rent the model.** Everyone had GPT-3; the curated library of viral tweets was Tweet Hunter's edge.
+- **Copy a winning format to the next platform.** Taplio took the same product to LinkedIn with little new invention.
+- **Decide on an early exit with open eyes.** Two million dollars in cash was certain; the founder still regretted selling.

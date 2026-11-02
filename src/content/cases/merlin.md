@@ -12,6 +12,7 @@ appSubcategory: Browser extension
 foundedYear: null
 foundedDate: "Not disclosed (sources disagree: 2021 or 2022)"
 teamSize: { display: "Not disclosed", label: not-disclosed }
+pricing: { display: "Free daily queries (102 a day in 2023); paid plans for more", label: founder-reported, labelNote: "Company-reported", sourceUrl: "https://www.newsfilecorp.com/release/187348/Merlin-AI-Reaches-Milestone-Surpassing-1-Million-Users-Within-11-Months", sourceDate: "2023-11" }
 mrr: { value: null, display: "Not disclosed", label: not-disclosed }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: not-disclosed
@@ -38,48 +39,55 @@ updated: 2026-11-02
 
 Every time you copy text from a web page, switch to an AI chat tab, paste it and ask a question, you lose a little focus. Merlin's founders, Pratyush Rai, Siddhartha Saxena and Sirsendu Sarkar, decided the AI should come to the page instead. Their Chrome extension puts an assistant one shortcut away on any site. Today the Chrome Web Store lists it with more than a million users ([verified, Chrome Web Store](https://chromewebstore.google.com/detail/merlin-ask-ai-to-research/camppjleccjaphfdbohjdohecfnoikec?hl=en)), one of the few hard numbers in a company that discloses little else.
 
-## Why did the founders build Merlin?
+## Why put AI in a Chrome extension instead of an app?
 
 Switching tabs to an AI chat breaks your flow. The founders put the assistant where people already work: a shortcut on any web page to summarise, reply or rewrite. The pain is friction, small but repeated dozens of times a day by anyone who reads and writes on the web.
 
 The founding year is not disclosed; sources disagree between 2021 and 2022.
 
-## How does Merlin work?
+## What can Merlin do on any web page?
 
 Merlin is a browser extension that calls several third-party models (GPT, Claude, Gemini and others) and can read the current page, YouTube transcripts or email threads. A user presses a shortcut, asks for a summary or a reply, and gets an answer grounded in what is on screen. Because it is model-agnostic, it can route requests to whichever model is best.
 
-## How was Merlin built?
+> "Users can obtain access to both the GPT 3.5 and GPT 4 models without requiring a ChatGPT account by utilizing the 102 complimentary queries provided daily." — Merlin AI announcement ([founder-reported, Newsfile](https://www.newsfilecorp.com/release/187348/Merlin-AI-Reaches-Milestone-Surpassing-1-Million-Users-Within-11-Months))
 
 They shipped a Chrome extension soon after ChatGPT launched, riding the first wave of "ChatGPT in your browser" searches on the Chrome Web Store. Building on the extension platform meant no new app to install and immediate access to the pages users already visit. Team size is not disclosed. CB Insights reports total funding of $8.36M ([media-reported, CB Insights](https://www.cbinsights.com/company/foyer-tech/financials)).
 
-## How did Merlin market and price itself?
+## How did Merlin reach a million users?
 
 Distribution came from Chrome Web Store search and ratings, plus press releases about user milestones and a Forbes 30 Under 30 Asia listing for a co-founder. A 2023 press release claimed 1M users within 11 months ([Newsfile press release](https://www.newsfilecorp.com/release/187348/Merlin-AI-Reaches-Milestone-Surpassing-1-Million-Users-Within-11-Months)).
 
 Pricing is freemium: a limited daily free allowance and a paid Pro plan with higher limits and premium models.
 
-## What challenges does Merlin face?
+## What risks does a browser AI assistant like Merlin carry?
 
 Building inside someone else's platform cuts both ways. Chrome provides distribution, but browsers and AI providers can add the same assistant features themselves. Being model-agnostic helps: Merlin can switch to whichever model is best rather than depending on one provider.
 
 Transparency is the other gap. Monthly revenue is not disclosed, total revenue is not disclosed, and only third-party estimates exist, so none is shown here.
 
-## How much revenue does Merlin make?
+## How much money does Merlin make?
 
 Merlin's revenue is not disclosed. What can be checked is usage: the Chrome Web Store lists 1,000,000+ users as of November 2026 ([verified, Chrome Web Store](https://chromewebstore.google.com/detail/merlin-ask-ai-to-research/camppjleccjaphfdbohjdohecfnoikec?hl=en)). Funding is reported at $8.36M ([media-reported, CB Insights](https://www.cbinsights.com/company/foyer-tech/financials)).
 
 The timeline: the company was founded in 2021 or 2022 (sources disagree); a 2023 press release claimed 1M users within 11 months; in November 2026 the Chrome Web Store lists 1M+ users.
 
-## Why did Merlin work?
+| When | Milestone | Source |
+|---|---|---|
+| December 2022 | Merlin released as a ChatGPT Chrome extension | [Newsfile](https://www.newsfilecorp.com/release/187348/Merlin-AI-Reaches-Milestone-Surpassing-1-Million-Users-Within-11-Months) |
+| February 2023 | Goes viral with marketing and coding communities | [Newsfile](https://www.newsfilecorp.com/release/187348/Merlin-AI-Reaches-Milestone-Surpassing-1-Million-Users-Within-11-Months) |
+| November 2023 | 1 million users within its first year | [Newsfile](https://www.newsfilecorp.com/release/187348/Merlin-AI-Reaches-Milestone-Surpassing-1-Million-Users-Within-11-Months) |
+| November 2026 | 1,000,000+ users listed on the Chrome Web Store | [Chrome Web Store](https://chromewebstore.google.com/detail/merlin-ask-ai-to-research/camppjleccjaphfdbohjdohecfnoikec?hl=en) |
+| Total funding | $8.36M | [CB Insights](https://www.cbinsights.com/company/foyer-tech/financials) |
 
-Distribution can live inside someone else's platform. The Chrome Web Store put Merlin in front of people actively searching for AI in their browser.
+## How does Merlin compare with TypingMind and Magai?
 
-It also removed a small, constant friction. Saving a tab switch does not sound like much, but repeated all day it is the difference between using AI occasionally and using it constantly. [TypingMind](/cases/typingmind/) improved the chat interface itself, and [Gamma](/cases/gamma/) shows another productivity product that spread through use.
+All three are interfaces to models other companies build. [TypingMind](/cases/typingmind/) is a separate chat app for power users who bring their own API key. [Magai](/cases/magai/) is a separate platform with one subscription for many models. Merlin goes where the user already is: a sidebar on every web page, with summaries and writing help next to the email, tweet or article in front of them.
 
-## What can founders learn from Merlin?
+That placement is Merlin's distribution advantage and its risk. A free daily allowance of model queries made it easy to try, and the Chrome Web Store did the discovery. But browsers and model makers can add the same features natively, so Merlin has to keep adding tools, such as social media writing and code explanations, faster than the platforms do.
 
-Distribution can live inside someone else's platform (Chrome). App stores and extension stores are search engines with built-in installs.
+## What takeaways does Merlin offer extension builders?
 
-Model-agnostic products can switch to whichever model is best. Avoid tying your product's quality to one provider.
-
-Store listings give a verifiable usage signal even when revenue is private. If you cannot share revenue, public usage counts still build trust.
+- **Put AI where people already work.** A browser sidebar removes the step of opening another app.
+- **A free daily allowance drives trial.** Free queries let people try premium models without a ChatGPT account.
+- **App stores are a distribution channel.** The Chrome Web Store listing alone shows 1,000,000+ users.
+- **Platform features are the main threat.** Browsers and model makers can copy what an extension does.

@@ -66,15 +66,16 @@ src/
 
 ## 3. 案例頁
 
-內容規則（關鍵字流程、8 個問句 H2、來源標籤、FAQ）全部在 `PUBLISHING.md` 0.1，並由 `cases.test.ts` 強制檢查。頁面由版型自動組成：
+內容規則（關鍵字流程、章節、表格、原話、來源標籤、FAQ）全部在 `PUBLISHING.md` 0.1，並由 `cases.test.ts` 強制檢查。頁面由版型自動組成：
 
 1. Breadcrumb → H1（= `title`，含 `primaryKeyword`）→ 分類連結（產業・產品型態）
 2. 首段 answer（= `summary`，也是 meta description）＋ TL;DR 框（AEO）
 3. 作者（Editorial team）＋ Updated 日期
-4. 本文（8 章敘事）
-5. FAQ 區塊
-6. Data summary 數據框（由 frontmatter 產生，含來源標籤）
-7. Sources 列表
+4. 「At a glance」表格（營收、團隊人數、定價、成立時間、創辦人，含來源標籤）
+5. 本文（5–7 個問句章節，含營收章、比較章、最後的重點條列；至少一張表格與一句創辦人原話）
+6. FAQ 區塊
+7. Data summary 數據框（由 frontmatter 產生，含來源標籤）
+8. Sources 列表
 
 結構化資料：`Article`（`datePublished`、`dateModified`、`image`、`author`、`about` = Organization＋founders）＋ `FAQPage`＋ `BreadcrumbList`。`og:type=article`、`twitter:card=summary_large_image`。
 

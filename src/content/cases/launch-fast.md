@@ -11,6 +11,7 @@ productType: SaaS
 foundedYear: null
 foundedDate: "Not disclosed (a few months before June 2026)"
 teamSize: { display: "Not disclosed", label: not-disclosed }
+pricing: { display: "$49, $89 and $199 a month; no free tier", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9", sourceDate: "2026-06" }
 mrr: { value: 30000, display: "$30K MRR", label: founder-reported, sourceUrl: "https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9", sourceDate: "2026-06" }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: 10k-50k
@@ -37,52 +38,50 @@ updated: 2026-11-02
 
 Hasaam Bhatti had tried to build ten or twelve products before, including AI video tools and job automation apps, and none of them reached production. He had no computer science degree and had never written a line of code. The one that worked was different because he was the customer: he ran two Amazon brands and hated how long product research took. He built Launch Fast in 48 hours with Cursor, and it reached $10K in monthly recurring revenue on day 30 ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9)).
 
-## Why did Hasaam Bhatti start Launch Fast?
+## Why did ten failed products lead to Launch Fast?
 
-Bhatti was working a corporate job and running two Amazon brands on the side. Researching a single product idea took him 20 to 30 hours of copying and pasting data into Google Sheets. He was frustrated and knew exactly what was broken, so he decided to build the tool he needed. He found Cursor, the AI coding editor, on Twitter, and it gave someone with no coding background a way to try. His earlier failures had taught him that building for audiences he did not belong to did not work.
+Because the earlier ones were built for audiences Bhatti did not belong to. Amazon was different. He was working a corporate job and running two Amazon brands on the side, and researching a single product idea took him 20 to 30 hours of copying data into Google Sheets. He knew exactly what was broken. When he found Cursor, the AI coding editor, on Twitter, he finally had a way to build the tool himself.
 
-## How does Launch Fast work?
+Launch Fast is that tool: product research for Amazon sellers, with a Chrome extension. In 2026 the team shipped an MCP, which Bhatti describes as one of the first all-in-one agentic tools for Amazon sellers, so they can research products, manage catalogs and optimise ads through AI without switching between several tools.
 
-Launch Fast helps Amazon sellers research products and decide what to sell. The core is a research engine that pulls together the data sellers used to collect by hand, and there is also a Chrome extension. In 2026 the team shipped an MCP, which Bhatti describes as one of the first all-in-one agentic tools for Amazon sellers. It lets sellers research products, manage their catalogs and optimise ads through AI without switching between several different tools.
+## What does a 48-hour build actually look like?
 
-## How was Launch Fast built?
+Bhatti set the deadline himself, in a pitch to a potential partner, because he needed a forcing function to stop planning. He then split the time like this ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9)):
 
-Bhatti built the first version in 48 hours, a deadline he set himself in a pitch to a potential partner. He spent the first four hours without touching Cursor, mapping the partner's existing workflows, standard operating procedures and data. Hours five to twelve went into the core features, 13 to 20 into testing, 21 to 30 into the interface, and 31 to 40 into edge cases. He then recorded a demo video and sent it. He gave the interface real time because running Amazon brands had taught him that if a product looks unfinished, people assume it is.
+| Hours | What Bhatti did |
+|---|---|
+| 1–4 | No code. Mapped the partner's workflows, SOPs and data |
+| 5–12 | Built the core features in Cursor |
+| 13–20 | Tested and iterated |
+| 21–30 | Polished the interface ("branding is everything") |
+| 31–40 | Tested edge cases so nothing broke under real use |
+| Final stretch | Recorded a demo video and sent it as the pitch |
 
-The original stack was Cursor for the build, Vercel for hosting, Supabase for the database and login, Resend for onboarding emails, Apify for data, and TypeScript with Next.js. It cost almost nothing until it made money. Since then the team has moved much of the infrastructure to Cloudflare and built its own crawlers and data layer. Bhatti now builds with both Codex and Claude Code.
+The first stack was Cursor, Vercel, Supabase, Resend for onboarding emails, Apify for data, and TypeScript with Next.js, and it cost almost nothing to run until it made money. Since then the team has moved much of the infrastructure to Cloudflare and built its own crawlers and data layer. Bhatti now builds with both Codex and Claude Code.
 
-## How does Launch Fast market and price its product?
+## How did Launch Fast get customers on day one?
 
-Launch Fast's first customers came from a partnership, not marketing. Two years earlier Bhatti had bought a coaching program called Legacy X, which had thousands of active Amazon sellers looking for better tools. He offered to build a solution in 48 hours and partner if they liked it. They called the next morning and told him to quit his job. He traded equity for access to that audience, so the product had real customers from day one.
+Through someone else's audience. Two years earlier Bhatti had bought a coaching program called Legacy X, which had thousands of active Amazon sellers looking for better tools. He offered to build a solution in 48 hours and partner if they liked it. They called the next morning and told him to quit his job. He traded equity for access to that audience.
 
-Pricing is subscription-based with no free tier. Legacy X coaching customers have their own plan, and public plans cost $49, $89 and $199 a month ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9)). For its own acquisition, the company runs weekly education sessions for new sellers, publishes technical blog posts that bring in Google traffic, offers free tools for beginners, and runs some Meta ads. Bhatti says the biggest driver is product quality: when the research engine improves, referrals and retention follow, because sellers talk to each other constantly.
+> "Fifty percent of something real is better than one hundred percent of nothing shipped." — Hasaam Bhatti ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9))
 
-## What challenges did Launch Fast face?
+Pricing is subscription-only with no free tier. Legacy X customers have their own plan, and public plans cost $49, $89 and $199 a month ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9)). Launch Fast's own acquisition now comes from weekly education sessions for new sellers, technical blog posts that bring in Google traffic, free tools for beginners and some Meta ads. Bhatti says the biggest driver is product quality, because sellers talk to each other constantly.
 
-Distribution was the first hard problem. With no audience, Bhatti had no customers, and solving it cost him equity in the business.
-
-The bigger challenge came later. Bhatti says he treated everything as a task instead of a system. Shipping and fixing problems by hand works while a product is small, but as one founder covering tech, marketing and support, he found that what got Launch Fast to $10K MRR became a ceiling on the way to $50K ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9)). He built monitoring and automated bug detection only after problems appeared, and says he would set them up from the start next time.
-
-## How much revenue does Launch Fast make?
+## How did Launch Fast revenue grow from day 30 to day 90?
 
 Launch Fast reached $10K MRR on day 30, $17K to $18K on day 60 and $21.8K on day 90, all from paying users, with 330 active users on its Chrome extension ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9)). By June 2026 it was at $30K MRR. Total revenue and team size are not disclosed.
 
-The timeline: a 48-hour build pitched to Legacy X; $10K MRR on day 30; $21.8K MRR on day 90; $30K MRR in June 2026, around the time the team shipped its agentic MCP tool ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9)). Bhatti also now runs consulting work and enterprise workshops on Claude Code.
+The next ceiling was the founder himself. Bhatti says he treated everything as a task instead of a system. That works while a product is small, but covering tech, marketing and support alone, he found that what got Launch Fast to $10K MRR became a ceiling on the way to $50K ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9)). He built monitoring and automated bug detection only after problems appeared, and says he would set them up from the start next time. He also now runs consulting work and enterprise workshops on Claude Code.
 
-## Why did Launch Fast work?
+## How does Launch Fast compare with Magai and Lovable?
 
-The founder was the customer. After ten or twelve failed products in markets he did not know, Bhatti finally built for a problem he had lived through for years. His knowledge of how Amazon sellers work was the real product, and Cursor only had to turn it into software.
+[Magai](/cases/magai/) and Launch Fast both prove a non-technical founder can ship real software, but a generation apart. Dustin Stout used Bubble and Zapier in 2023 and later paid for a full rebuild. Bhatti used Cursor in 2025-26 and produced real TypeScript code from day one, so his upgrade path was moving infrastructure, not rewriting the app. AI app builders like [Lovable](/cases/lovable/) push the same idea further for people who do not want to touch an editor at all.
 
-Borrowed distribution solved the hardest problem on day one. Instead of building an audience from zero, Bhatti went to an organisation that already had thousands of the exact customers he wanted, and paid for access with equity.
+The bigger difference is distribution. Stout spent a decade building an email list of nearly 100,000 people. Bhatti had no audience, so he rented one, giving up equity for instant access to thousands of sellers. Both reached paying customers immediately, which is the part most first-time founders skip.
 
-A real deadline forced him to ship. Promising a working demo in 48 hours to a real partner left no room for endless planning. For another AI product that started with a non-technical founder and no-code or AI tools, see [Magai](/cases/magai/), and for AI app builders that make this kind of build possible, see [Lovable](/cases/lovable/).
+## What are the takeaways from Launch Fast?
 
-## What can founders learn from Launch Fast?
-
-Build where you already have domain knowledge. Bhatti's advice is to build for a problem you have personally experienced, not for a market you have read is big.
-
-Solve distribution before anything else. Find someone who already has your customers and work out a deal, even if it costs equity or a revenue share. In his words, fifty percent of something real beats one hundred percent of nothing shipped.
-
-Use a forcing function. A fixed deadline with a real person waiting for the result turns planning into shipping.
-
-Build systems, not just fixes. The habits that get a solo founder to the first $10K MRR can become the ceiling later, so automate monitoring and bug detection before they are urgent.
+- **Build where you are the user.** After ten or twelve failures in markets he did not know, Bhatti succeeded in the one he lived in.
+- **Solve distribution before the product is finished.** A partner with your customers is worth equity or a revenue share.
+- **Use a real deadline with a real recipient.** Promising a demo in 48 hours turned planning into shipping.
+- **Turn tasks into systems early.** Monitoring and bug detection built reactively capped growth later.

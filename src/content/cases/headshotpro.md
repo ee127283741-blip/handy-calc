@@ -10,12 +10,13 @@ industry: careers-hr
 productType: SaaS
 foundedYear: 2023
 foundedDate: "2023"
-teamSize: { display: "Small team (started with freelancers and part-timers)", label: founder-reported, sourceUrl: "https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/", sourceDate: "2024-02" }
+teamSize: { display: "Small team (started with freelancers and part-timers)", label: founder-reported, sourceUrl: "https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/", sourceDate: "2024-02" }
+pricing: { display: "Not disclosed", label: not-disclosed }
 mrr: { value: null, display: "Not disclosed", label: not-disclosed }
 totalRevenue: { value: null, display: "Not disclosed", label: not-disclosed }
 revenueRange: not-disclosed
 metrics:
-  - { name: "Photos required per order", value: "15–17 uploads", label: founder-reported, sourceUrl: "https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/", sourceDate: "2024-02" }
+  - { name: "Photos required per order", value: "15–17 uploads", label: founder-reported, sourceUrl: "https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/", sourceDate: "2024-02" }
 tldr: "HeadshotPro is Danny Postma's AI service that turns 15–17 uploaded selfies into studio-style business headshots, launched in 2023 after earlier experiments with AI stock photos and ProfilePicture.AI. It chains dozens of open-source and custom models rather than relying on one fine-tuned model. Its revenue is not disclosed by any primary source."
 faq:
   - q: "How much does HeadshotPro make?"
@@ -27,60 +28,70 @@ faq:
   - q: "Who founded HeadshotPro?"
     a: "Danny Postma, who had previously sold the AI copywriting tool Headlime."
 sources:
+  - { title: "Danny Postma, Founder of HeadshotPro – Interview Series (English)", url: "https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/", publisher: "Unite.AI", date: "2024-02" }
   - { title: "Danny Postma, Founder of HeadshotPro – Interview Series", url: "https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/", publisher: "Unite.AI", date: "2024-02" }
   - { title: "Danny Postma built and sold an AI writing tool for $1M in 8 months", url: "https://www.indiehackers.com/post/danny-postma-built-and-sold-ai-writing-tool-for-1m-in-8-months-full-story-7da7a7edf7", publisher: "Indie Hackers" }
 published: 2026-11-02
 updated: 2026-11-02
 ---
 
-A professional photographer, a studio booking and an afternoon off work, or a few selfies and a wait. HeadshotPro bet that most people who need a business headshot would choose the second option if the result looked good enough. Its founder, Danny Postma, did not arrive at that bet directly. He got there by running several small AI image experiments and watching which one people kept paying for.
+Danny Postma's first AI company wrote copy. His second made profile pictures. His third, HeadshotPro, makes one thing only: professional business headshots from a batch of selfies. Getting there took a stock-photo idea he abandoned, a product he built in 30 hours, and a launch where the project that won the press lost the sales. The company's revenue is not disclosed.
 
-## Why did Danny Postma start HeadshotPro?
+## What led Danny Postma from copywriting to headshots?
 
-Postma had already sold an AI copywriting tool, Headlime. After Stable Diffusion's release in 2022 he tried an AI stock-photo site, dropped it over quality concerns, and built ProfilePicture.AI in about 30 hours. Business headshots turned out to be the use case people paid for most reliably.
+Postma started out as a freelance conversion specialist and built Landingfolio, a gallery of landing page designs, in 2015 without knowing how to code. While working on a copy tool called Headlime, a friend showed him GPT-3. He got early access by contacting OpenAI directly and turned Headlime into one of the first AI copywriting tools in production ([founder-reported, Unite.AI](https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/)). Indie Hackers reported that he built and sold it for $1M in eight months ([Indie Hackers](https://www.indiehackers.com/post/danny-postma-built-and-sold-ai-writing-tool-for-1m-in-8-months-full-story-7da7a7edf7)).
 
-The pain is concrete. LinkedIn profiles, company "about" pages, conference bios and job applications all want a professional photo, and getting one usually means paying a photographer and finding the time. For a whole company, coordinating a shoot for every employee is even harder.
+When Stable Diffusion launched in September 2022 he tried an AI stock-photo site, Stock AI, but dropped it over quality and possible legal trouble from companies like Getty Images. He then built ProfilePicture.AI in about 30 hours. It exploded on Twitter and ranked well on Google, then sales faded as the excitement wore off.
 
-## How does HeadshotPro work?
+## Why did HeadshotPro win when Deep Agency did not?
 
-Customers upload 15–17 photos of themselves ([founder-reported, Unite.AI](https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/)). The service then generates studio-style headshots in a range of looks.
+Postma launched two products at the same time: Deep Agency and HeadshotPro. Deep Agency got a lot of press attention but did not turn into sales. HeadshotPro was an instant hit, so he followed the demand and made it the focus ([founder-reported, Unite.AI](https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/)).
 
-Rather than a single fine-tuned model, the company says it chains dozens of open-source and custom models. A vision-language model filters bad or unsafe uploads before any training happens, and a face-restoration model cleans artefacts afterwards. The input filtering matters: a blurry or badly lit selfie produces a bad headshot, so rejecting poor inputs is part of delivering quality.
+The use case explains why. LinkedIn profiles, company pages, conference bios and job applications all want a professional photo, and getting one usually means paying a photographer and finding the time. HeadshotPro turns 15 to 17 uploaded photos into studio-style headshots with a chosen background and lighting. Postma says the company focuses exclusively on professional headshots, while many competitors move sideways into dating photos and avatars.
 
-## How was HeadshotPro built?
+## What is inside HeadshotPro's model pipeline?
 
-He launched HeadshotPro alongside another image product, watched which one grew, and then focused on headshots. That portfolio approach meant he did not have to guess the winner in advance.
+Postma says most competitors use only Stable Diffusion with DreamBooth trained on the user's photos. HeadshotPro chains dozens of extra open-source and custom models, and by February 2024 the team had spent a full year on its own custom models ([founder-reported, Unite.AI](https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/)).
 
-The model pipeline was not bought off the shelf. The company spent about a year on its own models, according to the February 2024 interview with Postma. The team started with freelancers and part-time staff, and remains a small team; exact headcount is not disclosed ([founder-reported, Unite.AI](https://www.unite.ai/de/danny-postma-founder-of-headshotpro-interview-series/)).
+| Step | What HeadshotPro uses it for |
+|---|---|
+| Filtering uploads | LLaVA, a vision-language model, rejects bad or unsafe photos before training |
+| Generation | Custom and open-source models on top of the user's photos |
+| Clean-up | CodeFormer removes AI artefacts from faces |
+| Safety | Removes NSFW generations |
 
-## How does HeadshotPro market and sell its headshots?
+Quality is the whole game: people know exactly what their own face looks like, so a slightly wrong result is a failed order. That is why so much of the pipeline is filtering and restoration rather than generation alone.
 
-Postma is known for SEO. HeadshotPro has landing pages for many headshot searches, by job, style and use, plus comparison pages. People searching for "headshots for doctors" or "LinkedIn headshot" find a page built for exactly that query.
+## How did a solo founder learn to build a team?
 
-Sales use one-off packages rather than subscriptions, with team ordering for companies. Team plans give companies a reason to buy for everyone at once, which raises order size without changing the product. The pitch is price and speed compared with booking a photographer.
+Postma had always worked alone and automated as much as he could, partly because he was afraid of hiring. As HeadshotPro grew he faced three options: sell, stay solo, or build a team. He chose the team, told every candidate from the first interview that managing people was new to him, and started with contractors and part-time people who had other clients.
 
-## What challenges did HeadshotPro face?
+> "Looking back, I should have started a team way earlier." — Danny Postma ([founder-reported, Unite.AI](https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/))
 
-Quality was the first hurdle. Postma had already dropped the stock-photo idea over quality concerns, and headshots are even less forgiving: people know exactly what their own face looks like. That is why so much of the product is filtering and restoration rather than generation alone, and why the company invested about a year in its own models.
+He now runs a small team; exact headcount is not disclosed.
 
-A second challenge is competition. Many apps launched AI headshots on the same open models. HeadshotPro answered with a more complex pipeline and with search-driven distribution rather than relying on a single viral moment.
+## Does HeadshotPro disclose its revenue?
 
-## How much revenue does HeadshotPro make?
+HeadshotPro's revenue is not disclosed by any primary source we could verify, and neither is total revenue. What the founder has disclosed is the product strategy and the team story above, from a February 2024 interview with Unite.AI ([founder-reported, Unite.AI](https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/)).
 
-HeadshotPro's monthly revenue is not disclosed, and its total revenue is not disclosed either. Large monthly figures appear in blog posts, but none could be traced to a primary source, so they are not repeated here.
+| When | Milestone | Source |
+|---|---|---|
+| 2015 | Landingfolio, built without code | [Unite.AI](https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/) |
+| GPT-3 era | Headlime becomes an AI copywriting tool, later sold | [Indie Hackers](https://www.indiehackers.com/post/danny-postma-built-and-sold-ai-writing-tool-for-1m-in-8-months-full-story-7da7a7edf7) |
+| September 2022 | Stable Diffusion launches; Stock AI tried and dropped | [Unite.AI](https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/) |
+| Late 2022 | ProfilePicture.AI built in about 30 hours | [Unite.AI](https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/) |
+| 2023 | Deep Agency and HeadshotPro launched; HeadshotPro becomes the focus | [Unite.AI](https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/) |
+| February 2024 | A year into custom models; small team | [Unite.AI](https://www.unite.ai/danny-postma-founder-of-headshotpro-interview-series/) |
 
-The documented timeline runs from 2022, when Postma sold Headlime and experimented with AI stock photos and ProfilePicture.AI, to 2023, when HeadshotPro launched and became the focus, to February 2024, when an interview described the custom model pipeline.
+## How does HeadshotPro compare with Photo AI?
 
-## Why did HeadshotPro work?
+[Photo AI](/cases/photo-ai/) and HeadshotPro started from the same 2022 insight, that people will pay for good photos of themselves, and went opposite ways. Pieter Levels kept Photo AI broad, for any setting or style, built it on a deliberately plain stack and rented GPUs. Postma narrowed HeadshotPro to one output and invested a year in a custom model pipeline. One optimised for shipping speed, the other for quality on a single job.
 
-It chose a use case with a clear buyer and an existing budget. Companies already pay photographers for staff headshots, so an AI alternative replaces a known expense rather than creating a new one.
+Both founders tested several products before one stuck. Levels expanded an avatar experiment into Photo AI; Postma ran Stock AI, ProfilePicture.AI and Deep Agency before HeadshotPro. [Interior AI](/cases/interior-ai/) shows the same "photos of X" pattern applied to rooms.
 
-It also treated quality as a pipeline problem, filtering inputs and cleaning outputs, rather than as a single model choice. And it won attention through search, which compounds over time. The same "sell the outcome" logic drives [Photo AI](/cases/photo-ai/), while [Umax](/cases/umax/) shows a very different, social-first route for a face-based consumer app.
+## What are the key lessons from HeadshotPro?
 
-## What can founders learn from HeadshotPro?
-
-Run several small bets and double down on the winner. Postma did not predict headshots; he observed them.
-
-Quality filtering of inputs is part of the product. In AI products, what you refuse to process can matter as much as what you generate.
-
-One-off pricing fits a purchase people make once a year. Not every AI product needs a subscription; match the pricing to how often customers actually need the result.
+- **Follow sales, not press.** Deep Agency got the attention; HeadshotPro got the customers, so that is where Postma went.
+- **Narrow the product to win on quality.** Focusing only on business headshots justified a year of custom model work.
+- **Viral spikes fade.** ProfilePicture.AI's Twitter success did not last; a steady, searched-for use case did.
+- **Hire before you have to.** Postma's own regret is starting his team too late.
