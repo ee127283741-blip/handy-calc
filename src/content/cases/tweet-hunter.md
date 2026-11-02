@@ -77,7 +77,7 @@ The core asset was data, not the model. GPT-3 was available to every competitor,
 
 And a second platform doubled the opportunity with little new invention. Compare [Arcads](/cases/arcads/), another tool for people who publish constantly, and [TypingMind](/cases/typingmind/), another product launched to an existing X audience.
 
-For another tool sold to people who live on outreach and audience growth, see [Instantly](/cases/instantly/), the bootstrapped cold-email platform.
+For another tool sold to people who live on outreach and audience growth, see [Instantly](/cases/instantly/), the bootstrapped cold-email platform, and for marketing on Reddit instead of X, see [Leadmore AI](/cases/leadmore-ai/).
 
 ## What can founders learn from Tweet Hunter?
 

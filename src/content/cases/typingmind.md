@@ -73,7 +73,7 @@ It wrapped a popular tool with the features power users were missing. Demand alr
 
 Bring-your-own-key keeps margins near 100%. Without paying for model usage, almost every license sale is margin, which is why a four-person team could do well.
 
-Speed to market mattered more than polish. Shipping within days of the API launch put TypingMind in front of the first wave of interest. [Merlin](/cases/merlin/) took a similar "put AI where people work" approach inside the browser, and [PDF.ai](/cases/pdf-ai/) also launched fast to an existing X audience.
+Speed to market mattered more than polish. Shipping within days of the API launch put TypingMind in front of the first wave of interest. [Merlin](/cases/merlin/) took a similar "put AI where people work" approach inside the browser, and [PDF.ai](/cases/pdf-ai/) also launched fast to an existing X audience. [Magai](/cases/magai/) made the same bet on one interface for many models, but sold it as a single subscription.
 
 ## What can founders learn from TypingMind?
 

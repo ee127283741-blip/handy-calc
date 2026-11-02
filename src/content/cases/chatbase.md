@@ -72,7 +72,7 @@ He solved his own problem, then asked who would pay for it. The PDF chat he buil
 
 And the widget turned customers into distribution. [PDF.ai](/cases/pdf-ai/) chose a different edge in the same category: a memorable domain.
 
-For another business-software case study in the library, see [Instantly](/cases/instantly/), the bootstrapped cold-email platform.
+For another business-software case study in the library, see [Instantly](/cases/instantly/), the bootstrapped cold-email platform. For a two-person support agent that plugs into Intercom and Zendesk instead of a website widget, see [My AskAI](/cases/my-askai/).
 
 ## What can founders learn from Chatbase?
 
