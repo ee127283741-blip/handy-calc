@@ -14,6 +14,8 @@ export const INDUSTRIES: Taxon[] = [
   { slug: 'health-fitness', name: 'Health & Fitness', description: 'AI for nutrition, fitness and health tracking.' },
   { slug: 'beauty-lifestyle', name: 'Beauty & Lifestyle', description: 'Consumer AI apps about appearance and lifestyle.' },
   { slug: 'careers-hr', name: 'Careers & HR', description: 'AI for professional profiles, hiring and careers.' },
+  { slug: 'sales-lead-generation', name: 'Sales & Lead Generation', description: 'AI and automation tools for outbound sales, cold email and lead generation.' },
+  { slug: 'legal-professional-services', name: 'Legal & Professional Services', description: 'AI for law firms, in-house legal teams and professional services.' },
   { slug: 'real-estate-home', name: 'Real Estate & Home', description: 'AI for interiors, property and home design.' },
 ];
 export const INDUSTRY_SLUGS = INDUSTRIES.map((c) => c.slug) as [string, ...string[]];

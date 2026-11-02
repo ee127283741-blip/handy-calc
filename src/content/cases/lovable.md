@@ -76,6 +76,8 @@ Letting non-developers ship apps unlocked a huge new market. The buyer is no lon
 
 Credit-based pricing aligned cost with heavy model usage, so growth did not destroy margins.
 
+For another fast-growing AI company, this one selling to law firms and corporate legal teams, see [Harvey](/cases/harvey/).
+
 ## What can founders learn from Lovable?
 
 Open source can be the top of the funnel for a paid product.

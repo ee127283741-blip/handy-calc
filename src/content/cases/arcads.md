@@ -77,6 +77,8 @@ It sold to buyers who measure ROI daily. Performance marketers can see within da
 
 Dogfooding the ad tool doubled as proof. The company's own paid social campaigns are both its acquisition channel and its demo reel. And a team of 8 at $10M ARR shows how far a focused product can go with few people. Compare [OpusClip](/cases/opus-clip/), which sells AI video to creators, and [Tweet Hunter](/cases/tweet-hunter/), which sold content tools to people growing audiences.
 
+For a growth tool aimed at a similar marketing buyer, see [Instantly](/cases/instantly/), the bootstrapped cold-email platform.
+
 ## What can founders learn from Arcads?
 
 Sell to buyers who measure ROI daily: performance marketers. A customer who can measure your value will pay for it quickly.

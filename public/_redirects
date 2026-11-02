@@ -1,3 +1,6 @@
+# Sitemap alias (GSC/crawlers requesting /sitemap.xml)
+/sitemap.xml /sitemap-index.xml 301
+
 # Legacy calculator URLs (targets resolved to final destinations, no chains)
 /crafts / 301
 /crafts/ / 301

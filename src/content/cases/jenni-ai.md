@@ -77,6 +77,8 @@ Narrow positioning, academic writing, beat a generic AI writer. Citations and so
 
 A many-accounts short-video strategy replaced paid ads, and deadline-themed content reached students exactly when they were ready to pay. [PDF.ai](/cases/pdf-ai/) also serves people working with documents, and [Gamma](/cases/gamma/) shows another productivity tool that grew after adding AI.
 
+For a very different path in a professional market, see [Harvey](/cases/harvey/), the venture-backed legal AI company.
+
 ## What can founders learn from Jenni AI?
 
 Follow the users who stay, not the ones you planned for.

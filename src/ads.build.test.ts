@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process';
-import { readdirSync, readFileSync, rmSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { beforeAll, describe, expect, it } from 'vitest';
 
@@ -147,7 +147,8 @@ describe('site build (ads off)', () => {
     for (const [src, dst, code] of rules) {
       expect(code, src).toBe('301');
       expect(from.has(dst), `chain ${src} -> ${dst}`).toBe(false);
-      expect(dst === '/' || readdirSync(join(OFF, dst.slice(1))).includes('index.html'), `${src} -> ${dst}`).toBe(true);
+      const target = join(OFF, dst.slice(1));
+      expect(dst === '/' || (/\.[a-z]+$/.test(dst) ? existsSync(target) : readdirSync(target).includes('index.html')), `${src} -> ${dst}`).toBe(true);
     }
     for (const d of ['prompts', 'guides', 'idea-to-prompt', 'calculators', 'prompt-proofs', 'ai-costs']) expect(() => readdirSync(join(OFF, d)), d).toThrow();
   });
