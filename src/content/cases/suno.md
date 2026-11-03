@@ -84,6 +84,8 @@ The difference is what each company owns. Photo AI rents GPU models and keeps it
 
 [neural frames](/cases/neural-frames/) covers the visual side of AI music: one founder generating audio-reactive videos for songs that already exist.
 
+For a much larger generative-audio company, see [ElevenLabs](/cases/elevenlabs/).
+
 ## What lessons does Suno hold for founders?
 
 - **Turn a skill into a prompt.** Most people who want to make a song never learned an instrument; that is the market.

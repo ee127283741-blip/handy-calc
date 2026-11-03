@@ -88,6 +88,8 @@ The timeline: founded in January 2022; pivot to AI clipping in 2023; about $20M 
 
 For a bootstrapped short-form video tool that never raised outside money, see [Submagic](/cases/submagic/).
 
+For AI video at the model-building end, see [Runway](/cases/runway/) and [Synthesia](/cases/synthesia/).
+
 ## What lessons does OpusClip hold?
 
 - **Pivot toward the job users repeat most.** Clipping long videos into shorts is a weekly task for creators.

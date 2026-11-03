@@ -86,6 +86,8 @@ All three sell a better way to use the same frontier models. [TypingMind](/cases
 
 The difference is who carries the complexity. TypingMind's buyers accept setup in exchange for control over model costs. Magai's buyers pay for convenience, which suits Stout's target of everyday workers rather than developers, but it also means Magai's margin depends on what its users consume. Its distribution is different too: TypingMind and Magai both launched to audiences their founders already had, while Magai's came from a decade of blogging and email rather than X.
 
+For a standalone AI answer engine that raised venture money, see [Perplexity](/cases/perplexity/).
+
 ## What can founders learn from Magai's story?
 
 - **Build the audience before the product.** An email list of nearly 100,000 people is why "no marketing" worked.

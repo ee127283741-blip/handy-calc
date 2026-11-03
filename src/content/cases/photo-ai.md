@@ -93,6 +93,8 @@ For another AI image product, this one for real estate listings, see [Virtual St
 
 For AI photo editing sold to online sellers instead of individuals, see [Photoroom](/cases/photoroom/).
 
+For the self-funded image model that defined the category, see [Midjourney](/cases/midjourney/).
+
 ## What can founders learn from Photo AI?
 
 - **Sell the result, not the AI.** "Photos of you" is easy to understand; "a fine-tuned diffusion model" is not.

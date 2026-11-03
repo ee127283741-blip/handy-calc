@@ -77,6 +77,8 @@ Generative video is expensive to run. Klemke said cloud costs were around $7K a 
 
 [BasedLabs](/cases/basedlabs/) also built on Stability AI's open models, but went broad with many free AI tools and an SEO-driven funnel. neural frames went narrow, choosing musicians as its one audience. The niche gave it a clear feature roadmap, starting with audio-reactive effects that a general AI video site had no reason to build.
 
+For a venture-funded video model company, see [Runway](/cases/runway/).
+
 ## Which takeaways from neural frames apply to creative tools?
 
 - **A narrow audience can rescue a vague product.** Rebuilding for musicians turned about $400 a month into $17K MRR ([founder-reported, Starter Story](https://www.starterstory.com/stories/neural-frames)).

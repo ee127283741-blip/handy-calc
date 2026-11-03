@@ -85,6 +85,8 @@ Submagic is the bootstrapped answer to [OpusClip](/cases/opus-clip/), which also
 | OpusClip | Long video to short clips | $20M from SoftBank (Mar 2025) | ~$20M ARR (unverified) | [ARR Club](https://www.arr.club/signal/opusclip-20m-arr-softbank-mar-2025) |
 | neural frames | Audio-reactive music videos | Not disclosed | $17K MRR (Oct 2023) | [Starter Story](https://www.starterstory.com/stories/neural-frames) |
 
+For the AI voice layer many video tools build on, see [ElevenLabs](/cases/elevenlabs/), and for AI avatar video, [Synthesia](/cases/synthesia/).
+
 ## What are the takeaways from Submagic for bootstrapped founders?
 
 - **Let customers sell the product in its own format.** Submagic's affiliates promote a short-video tool with short videos, and they bring in about 20% of ARR.

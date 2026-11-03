@@ -93,6 +93,8 @@ Both founders tested several products before one stuck. Levels expanded an avata
 
 For another AI image product sold to professionals, see [Virtual Staging AI](/cases/virtual-staging-ai/).
 
+For a general-purpose AI image company at far larger scale, see [Midjourney](/cases/midjourney/).
+
 ## What are the key lessons from HeadshotPro?
 
 - **Follow sales, not press.** Deep Agency got the attention; HeadshotPro got the customers, so that is where Postma went.

@@ -87,6 +87,8 @@ That placement is Merlin's distribution advantage and its risk. A free daily all
 
 [Bluedot](/cases/bluedot/) and [Recall](/cases/recall/) are two smaller AI Chrome extensions: one writes Google Meet notes without a bot, the other turns what you read into a knowledge base.
 
+For a standalone AI answer engine that raised venture money, see [Perplexity](/cases/perplexity/).
+
 ## What takeaways does Merlin offer extension builders?
 
 - **Put AI where people already work.** A browser sidebar removes the step of opening another app.

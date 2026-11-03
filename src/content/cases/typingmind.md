@@ -85,6 +85,8 @@ All three sell a better way to use models that other companies build. [Magai](/c
 
 For two more one-person AI tools sold to power users, see [AudioPen](/cases/audiopen/), which turns voice notes into text, and [Lychee](/cases/lychee/), which replaces spreadsheets for everyday users.
 
+For a venture-funded AI answer engine, see [Perplexity](/cases/perplexity/).
+
 ## What can founders learn from TypingMind?
 
 - **Build on heavy users' complaints.** The best wedge is the feature power users keep asking the platform for.
