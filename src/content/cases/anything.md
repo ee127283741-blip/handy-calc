@@ -70,6 +70,8 @@ Apple removed Anything's iPhone app from the App Store twice, and the company sa
 
 Anything is much smaller than the leaders in its category. [Lovable](/cases/lovable/) reported $100M ARR about eight months after launch, and [Emergent](/cases/emergent/) reported a $120M run rate in July 2026 ([founder-reported, TechCrunch](https://techcrunch.com/2026/07/15/indian-ai-coding-startup-emergent-becomes-a-unicorn-just-over-a-year-after-launch/)). Anything's $2M ARR came in two weeks, a fast start, but it has not published a later number. Its focus on mobile apps puts it closer to Emergent, which also launched a mobile app, and makes it more exposed to Apple's rules than web-first builders like [Bolt.new](/cases/bolt-new/).
 
+[Shipper](/cases/shipper/) is a smaller rival built by two brothers who describe themselves as non-technical.
+
 ## What are the lessons from Anything for vibe-coding founders?
 
 - **A relaunch can beat a fresh start.** Anything reused its founders' users and lessons from Create and hit $2M ARR in two weeks.

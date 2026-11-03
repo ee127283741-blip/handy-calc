@@ -67,6 +67,8 @@ Wrestle AI, [Cal AI](/cases/cal-ai/) and [STOPPR](/cases/stoppr/) are all mobile
 
 Our reading: Wrestle AI is what AI app builders make possible: a teenager turning personal expertise into a paid app without any upfront investment. The audience is small, so growth may level off, but tool costs of only a few hundred dollars a month at most mean even a modest user base is very profitable.
 
+Two more Rork-built sports coaches follow the same pattern: [3AK Track](/cases/3ak-track/), from two college sprinters with a large audience, and [Hockey AI](/cases/hockey-ai/), from brothers aged 14 and 17.
+
 ## What can teen and first-time founders learn from Wrestle AI?
 
 - **Pick a niche big apps ignore.** A wrestling coach serves a passionate audience general fitness apps overlook.

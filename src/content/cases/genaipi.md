@@ -66,6 +66,8 @@ GenAIPI is a customer of [Replit](/cases/replit/), whose agent made its build po
 
 Our reading: the headline numbers here come from a vendor case study and the founder's own interviews, so they are marketing as much as accounting. The stronger lesson is cost: the gap between a $105,000 quote and a sub-$400 launch is what changes who can start a software business.
 
+[TryNearby](/cases/trynearby/) is another business Replit cites as built by a non-coder, matching restaurants with local creators.
+
 ## What are the lessons from GenAIPI for non-coders?
 
 - **Get a quote, then try AI first.** Cheney's $105,000 agency quote became a sub-$400 launch with Replit Agent.

@@ -72,6 +72,8 @@ Plinq, [Magai](/cases/magai/) and [Formula Bot](/cases/formula-bot/) were all bu
 
 Our reading: the founder's skill here was marketing, not engineering. Matos knew how to reach her audience, and Lovable removed the part she could not do. The product also leans on a data partner, Judit, for the hardest technical piece, which is a sensible pattern for non-technical founders.
 
+[ShiftNex](/cases/shiftnex/) is another Lovable-built business from an industry insider, a healthcare staffing platform for US facilities.
+
 ## What can non-technical founders learn from Plinq?
 
 - **Marketing skill can be the founder's edge.** A growth marketer reached tens of thousands of users once AI handled the code.

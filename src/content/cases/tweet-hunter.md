@@ -80,6 +80,8 @@ The difference is how much each depends on one platform. Tweet Hunter answered t
 
 [ChatSEO](/cases/chatseo/) is a newer example of a founder turning his own public expertise, in SEO, into an AI tool his audience pays for.
 
+[Creator Buddy](/cases/creator-buddy/) is a newer AI tool for X, built by a non-technical creator who sold it to his own audience at launch.
+
 ## What are the takeaways from Tweet Hunter?
 
 - **Package the method you are known for.** If you grow an audience in public, a tool built on your method has a market waiting.

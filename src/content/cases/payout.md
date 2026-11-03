@@ -63,6 +63,8 @@ Payout, [STOPPR](/cases/stoppr/) and [PepAI](/cases/pepai/) are all mobile subsc
 
 Our reading: Payout's idea has a built-in hook, "you may be owed money," that suits short influencer videos. That made distribution easy. The risk is that settlement data is public, so competitors can copy the product as fast as Burd built it.
 
+[Creator Hunter](/cases/creator-hunter/) sells the other side of creator marketing: a database startups use to find influencers, built by a non-coder.
+
 ## What lessons does Payout hold for portfolio app builders?
 
 - **Pick ideas with a hook.** "You may be owed money" sells itself in a 30-second video.

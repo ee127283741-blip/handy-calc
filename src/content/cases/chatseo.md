@@ -79,6 +79,8 @@ Churn was the hardest number. In spring 2026 ChatSEO lost about 20% of subscribe
 
 [Leadmore AI](/cases/leadmore-ai/) sells another form of organic visibility, on Reddit, and its founder was preparing a GEO product for AI search. ChatSEO focuses on classic Google SEO with live data. Together they show demand for AI tools that help small businesses get found, whether by search engines, communities or AI assistants.
 
+[Topical Map AI](/cases/topical-map-ai/) is an SEO planning tool built with AI by blogger Pete McPherson, who does not have a programming background.
+
 ## What takeaways does ChatSEO offer expert-founders?
 
 - **Build the audience before the product.** Thousands of people who trusted the founder bought in month one.

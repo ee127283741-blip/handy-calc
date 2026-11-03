@@ -63,6 +63,8 @@ STOPPR, [Cal AI](/cases/cal-ai/) and [Umax](/cases/umax/) are all consumer self-
 
 Our reading: cloning a winning app is a fast way to first revenue, because the demand is already proven. It is a weak long-term moat. STOPPR's change of audience was its only real difference from the original, so its growth will depend on marketing, not on the product being hard to copy.
 
+[Flowfy](/cases/flowfy/), a budget app built in Rork by a former dropshipper, is another consumer app from a founder who never coded.
+
 ## What lessons does STOPPR hold for app cloners?
 
 - **Proven demand lowers risk.** Copying an app that already sells removes the guesswork about whether anyone wants it.
