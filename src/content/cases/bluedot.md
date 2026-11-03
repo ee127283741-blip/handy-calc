@@ -79,6 +79,8 @@ For an AI scribe built for one profession, clinicians, see [Freed](/cases/freed/
 
 For a venture-backed take on real-time meeting help, and a retracted revenue claim, see [Cluely](/cases/cluely/).
 
+For the two longest-running AI meeting note takers, see [Otter.ai](/cases/otter-ai/) and [Fireflies.ai](/cases/fireflies-ai/).
+
 ## What lessons does Bluedot teach about research?
 
 - **Friendly calls are not demand.** Six months of building followed research that mistook politeness for interest.

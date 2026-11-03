@@ -87,6 +87,8 @@ All four sell paid access to AI answers. Only Perplexity has raised venture mone
 
 In our reading, the difference is the job each product does. TypingMind, Magai and Merlin are wrappers that give people a better way to reach other companies' models. Perplexity sells a replacement for search: the answer plus citations. That pitch is what let it charge the same $20 as its peers and raise at $20B.
 
+For AI search inside companies rather than on the public web, see [Glean](/cases/glean/).
+
 ## What lessons does Perplexity's growth hold for founders?
 
 - **Pick a habit people already have.** Perplexity aimed at search, a daily habit, and reached 20 million questions a day by the end of 2024.

@@ -82,6 +82,8 @@ The business stories differ more than the products. StackBlitz was an establishe
 
 For the AI code editor for developers that SpaceX bought, see [Cursor](/cases/cursor/).
 
+For an older coding platform that added an AI agent to its existing hosting, see [Replit](/cases/replit/).
+
 ## What lessons did Bolt.new's launch teach?
 
 - **Deep tech can wait for its moment.** WebContainers sat inside a small business for years until coding models made it valuable.

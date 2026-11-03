@@ -93,6 +93,8 @@ Put on a timeline: about $5K in MRR in the first week after the January 2024 lau
 
 For the enterprise end of AI avatar video, see [Synthesia](/cases/synthesia/).
 
+For a larger AI avatar video company, see [HeyGen](/cases/heygen/).
+
 ## What are the key takeaways from Arcads?
 
 - **Sell to buyers who measure ROI daily.** Performance marketers see within days whether an ad works, so a good tool proves itself fast.

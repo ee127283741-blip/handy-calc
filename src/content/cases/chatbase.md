@@ -87,6 +87,8 @@ All four launched in 2023 on the same idea: an AI that answers from your own con
 
 [Coachvox AI](/cases/coachvox-ai/) uses the same "train AI on your content" idea for creators instead of support teams, cloning a coach rather than a help centre.
 
+For the enterprise end of AI customer support, see [Sierra](/cases/sierra/) and [Decagon](/cases/decagon/).
+
 ## What are the lessons from Chatbase?
 
 - **Speed beats research in a brand-new market.** Elsaid skipped validation because the demand was obvious, and shipping first is what made Chatbase go viral.

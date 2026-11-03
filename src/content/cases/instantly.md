@@ -103,6 +103,8 @@ Staying bootstrapped was a choice, not a fallback. Raul turned down investor int
 
 [Rytr](/cases/rytr/) is the other case here that used AppSumo to seed its launch before building SEO.
 
+For the data and research layer that feeds outreach tools, see [Clay](/cases/clay/).
+
 ## What are the takeaways from Instantly?
 
 - **Attack the invoice you resent paying.** Per-account pricing was the agency's own pain, so the team knew exactly what to remove.

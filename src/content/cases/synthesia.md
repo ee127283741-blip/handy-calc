@@ -96,6 +96,8 @@ All three sell AI video, but they sell it to different buyers, and that is a big
 | Arcads | Performance marketers | $10M ARR (Nov 2025) | [Latka](https://getlatka.com/interviews/arcads-romain-torres-2025) |
 | Opus Clip | Creators | ~$20M ARR (Mar 2025, unverified) | [ARR Club](https://www.arr.club/signal/opusclip-20m-arr-softbank-mar-2025) |
 
+For a self-serve AI avatar rival that grew on little venture money, see [HeyGen](/cases/heygen/).
+
 ## What can founders learn from Synthesia's revenue path?
 
 - **Pick the boring budget.** Corporate training video is not glamorous, but it is recurring, and it took Synthesia into more than 90% of the Fortune 100.

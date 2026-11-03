@@ -82,6 +82,8 @@ For voice-to-notes applied to medical visits, see [Freed](/cases/freed/).
 
 For an AI note-taker that chased headlines instead, see [Cluely](/cases/cluely/).
 
+For a much larger transcription company, see [Otter.ai](/cases/otter-ai/).
+
 ## What should app builders take from Talknotes' lessons?
 
 - **Test products like a store tests products.** Seventeen apps in a year found one sale and one business.

@@ -104,6 +104,8 @@ All four turn speech into notes, but Freed is the only one that picked a single 
 
 Our observation: the three general note-takers sell convenience to people whose notes are optional. Freed sells relief from a task clinicians cannot skip, which Druk saw at his own dinner table. That pain supports a higher price and outside funding. The three general tools stayed small and lean, while Freed raised venture money and grew far larger.
 
+For an AI scribe sold to large health systems instead of small practices, see [Abridge](/cases/abridge/).
+
 ## What lessons does Freed offer founders?
 
 - **Pick users you can reach every day.** Druk's main lesson from his first startup was to pick users carefully, "more than the problem, more than the market" ([founder-reported, N47 podcast](https://www.n47.com/insights/how-to-scale-a-mission-driven-startup)); his user was his wife.

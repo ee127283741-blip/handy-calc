@@ -88,6 +88,8 @@ Cursor is an editor for people who already write code, while the other three are
 
 The exits differ by about three orders of magnitude. [Base44](/cases/base44/) sold to Wix for $80M plus possible earn-outs about six months after Maor Shlomo started it alone ([media-reported, TechRadar](https://techradar.com/pro/website-building/wix-jumps-on-the-vibe-coding-bandwagon-with-a-new-acquisition)). Cursor sold for $60B in stock ([media-reported, Built In](https://builtin.com/articles/spacex-acquires-cursor-60b-20260616)). Cursor also shows up inside other cases. [Launch Fast](/cases/launch-fast/) founder Hasaam Bhatti had never written code and built his first version in 48 hours with Cursor. For many small founders, Cursor is the tool behind their product.
 
+For two other AI coding stories, see [Replit](/cases/replit/), which pivoted to non-coders, and [Windsurf](/cases/windsurf/), which was split between Google and Cognition.
+
 ## What can founders learn from Cursor's run?
 
 - **Sell to the buyer who already pays.** Developers and their employers already paid for tools, so Cursor could reach over half of the Fortune 500 within about three years of founding.

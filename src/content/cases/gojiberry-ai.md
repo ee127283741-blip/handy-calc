@@ -77,6 +77,8 @@ The path there ran through one big correction. Czerny says the team first tried 
 
 Both, like [Tweet Hunter](/cases/tweet-hunter/), sell by doing what they sell. Tweet Hunter grew on X with the audience-building methods it teaches, and Gojiberry AI runs its own LinkedIn outbound with Gojiberry AI. The difference is the starting point. Czerny was not guessing: the LinkedIn tactic had already helped CocoAI reach a seven-figure exit before he turned it into a product.
 
+For a much larger go-to-market data platform, see [Clay](/cases/clay/).
+
 ## What are the lessons from Gojiberry AI?
 
 - **Sell the outcome by hand first.** A summer of manual lead finding produced paying customers and an exact spec for the software.

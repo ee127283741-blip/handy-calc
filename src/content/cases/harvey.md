@@ -109,6 +109,8 @@ Harvey is the clearest venture-scale case in this library, and the contrast with
 
 [EchoBase AI](/cases/echobase-ai/) tried to sell AI to consultants on a tiny budget and shut down in 2024, which shows the other end of the professional-services market.
 
+For other AI companies selling large enterprise contracts, see [Glean](/cases/glean/) in workplace search and [Abridge](/cases/abridge/) in health systems.
+
 ## What lessons does Harvey offer founders?
 
 - **Pair domain expertise with AI expertise.** A litigator and an AI researcher could build what neither could alone.

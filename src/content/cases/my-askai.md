@@ -89,6 +89,8 @@ All three started from the same idea in 2023: train a chatbot on a company's own
 
 That changes the sales conversation. A website widget competes with every other chatbot. An add-on for an existing help desk competes mainly with the help desk's own AI, which is why My AskAI's copy leads with a price comparison against Intercom's Fin and Zendesk's AI. The trade-off is reach: My AskAI depends on those platforms and their integrations, while a standalone widget can sell to any website. Like [Instantly](/cases/instantly/), it also shows how far a bootstrapped team can get with a narrow, well-defined buyer.
 
+For venture-funded AI support agents sold to large companies, see [Sierra](/cases/sierra/) and [Decagon](/cases/decagon/).
+
 ## What are the key takeaways from My AskAI?
 
 - **Niche down early.** My AskAI spent about a year as a general "chat with anything" tool, and growth came only after it focused on customer support.

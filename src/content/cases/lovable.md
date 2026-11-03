@@ -85,6 +85,8 @@ That origin shaped the product. Lovable outputs real React code with Supabase fo
 
 For the AI code editor aimed at developers rather than non-coders, see [Cursor](/cases/cursor/).
 
+For an older coding platform that pivoted into the same market, see [Replit](/cases/replit/).
+
 ## What should founders learn from Lovable?
 
 - **Open source can be the top of the funnel.** GPT Engineer built credibility and an audience before Lovable sold anything.
