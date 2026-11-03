@@ -91,6 +91,8 @@ Their pricing reflects their users. Formula Bot's free limit covers 97% of peopl
 
 [Lychee](/cases/lychee/) attacks the same spreadsheet pain from the other side, replacing the spreadsheet for people who never wanted one.
 
+[Julius AI](/cases/julius-ai/) starts from the analysis side, turning uploaded data and plain-English questions into charts.
+
 ## Which takeaways from Formula Bot fit any side project?
 
 - **Your day job can be the idea.** Twelve years of Excel work told Bressler both the problem and the accuracy bar.

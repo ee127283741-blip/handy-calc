@@ -87,6 +87,8 @@ The timeline: a viral tweet in July 2022 brought about $10K in a day; about $1.8
 
 For an AI writer that stayed with marketers and moved to enterprise, see [Jasper](/cases/jasper/).
 
+Two other education cases target students from different angles: [Turbo AI](/cases/turbo-ai/) turns lectures into study notes, and [Consensus](/cases/consensus/) answers questions from research papers.
+
 ## What can founders learn from Jenni AI's pivots?
 
 - **Follow the users who stay.** Churn interviews revealed students and researchers as Jenni AI's real market.

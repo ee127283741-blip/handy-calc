@@ -105,6 +105,8 @@ Staying bootstrapped was a choice, not a fallback. Raul turned down investor int
 
 For the data and research layer that feeds outreach tools, see [Clay](/cases/clay/).
 
+Two AI sales rep startups sit on top of this kind of email infrastructure: [Artisan](/cases/artisan/), known for its "Stop Hiring Humans" billboards, and [11x](/cases/11x/), whose reported ARR was disputed.
+
 ## What are the takeaways from Instantly?
 
 - **Attack the invoice you resent paying.** Per-account pricing was the agency's own pain, so the team knew exactly what to remove.

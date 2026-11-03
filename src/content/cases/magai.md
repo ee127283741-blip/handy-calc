@@ -88,6 +88,8 @@ The difference is who carries the complexity. TypingMind's buyers accept setup i
 
 For a standalone AI answer engine that raised venture money, see [Perplexity](/cases/perplexity/).
 
+[Motion](/cases/motion/) bundles AI agents for small businesses rather than giving individuals access to many models.
+
 ## What can founders learn from Magai's story?
 
 - **Build the audience before the product.** An email list of nearly 100,000 people is why "no marketing" worked.

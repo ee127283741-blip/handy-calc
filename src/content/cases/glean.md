@@ -74,6 +74,8 @@ All four sell AI answers, but Glean searches a company's own data while [Perplex
 
 In our view, the gap between Glean and Perplexity is about who pays. Perplexity sells mostly $20 Pro subscriptions to individuals ([founder-reported, Perplexity](https://www.perplexity.ai/hub/blog/introducing-perplexity-max)), and investors price it as a possible Google rival. Glean sells multi-year contracts to IT departments. That revenue is steadier but tells a smaller story, so it earns a lower multiple. Harvey sits between them: enterprise contracts, but in a single profession.
 
+[Sana](/cases/sana/) sold a similar workplace AI assistant and chose to sell to Workday instead of staying independent.
+
 ## What are the takeaways from Glean's growth?
 
 - **Years of slow work can set up a fast run.** Glean spent its early years building connectors to company systems, and that work paid off once AI assistants took off.

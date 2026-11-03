@@ -106,6 +106,8 @@ Our observation: the three general note-takers sell convenience to people whose 
 
 For an AI scribe sold to large health systems instead of small practices, see [Abridge](/cases/abridge/).
 
+[Ambience Healthcare](/cases/ambience/) is another enterprise option, selling notes plus billing-code suggestions to health systems.
+
 ## What lessons does Freed offer founders?
 
 - **Pick users you can reach every day.** Druk's main lesson from his first startup was to pick users carefully, "more than the problem, more than the market" ([founder-reported, N47 podcast](https://www.n47.com/insights/how-to-scale-a-mission-driven-startup)); his user was his wife.

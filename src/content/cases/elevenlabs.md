@@ -101,6 +101,8 @@ All three sell generated media to people who are not studio professionals, but t
 | Suno | Full songs | $300M ARR (Feb 2026) | $2.45B valuation (Nov 2025) | [Unite.AI](https://www.unite.ai/suno-reaches-2-million-paid-subscribers-and-300m-arr-in-two-years) |
 | Submagic | Short-form video | $8M ARR (Jun 2025) | $0 raised | [Latka](https://getlatka.com/interviews/submagic-david-zitoun-2025) |
 
+[Deepgram](/cases/deepgram/) works at a different layer of the voice stack, selling speech-to-text APIs that voice agents depend on.
+
 ## What lessons can founders take from ElevenLabs?
 
 - **Start from a problem you have lived with.** Growing up with rough dubbing in Poland gave the founders a clear, concrete use case before voice AI was a category.

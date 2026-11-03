@@ -68,6 +68,8 @@ Emergent and [Lovable](/cases/lovable/) both reported $100M ARR about eight mont
 
 Our reading: the "ARR" numbers in this category are mostly monthly revenue times 12, and they can swing with promotions and usage. Emergent's own figures show a 2x jump in one month, which is a run rate claim, not a contract base. The paying-customer count, 200,000 by July 2026, is the steadier signal.
 
+[Rocket.new](/cases/rocket-new/), from Surat, is a smaller Indian vibe-coding company selling to users in 180 countries.
+
 ## What should app-builder founders learn from Emergent?
 
 - **Build in one market, sell to another.** Emergent's team is in India, but about 70% of its revenue comes from the US and Europe.

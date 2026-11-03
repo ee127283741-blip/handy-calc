@@ -79,6 +79,8 @@ Midjourney sells a general creative tool to anyone. [Photo AI](/cases/photo-ai/)
 
 All three share a habit: they keep teams small and rely on revenue instead of large funding rounds. The difference is scale. Midjourney's $300 million 2024 figure ([media-reported, NBC News](https://www.nbcnews.com/business/business-news/disney-universal-sue-ai-image-company-midjourney-unlicensed-star-wars-rcna212369)) comes from training its own models, which also made it the target of a studio lawsuit. Photo AI rents hosted GPU models, and HeadshotPro builds on open-source models. For a creative AI company that took a different path in video, see [Runway](/cases/runway/).
 
+Two newer cases show other paths in consumer creative AI: [Black Forest Labs](/cases/black-forest-labs/) licenses its FLUX models to businesses, and [Character.AI](/cases/character-ai/) sold open-ended chat and ended in Chapter 11.
+
 ## What lessons does Midjourney hold for bootstrapped AI founders?
 
 - **Charge for compute from the first day.** Holz priced at cost plus a margin and said Midjourney was profitable by 2022, which made investors optional.

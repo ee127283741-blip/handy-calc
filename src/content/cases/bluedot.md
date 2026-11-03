@@ -81,6 +81,8 @@ For a venture-backed take on real-time meeting help, and a retracted revenue cla
 
 For the two longest-running AI meeting note takers, see [Otter.ai](/cases/otter-ai/) and [Fireflies.ai](/cases/fireflies-ai/).
 
+[Limitless](/cases/limitless/) recorded in-person conversations with a pendant instead, and was acquired by Meta in December 2025.
+
 ## What lessons does Bluedot teach about research?
 
 - **Friendly calls are not demand.** Six months of building followed research that mistook politeness for interest.
