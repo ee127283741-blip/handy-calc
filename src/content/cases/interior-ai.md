@@ -87,6 +87,8 @@ In his version 2.0 Product Hunt post, Levels reported 1,000+ recurring customers
 
 [BasedLabs](/cases/basedlabs/) went the opposite way to Interior AI, building many free AI image and video tools as search landing pages instead of one vertical.
 
+For AI room staging built specifically for real estate listings, see [Virtual Staging AI](/cases/virtual-staging-ai/).
+
 ## What are the lessons from Interior AI?
 
 - **Pick a vertical where one picture sells it.** Before-and-after images do the marketing for free.

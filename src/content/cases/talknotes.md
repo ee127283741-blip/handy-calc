@@ -78,6 +78,8 @@ The ad maths is simple. Each customer costs about $50 to acquire, which he earns
 
 [Formula Bot](/cases/formula-bot/) shares the scrappy origin: a founder with no traditional engineering background shipping an AI wrapper fast. Jeanne himself warns that the window for simple AI apps is closing, because the novelty is wearing off and many similar apps launch every week.
 
+For voice-to-notes applied to medical visits, see [Freed](/cases/freed/).
+
 ## What should app builders take from Talknotes' lessons?
 
 - **Test products like a store tests products.** Seventeen apps in a year found one sale and one business.

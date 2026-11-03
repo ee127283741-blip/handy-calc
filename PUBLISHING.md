@@ -32,7 +32,7 @@
 - `tldr`：2–3 句的直接答案（AEO），包含公司做什麼、最關鍵的營收數字＋日期＋來源標籤。顯示在頁首。
 - `primaryKeyword`、`secondaryKeywords`、`published`（首次發布日，`YYYY-MM-DD`）：見上方關鍵字流程。
 - `faq`：3–5 題，`q` 用真實搜尋問句並以 `?` 結尾，`a` 是可獨立引用的答案（含標籤）。會渲染成 FAQ 區塊並輸出 FAQPage JSON-LD（與 Article JSON-LD 並列）。
-- 每個數字：`label`（founder-reported / verified / media-reported / unverified）＋ `sourceUrl`，日期只寫 `YYYY-MM`；沒有數字就寫 `Not disclosed` 並用 `not-disclosed`。
+- 每個數字：`label`（founder-reported / verified / media-reported / unverified / third-party-estimate（分析公司估算，如 Sacra；本文寫 "third-party estimate"）/ calc（我們用已附來源數字做的計算，例如 ARR/12；本文寫 "calc"，不可當成公布數字））＋ `sourceUrl`，日期只寫 `YYYY-MM`；沒有數字就寫 `Not disclosed` 並用 `not-disclosed`。
 - `pricing`：定價（例 `"$49, $89 and $199 a month"`），附 `label`＋`sourceUrl`；查不到就 `Not disclosed`。會和營收、團隊人數、成立時間、創辦人一起顯示在頁首的「At a glance」表格。
 
 **本文寫法（2026-11 改版）：給「先掃再讀」的英語系讀者。** 不再是固定 8 章的模板，而是依每個案例最有趣的地方安排章節。

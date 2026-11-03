@@ -75,6 +75,8 @@ Two months after launch, Bluedot reported 500 daily active users and $1.5K MRR, 
 
 [Talknotes](/cases/talknotes/) also turns spoken words into notes, but from voice memos rather than meetings, and grew on paid ads as a one-person business. Bluedot's angle is privacy and convenience in calls: no bot in the meeting. In a crowded AI note-taker market, that one difference is its whole pitch.
 
+For an AI scribe built for one profession, clinicians, see [Freed](/cases/freed/).
+
 ## What lessons does Bluedot teach about research?
 
 - **Friendly calls are not demand.** Six months of building followed research that mistook politeness for interest.

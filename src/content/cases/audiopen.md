@@ -76,6 +76,8 @@ It has been profitable since day one because the costs are small. The biggest ex
 
 [Magai](/cases/magai/) shares AudioPen's build path: a non-developer using Bubble to ship an AI product fast. Magai later had to rebuild on custom code as it grew; AudioPen has stayed small and simple enough for one part-time founder to run.
 
+For voice-to-notes applied to medical visits, see [Freed](/cases/freed/).
+
 ## What can makers learn from AudioPen?
 
 - **Ship many small experiments.** Four products in a week found the one people wanted.

@@ -91,6 +91,8 @@ Both founders tested several products before one stuck. Levels expanded an avata
 
 [BetterPic](/cases/betterpic/) is a direct rival that grew from about $1,500 to $20,016 a month with SEO and a pricing change ([founder-reported, Starter Story](https://www.starterstory.com/stories/betterpic)), and [AiApply](/cases/aiapply/) sells the rest of the job application to the same job seekers.
 
+For another AI image product sold to professionals, see [Virtual Staging AI](/cases/virtual-staging-ai/).
+
 ## What are the key lessons from HeadshotPro?
 
 - **Follow sales, not press.** Deep Agency got the attention; HeadshotPro got the customers, so that is where Postma went.

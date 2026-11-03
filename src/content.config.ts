@@ -9,7 +9,8 @@ const authors = defineCollection({
 
 // Provenance of a number. 'unverified' = quoted figure we could not confirm against the original source.
 // Provenance of a number. 'not-disclosed' only when there is no number.
-export const LABELS = ['founder-reported', 'verified', 'media-reported', 'unverified', 'not-disclosed'] as const;
+export const LABELS = ['founder-reported', 'verified', 'media-reported', 'unverified', 'third-party-estimate', 'calc', 'not-disclosed'] as const;
+// 'third-party-estimate' = analyst/data-firm estimate (e.g. Sacra); 'calc' = our arithmetic on a sourced figure (e.g. ARR/12), never a reported number.
 const label = z.enum(LABELS);
 // Year-month only, and only when the source makes it reasonably clear; otherwise omit.
 const dateish = z.string().regex(/^\d{4}-\d{2}$/);

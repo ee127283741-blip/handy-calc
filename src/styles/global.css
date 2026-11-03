@@ -187,6 +187,8 @@ code { font-family: var(--mono); font-size: .9em; background: #fff; border: 1px 
 .l-founder-reported { color: var(--accent-dark); border-color: var(--accent); }
 .l-not-disclosed { color: var(--muted); }
 .l-unverified { color: #9a3412; border-color: #9a3412; border-style: dashed; }
+.l-third-party-estimate { color: #6b21a8; border-color: #6b21a8; border-style: dashed; }
+.l-calc { color: var(--muted); border-style: dotted; }
 .m-src { font-size: .82rem; }
 .tldr { background: var(--card); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.25rem 0; max-width: 44rem; line-height: 1.55; }
 .case-body p { max-width: 44rem; line-height: 1.7; }

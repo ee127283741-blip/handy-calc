@@ -89,6 +89,8 @@ The build choices differ too. Photo AI keeps its own code as simple as possible 
 
 For a smaller rival focused only on professional headshots, see [BetterPic](/cases/betterpic/).
 
+For another AI image product, this one for real estate listings, see [Virtual Staging AI](/cases/virtual-staging-ai/).
+
 ## What can founders learn from Photo AI?
 
 - **Sell the result, not the AI.** "Photos of you" is easy to understand; "a fine-tuned diffusion model" is not.

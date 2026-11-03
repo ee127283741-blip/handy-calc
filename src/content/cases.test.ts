@@ -12,9 +12,9 @@ const COMPARE_H2 = /\b(compare|compares|comparison|vs|versus|differ|different|di
 const TAKEAWAY_H2 = /\b(learn|lessons|takeaways)\b/i;
 // A normalised H2 (company name replaced) may be reused by at most this many cases, so pages do not read like one template.
 const MAX_SHARED_H2 = 3;
-const LABEL_TEXT: Record<string, string> = { 'founder-reported': 'founder-reported', verified: 'verified', 'media-reported': 'media-reported', unverified: 'unverified' };
+const LABEL_TEXT: Record<string, string> = { 'founder-reported': 'founder-reported', verified: 'verified', 'media-reported': 'media-reported', unverified: 'unverified', 'third-party-estimate': 'third-party estimate', calc: 'calc' };
 const words = (s: string) => s.replace(/\]\([^)]*\)/g, ']').split(/\s+/).filter((w) => /[A-Za-z0-9]/.test(w)).length;
-const LABELS = ['founder-reported', 'verified', 'media-reported', 'unverified'];
+const LABELS = ['founder-reported', 'verified', 'media-reported', 'unverified', 'third-party-estimate', 'calc'];
 const DATE = /^\d{4}-\d{2}$/; // year-month only; dates are optional
 const ND = 'Not disclosed';
 
@@ -43,8 +43,8 @@ function check(where: string, f: Figure) {
 }
 
 describe('case files', () => {
-  it('has exactly 47 cases with unique slugs matching file names', () => {
-    expect(files.length).toBe(47);
+  it('has exactly 49 cases with unique slugs matching file names', () => {
+    expect(files.length).toBe(49);
     const slugs = files.map((f) => read(f).fm.slug);
     expect(new Set(slugs).size).toBe(files.length);
     for (const f of files) expect(read(f).fm.slug, f).toBe(f.replace(/\.md$/, ''));
