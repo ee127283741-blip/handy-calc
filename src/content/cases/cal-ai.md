@@ -88,6 +88,8 @@ The timeline: the app launched in 2024; in May 2025 about $10M had been collecte
 
 [Photo AI](/cases/photo-ai/) shows the solo-founder version of an AI camera product, sold on subscriptions and marketed by building in public. Cal AI took the app-store route instead, and its exit shows another way such apps can end: not as an independent company, but as a feature an incumbent buys to reach users who want tracking to be fast and AI-based.
 
+Two newer health apps were built by young founders who could not code: [PepAI](/cases/pepai/), a peptide tracker made with Replit and Claude, and [Wrestle AI](/cases/wrestle-ai/), an AI wrestling coach made with Rork.
+
 ## Which lessons from Cal AI travel to other apps?
 
 - **Ship many apps until one sticks.** Yadegari's plan was to keep launching and double down on the winner.

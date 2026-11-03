@@ -86,6 +86,8 @@ The timeline is short: launch in December 2023, and by July 2024 the founder was
 
 [Photo AI](/cases/photo-ai/) sells a flattering result, new photos of you. Umax sells a judgment and a plan to improve. Shareable judgments spread fast, but they also carry more risk, both for users and for the app's reputation and app store standing.
 
+[STOPPR](/cases/stoppr/) is a smaller self-improvement app whose founder cloned a proven app with AI despite having no coding background.
+
 ## What lessons does Umax teach consumer app makers?
 
 - **A shareable score is a growth engine.** Users posting their results brought over a billion social impressions.

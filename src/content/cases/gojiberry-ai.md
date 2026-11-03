@@ -79,6 +79,8 @@ Both, like [Tweet Hunter](/cases/tweet-hunter/), sell by doing what they sell. T
 
 For a much larger go-to-market data platform, see [Clay](/cases/clay/).
 
+[ReplyDaddy](/cases/replydaddy/) applies the same idea to Reddit, finding threads where people ask for product recommendations.
+
 ## What are the lessons from Gojiberry AI?
 
 - **Sell the outcome by hand first.** A summer of manual lead finding produced paying customers and an exact spec for the software.

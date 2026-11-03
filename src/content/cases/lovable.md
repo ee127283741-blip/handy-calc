@@ -89,6 +89,8 @@ For an older coding platform that pivoted into the same market, see [Replit](/ca
 
 Two later app builders show the range of outcomes: [Emergent](/cases/emergent/), an Indian team selling mostly to the US and Europe, and [Anything](/cases/anything/), which had a fast start and then lost its iPhone app on the App Store.
 
+Two businesses built on Lovable by founders who could not code show what its users make: [Plinq](/cases/plinq/), a women's safety app from Brazil, and [Lumoo](/cases/lumoo/), an AI fashion-content platform from Sweden.
+
 ## What should founders learn from Lovable?
 
 - **Open source can be the top of the funnel.** GPT Engineer built credibility and an audience before Lovable sold anything.

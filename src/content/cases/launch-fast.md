@@ -81,6 +81,8 @@ The bigger difference is distribution. Stout spent a decade building an email li
 
 For the company behind the editor Bhatti built Launch Fast with, see [Cursor](/cases/cursor/).
 
+[TrendFeed](/cases/trendfeed/) is another non-technical founder's AI product that launched to an existing audience, built in four days.
+
 ## What are the takeaways from Launch Fast?
 
 - **Build where you are the user.** After ten or twelve failures in markets he did not know, Bhatti succeeded in the one he lived in.

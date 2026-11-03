@@ -90,6 +90,8 @@ For a standalone AI answer engine that raised venture money, see [Perplexity](/c
 
 [Motion](/cases/motion/) bundles AI agents for small businesses rather than giving individuals access to many models.
 
+Newer non-coder founders build with AI app builders instead of no-code tools, such as [Plinq](/cases/plinq/) on Lovable and [Payout](/cases/payout/), a vibe-coded class action app.
+
 ## What can founders learn from Magai's story?
 
 - **Build the audience before the product.** An email list of nearly 100,000 people is why "no marketing" worked.

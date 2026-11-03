@@ -91,6 +91,8 @@ Photoroom applies the same image technology as consumer AI photo apps, but to a 
 
 [Virtual Staging AI](/cases/virtual-staging-ai/) is the closest match in strategy. It also trained its own model so the output would stay faithful to a real object, a room instead of a product. It reached $1M ARR in about 10 months and sold to Zillow ([media-reported, TechCrunch](https://techcrunch.com/2024/02/23/virtual-staging-ai-helps-realtors-digitally-furnish-rooms-within-seconds/)). Photoroom stayed independent and kept raising. [Launch Fast](/cases/launch-fast/) serves the same e-commerce sellers at an earlier step, product research for Amazon, and reported $30K MRR in June 2026 ([founder-reported, Indie Hackers](https://www.indiehackers.com/post/tech/building-a-product-in-48-hours-and-hitting-30k-mrr-as-a-non-technical-founder-wWtWIH5tmwASUbxKaLT9)).
 
+[Lumoo](/cases/lumoo/), built by fashion veterans on Lovable, sells AI product imagery and virtual try-ons to fashion brands.
+
 ## What lessons does Photoroom offer e-commerce AI founders?
 
 - **Pick a task that repeats.** Sellers need fresh product photos for every listing, which keeps a subscription useful long after signup.

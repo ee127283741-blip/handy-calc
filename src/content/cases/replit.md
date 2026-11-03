@@ -81,6 +81,8 @@ In our reading, the difference is the starting point. Lovable and Bolt.new were 
 
 [n8n](/cases/n8n/) followed a similar path in automation, with years of free developer adoption before AI agents made its revenue jump.
 
+Replit's agent has also let non-coders start companies, such as [GenAIPI](/cases/genaipi/), an AI training business, and [WhisperAI](/cases/whisperai/), a transcription app built by a former real estate investor.
+
 ## What can founders learn from Replit's pivot?
 
 - **The customer can be the pivot.** Replit kept most of its product and changed who it was for, and revenue followed within a year.
