@@ -80,6 +80,8 @@ The timeline: StackBlitz founded in 2018; the team tests Claude 3.5 Sonnet with 
 
 The business stories differ more than the products. StackBlitz was an established company with under $1M ARR that found its breakout product after six years. Lovable grew from an open-source project into a venture-backed company. Base44 was a solo founder's project that Wix bought about six months after it started. Bolt.new shows that old, deep technology can become the moat once models catch up to it.
 
+For the AI code editor for developers that SpaceX bought, see [Cursor](/cases/cursor/).
+
 ## What lessons did Bolt.new's launch teach?
 
 - **Deep tech can wait for its moment.** WebContainers sat inside a small business for years until coding models made it valuable.

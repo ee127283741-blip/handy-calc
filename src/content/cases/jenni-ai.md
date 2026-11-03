@@ -85,6 +85,8 @@ The timeline: a viral tweet in July 2022 brought about $10K in a day; about $1.8
 
 [Textero](/cases/textero/) competes for the same students with an AI writing assistant and shows how fragile a Google-dependent student product can be.
 
+For an AI writer that stayed with marketers and moved to enterprise, see [Jasper](/cases/jasper/).
+
 ## What can founders learn from Jenni AI's pivots?
 
 - **Follow the users who stay.** Churn interviews revealed students and researchers as Jenni AI's real market.

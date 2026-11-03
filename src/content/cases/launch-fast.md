@@ -79,6 +79,8 @@ The next ceiling was the founder himself. Bhatti says he treated everything as a
 
 The bigger difference is distribution. Stout spent a decade building an email list of nearly 100,000 people. Bhatti had no audience, so he rented one, giving up equity for instant access to thousands of sellers. Both reached paying customers immediately, which is the part most first-time founders skip.
 
+For the company behind the editor Bhatti built Launch Fast with, see [Cursor](/cases/cursor/).
+
 ## What are the takeaways from Launch Fast?
 
 - **Build where you are the user.** After ten or twelve failures in markets he did not know, Bhatti succeeded in the one he lived in.

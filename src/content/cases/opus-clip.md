@@ -86,6 +86,8 @@ The timeline: founded in January 2022; pivot to AI clipping in 2023; about $20M 
 
 [Vidon.ai](/cases/vidon-ai/) repurposes written blog posts into video instead, and [neural frames](/cases/neural-frames/) generates music videos for musicians.
 
+For a bootstrapped short-form video tool that never raised outside money, see [Submagic](/cases/submagic/).
+
 ## What lessons does OpusClip hold?
 
 - **Pivot toward the job users repeat most.** Clipping long videos into shorts is a weekly task for creators.

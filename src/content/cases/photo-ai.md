@@ -91,6 +91,8 @@ For a smaller rival focused only on professional headshots, see [BetterPic](/cas
 
 For another AI image product, this one for real estate listings, see [Virtual Staging AI](/cases/virtual-staging-ai/).
 
+For AI photo editing sold to online sellers instead of individuals, see [Photoroom](/cases/photoroom/).
+
 ## What can founders learn from Photo AI?
 
 - **Sell the result, not the AI.** "Photos of you" is easy to understand; "a fine-tuned diffusion model" is not.

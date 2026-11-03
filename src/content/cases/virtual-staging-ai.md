@@ -89,6 +89,8 @@ Zillow bought Virtual Staging AI to bring fast, realistic staging into Zillow Sh
 
 [HeadshotPro](/cases/headshotpro/) is the nearest match in strategy. Danny Postma narrowed it to one output, business headshots, and the team spent a year on its own custom models. Virtual Staging AI made the same bet on a room. HeadshotPro's revenue is not disclosed.
 
+For an AI product-photo editor that also trains its own models, see [Photoroom](/cases/photoroom/).
+
 ## What can proptech founders learn from Virtual Staging AI?
 
 - **A domain rule can be a moat.** General generators invented doors and windows, and building a model around "never misrepresent the room" gave agents something they could safely show buyers.

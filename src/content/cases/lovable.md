@@ -83,6 +83,8 @@ The timeline: company started from GPT Engineer in 2023; public launch as Lovabl
 
 That origin shaped the product. Lovable outputs real React code with Supabase for data and GitHub sync, so users own what they build rather than being locked into a page builder. For a non-technical founder who used an AI coding editor instead of an app builder, see [Launch Fast](/cases/launch-fast/).
 
+For the AI code editor aimed at developers rather than non-coders, see [Cursor](/cases/cursor/).
+
 ## What should founders learn from Lovable?
 
 - **Open source can be the top of the funnel.** GPT Engineer built credibility and an audience before Lovable sold anything.

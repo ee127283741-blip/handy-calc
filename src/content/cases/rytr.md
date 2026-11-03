@@ -76,6 +76,8 @@ He prefers picking a couple of channels over spreading thin, and SEO has been co
 
 [Instantly](/cases/instantly/) is the other case in this library that used AppSumo to seed growth. Both used a lifetime-deal marketplace to get early users, cash and feedback quickly. Instantly later stopped doing lifetime deals; Rytr used AppSumo as a launch channel and then built SEO for the long run.
 
+For the venture-backed AI writer that launched the same year, see [Jasper](/cases/jasper/).
+
 ## What lessons does Rytr teach late entrants?
 
 - **Late is fine if the product is better.** Rytr entered a crowded market and won on output quality and simplicity.
