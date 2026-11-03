@@ -80,6 +80,8 @@ Abridge and [Freed](/cases/freed/) both sell AI scribes, but to opposite ends of
 
 In our view, the split is sales motion. Freed can sign a doctor in minutes with a credit card. Abridge has to win a hospital system, connect to its health record software and train thousands of clinicians. That is slower, but each contract is far larger, and the billing-code feature gives the buyer a financial reason to say yes. Harvey made a similar bet on big law firms.
 
+[OpenEvidence](/cases/openevidence/) sells to the same doctors with a different model: it is free for clinicians and paid for by advertisers.
+
 ## What lessons does Abridge offer founders in vertical AI?
 
 - **Tie the product to the buyer's revenue.** Abridge's billing codes turn a time-saver into something the hospital's finance team values.

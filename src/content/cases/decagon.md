@@ -77,6 +77,8 @@ Decagon and [Sierra](/cases/sierra/) sell the same thing to the same buyers, but
 
 The table shows why the "Sierra vs Decagon" question is hard to answer. The two compete for the same Fortune 500 support budgets, and investors price them more than three times apart, yet only one of them shows its revenue.
 
+[Retell AI](/cases/retell-ai/) takes the platform route instead, letting developers and call centers build their own voice agents.
+
 ## What lessons does Decagon's valuation hold for founders?
 
 - **A hot category can carry a valuation.** Decagon's price tripled in six months without a new public revenue figure.

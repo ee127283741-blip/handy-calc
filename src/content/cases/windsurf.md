@@ -78,6 +78,8 @@ All three sold AI coding in 2025, and only Windsurf ended up split between buyer
 
 In our reading, Windsurf's problem was position, not growth. It sold the same kind of editor as Cursor at a lower price, so it was second in a race where buyers wanted the leader. Replit sold something different, finished apps for non-coders. That gave Replit a reason to stay independent, and Windsurf a reason to sell.
 
+What happened after the deal is covered in the [Cognition](/cases/cognition/) case, which shows how buying Windsurf changed the company behind Devin.
+
 ## What lessons does the Windsurf acquisition hold?
 
 - **Price cuts signal a second-place product.** Windsurf priced its individual plan below Cursor's and still trailed it on revenue.

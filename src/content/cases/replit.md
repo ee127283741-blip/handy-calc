@@ -79,6 +79,8 @@ Replit, [Lovable](/cases/lovable/) and [Bolt.new](/cases/bolt-new/) sell app bui
 
 In our reading, the difference is the starting point. Lovable and Bolt.new were new products. Replit already had hosting, a browser editor and a large free user base when it added the agent, so the agent could take an app all the way to a live URL. That old infrastructure was a cost for eight years and became the advantage in the ninth. [Windsurf](/cases/windsurf/) shows the other path: a coding tool for developers that sold itself in pieces rather than raising again.
 
+[n8n](/cases/n8n/) followed a similar path in automation, with years of free developer adoption before AI agents made its revenue jump.
+
 ## What can founders learn from Replit's pivot?
 
 - **The customer can be the pivot.** Replit kept most of its product and changed who it was for, and revenue followed within a year.

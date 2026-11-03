@@ -80,6 +80,8 @@ Otter and [Fireflies.ai](/cases/fireflies-ai/) are the two veterans of AI meetin
 
 In our view, Otter's edge was timing. It was transcribing meetings years before the pandemic, so when remote work arrived in 2020 it already had the product and the brand. Newer tools compete on features, but they start from a market where Otter and Fireflies are the default names.
 
+Two newer productivity cases start from other habits: [Fyxer AI](/cases/fyxer-ai/) begins in the inbox, and [Wispr Flow](/cases/wispr-flow/) turns the user's own speech into text in any app.
+
 ## What lessons does Otter.ai hold for founders?
 
 - **Being early can matter more than raising big.** Otter built its product before remote work took off, then grew on about $63M of disclosed funding.

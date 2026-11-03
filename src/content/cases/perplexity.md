@@ -89,6 +89,8 @@ In our reading, the difference is the job each product does. TypingMind, Magai a
 
 For AI search inside companies rather than on the public web, see [Glean](/cases/glean/).
 
+[Genspark](/cases/genspark/) began as an AI search engine too, then moved from answers to finished work such as slides and reports.
+
 ## What lessons does Perplexity's growth hold for founders?
 
 - **Pick a habit people already have.** Perplexity aimed at search, a daily habit, and reached 20 million questions a day by the end of 2024.

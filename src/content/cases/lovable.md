@@ -87,6 +87,8 @@ For the AI code editor aimed at developers rather than non-coders, see [Cursor](
 
 For an older coding platform that pivoted into the same market, see [Replit](/cases/replit/).
 
+Two later app builders show the range of outcomes: [Emergent](/cases/emergent/), an Indian team selling mostly to the US and Europe, and [Anything](/cases/anything/), which had a fast start and then lost its iPhone app on the App Store.
+
 ## What should founders learn from Lovable?
 
 - **Open source can be the top of the funnel.** GPT Engineer built credibility and an audience before Lovable sold anything.

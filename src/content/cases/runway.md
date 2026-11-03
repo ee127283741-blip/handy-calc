@@ -98,6 +98,8 @@ Runway trains its own frontier models, while the two smaller creative-media case
 
 [neural frames](/cases/neural-frames/) sits at the other end. Solo founder Nicolai Klemke built it on open-source Stable Diffusion and reached $17K MRR by the end of October 2023 ([founder-reported, Starter Story](https://www.starterstory.com/stories/neural-frames)). Both companies sell video to creators. The gap is in who owns the model: neural frames rents compute for an open model, while Runway raises hundreds of millions to train its own. [Midjourney](/cases/midjourney/) is the other well-known AI lab rooted in creative tools.
 
+[Higgsfield](/cases/higgsfield/) shows the app-layer alternative: it packages video models into presets for social media marketers instead of competing on its own frontier model.
+
 ## What can AI startups learn from Runway?
 
 - **Start with a creative audience, then move up the stack.** Runway began with tools for artists and later trained its own models, so it already had a customer base when each model launched.
