@@ -71,6 +71,8 @@ Fyxer AI starts in the inbox; [Otter.ai](/cases/otter-ai/) and [Fireflies.ai](/c
 
 Our reading: Fyxer's agency years were market research. The founders knew what an assistant does with an executive's email because they billed for it. That shows in the 90% three-month retention it reported at the Series B, which is the number we would watch more closely than ARR growth.
 
+[Sintra](/cases/sintra/) is another AI assistant business from agency founders, selling AI helpers to small businesses, and [KNOWIDEA](/cases/knowidea/) is a B2B AI startup led by a non-technical founder who sells while a hire builds.
+
 ## What are the takeaways from Fyxer AI for service businesses?
 
 - **Automate the service you already sell.** Fyxer turned an executive assistant business into software that does the same job.

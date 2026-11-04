@@ -84,6 +84,8 @@ Two newer productivity cases start from other habits: [Fyxer AI](/cases/fyxer-ai
 
 For a bot-free AI notepad that enhances the user's own notes, see [Granola](/cases/granola/).
 
+[Wave AI](/cases/wave-ai/) is a mobile AI note taker run largely by one former Uber executive using Claude Code.
+
 ## What lessons does Otter.ai hold for founders?
 
 - **Being early can matter more than raising big.** Otter built its product before remote work took off, then grew on about $63M of disclosed funding.

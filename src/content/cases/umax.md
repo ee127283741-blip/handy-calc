@@ -88,6 +88,8 @@ The timeline is short: launch in December 2023, and by July 2024 the founder was
 
 [STOPPR](/cases/stoppr/) is a smaller self-improvement app whose founder cloned a proven app with AI despite having no coding background.
 
+[Glam Up](/cases/glam-up/) is another viral consumer AI beauty app, co-founded by a college student with no engineering background.
+
 ## What lessons does Umax teach consumer app makers?
 
 - **A shareable score is a growth engine.** Users posting their results brought over a billion social impressions.

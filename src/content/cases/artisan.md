@@ -62,6 +62,8 @@ Artisan and [11x](/cases/11x/) sell the same thing, an AI sales rep, and both re
 
 Our reading: the AI SDR category is full of trials and churn, because buyers can test a rep for a month and leave if meetings do not appear. Artisan's roughly $20K of ARR per customer suggests mid-sized contracts. Whether they renew is what will separate it from the hype the billboards created.
 
+[Fathom AI](/cases/fathom-ai/) takes the opposite approach: it uses 12 AI agents inside a three-person company with no engineering team.
+
 ## What are the lessons from Artisan's provocative marketing?
 
 - **Provocation buys reach.** "Stop Hiring Humans" made a small startup famous without a large ad budget.

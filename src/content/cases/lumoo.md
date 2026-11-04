@@ -63,6 +63,8 @@ Lumoo and [Plinq](/cases/plinq/) are both Lovable-built companies whose founders
 
 Our reading: Lumoo's edge is industry knowledge. The founders did not need to discover what fashion marketers want, because they had been those marketers. Lovable let them turn that knowledge into software without the cost and delay of a development team, which is why they reached brand customers in months.
 
+[Fitted](/cases/fitted/) applies AI to fashion from the consumer side, digitizing users' closets, and was built no-code.
+
 ## What lessons does Lumoo offer industry experts?
 
 - **Domain expertise is the moat.** Decades in fashion told the founders which problems brands would pay to solve.

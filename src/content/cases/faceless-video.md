@@ -65,6 +65,8 @@ Faceless.video and [Formula Bot](/cases/formula-bot/) were both built on no-code
 
 Our reading: Seeger's six failures were the real training. Each product taught him more about Bubble and about what people pay for. By the seventh, he could move quickly on a trend he saw in his own feed, which is what non-coders with no-code tools have always done best.
 
+[StoryShort](/cases/storyshort/) sells a similar AI short-video tool, built by a former optician who clones products that already have traction.
+
 ## What can no-code founders learn from Faceless.video?
 
 - **Failure counts as practice.** Six failed products came before a $1M ARR one.

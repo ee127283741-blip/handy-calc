@@ -66,6 +66,8 @@ Turbo AI is one of three consumer education businesses in this library with eigh
 
 Our reading: student apps spread through classrooms and group chats, which is why Turbo AI could add 4 million users in six months without much funding. The weakness is the calendar. Students study hardest before exams and leave in summer, so subscription revenue can swing with the school year.
 
+[Coconote](/cases/coconote/) is a bootstrapped rival in AI lecture notes that Quizlet acquired, and [Conch AI](/cases/conch-ai/) is a student AI tool whose biggest month came from one TikTok.
+
 ## What can student-app founders learn from Turbo AI?
 
 - **Build for your own class.** Turbo AI's founders were students solving their own studying problem.

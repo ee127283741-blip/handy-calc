@@ -74,6 +74,8 @@ Our reading: the founder's skill here was marketing, not engineering. Matos knew
 
 [ShiftNex](/cases/shiftnex/) is another Lovable-built business from an industry insider, a healthcare staffing platform for US facilities.
 
+[FrameSage](/cases/framesage/) is a Lovable-built film finance platform from a pharma project manager who had never coded outside school.
+
 ## What can non-technical founders learn from Plinq?
 
 - **Marketing skill can be the founder's edge.** A growth marketer reached tens of thousands of users once AI handled the code.

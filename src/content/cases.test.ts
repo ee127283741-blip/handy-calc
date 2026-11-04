@@ -43,8 +43,8 @@ function check(where: string, f: Figure) {
 }
 
 describe('case files', () => {
-  it('has exactly 121 cases with unique slugs matching file names', () => {
-    expect(files.length).toBe(121);
+  it('has exactly 131 cases with unique slugs matching file names', () => {
+    expect(files.length).toBe(131);
     const slugs = files.map((f) => read(f).fm.slug);
     expect(new Set(slugs).size).toBe(files.length);
     for (const f of files) expect(read(f).fm.slug, f).toBe(f.replace(/\.md$/, ''));
