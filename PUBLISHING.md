@@ -9,6 +9,7 @@
 - 網站內容一律 **English**；本文件為繁體中文。
 - **不花錢**：不買網域、不用付費工具/API。網站任何地方**都不呼叫 AI API**。
 - **不捏造**：數字、價格、搜尋量都要有來源。作者一律為 `Editorial team`，不可捏造人物或資歷。
+- **寫作模型**：所有文章（每日案例與改寫）一律用 Claude Code CLI 的 Opus 5.5、**medium** effort 撰寫，不用 high（使用者 2026-11-04 規定）。
 - 寧缺勿濫：避免 scaled content abuse / doorway pages。不要做只換一個名字的近似案例頁。
 
 ## 0.1 AI 創業案例寫作標準（每日新增 case 必讀）
