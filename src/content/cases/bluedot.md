@@ -83,6 +83,8 @@ For the two longest-running AI meeting note takers, see [Otter.ai](/cases/otter-
 
 [Limitless](/cases/limitless/) recorded in-person conversations with a pendant instead, and was acquired by Meta in December 2025.
 
+For another bot-free meeting notes app, now valued at $1.5B, see [Granola](/cases/granola/) ([media-reported, TechCrunch](https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/)).
+
 ## What lessons does Bluedot teach about research?
 
 - **Friendly calls are not demand.** Six months of building followed research that mistook politeness for interest.

@@ -69,6 +69,8 @@ Wispr and two small voice-note apps in this library start from the same habit, t
 
 Our reading: Wispr's bet is that voice becomes an input layer for all software, and investors priced it that way at $2B. The open question is the one its own numbers leave out: how much revenue that growth adds up to. Until Wispr publishes a dollar figure, the valuation rests on growth rates and usage.
 
+For an AI notepad for meetings that writes notes without a bot joining the call, see [Granola](/cases/granola/).
+
 ## What lessons does Wispr offer consumer AI founders?
 
 - **Work inside other apps.** Wispr Flow types wherever the cursor is, so users do not have to change tools.

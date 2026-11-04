@@ -113,6 +113,8 @@ For other AI companies selling large enterprise contracts, see [Glean](/cases/gl
 
 Two newer legal cases sit on either side of Harvey: [Legora](/cases/legora/), the Stockholm challenger selling the same kind of platform to large firms, and [EvenUp](/cases/evenup/), which sells one workflow to personal injury firms.
 
+For an AI analyst built for finance rather than law, see [Hebbia](/cases/hebbia/).
+
 ## What lessons does Harvey offer founders?
 
 - **Pair domain expertise with AI expertise.** A litigator and an AI researcher could build what neither could alone.

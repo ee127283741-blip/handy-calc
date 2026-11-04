@@ -76,6 +76,8 @@ In our view, the gap between Glean and Perplexity is about who pays. Perplexity 
 
 [Sana](/cases/sana/) sold a similar workplace AI assistant and chose to sell to Workday instead of staying independent.
 
+For a finance-focused counterpart to enterprise AI search, see [Hebbia](/cases/hebbia/).
+
 ## What are the takeaways from Glean's growth?
 
 - **Years of slow work can set up a fast run.** Glean spent its early years building connectors to company systems, and that work paid off once AI assistants took off.

@@ -77,6 +77,8 @@ Fireflies and [Otter.ai](/cases/otter-ai/) are both meeting-notes companies foun
 
 In our reading, Otter and Fireflies made opposite disclosure choices with similar strategies. Otter announced a round revenue number. Fireflies announced a valuation and profitability instead. Both kept teams of a few hundred people or fewer and relied on free plans that spread inside companies, as one employee invites the note taker to a call and others see it.
 
+For a meeting notes app that works without a bot joining the call, see [Granola](/cases/granola/).
+
 ## What can capital-light founders learn from Fireflies.ai?
 
 - **Profit can replace new rounds.** Fireflies says it has been profitable since 2023, so it did not need to raise after its 2021 Series A.

@@ -76,6 +76,8 @@ Legora is the challenger to [Harvey](/cases/harvey/), and the gap depends on whi
 
 Our reading: investors still pay more per dollar of ARR for the category leader. Legora's case is speed: it reached $200M ARR about three years after founding, starting from Europe.
 
+For AI built for finance analysts instead of lawyers, see [Hebbia](/cases/hebbia/).
+
 ## Which lessons from Legora apply to other legal AI startups?
 
 - **A second mover can catch up.** Legora started a year after Harvey and passed $200M ARR about three years after founding.
