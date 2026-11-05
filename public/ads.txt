@@ -1,3 +1,1 @@
-# ads.txt — intentionally empty until AdSense approval.
-# After approval, add this line (with your publisher ID) and remove these comments:
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-1016320651503873, DIRECT, f08c47fec0942fa0
