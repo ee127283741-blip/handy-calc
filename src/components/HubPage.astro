@@ -8,8 +8,8 @@ import { SITE_NAME } from '../site';
 import { caseUrl } from '../lib';
 import type { HubCopy } from '../lib/hubs';
 import { asOf, hasFigure, hasPricing, hubFaq, labelText, otherCurrency, rankedUsd } from '../lib/revenue';
-interface Props { copy: HubCopy; description: string; crumbs: Crumb[]; cases: CollectionEntry<'cases'>[] }
-const { copy, description, crumbs, cases } = Astro.props;
+interface Props { copy: HubCopy; description: string; crumbs: Crumb[]; cases: CollectionEntry<'cases'>[]; noindex?: boolean }
+const { copy, description, crumbs, cases, noindex = cases.length === 0 } = Astro.props;
 const abs = (p: string) => new URL(p, Astro.site).href;
 const facts = cases.map((c) => c.data);
 const name = `${copy.phrase} startups: revenue case studies`;
@@ -34,7 +34,7 @@ const jsonLd = [
 ];
 const url = (slug: string) => `/cases/${slug}/`;
 ---
-<BaseLayout title={name} description={meta} jsonLd={jsonLd}>
+<BaseLayout title={name} description={meta} jsonLd={jsonLd} noindex={noindex}>
   <Breadcrumbs items={crumbs} />
   <h1>{name}</h1>
   <p class="answer">{description}</p>

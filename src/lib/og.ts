@@ -3,7 +3,7 @@ import { createRequire } from 'node:module';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
 
-// Text-only Open Graph card (1200x630), rendered at build time. No photos or AI images.
+// Fallback text-only Open Graph card (1200x630), rendered at build time. Case cards are overridden by the Gemini-generated og/<slug>.png files the site now uses.
 const require = createRequire(import.meta.url);
 const font = (w: 400 | 700) => readFileSync(require.resolve(`@fontsource/inter/files/inter-latin-${w}-normal.woff`));
 const fonts = [
