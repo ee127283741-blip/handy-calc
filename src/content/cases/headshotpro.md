@@ -95,6 +95,8 @@ For another AI image product sold to professionals, see [Virtual Staging AI](/ca
 
 For a general-purpose AI image company at far larger scale, see [Midjourney](/cases/midjourney/).
 
+For selfie avatars sold as a viral novelty rather than a professional need, with an estimated $29.3M in consumer spending in 12 days of December 2022, see [Lensa AI](/cases/lensa-ai/) ([third-party estimate, via TIME](https://time.com/6240648/lensa-ai-psychology-behind/)).
+
 ## What are the key lessons from HeadshotPro?
 
 - **Follow sales, not press.** Deep Agency got the attention; HeadshotPro got the customers, so that is where Postma went.

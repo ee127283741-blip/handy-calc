@@ -83,6 +83,8 @@ All three help companies find and contact prospects, but Clay sells the data lay
 
 In our view, Clay won by sitting upstream. Email and LinkedIn tools compete on price and deliverability, and buyers switch easily. Clay holds the research, the enrichment and the workflows that feed those tools, which is harder to rip out. That is also why its customer list reads like the AI industry itself.
 
+[Lindy](/cases/lindy/) also automates prospecting and lead qualification, but through no-code AI agents, and reported high seven figures of revenue in July 2025 ([founder-reported, The SaaS Podcast](https://saasclub.io/podcast/lindy-flo-crivello-450/)).
+
 ## What are the lessons from Clay's growth?
 
 - **Own the workflow, not the channel.** Clay sits before the email or LinkedIn tool, where switching costs are higher.

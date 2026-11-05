@@ -95,6 +95,8 @@ For AI photo editing sold to online sellers instead of individuals, see [Photoro
 
 For the self-funded image model that defined the category, see [Midjourney](/cases/midjourney/).
 
+For a viral selfie-avatar app built on open-source Stable Diffusion, with an estimated $29.3M in consumer spending in 12 days of December 2022, see [Lensa AI](/cases/lensa-ai/) ([third-party estimate, via TIME](https://time.com/6240648/lensa-ai-psychology-behind/)).
+
 ## What can founders learn from Photo AI?
 
 - **Sell the result, not the AI.** "Photos of you" is easy to understand; "a fine-tuned diffusion model" is not.

@@ -64,6 +64,8 @@ Our reading: the AI SDR category is full of trials and churn, because buyers can
 
 [Fathom AI](/cases/fathom-ai/) takes the opposite approach: it uses 12 AI agents inside a three-person company with no engineering team.
 
+[Lindy](/cases/lindy/) dropped its own "AI employee" pitch while the product caught up, and reported high seven figures of revenue in July 2025 ([founder-reported, The SaaS Podcast](https://saasclub.io/podcast/lindy-flo-crivello-450/)).
+
 ## What are the lessons from Artisan's provocative marketing?
 
 - **Provocation buys reach.** "Stop Hiring Humans" made a small startup famous without a large ad budget.

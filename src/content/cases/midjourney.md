@@ -81,6 +81,8 @@ All three share a habit: they keep teams small and rely on revenue instead of la
 
 Two newer cases show other paths in consumer creative AI: [Black Forest Labs](/cases/black-forest-labs/) licenses its FLUX models to businesses, and [Character.AI](/cases/character-ai/) sold open-ended chat and ended in Chapter 11.
 
+For a consumer app that ran on the open-source Stable Diffusion model and drew an estimated $29.3M in consumer spending in 12 days of December 2022, see [Lensa AI](/cases/lensa-ai/) ([third-party estimate, via TIME](https://time.com/6240648/lensa-ai-psychology-behind/)).
+
 ## What lessons does Midjourney hold for bootstrapped AI founders?
 
 - **Charge for compute from the first day.** Holz priced at cost plus a margin and said Midjourney was profitable by 2022, which made investors optional.

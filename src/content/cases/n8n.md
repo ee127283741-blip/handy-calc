@@ -70,6 +70,8 @@ n8n grew the slow way and then the fast way. [Lovable](/cases/lovable/) and [Bol
 
 Our reading: the self-hosted free edition is both n8n's growth engine and its ceiling. It built trust with developers and spread n8n into companies without a sales team. It also means many users never pay, which may be why n8n's ARR trails its usage. The tenfold revenue growth suggests the cloud product is converting more of those users now that AI workflows need hosted reliability.
 
+For a no-code AI agent platform that once pitched itself as the "Zapier of AI" and reported high seven figures of revenue in July 2025, see [Lindy](/cases/lindy/) ([founder-reported, The SaaS Podcast](https://saasclub.io/podcast/lindy-flo-crivello-450/)).
+
 ## What can open-source founders learn from n8n?
 
 - **A free self-hosted edition builds a long runway.** n8n had years of developer adoption before AI made automation urgent.
