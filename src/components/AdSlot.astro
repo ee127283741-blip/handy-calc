@@ -1,8 +1,8 @@
 ---
 // Renders nothing unless ads are on (see src/ads.ts).
-import { ADS_ON, ADSENSE_CLIENT } from '../ads';
+import { ADS_ON, ADSENSE_CLIENT, ADSENSE_SLOT } from '../ads';
 interface Props { slot?: string }
-const { slot } = Astro.props;
+const { slot = ADSENSE_SLOT } = Astro.props;
 ---
 {ADS_ON && (
   <aside class="ad-slot">

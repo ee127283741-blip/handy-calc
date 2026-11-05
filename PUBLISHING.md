@@ -168,6 +168,14 @@ npm run preview   # 本機預覽 http://localhost:4321
   - `PUBLIC_ADS_ENABLED`：維持 `false`，AdSense 核准前不可開啟；`false` 時 `AdSlot` 完全不輸出。開啟後每頁最多 4 個廣告位。
   - `PUBLIC_CF_BEACON_TOKEN`：Cloudflare Web Analytics token；有設定才會載入 beacon。
 
+### AdSense 核准後開啟廣告
+
+帳戶已完成：`public/ads.txt`、廣告單元 `site-responsive`（slot 已寫在 `src/ads.ts`）、歐洲法規同意訊息。自動廣告維持停用，因為每頁下限 6 個，超過 `SPEC.md` 的 4 個上限。收到核准通知後：
+
+1. `.github/workflows/ci.yml` 的 `build` job 設定 `PUBLIC_ADS_ENABLED: "true"`，並新增 `PUBLIC_ADSENSE_CLIENT: ca-pub-1016320651503873`。
+2. 更新 `src/pages/privacy-policy.astro`：改掉「目前沒有廣告」的段落和 `updated` 日期。
+3. 推到 `main` 部署，再到線上頁面確認廣告與同意訊息都有出現。
+
 ## 6. 維護
 
 - 每 90 天依 GSC 查詢資料更新內容；只有實質修改才更新 `updated` 日期。
