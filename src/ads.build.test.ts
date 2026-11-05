@@ -2,6 +2,8 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { beforeAll, describe, expect, it } from 'vitest';
+import { parse } from 'yaml';
+import { INDUSTRIES, PRODUCT_TYPES } from './site';
 
 // Builds the site twice (ads off / on) into throwaway dirs; dist/ is never touched.
 function build(outDir: string, env: Record<string, string>) {
@@ -166,6 +168,99 @@ describe('site build (ads off)', () => {
       for (const m of readFileSync(f, 'utf8').matchAll(/href="(\/[^"]*)"/g)) if (!exists(m[1])) broken.push(`${f} -> ${m[1]}`);
     }
     expect(broken).toEqual([]);
+  });
+
+  describe('hubs, rankings, search', () => {
+    const DIR = join(__dirname, 'content', 'cases');
+    const SITE = 'https://ai-founder-atlas.pages.dev';
+    const raw = readdirSync(DIR).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(DIR, f), 'utf8').split(/^---$/m)[1]);
+    const cases = raw.map((y) => parse(y));
+    const frontmatter = raw.join('\n');
+    const ld = (html: string) => [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
+    const rows = (html: string, id: string) => [...(html.match(new RegExp(`<table[^>]*id="${id}"[\\s\\S]*?</table>`))?.[0] ?? '').matchAll(/data-case="([^"]+)"/g)].map((m) => m[1]);
+    const disclosed = (c: { mrr: { value: number | null; label: string; sourceUrl?: string } }) => c.mrr.value !== null && c.mrr.label !== 'not-disclosed' && !!c.mrr.sourceUrl;
+    const hubs = [
+      ...INDUSTRIES.map((t) => ({ path: `/industries/${t.slug}/`, list: cases.filter((c) => c.industry === t.slug) })),
+      ...PRODUCT_TYPES.map((t) => ({ path: `/types/${t.slug}/`, list: cases.filter((c) => c.productType === t.name) })),
+    ];
+
+    it('every hub has the required sections, metadata and data-only snapshot and FAQ', () => {
+      for (const { path, list } of hubs) {
+        const html = read(join(path, 'index.html'));
+        const h2 = [...html.matchAll(/<h2[^>]*>([^<]+)<\/h2>/g)].map((m) => m[1]).filter((t) => ['Overview', 'How they make money', 'Notable cases', 'FAQ'].includes(t));
+        expect(h2, path).toEqual(['Overview', 'How they make money', 'Notable cases', 'FAQ']);
+        expect(html, path).toMatch(/<title>[^<]*startups: revenue case studies<\/title>/);
+        expect(html, path).toContain(`<link rel="canonical" href="${SITE}${path}"`);
+        expect(html.indexOf('id="revenue-snapshot"'), path).toBeLessThan(html.indexOf('>Overview</h2>'));
+        expect(rows(html, 'revenue-snapshot').sort(), path).toEqual(list.filter(disclosed).map((c) => c.slug).sort());
+        for (const c of list) expect(html, `${path} ${c.slug}`).toContain(`href="/cases/${c.slug}/"`);
+        const data = ld(html);
+        expect(data.find((x) => x['@type'] === 'CollectionPage').mainEntity.itemListElement.length, path).toBe(list.length);
+        const faq = data.find((x) => x['@type'] === 'FAQPage').mainEntity;
+        expect(faq.length, path).toBeGreaterThanOrEqual(3);
+        expect(faq.length, path).toBeLessThanOrEqual(5);
+        for (const q of faq) for (const m of q.acceptedAnswer.text.matchAll(/[$€£R]+\d[\d.,]*[KMB]?/g)) expect(frontmatter, `${path}: ${m[0]}`).toContain(m[0].replace(/[.,]$/, ''));
+        const desc = html.match(/<meta name="description" content="([^"]*)"/)![1];
+        expect(desc.length, path).toBeLessThanOrEqual(170);
+      }
+    });
+
+    it('the empty content hub states not disclosed and has no table', () => {
+      const html = read('types/content/index.html');
+      expect(html).not.toContain('<table');
+      expect(html).toContain('no case in this group has a disclosed figure');
+    });
+
+    it('home page has a 1200x630 image and a SearchAction that points at a built page', () => {
+      const home = read('index.html');
+      expect(home).toContain(`<meta property="og:image" content="${SITE}/og/home.png"`);
+      expect(home).toContain(`<meta name="twitter:image" content="${SITE}/og/home.png"`);
+      expect(home).toContain('<meta name="twitter:card" content="summary_large_image"');
+      expect(home).toContain('<meta property="og:image:alt"');
+      expect(home).toContain('<meta name="twitter:image:alt"');
+      const png = readFileSync(join(OFF, 'og', 'home.png'));
+      expect(png.subarray(1, 4).toString()).toBe('PNG');
+      expect([png.readUInt32BE(16), png.readUInt32BE(20)]).toEqual([1200, 630]);
+      expect(existsSync(join(__dirname, 'pages', 'og', 'home.png.ts'))).toBe(false);
+      expect(cases.some((c) => c.slug === 'home')).toBe(false);
+      const site = ld(home).find((x) => x['@type'] === 'WebSite');
+      expect(site.potentialAction.target.urlTemplate).toBe(`${SITE}/search/?q={search_term_string}`);
+      expect(site.potentialAction['query-input']).toBe('required name=search_term_string');
+    });
+
+    it('/search/ is noindex,follow, self-canonical, reads ?q= and stays out of the sitemap', () => {
+      const html = read('search/index.html');
+      expect(html).toContain('<meta name="robots" content="noindex,follow"');
+      expect(html).toContain(`<link rel="canonical" href="${SITE}/search/"`);
+      expect(html).toMatch(/<form[^>]*action="\/search\/"/);
+      expect(html).toContain('name="q"');
+      const js = files(OFF).filter((f) => /\.(js|html)$/.test(f) && readFileSync(f, 'utf8').includes('/search-index.json'));
+      expect(js.length).toBeGreaterThan(0);
+      expect(js.some((f) => /URLSearchParams\(location\.search\)\.get\("q"\)/.test(readFileSync(f, 'utf8')))).toBe(true);
+      expect(read('sitemap-0.xml')).not.toContain('/search/');
+    });
+
+    it('/rankings/ lists only disclosed figures, sorted by monthly value, keeping non-USD apart', () => {
+      const html = read('rankings/index.html');
+      const nonUsd = (c: { mrr: { display: string } }) => /[€£¥]|R\$/.test(c.mrr.display);
+      const usd = cases.filter(disclosed).filter((c) => !nonUsd(c));
+      const order = rows(html, 'rankings-table');
+      expect(order.slice().sort()).toEqual(usd.map((c) => c.slug).sort());
+      const values = order.map((s) => cases.find((c) => c.slug === s).mrr.value);
+      expect(values).toEqual([...values].sort((a, b) => b - a));
+      expect(rows(html, 'rankings-other')).toEqual(cases.filter(disclosed).filter(nonUsd).map((c) => c.slug));
+      for (const col of ['Startup', 'Disclosed figure', 'As of', 'Label', 'Industry', 'Case']) expect(html).toContain(`<th scope="col">${col}</th>`);
+      expect(html).toContain('ARR / 12');
+      expect(html).toContain('>Methodology</h2>');
+      expect(ld(html).find((x) => x['@type'] === 'FAQPage').mainEntity.length).toBeGreaterThanOrEqual(3);
+      expect(read('sitemap-0.xml')).toContain(`<loc>${SITE}/rankings/</loc>`);
+      expect(read('llms.txt').match(/\/rankings\//g)).toHaveLength(1);
+      for (const page of ['index.html', 'about/index.html']) expect(read(page), page).toContain('href="/rankings/"');
+      const home = read('index.html');
+      expect(home.match(/<main[\s\S]*<\/main>/)![0]).toContain('href="/rankings/"');
+      expect(home.match(/<header[\s\S]*<\/header>/)![0]).toContain('href="/rankings/"');
+      expect(home.match(/<footer[\s\S]*<\/footer>/)![0]).toContain('href="/rankings/"');
+    });
   });
 
   it('no internal links to removed pages', () => {

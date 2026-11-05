@@ -11,12 +11,12 @@ const types = PRODUCT_TYPES.filter((t) => cases.some((c) => c.data.productType =
 const inds = INDUSTRIES.filter((i) => cases.some((c) => c.data.industry === i.slug));
 const description = 'A library of real AI startup case studies: how founders found the idea, launched, priced and marketed, with sourced, dated revenue figures.';
 const jsonLd = [
-  { '@type': 'WebSite', name: SITE_NAME, url: home, description },
+  { '@type': 'WebSite', name: SITE_NAME, url: home, description, potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: `${home}search/?q={search_term_string}` }, 'query-input': 'required name=search_term_string' } },
   { '@type': 'Organization', name: SITE_NAME, url: home, logo: new URL('/favicon.svg', Astro.site).href },
   { '@type': 'ItemList', name: 'AI startup case library', itemListElement: cases.map((c, n) => ({ '@type': 'ListItem', position: n + 1, url: new URL(caseUrl(c), Astro.site).href, name: c.data.title })) },
 ];
 ---
-<BaseLayout title={`${SITE_NAME} – AI Startup Case Library: Real Revenue, Sourced`} description={description} jsonLd={jsonLd}>
+<BaseLayout title={`${SITE_NAME} – AI Startup Case Library: Real Revenue, Sourced`} description={description} jsonLd={jsonLd} image={{ url: new URL('/og/home.png', Astro.site).href, alt: `${SITE_NAME}: real AI startup case studies with sourced, dated revenue figures`, width: 1200, height: 630 }}>
   <section class="hero">
     <p class="eyebrow">AI startup case library</p>
     <h1>How real AI startups got started</h1>
@@ -31,7 +31,7 @@ const jsonLd = [
   <p class="meta" id="case-count" aria-live="polite">Showing {cases.length} of {cases.length} cases</p>
   <CaseCards cases={cases} />
   <AdSlot />
-  <p>Browse by <a href="/industries/">industry</a> or <a href="/types/">product type</a>.</p>
+  <p>Browse by <a href="/industries/">industry</a> or <a href="/types/">product type</a>, or compare disclosed figures in the <a href="/rankings/">AI startup revenue rankings</a>.</p>
 </BaseLayout>
 <script>
   // Light client-side filtering; without JS every case stays visible.

@@ -24,7 +24,7 @@ export default defineConfig({
   build: { format: 'directory', inlineStylesheets: 'always' },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/404'),
+      filter: (page) => !page.includes('/404') && new URL(page).pathname !== '/search/',
       serialize: (item) => ({ ...item, lastmod: dates[new URL(item.url).pathname] ?? buildDate }),
     }),
   ],

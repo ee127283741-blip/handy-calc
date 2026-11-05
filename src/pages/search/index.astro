@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseSearch from '../../components/CaseSearch.astro';
+import { SITE_NAME } from '../../site';
+---
+<BaseLayout title={`Search AI startup cases | ${SITE_NAME}`} description="Search the AI startup case library and AI tool explainers by company, product or topic." noindex>
+  <h1>Search AI startup cases</h1>
+  <CaseSearch />
+</BaseLayout>

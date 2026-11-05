@@ -12,6 +12,7 @@ import { INDUSTRIES, SITE_NAME } from '../site';
         <h2 id="f-cases" class="eyebrow">Cases</h2>
         <ul>
           <li><a href="/">Case library</a></li>
+          <li><a href="/rankings/">Revenue rankings</a></li>
           {INDUSTRIES.map((c) => <li><a href={`/industries/${c.slug}/`}>{c.name}</a></li>)}
           <li><a href="/types/">By product type</a></li>
         </ul>

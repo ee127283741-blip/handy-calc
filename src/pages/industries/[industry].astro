@@ -1,11 +1,12 @@
 ---
-import CaseListPage from '../../components/CaseListPage.astro';
+import HubPage from '../../components/HubPage.astro';
 import { INDUSTRIES, type Taxon } from '../../site';
 import { allCases } from '../../lib';
+import { INDUSTRY_HUBS } from '../../lib/hubs';
 export function getStaticPaths() {
   return INDUSTRIES.map((ind) => ({ params: { industry: ind.slug }, props: { ind } }));
 }
 const { ind } = Astro.props as { ind: Taxon };
 const cases = (await allCases()).filter((c) => c.data.industry === ind.slug);
 ---
-<CaseListPage name={`AI startups in ${ind.name}`} description={ind.description} crumbs={[{ name: 'Industries', href: '/industries/' }, { name: ind.name, href: `/industries/${ind.slug}/` }]} cases={cases} />
+<HubPage copy={INDUSTRY_HUBS[ind.slug]} description={ind.description} crumbs={[{ name: 'Industries', href: '/industries/' }, { name: ind.name, href: `/industries/${ind.slug}/` }]} cases={cases} />

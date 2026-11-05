@@ -40,10 +40,12 @@
 /cases/<slug>/                  案例頁（內容來源：src/content/cases/<slug>.md）
 /industries/  /industries/<slug>/          依產業分類（主題中心 hub，產業定義在 src/site.ts INDUSTRIES）
 /types/  /types/<slug>/  /types/app/<sub>/ 依產品型態分類（SaaS、App、Tool、Service、Content）
+/rankings/                      依已揭露營收排序（只列有標籤與來源的數字；ARR / 12）
+/search/                        站內搜尋（讀 ?q=，noindex,follow，不進 sitemap；WebSite SearchAction 指向這裡）
 /what-is/  /what-is/<slug>/       AI 工具介紹頁（Claude、Codex、Gemini…；寫法見 PUBLISHING.md 0.3）
 /authors/<slug>/                作者頁（Editorial team）
 /about/ /contact/ /editorial-policy/ /privacy-policy/ /terms/ /404
-/og/<slug>.png                  OG 圖片
+/og/<slug>.png                  OG 圖片（首頁用 public/og/home.png 靜態檔）
 /sitemap-index.xml /robots.txt /llms.txt /rss.xml /search-index.json
 ```
 

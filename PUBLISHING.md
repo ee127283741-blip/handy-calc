@@ -108,6 +108,12 @@
 - 檔名避免 `claude.md`：macOS 檔名不分大小寫，會被 Claude Code 當成 `CLAUDE.md` 讀入（Claude 的介紹頁 slug 用 `claude-ai`）。
 - 每季重新檢查價格與方案，更新 `pricing.checked` 與 `updated`。
 
+## 0.4 Hub 頁、排行榜、首頁 OG 圖
+
+- **Hub 頁**（`/industries/<slug>/`、`/types/<slug>/`）：表格、FAQ、計數全部由 frontmatter 自動產生（`src/lib/revenue.ts`）。文案在 `src/lib/hubs.ts`，**不可寫任何數字**（`hubs.test.ts` 會擋）；新增產業或產品型態時要一起補文案。文案提到某家公司的定價模式時，必須與該案例的 `pricing` 一致。
+- **排行榜**（`/rankings/`）：有 `mrr.value`、標籤與 `sourceUrl` 才列入。非美元數字（如 Lumoo 的歐元）不換匯，另列一表。
+- **首頁 OG 圖**：`public/og/home.png` 目前是暫用卡片。要換正式圖時，直接用 1200×630 的 PNG 覆蓋該檔即可，不需改程式（`ads.build.test.ts` 會檢查尺寸）。不要新增 `src/pages/og/home.png.ts`，也不要建立 slug 為 `home` 的案例，否則會與此檔衝突。
+
 ## 1. 新增 case
 
 1. 選公司：必須有至少一個可公開連結的營收／成長數字來源（創辦人訪談、主流媒體、官方公告）。沒有來源就不做這個案例。

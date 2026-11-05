@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { INDUSTRIES, SITE_NAME } from '../../site';
+import { allCases } from '../../lib';
+import { asOf, hasFigure, labelText, otherCurrency, rankedUsd, rankingFaq } from '../../lib/revenue';
+const facts = (await allCases()).map((c) => c.data);
+const ranked = rankedUsd(facts);
+const other = otherCurrency(facts);
+const missing = facts.length - facts.filter(hasFigure).length;
+const faq = rankingFaq(facts);
+const title = 'AI startup revenue rankings: disclosed monthly revenue and ARR';
+const description = `${ranked.length} AI startups ranked by disclosed monthly revenue, with ARR divided by 12. Every figure has a source, a date and a label.`;
+const jsonLd = [{ '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }];
+const ind = (slug: string) => INDUSTRIES.find((i) => i.slug === slug)!;
+---
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ name: 'Revenue rankings', href: '/rankings/' }]} />
+  <h1>AI startup revenue rankings</h1>
+  <p class="answer">{ranked.length} AI startups from our case library, sorted by monthly revenue. ARR is converted with ARR / 12, and {missing} cases with no sourced figure are left out instead of estimated.</p>
+  {[{ list: ranked, caption: `Ranked by normalized monthly revenue in US dollars (ARR / 12)`, id: 'rankings-table' }, { list: other, caption: 'Reported in another currency: not ranked, because we do not apply exchange rates', id: 'rankings-other' }].filter((t) => t.list.length).map((t) => (
+    <div class="table-wrap">
+      <table class="data-table" id={t.id}>
+        <caption>{t.caption}</caption>
+        <thead><tr>{t.id === 'rankings-table' && <th scope="col">#</th>}<th scope="col">Startup</th><th scope="col">Disclosed figure</th><th scope="col">As of</th><th scope="col">Label</th><th scope="col">Industry</th><th scope="col">Case</th></tr></thead>
+        <tbody>
+          {t.list.map((d, n) => (
+            <tr data-case={d.slug}>
+              {t.id === 'rankings-table' && <td>{n + 1}</td>}
+              <th scope="row"><a href={`/cases/${d.slug}/`}>{d.company}</a></th>
+              <td>{d.mrr.display} <a class="m-src" href={d.mrr.sourceUrl} rel="nofollow noopener" target="_blank">Source</a></td>
+              <td class="nowrap">{asOf(d.mrr)}</td>
+              <td><span class={`m-label l-${d.mrr.label}`}>{labelText(d.mrr)}</span></td>
+              <td><a href={`/industries/${d.industry}/`}>{ind(d.industry).name}</a></td>
+              <td class="nowrap"><a href={`/cases/${d.slug}/`} aria-label={`Read the ${d.company} case`}>Read case</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  ))}
+
+  <h2>Methodology</h2>
+  <p><strong>Conversion.</strong> We sort on each case's monthly figure. Where the source gives ARR or an annualized run rate, that figure is ARR / 12. The result is a calculation, so it is shown as "calc" or "implied" and the original number stays in the figure text. A few other calculated figures use different sourced inputs, such as daily revenue or customers times price; the label says which.</p>
+  <p><strong>Why some startups are missing.</strong> A case appears only if it has a monthly revenue or ARR figure with a label and a source link. Cases reporting only a lifetime total cannot be converted to a monthly number, and claims with no specific figure are not counted. We never fill the gap with an estimate of our own. See the <a href="/cases/">full case library</a> for those companies.</p>
+  <p><strong>How to read the order.</strong> Dates differ, so this is not a same-month league table. As of is the date recorded for the source; where a figure covers an earlier period, the figure text or label says so. Where a source gives a range, we sort on the low end. Gross figures, single-product figures and targets are not the same as total net revenue, and we keep those words in the figure text and label. Our <a href="/editorial-policy/">editorial policy</a> defines each label. We do not audit any of these numbers.</p>
+
+  <h2 id="faq">FAQ</h2>
+  {faq.map((f) => <><h3>{f.q}</h3><p>{f.a}</p></>)}
+</BaseLayout>

@@ -1,0 +1,93 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs, { type Crumb } from './Breadcrumbs.astro';
+import CaseCards from './CaseCards.astro';
+import AdSlot from './AdSlot.astro';
+import { SITE_NAME } from '../site';
+import { caseUrl } from '../lib';
+import type { HubCopy } from '../lib/hubs';
+import { asOf, hasFigure, hasPricing, hubFaq, labelText, otherCurrency, rankedUsd } from '../lib/revenue';
+interface Props { copy: HubCopy; description: string; crumbs: Crumb[]; cases: CollectionEntry<'cases'>[] }
+const { copy, description, crumbs, cases } = Astro.props;
+const abs = (p: string) => new URL(p, Astro.site).href;
+const facts = cases.map((c) => c.data);
+const name = `${copy.phrase} startups: revenue case studies`;
+const disclosed = facts.filter(hasFigure).length;
+const usd = rankedUsd(facts);
+const snapshot = [...usd, ...otherCurrency(facts)];
+const notable = [...usd, ...facts.filter((d) => !usd.includes(d))].slice(0, 5);
+const priced = rankedUsd(facts).filter(hasPricing).concat(facts.filter((d) => hasPricing(d) && !usd.includes(d))).slice(0, 8);
+const pricedTotal = facts.filter(hasPricing).length;
+const faq = hubFaq(copy.phrase, SITE_NAME, copy.money, facts);
+const meta = `${cases.length} ${copy.phrase} ${cases.length === 1 ? 'case study' : 'case studies'}, ${disclosed} with a disclosed revenue figure. How they make money, with every number sourced, dated and labelled.`;
+const jsonLd = [
+  {
+    '@type': 'CollectionPage',
+    name,
+    url: abs(Astro.url.pathname),
+    description: meta,
+    isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: abs('/') },
+    mainEntity: { '@type': 'ItemList', itemListElement: cases.map((c, n) => ({ '@type': 'ListItem', position: n + 1, url: abs(caseUrl(c)), name: c.data.title })) },
+  },
+  { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
+const url = (slug: string) => `/cases/${slug}/`;
+---
+<BaseLayout title={name} description={meta} jsonLd={jsonLd}>
+  <Breadcrumbs items={crumbs} />
+  <h1>{name}</h1>
+  <p class="answer">{description}</p>
+  {snapshot.length > 0 ? (
+    <div class="table-wrap">
+      <table class="data-table" id="revenue-snapshot">
+        <caption>Revenue snapshot: {snapshot.length} of {cases.length} {cases.length === 1 ? 'case' : 'cases'} with a disclosed figure</caption>
+        <thead><tr><th scope="col">Product</th><th scope="col">Monthly revenue / ARR</th><th scope="col">Label</th><th scope="col">Source</th><th scope="col">As of</th></tr></thead>
+        <tbody>
+          {snapshot.map((d) => (
+            <tr data-case={d.slug}>
+              <th scope="row"><a href={url(d.slug)}>{d.company}</a></th>
+              <td>{d.mrr.display}</td>
+              <td><span class={`m-label l-${d.mrr.label}`}>{labelText(d.mrr)}</span></td>
+              <td><a class="m-src" href={d.mrr.sourceUrl} rel="nofollow noopener" target="_blank">Source</a></td>
+              <td class="nowrap">{asOf(d.mrr)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  ) : <p id="revenue-snapshot">Revenue snapshot: no case in this group has a disclosed figure yet.</p>}
+
+  <h2>Overview</h2>
+  <p>{copy.overview}</p>
+  <p>{SITE_NAME} covers {cases.length} {cases.length === 1 ? 'case' : 'cases'} in this group, and {disclosed} {disclosed === 1 ? 'has' : 'have'} a disclosed monthly revenue or ARR figure. To read the table, start with the label: founder-reported means the company said it, media-reported means a publication did, and calc means our own arithmetic on a sourced number (such as ARR divided by 12). Check the as-of date too, because figures from different years are not like for like. See the full <a href="/rankings/">revenue rankings</a> to compare across every industry.</p>
+  <slot />
+
+  <h2>How they make money</h2>
+  <p>{copy.money}</p>
+  {priced.length > 0 && (
+    <>
+      <p>Sourced pricing from {priced.length === pricedTotal ? `all ${pricedTotal}` : `${priced.length} of the ${pricedTotal}`} {pricedTotal === 1 ? 'case' : 'cases'} that have it:</p>
+      <ul class="hub-pricing">
+        {priced.map((d) => <li><a href={url(d.slug)}>{d.company}</a>: {d.pricing.display} <span class={`m-label l-${d.pricing.label}`}>{labelText(d.pricing)}</span> <a class="m-src" href={d.pricing.sourceUrl} rel="nofollow noopener" target="_blank">Source</a></li>)}
+      </ul>
+    </>
+  )}
+
+  <h2>Notable cases</h2>
+  {cases.length > 0 ? (
+    <>
+      <p>Largest disclosed figures first, then cases without one:</p>
+      <ul class="hub-notable">
+        {notable.map((d) => <li><a href={url(d.slug)}><strong>{d.company}</strong></a>: {d.summary}</li>)}
+      </ul>
+      <h3>All {cases.length} {cases.length === 1 ? 'case' : 'cases'}</h3>
+      <CaseCards cases={cases} />
+    </>
+  ) : <p>No cases are filed here yet. Browse the <a href="/cases/">full case library</a> instead.</p>}
+  <AdSlot />
+
+  <h2 id="faq">FAQ</h2>
+  {faq.map((f) => <><h3>{f.q}</h3><p>{f.a}</p></>)}
+  <p><a href="/cases/">← All cases</a></p>
+</BaseLayout>

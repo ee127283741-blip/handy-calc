@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { INDUSTRIES } from '../site';
 import { allCases, allExplainers, caseUrl, explainerUrl } from '../lib';
 
-// Static search index of cases for CaseSearch (404 page), fetched on first use.
+// Static search index of cases for CaseSearch (/search/ and 404 pages), fetched on first use.
 export const GET: APIRoute = async () => {
   const name = (slug: string) => INDUSTRIES.find((i) => i.slug === slug)?.name ?? slug;
   const index = (await allCases()).map((c) => ({ title: c.data.title, url: caseUrl(c), type: c.data.productType, category: name(c.data.industry), description: c.data.summary }));

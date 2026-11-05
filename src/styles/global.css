@@ -135,6 +135,10 @@ th, td { border-bottom: 1px solid var(--line); padding: .6rem .75rem .6rem 0; te
 th { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .table-wrap { overflow-x: auto; }
 .glance { max-width: 44rem; }
+.data-table caption { text-align: left; font-weight: 600; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding-bottom: .4rem; }
+.data-table .nowrap { white-space: nowrap; }
+@media (min-width: 800px) and (max-width: 979px) { .nav-actions { display: none; } }
+.data-table tbody th { font-size: inherit; letter-spacing: normal; text-transform: none; color: inherit; }
 .glance caption { text-align: left; font-weight: 600; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding-bottom: .4rem; }
 .glance th { width: 9rem; vertical-align: top; }
 .glance .m-label { margin-left: .5rem; }

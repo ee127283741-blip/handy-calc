@@ -13,6 +13,4 @@ export async function allExplainers() {
 export const explainerUrl = (e: CollectionEntry<'explainers'>) => `/what-is/${e.data.slug}/`;
 export const caseUrl = (c: CollectionEntry<'cases'>) => `/cases/${c.data.slug}/`;
 export const subSlug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-export const LABEL_NAME: Record<string, string> = {
-  'founder-reported': 'Founder-reported', verified: 'Verified', 'media-reported': 'Media-reported', unverified: 'Unverified', 'third-party-estimate': 'Third-party estimate', calc: 'Calc (estimate)', 'not-disclosed': 'Not disclosed',
-};
+export { LABEL_NAME } from './revenue';
