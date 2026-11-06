@@ -79,6 +79,8 @@ The refund rate was 6.78%, down from 7.69%, against a 5% goal. The team was aimi
 
 [Photo AI](/cases/photo-ai/) sells the broader version, photos of you in any setting, by subscription, run by one person. BetterPic sells packages per order, like HeadshotPro, which suits a purchase most people make once. The three cases show how many businesses one Stable Diffusion insight could support.
 
+For the resume side of the same job search, see [Rezi](/cases/rezi/), an ATS resume builder sold by subscription.
+
 For a selfie-to-image app that spiked on novelty, with an estimated $29.3M in consumer spending in 12 days of December 2022, see [Lensa AI](/cases/lensa-ai/) ([third-party estimate, via TIME](https://time.com/6240648/lensa-ai-psychology-behind/)).
 
 ## Which lessons from BetterPic apply to pricing?

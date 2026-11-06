@@ -82,6 +82,8 @@ The difference is how much each depends on one platform. Tweet Hunter answered t
 
 [Creator Buddy](/cases/creator-buddy/) is a newer AI tool for X, built by a non-technical creator who sold it to his own audience at launch.
 
+[Postiz](/cases/postiz/) took a different route to the same creators: it gives its social scheduler away as open source and sells a hosted version.
+
 ## What are the takeaways from Tweet Hunter?
 
 - **Package the method you are known for.** If you grow an audience in public, a tool built on your method has a market waiting.

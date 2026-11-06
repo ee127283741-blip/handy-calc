@@ -76,6 +76,8 @@ The business runs entirely online with two founders and no employees, on a mostl
 
 The growth playbooks overlap. All three rely on short demo videos and search, because people looking for a job are actively searching for help. AiApply's extra edge was its founder's recruitment background, which told him where the application process wastes the most time.
 
+[Rezi](/cases/rezi/) is a closer rival on resumes, but it focuses on an ATS-friendly resume builder and its founder said in 2024 that it had stopped running ads.
+
 ## What lessons does AiApply offer?
 
 - **Validate with a video before you build.** A demo of an idea found both demand and a co-founder.

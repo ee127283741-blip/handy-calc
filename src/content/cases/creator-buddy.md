@@ -64,7 +64,7 @@ Creator Buddy depends on X's data, which costs about $5,000 a month ([founder-re
 
 Creator Buddy competes with [Tweet Hunter](/cases/tweet-hunter/), an earlier X growth tool that was later sold, and sits near [TrendFeed](/cases/trendfeed/), whose non-technical founder also launched to an existing audience. Tweet Hunter grew over years; Creator Buddy front-loaded its revenue with one launch. Both depend on X's data and rules.
 
-Our reading: Creator Buddy is the clearest case in this library of distribution beating engineering. Finn's audience did the selling; AI tools did the building. The question for any creator-built app is whether customers stay after launch-day excitement, which ARR, not launch sales, answers.
+Our reading: Creator Buddy is the clearest case in this library of distribution beating engineering. Finn's audience did the selling; AI tools did the building. The question for any creator-built app is whether customers stay after launch-day excitement, which ARR, not launch sales, answers. [Postiz](/cases/postiz/) is the opposite approach: its customers find a free open source scheduler rather than a founder's feed.
 
 ## What can creators learn from Creator Buddy?
 

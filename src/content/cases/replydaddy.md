@@ -61,7 +61,7 @@ ReplyDaddy's MRR is somewhere between the two published figures. Seth's LinkedIn
 
 ReplyDaddy, [ChatSEO](/cases/chatseo/) and [Gojiberry AI](/cases/gojiberry-ai/) all sell AI-powered lead generation to small companies. Gojiberry finds buying signals on LinkedIn and sends outreach; ChatSEO targets search visibility. ReplyDaddy works in Reddit threads, where people ask for recommendations openly. Like Gojiberry, it was built by a solo founder who used AI to move fast, and it competes in a market where many small tools chase the same founders.
 
-Our reading: the gap between $1,500 and $5,000 is common for small SaaS, where founders share their best month and trackers guess from public signals. Total revenue over a period, like the $20K+ figure here, is often the most honest number to watch.
+Our reading: the gap between $1,500 and $5,000 is common for small SaaS, where founders share their best month and trackers guess from public signals. Total revenue over a period, like the $20K+ figure here, is often the most honest number to watch. [Postiz](/cases/postiz/) shows Reddit from the founder's side: its open source scheduler drew install requests on a self-hosting forum.
 
 ## What lessons does ReplyDaddy offer product managers who want to build?
 
