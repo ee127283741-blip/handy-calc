@@ -3,7 +3,7 @@ title: "Interior AI revenue: Pieter Levels' room redesign tool"
 slug: interior-ai
 company: Interior AI
 founders: [Pieter Levels]
-summary: "Interior AI turns a photo of a room into redesigned versions in different styles. Pieter Levels reported Interior AI revenue of $40,000 MRR from 1,000+ recurring customers."
+summary: "Interior AI revenue reached $40,000 MRR from 1,000+ recurring customers, Pieter Levels reported, for an app that redesigns photos of rooms."
 primaryKeyword: "interior ai revenue"
 secondaryKeywords: ["interior ai pieter levels", "how much does interior ai make", "interior ai case study", "ai interior design startup revenue"]
 industry: real-estate-home

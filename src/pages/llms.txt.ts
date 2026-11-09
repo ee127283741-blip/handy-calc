@@ -20,6 +20,6 @@ export const GET: APIRoute = async ({ site }) => {
   lines.push('', '## Product types', '', `- [All product types](${abs('/types/')})`);
   for (const t of PRODUCT_TYPES) lines.push(`- [${t.name}](${abs(`/types/${t.slug}/`)}): ${t.description}`);
   lines.push('');
-  lines.push('## Optional', '', `- [RSS feed](${abs('/rss.xml')}): New and updated cases`, `- [About](${abs('/about/')}): Who maintains the site and how AI is used`, `- [Editorial policy](${abs('/editorial-policy/')}): Sources, fact-checking and corrections`, '');
+  lines.push('## Optional', '', `- [Full text for AI engines](${abs('/llms-full.txt')}): every case's TL;DR, sourced revenue figures and FAQ in one file`, `- [RSS feed](${abs('/rss.xml')}): New and updated cases`, `- [About](${abs('/about/')}): Who maintains the site and how AI is used`, `- [Editorial policy](${abs('/editorial-policy/')}): Sources, fact-checking and corrections`, '');
   return new Response(lines.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };

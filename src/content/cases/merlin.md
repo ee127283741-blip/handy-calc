@@ -3,7 +3,7 @@ title: "Merlin AI revenue: an AI assistant inside your browser"
 slug: merlin
 company: Merlin (Foyer)
 founders: [Pratyush Rai, Siddhartha Saxena, Sirsendu Sarkar]
-summary: "Merlin brings ChatGPT-style answers, summaries and writing help into every web page as a Chrome extension with over a million users. Merlin AI revenue is not disclosed."
+summary: "Merlin AI revenue is not disclosed; the Chrome extension brings ChatGPT-style answers, summaries and writing help to every web page for 1M+ users."
 primaryKeyword: "merlin ai revenue"
 secondaryKeywords: ["merlin ai by foyer", "merlin ai chrome extension", "merlin ai users", "merlin ai case study"]
 industry: productivity

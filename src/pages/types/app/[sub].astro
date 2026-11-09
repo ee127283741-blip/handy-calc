@@ -8,4 +8,4 @@ export async function getStaticPaths() {
 const { name } = Astro.props as { name: string };
 const cases = (await allCases()).filter((c) => c.data.productType === 'App' && c.data.appSubcategory === name);
 ---
-<CaseListPage name={`AI apps: ${name}`} description={`AI startup cases in the ${name} app subcategory.`} crumbs={[{ name: 'Product types', href: '/types/' }, { name: 'App', href: '/types/app/' }, { name, href: `/types/app/${subSlug(name)}/` }]} cases={cases} />
+<CaseListPage name={`AI apps: ${name}`} description={`${cases.length} AI ${name.toLowerCase()} app case ${cases.length === 1 ? "study" : "studies"} with sourced, dated revenue figures: who built each app, what it charges and how it grows.`} crumbs={[{ name: 'Product types', href: '/types/' }, { name: 'App', href: '/types/app/' }, { name, href: `/types/app/${subSlug(name)}/` }]} cases={cases} />

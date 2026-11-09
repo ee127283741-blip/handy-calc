@@ -6,7 +6,21 @@ import JsonLd from '../components/JsonLd.astro';
 import { ADS_ON, ADSENSE_CLIENT } from '../ads';
 import '../styles/global.css';
 interface Props { title: string; description: string; jsonLd?: object[]; noindex?: boolean; ogType?: 'website' | 'article'; image?: { url: string; alt: string; width: number; height: number } }
-const { title, description, jsonLd = [], noindex = false, ogType = 'website', image } = Astro.props;
+const props = Astro.props;
+const { jsonLd = [], noindex = false, ogType = 'website', image } = props;
+// Google cuts titles past ~60 characters, so the " | Site" brand suffix is dropped when it would push a title over.
+const SUFFIX = ` | ${SITE_NAME}`;
+const title = props.title.endsWith(SUFFIX) && props.title.length > 60 ? props.title.slice(0, -SUFFIX.length) : props.title;
+// Snippets are cut near 160 characters: keep whole sentences when they fit, otherwise end on a word with an ellipsis.
+function clip(text: string, max = 160) {
+  if (text.length <= max) return text;
+  const sentences = text.match(/.+?[.!?](?=\s+[A-Z(]|$)\s*/g) ?? [];
+  let out = '';
+  for (const s of sentences) { if ((out + s).trim().length > max) break; out += s; }
+  if (out.trim().length >= 70) return out.trim();
+  return text.slice(0, max - 1).replace(/[\s,;:(]+\S*$/, '') + '…';
+}
+const description = clip(props.description);
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const beacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 ---

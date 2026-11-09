@@ -3,7 +3,7 @@ title: "Formula Bot revenue: AI Excel formulas built with no code"
 slug: formula-bot
 company: Formula Bot (formerly Excel Formula Bot)
 founders: [David Bressler]
-summary: "David Bressler built Excel Formula Bot on Bubble and OpenAI while working a full-time job. Formula Bot revenue passed $14K MRR within seven months of its paid launch."
+summary: "Formula Bot revenue passed $14K MRR within seven months of its paid launch; David Bressler built it on Bubble and OpenAI while working a full-time job."
 primaryKeyword: "formula bot revenue"
 secondaryKeywords: ["formula bot ai excel", "formula bot david bressler", "formula bot no code", "formula bot mrr"]
 industry: productivity

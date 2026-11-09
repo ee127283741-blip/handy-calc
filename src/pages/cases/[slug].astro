@@ -47,7 +47,7 @@ const article: WithContext<Article> = {
   datePublished: isoDate(d.published),
   dateModified: isoDate(d.updated),
   keywords: [d.primaryKeyword, ...d.secondaryKeywords].join(', '),
-  about: { '@type': 'Organization', name: d.company, founder: d.founders.map((name) => ({ '@type': 'Person', name })), ...(d.foundedYear ? { foundingDate: String(d.foundedYear) } : {}) },
+  about: { '@type': 'Organization', name: d.company, founder: d.founders.filter((name) => !name.startsWith('Not disclosed')).map((name) => ({ '@type': 'Person', name })), ...(d.foundedYear ? { foundingDate: String(d.foundedYear) } : {}) },
   author: { '@type': 'Organization', name: 'Editorial team', url: authorUrl },
   publisher: { '@type': 'Organization', name: SITE_NAME },
   citation: d.sources.map((s) => s.url),

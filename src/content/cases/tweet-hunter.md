@@ -3,7 +3,7 @@ title: "Tweet Hunter acquisition: AI growth on X, sold to Lempire in 2022"
 slug: tweet-hunter
 company: Tweet Hunter
 founders: [Thibault Louis-Lucas (Tibo)]
-summary: "Tweet Hunter helped creators write and schedule tweets with AI and a viral-tweet library. It hit $150K ARR in four months; the Tweet Hunter acquisition by Lempire came in 2022."
+summary: "Tweet Hunter acquisition: Lempire bought the AI tweet-writing and scheduling tool in 2022, after it reached $150K ARR in four months."
 primaryKeyword: "tweet hunter acquisition"
 secondaryKeywords: ["tweet hunter tibo louis-lucas", "tweet hunter lempire", "tweet hunter revenue", "taplio tweet hunter"]
 industry: marketing-advertising

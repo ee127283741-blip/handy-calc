@@ -3,7 +3,7 @@ title: "HeadshotPro revenue: Danny Postma's AI headshot business"
 slug: headshotpro
 company: HeadshotPro
 founders: [Danny Postma]
-summary: "Danny Postma's HeadshotPro makes studio-style business headshots from selfies. How it started, its model pipeline, and what is publicly known about HeadshotPro revenue."
+summary: "HeadshotPro revenue: what is publicly known about Danny Postma's AI business-headshot app, how it started and the model pipeline behind it."
 primaryKeyword: "headshotpro revenue"
 secondaryKeywords: ["headshotpro danny postma", "ai headshot business revenue", "headshotpro case study", "headshotpro mrr"]
 industry: careers-hr

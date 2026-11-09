@@ -3,7 +3,7 @@ title: "Cal AI revenue: the teen-built calorie app MyFitnessPal bought"
 slug: cal-ai
 company: Cal AI
 founders: [Zach Yadegari, Henry Langmack]
-summary: "Two teenagers built Cal AI, a calorie app that estimates nutrition from a photo. Cal AI revenue topped $40M in trailing-12-month sales at the March 2026 MyFitnessPal deal."
+summary: "Cal AI revenue topped $40M in trailing-12-month sales at the March 2026 MyFitnessPal deal, for a photo calorie app built by two teenagers."
 primaryKeyword: "cal ai revenue"
 secondaryKeywords: ["cal ai zach yadegari", "cal ai revenue per month", "how cal ai grew tiktok", "cal ai founders"]
 industry: health-fitness
