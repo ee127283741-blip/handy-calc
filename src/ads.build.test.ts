@@ -205,10 +205,10 @@ describe('site build (ads off)', () => {
       }
     });
 
-    it('the empty content hub states not disclosed and has no table', () => {
+    it('the content hub lists its disclosed cases in a table', () => {
       const html = read('types/content/index.html');
-      expect(html).not.toContain('<table');
-      expect(html).toContain('no case in this group has a disclosed figure');
+      expect(html).toContain('<table');
+      expect(html).not.toContain('no case in this group has a disclosed figure');
     });
 
     it('home page has a 1200x630 image and a SearchAction that points at a built page', () => {
